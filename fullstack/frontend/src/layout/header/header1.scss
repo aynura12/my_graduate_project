@@ -1,0 +1,67 @@
+.slider1 {
+  background: url("https://oxpitan-gatsby.vercel.app/static/slider1-e74e91e3653f7a8de64abb24a8f8b2a7.jpg");
+  width: 100% !important;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .slider1_left {
+    width: 530px;
+    height: 100%;
+    background-color: rgb(131, 59, 161);
+    opacity: 0.9;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+  }
+}
+.slider2 {
+  background: url("https://oxpitan-gatsby.vercel.app/static/slider2-3ae80dd34ac3531db3e4190bf0105174.jpg");
+  width: 100% !important;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .slider2_left {
+    width: 530px;
+    height: 100%;
+    background-color: rgb(131, 59, 161);
+    opacity: 0.9;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+  }
+}
+.slider3 {
+  background: url("https://oxpitan-gatsby.vercel.app/static/slider3-e481626a6dcb2d17520ce5eff8dcc856.jpg");
+  width: 100% !important;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .slider3_left {
+    width: 530px;
+    height: 100%;
+    background-color: rgb(131, 59, 161);
+    opacity: 0.9;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+  }
+}
+
+.header_bottom_area {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 2px solid;
+  .header_bottom_title {
+    // color: #fff;
+    color: black;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 800;
+    padding-right: 50px;
+    font-family: Playfair Display,serif;
+   
+  }
+}
+.header{
+    background-color: red;
+}

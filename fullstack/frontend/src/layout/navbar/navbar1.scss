@@ -53,8 +53,11 @@ ul {
 }
 .navbar_bottom {
   width: 100%;
-  position: fixed;
+  // position: fixed;
   padding: 30px 0;
+  // z-index: 99;
+  // background-color: aliceblue;
+  // top: 0;
 
   .bottom_lists {
     display: flex;
@@ -90,6 +93,7 @@ ul {
       color: white;
       width: 150px;
       height: 40px;
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
     }
     button:hover {
       background-color: #f1ae44;
@@ -188,6 +192,7 @@ ul {
     color: white;
     width: 150px;
     height: 40px;
+    clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
   }
   .modal_button:hover {
     background-color: #f1ae44;

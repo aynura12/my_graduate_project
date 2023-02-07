@@ -1,0 +1,28 @@
+.readmore{
+    width: 100%;
+    height: 100vh;
+    padding:100px 0;
+    .read_card1{
+       
+            background: url("https://oxpitan-gatsby.vercel.app/static/hiw-img-99e56563f121a0abf0d6f3b725769644.jpg");
+            width: 100% ;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 150px;
+            padding-left: 60px;
+           .read_title1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 40px;
+            line-height: 48px;
+            font-weight: 800;
+            font-family: Playfair Display,serif;
+            max-width: 200px;
+           }
+    }
+}
