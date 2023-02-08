@@ -1,28 +1,129 @@
-.readmore{
+.readmore {
+  padding: 50px 0;
+  img {
+    height: 100%;
     width: 100%;
-    height: 100vh;
-    padding:100px 0;
-    .read_card1{
-       
-            background: url("https://oxpitan-gatsby.vercel.app/static/hiw-img-99e56563f121a0abf0d6f3b725769644.jpg");
-            width: 100% ;
-            height: 500px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding-top: 150px;
-            padding-left: 60px;
-           .read_title1{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            font-size: 40px;
-            line-height: 48px;
-            font-weight: 800;
-            font-family: Playfair Display,serif;
-            max-width: 200px;
-           }
+  }
+  .read_card1 {
+    position: relative;
+
+    img {
+      height: 100%;
+      width: 100%;
     }
+    .card1_color {
+      position: absolute;
+      bottom: 0px;
+      height: 100%;
+      width: 100%;
+      opacity: 0.7;
+      background-color: #50bac3;
+      padding: 50% 40%;
+    }
+    h3 {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      color: #fff;
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: 800;
+      font-family: Playfair Display, serif;
+      max-width: 200px;
+    }
+
+    @media (max-width: 768px) {
+      h3 {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+  .read_card2 {
+    position: relative;
+    .card2_color {
+      position: absolute;
+      bottom: 0px;
+      height: 100%;
+      width: 100%;
+      opacity: 0.7;
+      background-color: rgb(218, 127, 116);
+      padding: 50% 40%;
+    }
+    h3 {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      color: #fff;
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: 800;
+      max-width: 200px;
+      font-family: Playfair Display, serif;
+    }
+    @media (max-width: 768px) {
+      h3 {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+  .read_card3 {
+    position: relative;
+    .card3_color {
+      position: absolute;
+      bottom: 0px;
+      height: 100%;
+      width: 100%;
+      opacity: 0.7;
+      background-color: rgb(242, 176, 77);
+      padding: 50% 40%;
+    }
+    h3 {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      z-index: 1;
+      color: #fff;
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: 800;
+      max-width: 200px;
+      font-family: Playfair Display, serif;
+    }
+    @media (max-width: 768px) {
+      h3 {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+.read_link {
+  text-decoration: none;
+  position: absolute;
+  z-index: 99;
+  bottom: 0px;
+  left: 0px;
+  button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+  }
+  button:hover {
+    background-color: rgb(227, 105, 85);
+  }
 }
