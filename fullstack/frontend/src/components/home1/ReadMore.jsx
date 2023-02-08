@@ -15,7 +15,7 @@ const ReadMore = () => {
               <div className="card1_color"></div>
               <h3>More charity better lives</h3>
               <Link to="events" className="read_link">
-                <button>ReadMore</button>
+                <button>Read More</button>
               </Link>
             </div>
           </div>
@@ -28,7 +28,7 @@ const ReadMore = () => {
               <div className="card2_color"></div>
               <h3>How to become volunteer</h3>
               <Link to="events" className="read_link">
-                <button>ReadMore</button>
+                <button>Read More</button>
               </Link>
             </div>
           </div>
@@ -41,7 +41,7 @@ const ReadMore = () => {
               <div className="card3_color"></div>
               <h3>Poor children education</h3>
               <Link to="events" className="read_link">
-                <button>ReadMore</button>
+                <button>Read More</button>
               </Link>
             </div>
           </div>

@@ -117,10 +117,13 @@
   bottom: 0px;
   left: 0px;
   button {
+    text-transform: uppercase;
     background-color: black;
     color: white;
     border: none;
-    padding: 10px 30px;
+    height: 40px;
+    width: 100px;
+    font-weight: 400;
     clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
   }
   button:hover {

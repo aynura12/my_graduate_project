@@ -5,13 +5,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  padding-right: 740px;
   .slider1_left {
-    width: 530px;
     height: 100%;
     background-color: rgb(131, 59, 161);
     opacity: 0.9;
-    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 65% 100%, 0% 100%);
   }
 }
 .slider2 {
@@ -73,7 +72,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       padding: 70px 150px;
-      .header_video_link{
+      .header_video_link {
         text-decoration: none;
         display: flex;
         align-items: center;
@@ -111,9 +110,10 @@
       }
     }
   }
-}
-@media screen and (max-width: 745px) {
-  .header_bottom_area {
+  @media (max-width: 768px) {
     flex-direction: column;
+    .header_right_title {
+      padding-left: 50px;
+    }
   }
 }
