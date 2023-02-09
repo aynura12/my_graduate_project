@@ -7,6 +7,7 @@ import Donation from '../components/home1/Donation'
 import GiveHelp from '../components/home1/GiveHelp'
 import HelpUs from '../components/home1/HelpUs'
 import ReadMore from '../components/home1/ReadMore'
+import Recent from '../components/home1/Recent'
 import Volunteers from '../components/home1/Volunteers'
 import Header1 from '../layout/header/Header1'
 const Home1 = () => {
@@ -22,6 +23,7 @@ const Home1 = () => {
     <GiveHelp/>
     <DoHelp/>
     <Volunteers/>
+    <Recent/>
     </div>
   )
 }
