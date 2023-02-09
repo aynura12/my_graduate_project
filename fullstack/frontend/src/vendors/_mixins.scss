@@ -1,0 +1,61 @@
+@import "../vendors/variables";
+
+
+@mixin causestitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+@mixin pagetitle{
+    color:$color;
+    font-family: $title_font;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 800;
+    padding-bottom: 40px;
+}
+@mixin backcolor{
+    background-color: $background_color;
+}
+ @mixin buttonpreparty{
+    background-color:$buttonback_color;
+    color:$button_color;
+    text-transform: uppercase;
+    border: none;
+    width: 150px;
+    height: 50px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    
+ }
+ @mixin h3{
+    font-size: 24px;
+    font-weight: 800;
+    color: #424242;
+    font-family: Playfair Display,serif;
+ }
+ @mixin span{
+    font-size: 14px;
+    color: #e36955;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+ }
+ @mixin text{
+    line-height: 30px;
+    font-size: 16px;
+    color: #818181;
+    font-weight: 400;
+ }
+ @mixin sponsor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding:60px 0;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+ }

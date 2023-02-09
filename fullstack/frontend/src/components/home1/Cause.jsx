@@ -33,7 +33,7 @@ const Cause = () => {
                   <span>25,270</span>
                 </li>
               </ul>
-              <Link to="donatenow" className="cause_link">
+              <Link to="/donatenow" className="cause_link">
                 <button>Donate Now</button>
               </Link>
             </div>
