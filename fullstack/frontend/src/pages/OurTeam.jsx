@@ -2,14 +2,14 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import Volunteers from "../components/home1/Volunteers";
 import { Link } from "react-router-dom";
-import "../pageStyle/ourteam.scss"
+import "../pageStyle/ourteam.scss";
 const OurTeam = () => {
   return (
     <>
+      <Helmet>
+        <title>Our Team</title>
+      </Helmet>
       <div className="ourteam">
-        <Helmet>
-          <title>Our Team</title>
-        </Helmet>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -23,7 +23,7 @@ const OurTeam = () => {
           </div>
         </div>
       </div>
-    <Volunteers/>
+      <Volunteers />
     </>
   );
 };

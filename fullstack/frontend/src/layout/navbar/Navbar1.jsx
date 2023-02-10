@@ -79,7 +79,7 @@ const Navbar1 = () => {
                   src={logo}
                   alt=""
                 />
-                <Link className="link d-lg-block d-md-none d-sm-none d-xs-none  ms-md-4" to="donatenow">
+                <Link className="link d-lg-block d-md-none d-sm-none d-xs-none  ms-md-4" to="/donatenow">
                   <button>DONATE NOW</button>
                 </Link>
               </div>

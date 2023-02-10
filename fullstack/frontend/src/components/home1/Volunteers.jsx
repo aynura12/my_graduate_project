@@ -200,7 +200,7 @@ const Volunteers = () => {
     <section className="start">
         <img src={donationLogo}alt="" />
         <h2>Our fingerprints on the lives we touch never fade</h2>
-        <Link to="donatenow"><button>START DONATION</button></Link>
+        <Link to="/donatenow"><button>START DONATION</button></Link>
     </section>
     </>
     

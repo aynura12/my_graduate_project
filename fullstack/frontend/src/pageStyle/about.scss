@@ -1,0 +1,77 @@
+@import "../vendors//mixins";
+
+.about {
+  padding: 40px 0;
+  @include backcolor;
+  .about_title {
+    @include causestitle;
+    h2 {
+      @include pagetitle;
+    }
+    button {
+      @include buttonpreparty;
+    }
+  }
+}
+.about_area_photo {
+  padding: 60px 0;
+  img {
+    width: 100%;
+  }
+}
+.about_area {
+  background-color: rgb(242, 240, 236);
+  padding: 40px 0;
+  .about_left {
+    img {
+      width: 100%;
+    }
+  }
+  .about_right {
+    padding-top: 20px;
+    h3 {
+      @include h3;
+    }
+    h6 {
+      color: blueviolet;
+      padding-bottom: 30px;
+    }
+    p {
+      @include text;
+    }
+  }
+}
+.about_question {
+  background-color: rgb(242, 240, 236);
+  padding: 60px 0;
+  .about_image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  h3 {
+    @include h3;
+  }
+  h6 {
+    color: blueviolet;
+    padding-bottom: 30px;
+  }
+
+  h5 {
+    @include h3;
+    cursor: pointer;
+    background-color: white;
+    padding: 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+//   h5:hover{
+//       p{
+//         display:none;
+//       }
+//     }
+  p {
+    @include text;
+    text-align: center;
+   display: block;
+  }
+}

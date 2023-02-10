@@ -6,11 +6,10 @@ import envato from "../media/envato.png";
 const Sponsors = () => {
   return (
     <>
-      {" "}
+      <Helmet>
+        <title>Sponsors</title>
+      </Helmet>
       <section className="sponsors">
-        <Helmet>
-          <title>Sponsors</title>
-        </Helmet>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -31,9 +30,9 @@ const Sponsors = () => {
               <img src={envato} alt="envato" />
             </div>
             <div className="sponsor_title col-lg-9 col-md-12">
-              <h3 >Company name here 01</h3>
-              <span >brisbane, australia</span>
-              <p >
+              <h3>Company name here 01</h3>
+              <span>brisbane, australia</span>
+              <p>
                 Phasellus vehicul justo eget diam dosuere sollicitudin eu
                 tincidun. Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry been the industry's standard dummy text
@@ -44,9 +43,9 @@ const Sponsors = () => {
               <img src={envato} alt="envato" />
             </div>
             <div className="sponsor_title col-lg-9 col-md-12">
-              <h3 >Company name here 01</h3>
-              <span >brisbane, australia</span>
-              <p >
+              <h3>Company name here 01</h3>
+              <span>brisbane, australia</span>
+              <p>
                 Phasellus vehicul justo eget diam dosuere sollicitudin eu
                 tincidun. Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry been the industry's standard dummy text
@@ -57,9 +56,9 @@ const Sponsors = () => {
               <img src={envato} alt="envato" />
             </div>
             <div className="sponsor_title col-lg-9 col-md-12">
-              <h3 >Company name here 01</h3>
-              <span >brisbane, australia</span>
-              <p >
+              <h3>Company name here 01</h3>
+              <span>brisbane, australia</span>
+              <p>
                 Phasellus vehicul justo eget diam dosuere sollicitudin eu
                 tincidun. Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry been the industry's standard dummy text

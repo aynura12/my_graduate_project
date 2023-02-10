@@ -61,7 +61,7 @@ const HelpUs = () => {
             </div>
           </div>
         </div>
-        <Link to="donatenow" className="help_link">
+        <Link to="/donatenow" className="help_link">
           <button>Donate Now</button>
         </Link>
       </div>
