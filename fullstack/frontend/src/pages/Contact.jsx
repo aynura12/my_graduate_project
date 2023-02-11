@@ -151,7 +151,7 @@ const Contact = () => {
                   <></>
                 )}
 
-                <input
+                <textarea
                   type="text"
                   {...register("message")}
                   onChange={handleChange}

@@ -4,12 +4,12 @@
   padding: 40px 0;
   @include backcolor;
   .causesto_title {
-   @include causestitle;
-    h2{
-        @include pagetitle;
+    @include causestitle;
+    h2 {
+      @include pagetitle;
     }
-    button{
-        @include buttonpreparty
+    button {
+      @include buttonpreparty;
     }
   }
 }

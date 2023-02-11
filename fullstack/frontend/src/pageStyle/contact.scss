@@ -65,28 +65,19 @@
       display: flex;
       justify-content: space-between;
     }
+    
     input {
-      border: none;
-      background-color: rgb(242, 240, 236);
-      padding: 20px 20px;
-      @include text;
-      border-radius: 4px;
+      @include input;
     }
-    button{
-        text-transform: uppercase;
-        font-family: Poppins, sans-serif;
-        background-color: rgb(241, 174, 68);
-        color: white;
-        border: none;
-        line-height: 29px;
-        font-size: 13px;
-        font-weight: 700;
-        height: 50px;
-        width: 180px;
-        clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    textarea {
+      @include input;
     }
-    button:hover{
-        background-color: rgb(227,105,85);
+    button {
+      @include sendButton;
+    
+    }
+    button:hover {
+      background-color: rgb(227, 105, 85);
     }
   }
 }
