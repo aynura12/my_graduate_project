@@ -72,13 +72,7 @@ const Recent = () => {
         </div>
       </div>
       <section>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6603.552039549855!2d-118.797223!3d34.152072!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xba03efb7998eef6d!2sCostco%20Wholesale!5e0!3m2!1sbn!2sbd!4v1675964887596!5m2!1sbn!2sbd"
-          style={{ width: "100%", height: "100vh" }}
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d96753.25799868624!2d-74.077644!3d40.728157!3m2!1i1024!2i768!4f13.1!4m3!3e6!4m0!4m0!5e0!3m2!1sen!2sus!4v1676124329284!5m2!1sen!2sus"  style={{ width: "100%", height: "100vh" }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </section>
 
       <section className="home_end">
