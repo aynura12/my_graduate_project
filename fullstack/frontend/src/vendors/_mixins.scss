@@ -131,3 +131,16 @@
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
 
 }
+@mixin replyButton {
+   text-transform: uppercase;
+   font-family: Poppins, sans-serif;
+   background-color: rgb(241, 174, 68);
+   color: white;
+   border: none;
+   line-height: 29px;
+   font-size: 13px;
+   font-weight: 700;
+   height: 40px;
+   width: 100px;
+   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+ }

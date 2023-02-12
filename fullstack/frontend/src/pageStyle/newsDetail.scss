@@ -52,16 +52,15 @@
     justify-content: space-between;
     border-bottom: 2px solid rgb(242, 240, 236);
     padding: 30px 0;
-    @media (max-width:768px){
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      .tags_right {
+        padding-top: 20px;
         display: flex;
-        flex-direction: column;
-        .tags_right{
-            padding-top: 20px;
-            display: flex;
-            align-items: center;
-           margin-left: 60px;
-            
-        }
+        align-items: center;
+        margin-left: 60px;
+      }
     }
     .tags_left {
       display: flex;
@@ -107,6 +106,83 @@
               background-color: rgb(134, 59, 174);
             }
           }
+        }
+      }
+    }
+  }
+
+  .detail_comment_top {
+    display: flex;
+    background-color: rgb(242, 240, 236);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 40px 30px;
+    img {
+      height: 100%;
+    }
+    h2 {
+      @include h3;
+      padding-left: 30px;
+    }
+    p {
+      @include text;
+      padding-left: 30px;
+    }
+  }
+  //   @media (max-width:576px){
+  //     .detail_comment_top{
+  //         flex-direction: column;
+  //     }
+  //   }
+
+  .detail_comment_bottom {
+    display: flex;
+    padding-top: 60px;
+    border-bottom: 2px solid rgb(242, 240, 236);
+    img {
+      height: 100%;
+    }
+    p {
+      @include text;
+    }
+    .bottom_title {
+      padding-left: 15px;
+      .title_left {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+
+        .left {
+          display: flex;
+          h4 {
+            @include h3;
+          }
+          span {
+            color: rgb(235, 37, 37);
+            font-size: 16px;
+            font-weight: 600;
+            padding-top: 3px;
+            padding-left: 15px;
+          }
+        }
+        button {
+          @include replyButton;
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    h3 {
+      text-align: center;
+    }
+    .detail_comment_bottom {
+      flex-direction: column;
+      text-align: center;
+
+      .title_left {
+        flex-direction: column;
+        .left {
+          justify-content: center;
         }
       }
     }

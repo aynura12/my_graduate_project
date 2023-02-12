@@ -27,7 +27,7 @@ const NewsDetail = () => {
           <div className="row">
             <div className="col-lg-8 col-md-12">
               <div className="detail_card_image">
-                  <span >26 FEB,2019</span>
+                <span>26 FEB,2019</span>
                 <img
                   src="http://layerdrops.com/oxpitan/images/img20.jpg"
                   alt="img"
@@ -69,47 +69,112 @@ const NewsDetail = () => {
                   <span>Tags</span>
                   <ul>
                     <li>
-                      <Link to="/" className="left_link">Charity</Link>
+                      <Link to="/" className="left_link">
+                        Charity
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/" className="left_link">POOR</Link>
+                      <Link to="/" className="left_link">
+                        POOR
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/" className="left_link">Love</Link>
+                      <Link to="/" className="left_link">
+                        Love
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="tags_right">
-                <ul>
-                  <li >
-                    <a href="/">
-                      <div>
-                        <i className="icon1 fa-brands fa-twitter"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li >
-                    <a href="/">
-                      <div>
-                        <i className="icon2 fa-brands fa-facebook-f"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <div>
-                        <i className="icon3 fa-brands fa-pinterest"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <div>
-                        <i className="icon4 fa-brands fa-instagram"></i>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
+                  <ul>
+                    <li>
+                      <a href="/">
+                        <div>
+                          <i className="icon1 fa-brands fa-twitter"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/">
+                        <div>
+                          <i className="icon2 fa-brands fa-facebook-f"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/">
+                        <div>
+                          <i className="icon3 fa-brands fa-pinterest"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/">
+                        <div>
+                          <i className="icon4 fa-brands fa-instagram"></i>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="detail_comment_top">
+                <img
+                  src="http://layerdrops.com/oxpitan/images/post-box-img.jpg"
+                  alt="img"
+                />
+                <div>
+                  <h2>Kevin Martin</h2>
+                  <p>
+                    Cursus massa at urnaaculis estie. Sed aliquamellus vitae
+                    ultrs condmentum lightly believable. If you are going to use
+                    a of you need to be sure there isn't anything embarrassing.
+                  </p>
+                </div>
+              </div>
+              <h2>Comments</h2>
+              <div className="detail_comment_bottom">
+                <img
+                  src="http://layerdrops.com/oxpitan/images/comment-avatar.jpg"
+                  alt="img"
+                />
+                <div className="bottom_title">
+                  <div className="title_left">
+                    <div className="left">
+                      <h4>David Marks </h4>
+                      <span>4 hours ago</span>
+                    </div>
+                    <Link to="/">
+                      <button>reply</button>
+                    </Link>
+                  </div>
+                  <p>
+                  
+                  Sending love. My nephews Nick and Anthony Salaber are your
+                    teammates, so I know the caliber person you are. Our whole
+                    family is sending our best to you and your family.
+                  </p>
+                </div>
+              </div>
+              <div className="detail_comment_bottom">
+                <img
+                  src="http://layerdrops.com/oxpitan/images/comment-avatar2.jpg"
+                  alt="img"
+                />
+                <div className="bottom_title">
+                  <div className="title_left">
+                    <div className="left">
+                      <h4>Christine Eve</h4>
+                      <span>3 hours ago</span>
+                    </div>
+                    <Link to="/">
+                      <button>reply</button>
+                    </Link>
+                  </div>
+                  <p>
+                  You're a champ. Your in my thoughts and prayers every day. You're the best teammate a bloke could ask for and we're going to return the favour my being there for you every step along this journey. Stay strong
+
+                  </p>
                 </div>
               </div>
             </div>
