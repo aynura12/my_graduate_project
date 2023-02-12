@@ -8,7 +8,7 @@ const Events = () => {
       <Helmet>
         <title>Events</title>
       </Helmet>
-      <section className="events">
+      <section className="event">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
