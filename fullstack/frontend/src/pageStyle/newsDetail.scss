@@ -1,0 +1,114 @@
+@import "../vendors//mixins";
+
+.news_detail {
+  padding: 40px 0;
+  @include backcolor;
+  .news_detail_title {
+    @include causestitle;
+    h2 {
+      @include pagetitle;
+    }
+    button {
+      @include buttonpreparty;
+    }
+  }
+}
+.news_detail_area {
+  padding: 50px 0;
+  .detail_card_image {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    span {
+      @include display;
+      @include news_date;
+      background-color: rgb(134, 59, 174);
+    }
+  }
+  .detail_card_title {
+    border-bottom: 2px solid rgb(242, 240, 236);
+    h2 {
+      @include h3;
+      padding-top: 20px;
+    }
+    ul {
+      display: flex;
+      li {
+        list-style: none;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        color: rgb(235, 37, 37);
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+    p {
+      @include text;
+    }
+  }
+  .detail_tags {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(242, 240, 236);
+    padding: 30px 0;
+    @media (max-width:768px){
+        display: flex;
+        flex-direction: column;
+        .tags_right{
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+           margin-left: 60px;
+            
+        }
+    }
+    .tags_left {
+      display: flex;
+      align-items: center;
+      span {
+        @include h3;
+      }
+      ul {
+        display: flex;
+        li {
+          list-style: none;
+          margin-right: 5px;
+          margin-left: 10px;
+          .left_link {
+            text-decoration: none;
+            @include sendButton;
+            padding: 10px 30px;
+          }
+        }
+      }
+    }
+    .tags_right {
+      ul {
+        display: flex;
+        gap: 20px;
+        li {
+          list-style: none;
+          a {
+            text-decoration: none;
+            i {
+              @include link;
+            }
+            .icon1 {
+              background-color: rgb(80, 186, 195);
+            }
+            .icon2 {
+              background-color: rgb(227, 105, 85);
+            }
+            .icon3 {
+              background-color: rgb(241, 174, 68);
+            }
+            .icon4 {
+              background-color: rgb(134, 59, 174);
+            }
+          }
+        }
+      }
+    }
+  }
+}

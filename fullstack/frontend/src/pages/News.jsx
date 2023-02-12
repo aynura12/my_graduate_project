@@ -27,7 +27,7 @@ const News = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-md-12">
-              <div className="news_card ">
+              <div className="news_card">
                 <span className="news_of_card ">
                   <span className="news_date card1">09 MAR,2019</span>
                 </span>
