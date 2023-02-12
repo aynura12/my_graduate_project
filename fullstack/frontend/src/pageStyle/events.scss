@@ -22,7 +22,6 @@
       width: 100%;
     }
     .date_of_card {
-     
       @include eventsDate;
       .day_date {
         font-size: 40px;
@@ -98,10 +97,7 @@
       }
       ul {
         display: flex;
-        .events_list1{
-          color: #50bac3;
-          @include events_list;
-        }
+       
         .events_list1{
             color: #50bac3;
             @include events_list;
@@ -119,7 +115,7 @@
             @include events_list;
           }
           .events_list5{
-            color: rgb(233, 52, 82);
+            color: rgb(233, 52, 82);;
             @include events_list;
           }
           .events_list6{
