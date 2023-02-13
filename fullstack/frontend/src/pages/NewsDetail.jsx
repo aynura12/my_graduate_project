@@ -149,8 +149,7 @@ const NewsDetail = () => {
                     </Link>
                   </div>
                   <p>
-                  
-                  Sending love. My nephews Nick and Anthony Salaber are your
+                    Sending love. My nephews Nick and Anthony Salaber are your
                     teammates, so I know the caliber person you are. Our whole
                     family is sending our best to you and your family.
                   </p>
@@ -172,9 +171,105 @@ const NewsDetail = () => {
                     </Link>
                   </div>
                   <p>
-                  You're a champ. Your in my thoughts and prayers every day. You're the best teammate a bloke could ask for and we're going to return the favour my being there for you every step along this journey. Stay strong
-
+                    You're a champ. Your in my thoughts and prayers every day.
+                    You're the best teammate a bloke could ask for and we're
+                    going to return the favour my being there for you every step
+                    along this journey. Stay strong
                   </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="news_right col-lg-4 col-md-12">
+              <input type="text" placeholder="Search" />
+              <div className="recent_posts">
+                <h3> Recent Posts</h3>
+
+                <div className="post">
+                  <img
+                    src="http://layerdrops.com/oxpitan/images/author-avatar5.jpg"
+                    alt="img"
+                  />
+                  <div>
+                    {" "}
+                    <h4>Learn how access to clean</h4>
+                    <h4>Water</h4>
+                  </div>
+                </div>
+                <div className="post">
+                  <img
+                    src="http://layerdrops.com/oxpitan/images/author-avatar6.jpg"
+                    alt="img"
+                  />
+                  <div>
+                    {" "}
+                    <h4>Build school for poor</h4>
+                    <h4>Childrens</h4>
+                  </div>
+                </div>
+                <div className="post">
+                  <img
+                    src="http://layerdrops.com/oxpitan/images/author-avatar7.jpg"
+                    alt="img"
+                  />
+                  <div>
+                    {" "}
+                    <h4>Together to help the world</h4>
+                    <h4>Better</h4>
+                  </div>
+                </div>
+              </div>
+              <div className="categories">
+                <h3>Categories</h3>
+                <ul>
+                  <li>
+                    <a href="/">Charity</a>
+                  </li>
+                  <li>
+                    <a href="/">Fundrising</a>
+                  </li>
+                  <li>
+                    <a href="/">Donations</a>
+                  </li>
+                  <li>
+                    <a href="/">Save Lifes</a>
+                  </li>
+                  <li>
+                    <a href="/">Health</a>
+                  </li>
+                  <li>
+                    <a href="/">Education</a>
+                  </li>
+                  <li>
+                    <a href="/">Food</a>
+                  </li>
+                  <li>
+                    <a href="/">Water</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="popular_tags">
+                <div>
+                  <Link to="/" className="popular_link">
+                    <button> Charity</button>
+                  </Link>
+                  <Link to="/" className="popular_link">
+                    <button> poor </button>
+                  </Link>
+                  <Link to="/" className="popular_link">
+                    <button> love</button>
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/" className="popular_link">
+                    <button> donations</button>
+                  </Link>
+                  <Link to="/" className="popular_link">
+                    <button> health</button>
+                  </Link>
+                  <Link to="/" className="popular_link">
+                    <button>save</button>
+                  </Link>
                 </div>
               </div>
             </div>
