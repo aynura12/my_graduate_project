@@ -9,7 +9,7 @@ export const formSchema = yup
     address:yup.string("Pls enter string text").required("This field must not be left blank"),
     date: yup.number("Pls enter number").required("This field must not be left blank"),
     occupation:yup.string("Pls enter string text").required("This field must not be left blank"),
+    comment:yup.string("Pls enter string text").required("This field must not be left blank"),
 
-
-  })
+})
   .required();

@@ -2,7 +2,40 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../pageStyle/newsDetail.scss";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { formSchema } from "../schema/formSchema";
+import { useState } from "react";
+import axios from "axios";
 const NewsDetail = () => {
+  const [state, setState] = useState({
+    fullName: "",
+    email: "",
+    comment: "",
+  });
+  const handleChange = async (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+  const addData = async (id) => {
+    if (!state.fullName || !state.email || !state.comment) return;
+    await axios.post("", state);
+    setState({
+      fullName: "",
+      email: "",
+      comment: "",
+    });
+  };
+  const onSubmit = (data) => {
+    console.log(data);
+    addData();
+  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(formSchema),
+  });
   return (
     <>
       <Helmet>
@@ -178,6 +211,54 @@ const NewsDetail = () => {
                   </p>
                 </div>
               </div>
+              <form className="form">
+                <h3>Leave a Comment</h3>
+                <div className="form_top">
+                  <input
+                    type="text"
+                    {...register("fullName")}
+                    onChange={handleChange}
+                    value={state.fullName}
+                    name="fullName"
+                    placeholder="Full Name..."
+                  />
+                  {errors.fullName ? (
+                    <span style={{ color: "red" }}>
+                      {errors.fullName.message}
+                    </span>
+                  ) : (
+                    <></>
+                  )}
+                  <input
+                    type="email"
+                    {...register("email")}
+                    onChange={handleChange}
+                    value={state.email}
+                    name="email"
+                    placeholder="E-mail..."
+                  />
+                  {errors.email ? (
+                    <span style={{ color: "red" }}>{errors.email.message}</span>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+
+                <textarea
+                  type="text"
+                  {...register("comment")}
+                  onChange={handleChange}
+                  value={state.comment}
+                  name="comment"
+                  placeholder="Leavee a Comment..."
+                />
+                {errors.comment ? (
+                  <span style={{ color: "red" }}>{errors.comment.message}</span>
+                ) : (
+                  <></>
+                )}
+                <button onClick={handleSubmit(onSubmit)}>submit now</button>
+              </form>
             </div>
 
             <div className="news_right col-lg-4 col-md-12">
