@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import Donate from "../components/donation/Donate";
 import "../pageStyle/donatenow.scss";
 const DonateNow = () => {
   return (
@@ -25,7 +26,7 @@ const DonateNow = () => {
       <section className="donate_now_area">
         <div className="container">
           <div className="row">
-            <div className="col-lg-8 col-md-12"> </div>
+            <div className="col-lg-8 col-md-12"><Donate/>  </div>
             <div className=" col-lg-4 col-md-12">
             <img className="cards"
               src="https://oxpitan-gatsby.vercel.app/static/img2-0e2d4e23ddf6de2cfc3ff871784bf4b7.jpg"
