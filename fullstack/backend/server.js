@@ -33,3 +33,6 @@ app.use("/gallery",galleryRoute)
 
 const eventRoute=require("./routes/eventRoute")
 app.use("/event",eventRoute)
+
+const causeRoute=require("./routes/causeRoute")
+app.use("/cause",causeRoute)
