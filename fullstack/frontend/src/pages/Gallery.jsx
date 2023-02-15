@@ -3,7 +3,17 @@ import { Helmet } from "react-helmet-async";
 import "../pageStyle/gallery.scss";
 import { Link } from "react-router-dom";
 import 'animate.css';
+import { useState,useEffect } from "react";
+import axios  from "axios"
 const Gallery = () => {
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    const res = await axios.get("http://localhost:8080/gallery");
+    setData(res.data);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <>
       <Helmet>
@@ -27,7 +37,7 @@ const Gallery = () => {
         <div className="container">
           {" "}
           <div className="row">
-            <div className="col-lg-4 col-md-12">
+            {/* <div className="col-lg-4 col-md-12">
               <div className="gallery_photo">
                 <img
                   src="https://oxpitan-gatsby.vercel.app/static/gallery-img4-4efd85fafb0c9e9189dc25ff06489489.jpg"
@@ -35,6 +45,7 @@ const Gallery = () => {
                 />
                 <div className="gallery_color"></div>
               </div>
+
             </div>
             <div className="col-lg-4 col-md-12">
               <div className="gallery_photo">
@@ -80,7 +91,19 @@ const Gallery = () => {
                 />
                 <div className="animate__backInLeft gallery_color"></div>
               </div>
-            </div>
+            </div> */}
+            {data?.map((datas)=>{
+                return ( <div className="col-lg-4 col-md-12">
+                <div className="gallery_photo">
+                  <img
+                    src={datas.image}
+                    alt="img"
+                  />
+                  <div className="gallery_color"></div>
+                </div>
+              </div>)
+              })}
+           
           </div>
         </div>
       </section>

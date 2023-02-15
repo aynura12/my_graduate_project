@@ -1,11 +1,15 @@
 const express=require("express")
 const mongoose=require("mongoose")
 const dotenv=require("dotenv")
+const cors = require("cors")
+const bodyParser = require("body-parser")
 dotenv.config()
 const app=express()
+app.use(cors())
+app.use(bodyParser.json())
 
 const PORT=process.env.PORT
-const PASSWORD=process.env.PASSWORD
+
 const DB=process.env.DB.replace("<password>",process.env.PASSWORD)
 mongoose.set('strictQuery', false);
 mongoose.connect(DB)
@@ -23,3 +27,9 @@ app.listen(PORT,()=>{
 
 const commentRoute=require("./routes/commentRoute")
 app.use("/comment",commentRoute)
+
+const galleryRoute=require("./routes/galleryRoute")
+app.use("/gallery",galleryRoute)
+
+const eventRoute=require("./routes/eventRoute")
+app.use("/event",eventRoute)

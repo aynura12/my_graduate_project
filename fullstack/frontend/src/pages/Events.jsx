@@ -2,7 +2,17 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../pageStyle/events.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
 const Events = () => {
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    const res = await axios.get("http://localhost:8080/event");
+    setData(res.data);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <>
       <Helmet>
@@ -25,26 +35,31 @@ const Events = () => {
       <section className="events_area">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-md-12">
-              <div className="events_card">
-                <img
-                  src="http://layerdrops.com/oxpitan/images/img7.jpg"
-                  alt="img"
-                />
-                <span className="date_of_card card1">
-                  <span className="day_date">6</span>
-                  <span className="month_date">may</span>
-                </span>
-                <div className="events_text">
-                  <h3 className="events_title1">Save the planets</h3>
-                  <ul>
-                    <li className="events_list1">8:00am to 2:00pm</li>
-                    <li className="events_list1">San marcos</li>
-                  </ul>
+            {data.map((datas) => {
+              return (
+                <div className="col-lg-4 col-md-12">
+                  <div className="events_card">
+                    <img
+                      src={datas.image}
+                      alt="img"
+                    />
+                    <span className="date_of_card card1">
+                      <span className="day_date">{datas.day}</span>
+                      <span className="month_date">{datas.month}</span>
+                    </span>
+                    <div className="events_text">
+                      <h3 className="events_title1">{datas.title}</h3>
+                      <ul>
+                        <li className="events_list1">{datas.watch}</li>
+                        <li className="events_list1">{datas.name}</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-12">
+              );
+            })}
+
+            {/* <div className="col-lg-4 col-md-12">
               <div className="events_card">
                 <img
                   src="http://layerdrops.com/oxpitan/images/img8.jpg"
@@ -138,8 +153,7 @@ const Events = () => {
                   </ul>
                 </div>
               </div>
-            </div>
-
+            </div> */}
           </div>
         </div>
       </section>

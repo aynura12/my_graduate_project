@@ -1,8 +1,8 @@
-const Comment=require("../models/commentModel")
+const Gallery=require("../models/galleryModel")
 
 
-exports.comment_getAll=(req,res)=>{
-    Comment.find({}, (err, docs) => {
+exports.gallery_getAll=(req,res)=>{
+    Gallery.find({}, (err, docs) => {
         if (!err) {
             res.send(docs)
         } else {
@@ -12,9 +12,9 @@ exports.comment_getAll=(req,res)=>{
 }
 
 
-exports.comment_getAll_byId=(req,res)=>{
+exports.gallery_getAll_byId=(req,res)=>{
     const { id } = req.params
-    Comment.findById(id, (err, docs) => {
+    Gallery.findById(id, (err, docs) => {
         if (!err) {
             res.send(docs)
         } else {
@@ -24,10 +24,10 @@ exports.comment_getAll_byId=(req,res)=>{
 }
 
 
-exports.comment_post=async(req,res)=>{
-    let comments =req.body
+exports.gallery_post=async(req,res)=>{
+    let gallerys =req.body
    try{
-    await Comment.create(comments)
+    await Gallery.create(gallerys)
     res.status(200).json({
         message:"succes"
         
@@ -38,9 +38,9 @@ exports.comment_post=async(req,res)=>{
    }
 }
 
-exports.comment_delete = (req, res) => {
+exports.gallery_delete = (req, res) => {
     const { id } = req.params;
-    Comment.findByIdAndDelete(id, (err) => {
+    Gallery.findByIdAndDelete(id, (err) => {
         if (!err) {
             res.send("SUCCESSFULY DELETE")
         } else {

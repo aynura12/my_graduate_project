@@ -1,8 +1,8 @@
-const Comment=require("../models/commentModel")
+const Event=require("../models/eventModule")
 
 
-exports.comment_getAll=(req,res)=>{
-    Comment.find({}, (err, docs) => {
+exports.event_getAll=(req,res)=>{
+    Event.find({}, (err, docs) => {
         if (!err) {
             res.send(docs)
         } else {
@@ -12,9 +12,9 @@ exports.comment_getAll=(req,res)=>{
 }
 
 
-exports.comment_getAll_byId=(req,res)=>{
+exports.event_getAll_byId=(req,res)=>{
     const { id } = req.params
-    Comment.findById(id, (err, docs) => {
+    Event.findById(id, (err, docs) => {
         if (!err) {
             res.send(docs)
         } else {
@@ -24,10 +24,10 @@ exports.comment_getAll_byId=(req,res)=>{
 }
 
 
-exports.comment_post=async(req,res)=>{
-    let comments =req.body
+exports.event_post=async(req,res)=>{
+    let events =req.body
    try{
-    await Comment.create(comments)
+    await Event.create(events)
     res.status(200).json({
         message:"succes"
         
@@ -38,9 +38,9 @@ exports.comment_post=async(req,res)=>{
    }
 }
 
-exports.comment_delete = (req, res) => {
+exports.event_delete = (req, res) => {
     const { id } = req.params;
-    Comment.findByIdAndDelete(id, (err) => {
+    Event.findByIdAndDelete(id, (err) => {
         if (!err) {
             res.send("SUCCESSFULY DELETE")
         } else {
