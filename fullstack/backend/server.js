@@ -36,3 +36,13 @@ app.use("/event",eventRoute)
 
 const causeRoute=require("./routes/causeRoute")
 app.use("/cause",causeRoute)
+
+
+const readRoute=require("./routes/readRoute")
+app.use("/read",readRoute)
+
+const teamRoute=require("./routes/teamRoute")
+app.use("/team",teamRoute)
+
+const volunteerRoute=require("./routes/volunteerRoute")
+app.use("/volunteer",volunteerRoute)

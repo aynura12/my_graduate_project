@@ -13,3 +13,65 @@
     }
   }
 }
+.our_team{
+  padding: 50px 0;
+  .volunteer_row{
+    padding-bottom: 20px;
+  } 
+  .volunteers_card {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .volunteers_icons {
+      position: absolute;
+      display: block;
+      background-color: black;
+      width: 100%;
+      top: 0;
+      padding: 30px 0;
+      opacity: 0.5;
+
+      ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        display: block;
+      }
+    }
+
+    .volunteers_title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-top: 5px;
+      padding: 10px 0;
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+      h2 {
+        color: white;
+        font-family: Playfair Display, serif;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      p {
+        font-family: Poppins, sans-serif;
+        color: white;
+        line-height: 29px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+    }
+  }
+  .title1 {
+    background-color: rgb(80, 186, 195);
+  }
+}

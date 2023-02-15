@@ -2,8 +2,17 @@ import React from "react";
 import "../home1/volunteers.scss";
 import donationLogo from "../../media/smalllogo.png";
 import { Link } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 const Volunteers = () => {
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    const res = await axios.get("http://localhost:8080/volunteer");
+    setData(res.data);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <>
     <section className="volunteers">
@@ -15,10 +24,11 @@ const Volunteers = () => {
         </div>
 
         <div className="row g-3">
-          <div className="col-lg-3 col-md-6">
+        {data?.map((datas)=>{
+            return(<div className="col-lg-3 col-md-6">
             <div className="volunteers_card">
               <img
-                src="https://oxpitan-gatsby.vercel.app/static/team-0c8be72bc06a63200bec5d1fc6c170a6.jpg"
+                src={datas.image}
                 alt="card"
               />
               <div className="volunteers_icons">
@@ -53,14 +63,16 @@ const Volunteers = () => {
                   </li>
                 </ul>
               </div>
-              <div className="volunteers_title title1">
+              <div className="volunteers_title" style={{backgroundColor:datas.color}}>
                 {" "}
-                <h2>Jessica Brown</h2>
-                <p>Student</p>
+                <h2>{datas.name}</h2>
+                <p>{datas.title}</p>
               </div>
             </div>
-          </div>
-          <div className="col-lg-3 col-md-6">
+          </div>)
+           })}
+            
+          {/* <div className="col-lg-3 col-md-6">
             <div className="volunteers_card">
               <img
                 src="https://oxpitan-gatsby.vercel.app/static/team2-7e9e4dbc81abdae64b2d921c98357f55.jpg"
@@ -193,7 +205,7 @@ const Volunteers = () => {
                 <p>Volunteer</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
