@@ -34,11 +34,11 @@ const OurTeam = () => {
       </div>
       <section className="our_team">
         <div className="container">
-          <div className="volunteer_row row">
+          <div className=" row">
             {data?.map((datas) => {
               return (
                 <div className="col-lg-3 col-md-6">
-                  <div className="volunteers_card">
+                  <div className="volunteers_card volunteer_row">
                     <div className="card_image">
                       <img src={datas.image} alt="card" />
                       <div className="volunteers_icons">
