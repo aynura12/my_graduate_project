@@ -20,7 +20,6 @@ const Cause = () => {
           <img src={donationLogo} alt="logo" />
           <h2>Latest Causes</h2>
         </div>
-
         <div className="row">
           {data?.map((datas) => {
             return (
