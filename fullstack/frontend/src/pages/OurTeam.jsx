@@ -35,54 +35,56 @@ const OurTeam = () => {
       <section className="our_team">
         <div className="container">
           <div className="volunteer_row row">
-           {data?.map((datas)=>{
-            return(<div className="col-lg-3 col-md-6">
-            <div className="volunteers_card">
-              <img
-                src={datas.image}
-                alt="card"
-              />
-              <div className="volunteers_icons">
-                <ul>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-twitter"></i>
+            {data?.map((datas) => {
+              return (
+                <div className="col-lg-3 col-md-6">
+                  <div className="volunteers_card">
+                    <div className="card_image">
+                      <img src={datas.image} alt="card" />
+                      <div className="volunteers_icons">
+                        <ul>
+                          <li className="list">
+                            <a href="/" className="link">
+                              <div>
+                                <i className="fa-brands fa-twitter"></i>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="list">
+                            <a href="/" className="link">
+                              <div>
+                                <i className="fa-brands fa-facebook-f"></i>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="list">
+                            <a href="/" className="link">
+                              <div>
+                                <i className="fa-brands fa-pinterest"></i>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="list">
+                            <a href="/" className="link">
+                              <div>
+                                <i className="fa-brands fa-instagram"></i>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
                       </div>
-                    </a>
-                  </li>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-facebook-f"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-pinterest"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-instagram"></i>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="volunteers_title" style={{backgroundColor:datas.color}}>
-                {" "}
-                <h2>{datas.name}</h2>
-                <p>{datas.title}</p>
-              </div>
-            </div>
-          </div>)
-           })}
-            
+                    </div>
+                    <div
+                      className="volunteers_title"
+                      style={{ backgroundColor: datas.color }}
+                    >
+                      <h2>{datas.name}</h2>
+                      <p>{datas.title}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

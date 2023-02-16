@@ -22,35 +22,35 @@ const Cause = () => {
         </div>
 
         <div className="row">
-          {data?.map((datas)=>{
-            return( <div className="cards col-lg-4 col-md-12">
-            <img
-              src={datas.image}
-              alt=""
-            />
-            <div className="cause_card">
-              <h3>
-                <Link to="causesdetail" className="cause_title_link">
-                {datas.title}
-                </Link>
-              </h3>
-              <p>{datas.text}</p>
-              <ul>
-                <li className="causes_list">
-                <i class="fa-solid fa-bullseye"></i>Goal:<span>${datas.goal},000</span>
-                </li>
-                <li className="causes_list">
-                  <i class="fa-solid fa-chart-line"></i>Raised:
-                  <span>{datas.raised}0</span>
-                </li>
-              </ul>
-              <Link to="/donatenow" className="cause_link">
-                <button>Donate Now</button>
-              </Link>
-            </div>
-          </div>)
+          {data?.map((datas) => {
+            return (
+              <div className="cards col-lg-4 col-md-12">
+                <img src={datas.image} alt="" />
+                <div className="cause_card">
+                  <h3>
+                    <Link to="causesdetail" className="cause_title_link">
+                      {datas.title}
+                    </Link>
+                  </h3>
+                  <p>{datas.text}</p>
+                  <ul>
+                    <li className="causes_list">
+                      <i class="fa-solid fa-bullseye"></i>Goal:
+                      <span>${datas.goal},000</span>
+                    </li>
+                    <li className="causes_list">
+                      <i class="fa-solid fa-chart-line"></i>Raised:
+                      <span>{datas.raised}0</span>
+                    </li>
+                  </ul>
+                  <Link to="/donatenow" className="cause_link">
+                    <button>Donate Now</button>
+                  </Link>
+                </div>
+              </div>
+            );
           })}
-         
+
           {/* <div className="cards col-lg-4 col-md-12">
             <img
               src="https://oxpitan-gatsby.vercel.app/static/img2-0e2d4e23ddf6de2cfc3ff871784bf4b7.jpg"

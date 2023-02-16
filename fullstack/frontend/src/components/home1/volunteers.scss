@@ -25,19 +25,20 @@
     }
   }
   .volunteers_card {
-    position: relative;
+    
+    .card_image{
+      position: relative;
+    }
     img {
       width: 100%;
     }
     .volunteers_icons {
       position: absolute;
       display: block;
-      background-color: black;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px -180px 36px -28px inset;
       width: 100%;
-      top: 0;
+      bottom: 0;
       padding: 30px 0;
-      opacity: 0.5;
-
       ul {
         display: flex;
         justify-content: center;
@@ -50,6 +51,9 @@
         text-decoration: none;
         color: white;
         display: block;
+      }
+      a:hover{
+        color:rgb(241, 174, 68) ;
       }
     }
 

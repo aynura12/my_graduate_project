@@ -15,109 +15,115 @@ const Volunteers = () => {
   }, []);
   return (
     <>
-    <section className="volunteers">
-      <div className="container">
-        <div className="volunteers_text">
-          <img src={donationLogo} alt="" />
-          <h2>Our Volunteers</h2>
-          <p>MEET PROFESIONALS</p>
-        </div>
-
-        <div className="row g-3">
-        {data?.map((datas)=>{
-            return(<div className="col-lg-3 col-md-6">
-            <div className="volunteers_card">
-              <img
-                src={datas.image}
-                alt="card"
-              />
-              <div className="volunteers_icons">
-                <ul>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-twitter"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-facebook-f"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-pinterest"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-instagram"></i>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="volunteers_title" style={{backgroundColor:datas.color}}>
-                {" "}
-                <h2>{datas.name}</h2>
-                <p>{datas.title}</p>
-              </div>
-            </div>
-          </div>)
-           })}
-            
-          {/* <div className="col-lg-3 col-md-6">
-            <div className="volunteers_card">
-              <img
-                src="https://oxpitan-gatsby.vercel.app/static/team2-7e9e4dbc81abdae64b2d921c98357f55.jpg"
-                alt="card"
-              />
-              <div className="volunteers_icons">
-                <ul>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-twitter"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-facebook-f"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-pinterest"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="list">
-                    <a href="/" className="link">
-                      <div>
-                        <i className="fa-brands fa-instagram"></i>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="volunteers_title title2">
-                {" "}
-                <h2>Yoni Albert</h2>
-                <p>Volunteer</p>
-              </div>
-            </div>
+      <section className="volunteers">
+        <div className="container">
+          <div className="volunteers_text">
+            <img src={donationLogo} alt="" />
+            <h2>Our Volunteers</h2>
+            <p>MEET PROFESIONALS</p>
           </div>
-          <div className="col-lg-3 col-md-6">
+
+          <div className="row g-3">
+            {data?.map((datas) => {
+              return (
+                <div className="col-lg-3 col-md-6">
+                  <div className="volunteers_card">
+                    <div className="card_image">
+                      <img src={datas.image} alt="card" />
+                      <div className="volunteers_icons">
+                        <ul>
+                          <li className="list">
+                            <a href="/" className="link">
+                              <div>
+                                <i className="fa-brands fa-twitter"></i>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="list">
+                            <a href="/" className="link">
+                              <div>
+                                <i className="fa-brands fa-facebook-f"></i>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="list">
+                            <a href="/" className="link">
+                              <div>
+                                <i className="fa-brands fa-pinterest"></i>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="list">
+                            <a href="/" className="link">
+                              <div>
+                                <i className="fa-brands fa-instagram"></i>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div
+                      className="volunteers_title"
+                      style={{ backgroundColor: datas.color }}
+                    >
+                      <h2>{datas.name}</h2>
+                      <p>{datas.title}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+{/* 
+            <div className="col-lg-3 col-md-6">
+              <div className="volunteers_card">
+                <div className="card_image">
+                  <img
+                    src="https://oxpitan-gatsby.vercel.app/static/team2-7e9e4dbc81abdae64b2d921c98357f55.jpg"
+                    alt="card"
+                  />
+                  <div className="volunteers_icons">
+                    <ul>
+                      <li className="list">
+                        <a href="/" className="link">
+                          <div>
+                            <i className="fa-brands fa-twitter"></i>
+                          </div>
+                        </a>
+                      </li>
+                      <li className="list">
+                        <a href="/" className="link">
+                          <div>
+                            <i className="fa-brands fa-facebook-f"></i>
+                          </div>
+                        </a>
+                      </li>
+                      <li className="list">
+                        <a href="/" className="link">
+                          <div>
+                            <i className="fa-brands fa-pinterest"></i>
+                          </div>
+                        </a>
+                      </li>
+                      <li className="list">
+                        <a href="/" className="link">
+                          <div>
+                            <i className="fa-brands fa-instagram"></i>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="volunteers_title title2">
+                  {" "}
+                  <h2>Yoni Albert</h2>
+                  <p>Volunteer</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6">
             <div className="volunteers_card">
               <img
                 src="https://oxpitan-gatsby.vercel.app/static/team3-58c6d1952ca6f54765d16c9d0cb4dad3.jpg"
@@ -206,16 +212,17 @@ const Volunteers = () => {
               </div>
             </div>
           </div> */}
+          </div>
         </div>
-      </div>
-    </section>
-    <section className="start">
-        <img src={donationLogo}alt="" />
+      </section>
+      <section className="start">
+        <img src={donationLogo} alt="" />
         <h2>Our fingerprints on the lives we touch never fade</h2>
-        <Link to="/donatenow"><button>START DONATION</button></Link>
-    </section>
+        <Link to="/donatenow">
+          <button>START DONATION</button>
+        </Link>
+      </section>
     </>
-    
   );
 };
 
