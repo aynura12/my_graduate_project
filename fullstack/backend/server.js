@@ -56,3 +56,12 @@ app.use("/causeRecent",causeRecentRoute)
 
 const newsRoute=require("./routes/newsRoute")
 app.use("/news",newsRoute)
+
+const connectRoute=require("./routes/connectRoute")
+app.use("/connect",connectRoute)
+
+const becomeRoute=require("./routes/becomeRoute")
+app.use("/become",becomeRoute)
+
+const donateRoute=require("./routes/donateRoute")
+app.use("/donate",donateRoute)

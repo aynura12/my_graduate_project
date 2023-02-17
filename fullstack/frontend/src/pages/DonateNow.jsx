@@ -41,10 +41,10 @@ const DonateNow = () => {
            
               <ul>
                 <li className="causes_list">
-                  <i class="fa-solid fa-bullseye"></i>Goal:<span>$30,000</span>
+                  <i className="fa-solid fa-bullseye"></i>Goal:<span>$30,000</span>
                 </li>
                 <li className="causes_list">
-                  <i class="fa-solid fa-chart-line"></i>Raised:
+                  <i className="fa-solid fa-chart-line"></i>Raised:
                   <span>25,270</span>
                 </li>
               </ul>

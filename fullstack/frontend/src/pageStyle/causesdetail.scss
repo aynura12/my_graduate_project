@@ -91,7 +91,7 @@
       padding-top: 60px;
       border-bottom: 2px solid rgb(242, 240, 236);
       img {
-        height: 100%;
+        height: 100px;
       }
       p {
         @include text;
@@ -100,7 +100,7 @@
         padding-left: 15px;
         .title_left {
           display: flex;
-          justify-content: space-between;
+          gap: 30px;
           padding-bottom: 20px;
 
           .left {
@@ -118,6 +118,7 @@
           }
           button {
             @include replyButton;
+            margin-left: 40px;
           }
         }
       }
@@ -148,22 +149,13 @@
     h3 {
       @include h3;
     }
-    .form_top {
-      display: flex;
-      justify-content: space-between;
-    }
     @media (max-width: 768px) {
-      .form_top {
-        flex-direction: column;
-      }
       input {
         margin-bottom: 20px;
       }
     }
-
     input {
       @include input;
-      padding-left: 100px;
     }
     textarea {
       @include input;
@@ -264,12 +256,12 @@
   }
   .recent_donations_connect {
     background-color: rgb(242, 240, 236);
-   @include display;
+    @include display;
     padding: 50px 50px;
     margin-top: 10px;
-    h2{
-        @include h3;
-        padding-bottom: 20px;
+    h2 {
+      @include h3;
+      padding-bottom: 20px;
     }
     ul {
       display: flex;

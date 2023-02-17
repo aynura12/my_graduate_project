@@ -31,17 +31,7 @@
       @include h3;
       padding-top: 20px;
     }
-    // ul {
-    //   display: flex;
-    //   li {
-    //     list-style: none;
-    //     padding-right: 10px;
-    //     padding-bottom: 20px;
-    //     color: rgb(235, 37, 37);
-    //     font-size: 12px;
-    //     font-weight: 600;
-    //   }
-    // }
+   
     p {
       @include text;
     }
@@ -139,7 +129,7 @@
     padding-top: 60px;
     border-bottom: 2px solid rgb(242, 240, 236);
     img {
-      height: 100%;
+      height: 100px;
     }
     p {
       @include text;
@@ -150,7 +140,6 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 20px;
-
         .left {
           display: flex;
           h4 {
@@ -166,6 +155,7 @@
         }
         button {
           @include replyButton;
+         margin-left: 30px;
         }
       }
     }
@@ -228,16 +218,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  input {
-    background-color: rgb(64, 8, 117);
-    color: white;
-    border: none;
-    text-transform: uppercase;
-    border-radius: 5px;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 30px 100px;
-  }
+ 
   .recent_posts {
     h3 {
       @include h3;

@@ -77,7 +77,7 @@ const Navbar1 = () => {
               <div className="bottom_left_logo d-block d-md-flex">
                 <img
                   src={logo}
-                  alt=""
+                  alt="img"
                 />
                 <Link className="link d-lg-block d-md-none d-sm-none d-xs-none  ms-md-4" to="/donatenow">
                   <button>DONATE NOW</button>
@@ -209,7 +209,8 @@ const Navbar1 = () => {
               <div
                 className="modal fade"
                 id="exampleModal"
-                tabindex="-1"
+                style={{tabindex:"-1"}}
+                
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
               >
@@ -336,16 +337,16 @@ const Navbar1 = () => {
                             <ul>
                               <li className="modal_list modal_contact_list">
                                 <a href="/" className="list1">
-                                  <i class="fa-brands fa-facebook-f"></i>
+                                  <i className="fa-brands fa-facebook-f"></i>
                                 </a>
                                 <a href="/" className="list2">
-                                  <i class="fa-brands fa-twitter"></i>
+                                  <i className="fa-brands fa-twitter"></i>
                                 </a>
                                 <a href="/" className="list3 ">
-                                  <i class="fa-brands fa-youtube"></i>
+                                  <i className="fa-brands fa-youtube"></i>
                                 </a>
                                 <a href="/" className="list4">
-                                  <i class="fa-brands fa-google-plus-g"></i>
+                                  <i className="fa-brands fa-google-plus-g"></i>
                                 </a>
                               </li>
 

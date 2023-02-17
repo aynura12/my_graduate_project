@@ -9,10 +9,19 @@ export const formSchema = yup
     number: yup.number("Pls enter number").required("This field must not be left blank"),
     message: yup.string("Pls enter string text").required("This field must not be left blank"),
     address:yup.string("Pls enter string text").required("This field must not be left blank"),
+    image:yup.string("Pls enter string text").required("This field must not be left blank"),
     date: yup.number("Pls enter number").required("This field must not be left blank"),
     occupation:yup.string("Pls enter string text").required("This field must not be left blank"),
     comment:yup.string("Pls enter string text").required("This field must not be left blank"),
     money: yup.number("Pls enter number").required("This field must not be left blank"),
     country:yup.string("Pls enter string text").required("This field must not be left blank"),
+    city:yup.string("Pls enter string text").required("This field must not be left blank"),
+    mm:yup.string("Pls enter string text").required("This field must not be left blank"),
+    cvc: yup.number("Pls enter number").required("This field must not be left blank"),
+    cardNumber: yup.number("Pls enter number").required("This field must not be left blank"),
+    billingAddress:yup.string("Pls enter string text").required("This field must not be left blank"),
+
+
+
 })
   .required();

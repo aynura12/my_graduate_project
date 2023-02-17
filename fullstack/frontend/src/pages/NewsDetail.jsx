@@ -128,7 +128,7 @@ const NewsDetail = () => {
               <Comment />
             </div>
             <div className="news_right col-lg-4 col-md-12" key={news._id}>
-              <input type="text" placeholder="Search" />
+             
               <div className="recent_posts">
                 <h3> Recent Posts</h3>
                 <div className="post">

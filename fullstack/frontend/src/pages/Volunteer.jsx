@@ -14,7 +14,7 @@ const Volunteer = () => {
     email: "",
     number: "",
     address: "",
-    date: "",
+    date: 0,
     occupation: "",
     message: "",
   });
@@ -32,7 +32,7 @@ const Volunteer = () => {
       !volunteer.message
     )
       return;
-    await axios.post("", volunteer);
+    await axios.post("http://localhost:8080/become", volunteer);
     setVolunteer({
       fullName: "",
       email: "",
@@ -122,7 +122,7 @@ const Volunteer = () => {
             </div>
             <div className="col-lg-6 col-md-12">
               {" "}
-              <form className="form">
+              <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 <input
                   type="text"
                   {...register("fullName")}
@@ -220,7 +220,7 @@ const Volunteer = () => {
                 ) : (
                   <></>
                 )}
-                <button onClick={handleSubmit(onSubmit)}>SEND MESSAGE</button>
+                <button onClick={()=>volunteerData()}>SEND MESSAGE</button>
               </form>
             </div>
           </div>

@@ -9,24 +9,24 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../pageStyle/contact.scss";
 const Contact = () => {
-  const [state, setstate] = useState({
+  const [state, setState] = useState({
     fullName: "",
     email: "",
-    number: "",
+    number: 0,
     message: "",
   });
-  const handleChange = async (e) => {
-    setstate({ ...state, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
   };
 
-  const addData = async (id) => {
+  const addData = async () => {
     if (!state.fullName || !state.email || !state.number || !state.message)
       return;
-    await axios.post("", state);
-    setstate({
+    await axios.post("http://localhost:8080/connect", state);
+    setState({
       fullName: "",
       email: "",
-      number: "",
+      number: 0,
       message: "",
     });
   };
@@ -105,7 +105,7 @@ const Contact = () => {
               </ul>
             </div>
             <div className="col-lg-6 col-md-12">
-              <form className="form">
+              <form onSubmit={handleSubmit(onSubmit)} className="form">
                 <div className="form_top">
                   <input
                     type="text"
@@ -164,7 +164,7 @@ const Contact = () => {
                 ) : (
                   <></>
                 )}
-                <button onClick={handleSubmit(onSubmit)}>SEND MESSAGE</button>
+                <button onClick={() => addData()}>SEND MESSAGE</button>
               </form>
             </div>
           </div>
