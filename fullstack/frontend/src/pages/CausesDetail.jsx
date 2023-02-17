@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../schema/formSchema";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { format } from "date-fns";
 const CausesDetail = () => {
@@ -46,12 +47,19 @@ const CausesDetail = () => {
   useEffect(() => {
     getData();
     getRecent();
+    getCause()
   }, []);
 
   const [recent, setRecent] = useState([]);
   const getRecent = async () => {
     const res = await axios.get("http://localhost:8080/causeRecent");
-    setRecent(res.recent);
+    setRecent(res.data);
+  };
+  const {id}=useParams()
+  const [cause, setCause] = useState([]);
+  const getCause = async () => {
+    const res = await axios.get(`http://localhost:8080/cause/`+id);
+    setCause(res.data);
   };
   return (
     <>
@@ -78,20 +86,20 @@ const CausesDetail = () => {
             <div className="col-lg-8 col-md-12">
               <div className="causes_detail_card">
                 <img
-                  src="https://oxpitan-gatsby.vercel.app/static/img1-53058564398eaad130cb0a80e4960c88.jpg"
+                  src={cause.image}
                   alt="img"
                 />
                 <div className="card_bottom">
                   <div>
-                    <h2>Save Poor Childrens</h2>
+                    <h2>{cause.title}</h2>
                     <ul>
                       <li>
                         <i className="fa-solid fa-bullseye"></i>
-                        Goal: <span>$30,000</span>
+                        Goal: <span>${cause.goal}</span>
                       </li>
                       <li className="causes_list">
                         <i className="fa-solid fa-chart-line"></i>Raised:
-                        <span>25,270</span>
+                        <span>{cause.raised}0</span>
                       </li>
                     </ul>
                   </div>
@@ -202,6 +210,7 @@ const CausesDetail = () => {
             </div>
             <div className="col-lg-4 col-md-12">
               <div className="organizer">
+                
                 <img
                   src="https://layerdrops.com/oxpitan/images/author-avatar.jpg"
                   alt="img"

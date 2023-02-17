@@ -36,24 +36,7 @@
         color: white;
       }
     }
-    .card1{
-        background-color: rgb(80, 186, 195);
-    }
-    // .card2{
-    //     background-color: rgb(227,105,85);
-    // }
-    // .card3{
-    //     background-color: rgb(241,180,73);
-    // }
-    // .card4{
-    //     background-color: rgb(134,59,174);
-    // }
-    // .card5{
-    //     background-color: rgb(233, 52, 82);
-    // }
-    // .card6{
-    //     background-color: green;
-    // }
+   
     .events_text {
       @include display;
       background-color: rgb(242, 240, 236);
@@ -62,65 +45,12 @@
       .events_title1{
         @include h3;
       }
-      .events_title1:hover {
-        color: #50bac3;
-      }
-      // .events_title2{
-      //   @include h3;
-      // }
-      // .events_title2:hover {
-      //   color: rgb(227,105,85);
-      // }
-      // .events_title3{
-      //   @include h3;
-      // }
-      // .events_title3:hover {
-      //   color: rgb(241,180,73);
-      // }
-      // .events_title4{
-      //   @include h3;
-      // }
-      // .events_title4:hover {
-      //   color:rgb(134,59,174);    
-      // }
-      // .events_title5{
-      //   @include h3;
-      // }
-      // .events_title5:hover {
-      //   color:rgb(233, 52, 82);
-      // }
-      // .events_title6{
-      //   @include h3;
-      // }
-      // .events_title6:hover {
-      //   color: green;
-      // }
       ul {
         display: flex;
         .events_list1{
-            color: #50bac3;
             @include events_list;
           }
-          // .events_list2{
-          //   color: rgb(227,105,85);
-          //   @include events_list;
-          // }
-          // .events_list3{
-          //   color: rgb(241,180,73);
-          //   @include events_list;
-          // }
-          // .events_list4{
-          //   color:rgb(134,59,174);            ;
-          //   @include events_list;
-          // }
-          // .events_list5{
-          //   color: rgb(233, 52, 82);;
-          //   @include events_list;
-          // }
-          // .events_list6{
-          //   color: green;
-          //   @include events_list;
-          // }
+          
       }
     }
   }

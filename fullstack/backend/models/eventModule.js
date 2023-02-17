@@ -26,6 +26,39 @@ const eventSchema= new Schema({
         type: String,
         require: true
     },
+    color: {
+        type: String,
+        require: true
+    },
+    requirements: {
+        type: String,
+        require: true
+    },
+    text: {
+        type: String,
+        require: true
+    },
+    date: {
+        type: String,
+        require: true
+    },
+    category: {
+        type: String,
+        require: true
+    },
+    phone: {
+        type: String,
+        require: true
+    },
+    website: {
+        type: String,
+        require: true
+    },
+    location: {
+        type: String,
+        require: true
+    },
+
    
 },
 { timestamps: true },)

@@ -269,7 +269,7 @@ const Navbar1 = () => {
                             </a>
                             <ul>
                               <li className="modal_list">
-                                <Link to="events" className="modal_link">
+                                <Link to="events/:id" className="modal_link">
                                   Events
                                 </Link>
                               </li>

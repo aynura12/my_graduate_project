@@ -2,7 +2,20 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../pageStyle/eventsDetail.scss";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 const EventsDetail = () => {
+  const {id}=useParams()
+  const [event, setEvent] = useState([]);
+  const getEvent = async () => {
+    const res = await axios.get(`http://localhost:8080/event/`+id);
+    setEvent(res.data);
+  };
+  useEffect(() => {
+   
+    getEvent()
+  }, []);
   return (
     <>
       <Helmet>
@@ -28,12 +41,12 @@ const EventsDetail = () => {
           <div className="row">
             <div className="col-lg-12 col-md-12">
               <img
-                src="http://layerdrops.com/oxpitan/images/img19.jpg"
+                src={event.image}
                 alt="img"
               />
-              <span className="date_of_card card2">
-                <span className="day_date">9</span>
-                <span className="month_date">mart</span>
+              <span className="date_of_card card2" style={{backgroundColor:event.color}}>
+                <span className="day_date">{event.day}</span>
+                <span className="month_date">{event.month}</span>
               </span>
             </div>
           </div>
@@ -44,41 +57,13 @@ const EventsDetail = () => {
           <div className="row">
             <div className="col-lg-7 col-md-12">
               <div className="detail_left">
-                <h3>Play for the world</h3>
+                <h3>{event.title}</h3>
                 <p>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum, you need to be sure there isn't anything
-                  embarrassing hidden in the middle of text.
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum ley
-                    of type and scrambled it to make a type specimen book.
-                  </p>
+                  {event.text}
                 </p>
                 <h3>Event Requirements</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum ley of
-                  type and scrambled it to make a type specimen book.
+                 {event.requirements}
                 </p>
                 <Link to="/volunteer">
                   <button>Register Now</button>
@@ -90,22 +75,22 @@ const EventsDetail = () => {
                 <h3>Event Details</h3>
                 <ul class="detail_list">
                   <li>
-                    <span className="span1">Starting Time:</span> 8:00AM to 2:00PM
+                    <span className="span1">Starting Time:</span> {event.watch}
                   </li>
                   <li>
-                    <span className="span2">Date:</span>9 March, 2019
+                    <span className="span2">Date:</span>{event.date}
                   </li>
                   <li>
-                    <span className="span3">Category:</span>Health
+                    <span className="span3">Category:</span>{event.category}
                   </li>
                   <li>
-                    <span className="span4">Phone:</span>666 888 0000
+                    <span className="span4">Phone:</span>{event.phone}
                   </li>
                   <li>
-                    <span className="span5">Website:</span>Info@event.com
+                    <span className="span5">Website:</span>{event.website}
                   </li>
                   <li>
-                    <span className="span6">Location:</span>8 Street, San Marcos London D29, UK
+                    <span className="span6">Location:</span>{event.location}
                   </li>
                 </ul>
               </div>

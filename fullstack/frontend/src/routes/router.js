@@ -43,7 +43,7 @@
                 element:<Events/>
             },
             {
-                path:"eventsdetail",
+                path:"events/:id",
                 element:<EventsDetail/>
             },
             {

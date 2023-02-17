@@ -84,7 +84,7 @@
   font-family: Playfair Display, serif;
 }
 .events_area .events_card .events_text .events_title1:hover {
-  color: #50bac3;
+  color: black;
 }
 .events_area .events_card .events_text ul {
   display: flex;
