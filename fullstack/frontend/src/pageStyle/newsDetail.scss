@@ -23,7 +23,6 @@
     span {
       @include display;
       @include news_date;
-      background-color: rgb(134, 59, 174);
     }
   }
   .detail_card_title {
@@ -32,17 +31,17 @@
       @include h3;
       padding-top: 20px;
     }
-    ul {
-      display: flex;
-      li {
-        list-style: none;
-        padding-right: 10px;
-        padding-bottom: 20px;
-        color: rgb(235, 37, 37);
-        font-size: 12px;
-        font-weight: 600;
-      }
-    }
+    // ul {
+    //   display: flex;
+    //   li {
+    //     list-style: none;
+    //     padding-right: 10px;
+    //     padding-bottom: 20px;
+    //     color: rgb(235, 37, 37);
+    //     font-size: 12px;
+    //     font-weight: 600;
+    //   }
+    // }
     p {
       @include text;
     }
@@ -189,41 +188,41 @@
     }
   }
 }
-.form {
-  padding: 50px 0;
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-  h3 {
-    @include h3;
-  }
-  .form_top {
+  .form {
+    padding: 50px 0;
     display: flex;
-    justify-content: space-between;
-  }
-  @media (max-width: 768px) {
+    gap: 20px;
+    flex-direction: column;
+    h3 {
+      @include h3;
+    }
     .form_top {
-      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
     }
-    input {
-      margin-bottom: 20px;
+    @media (max-width: 768px) {
+      .form_top {
+        flex-direction: column;
+      }
+      input {
+        margin-bottom: 20px;
+      }
     }
-  }
 
-  input {
-    @include input;
-    padding-left: 100px;
+    input {
+      @include input;
+      padding-left: 100px;
+    }
+    textarea {
+      @include input;
+    }
+    button {
+      @include sendButton;
+    }
+    button:hover {
+      background-color: rgb(227, 105, 85);
+    }
   }
-  textarea {
-    @include input;
-  }
-  button {
-    @include sendButton;
-  }
-  button:hover {
-    background-color: rgb(227, 105, 85);
-  }
-}
 
 .news_right {
   display: flex;

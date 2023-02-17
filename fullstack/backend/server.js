@@ -53,3 +53,6 @@ app.use("/causeComment",causeCommentRoute)
 
 const causeRecentRoute=require("./routes/causeRecentRoute")
 app.use("/causeRecent",causeRecentRoute)
+
+const newsRoute=require("./routes/newsRoute")
+app.use("/news",newsRoute)

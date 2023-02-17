@@ -2,40 +2,23 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../pageStyle/newsDetail.scss";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { formSchema } from "../schema/formSchema";
-import { useState } from "react";
+import Comment from "../components/Comment";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+
 const NewsDetail = () => {
-  const [state, setState] = useState({
-    fullName: "",
-    email: "",
-    comment: "",
-  });
-  const handleChange = async (e) => {
-    setState({ ...state, [e.target.name]: e.target.value });
+  const {id}=useParams()
+  const [news, setNews] = useState([]);
+  const getNews = async () => {
+    const res = await axios.get(`http://localhost:8080/news/`+id);
+    setNews(res.data);
   };
-  const addData = async (id) => {
-    if (!state.fullName || !state.email || !state.comment) return;
-    await axios.post("", state);
-    setState({
-      fullName: "",
-      email: "",
-      comment: "",
-    });
-  };
-  const onSubmit = (data) => {
-    console.log(data);
-    addData();
-  };
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(formSchema),
-  });
+  useEffect(() => {
+   
+    getNews()
+  }, []);
+ 
   return (
     <>
       <Helmet>
@@ -59,43 +42,20 @@ const NewsDetail = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 col-md-12">
-              <div className="detail_card_image">
-                <span>26 FEB,2019</span>
+              <div className="detail_card_image" >
+                <span style={{backgroundColor:news.color}}>26 FEB,2019</span>
                 <img
-                  src="http://layerdrops.com/oxpitan/images/img20.jpg"
+                  src={news.image}
                   alt="img"
                 />
               </div>
               <div className="detail_card_title">
-                <h2>Do something crazy to raise money</h2>
-                <ul>
-                  <li>CHRISTINE EVE</li>
-                  <li>2 COMMENTS</li>
-                </ul>
+                <h2>{news.title}</h2>
+                
                 <p>
-                  Aliq is notm hendr erit a augue insu image pellen tes que id
-                  erat quis sollicitud. Lorem ipsum dolor sit amet, consectetur
-                  adipiscing ullam blandit hendrerit faucibus suspendisse. There
-                  are many variations of passages of Lorem Ipsum available, but
-                  the majority have suffered alteration in some form, by
-                  injected humour, or randomised words which don't look even
-                  slightly believable. If you are going to use a passage of
-                  Lorem Ipsum, you need to be sure there isn't anything
-                  embarrassing hidden in the middle of text.{" "}
+                 {news.detailText}
                 </p>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum ley of
-                  type and scrambled it to make a type specimen book.
-                </p>
+               
               </div>
               <div className="detail_tags">
                 <div className="tags_left">
@@ -165,138 +125,21 @@ const NewsDetail = () => {
                   </p>
                 </div>
               </div>
-              <h2>Comments</h2>
-              <div className="detail_comment_bottom">
-                <img
-                  src="http://layerdrops.com/oxpitan/images/comment-avatar.jpg"
-                  alt="img"
-                />
-                <div className="bottom_title">
-                  <div className="title_left">
-                    <div className="left">
-                      <h4>David Marks </h4>
-                      <span>4 hours ago</span>
-                    </div>
-                    <Link to="/">
-                      <button>reply</button>
-                    </Link>
-                  </div>
-                  <p>
-                    Sending love. My nephews Nick and Anthony Salaber are your
-                    teammates, so I know the caliber person you are. Our whole
-                    family is sending our best to you and your family.
-                  </p>
-                </div>
-              </div>
-              <div className="detail_comment_bottom">
-                <img
-                  src="http://layerdrops.com/oxpitan/images/comment-avatar2.jpg"
-                  alt="img"
-                />
-                <div className="bottom_title">
-                  <div className="title_left">
-                    <div className="left">
-                      <h4>Christine Eve</h4>
-                      <span>3 hours ago</span>
-                    </div>
-                    <Link to="/">
-                      <button>reply</button>
-                    </Link>
-                  </div>
-                  <p>
-                    You're a champ. Your in my thoughts and prayers every day.
-                    You're the best teammate a bloke could ask for and we're
-                    going to return the favour my being there for you every step
-                    along this journey. Stay strong
-                  </p>
-                </div>
-              </div>
-              <form className="form">
-                <h3>Leave a Comment</h3>
-                <div className="form_top">
-                  <input
-                    type="text"
-                    {...register("fullName")}
-                    onChange={handleChange}
-                    value={state.fullName}
-                    name="fullName"
-                    placeholder="Full Name..."
-                  />
-                  {errors.fullName ? (
-                    <span style={{ color: "red" }}>
-                      {errors.fullName.message}
-                    </span>
-                  ) : (
-                    <></>
-                  )}
-                  <input
-                    type="email"
-                    {...register("email")}
-                    onChange={handleChange}
-                    value={state.email}
-                    name="email"
-                    placeholder="E-mail..."
-                  />
-                  {errors.email ? (
-                    <span style={{ color: "red" }}>{errors.email.message}</span>
-                  ) : (
-                    <></>
-                  )}
-                </div>
-
-                <textarea
-                  type="text"
-                  {...register("comment")}
-                  onChange={handleChange}
-                  value={state.comment}
-                  name="comment"
-                  placeholder="Leavee a Comment..."
-                />
-                {errors.comment ? (
-                  <span style={{ color: "red" }}>{errors.comment.message}</span>
-                ) : (
-                  <></>
-                )}
-                <button onClick={handleSubmit(onSubmit)}>submit now</button>
-              </form>
+              <Comment />
             </div>
-
-            <div className="news_right col-lg-4 col-md-12">
+            <div className="news_right col-lg-4 col-md-12" key={news._id}>
               <input type="text" placeholder="Search" />
               <div className="recent_posts">
                 <h3> Recent Posts</h3>
-
                 <div className="post">
                   <img
-                    src="http://layerdrops.com/oxpitan/images/author-avatar5.jpg"
+                    src={news.detailImage}
                     alt="img"
                   />
                   <div>
                     {" "}
-                    <h4>Learn how access to clean</h4>
-                    <h4>Water</h4>
-                  </div>
-                </div>
-                <div className="post">
-                  <img
-                    src="http://layerdrops.com/oxpitan/images/author-avatar6.jpg"
-                    alt="img"
-                  />
-                  <div>
-                    {" "}
-                    <h4>Build school for poor</h4>
-                    <h4>Childrens</h4>
-                  </div>
-                </div>
-                <div className="post">
-                  <img
-                    src="http://layerdrops.com/oxpitan/images/author-avatar7.jpg"
-                    alt="img"
-                  />
-                  <div>
-                    {" "}
-                    <h4>Together to help the world</h4>
-                    <h4>Better</h4>
+                    <h4>{news.detailTitle}</h4>
+                    <h4>{news.category}</h4>
                   </div>
                 </div>
               </div>

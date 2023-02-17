@@ -154,7 +154,7 @@ const Navbar1 = () => {
                       </Link>
                     </li>
                     <li className="bottom_list">
-                      <Link to="newsdetail" className="bottom_link">
+                      <Link to="news/:id" className="bottom_link">
                         News Detail
                       </Link>
                     </li>

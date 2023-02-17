@@ -25,27 +25,7 @@
       @include display;
       @include news_date;
     }
-    .card1{
-        background-color: rgb(224, 42, 72);
-    }
-    .card2{
-        background-color: rgb(80, 186, 195);
-    }
-    .card3{
-        background-color: green;
-    }
-    .card4{
-        background-color: rgb(134,59,174);
-    }
-    .card4{
-        background-color: rgb(241,180,73);
-    }
-    .card5{
-        background-color: rgb(227,105,85);
-    }
-    .card6{
-        background-color: rgb(255, 230, 0);
-    }
+
     .news_text {
       .news_link {
         text-decoration: none;
