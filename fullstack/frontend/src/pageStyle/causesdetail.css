@@ -1,0 +1,372 @@
+.causes_detail {
+  padding: 40px 0;
+  background-color: rgb(242, 240, 236);
+}
+.causes_detail .causes_detail_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.causes_detail .causes_detail_title h2 {
+  color: rgb(66, 66, 66);
+  font-family: Playfair Display, serif;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 800;
+  padding-bottom: 40px;
+}
+.causes_detail .causes_detail_title button {
+  background-color: rgb(227, 105, 85);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  width: 150px;
+  height: 50px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+.causes_detail_area {
+  padding: 59px 0;
+}
+.causes_detail_area .causes_detail_card img {
+  width: 100%;
+}
+.causes_detail_area .causes_detail_card p {
+  line-height: 30px;
+  font-size: 18px;
+  color: #818181;
+  font-weight: 480;
+  padding-top: 20px;
+}
+.causes_detail_area .causes_detail_card .card_bottom {
+  padding: 50px 40px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(242, 240, 236);
+}
+.causes_detail_area .causes_detail_card .card_bottom h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #424242;
+  font-family: Playfair Display, serif;
+  padding-bottom: 15px;
+}
+.causes_detail_area .causes_detail_card .card_bottom ul {
+  display: flex;
+}
+.causes_detail_area .causes_detail_card .card_bottom ul li {
+  list-style: none;
+  color: black;
+  font-weight: 700;
+  padding-right: 10px;
+}
+.causes_detail_area .causes_detail_card .card_bottom ul li i {
+  font-size: 25px;
+  color: #424242;
+  margin-right: 10px;
+}
+.causes_detail_area .causes_detail_card .card_bottom ul li span {
+  color: #e36955;
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+}
+.causes_detail_area .causes_detail_card .card_bottom button {
+  margin-top: 10px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  background-color: rgb(80, 186, 195);
+  color: white;
+  width: 150px;
+  height: 40px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+.causes_detail_area .causes_detail_card .card_bottom button:hover {
+  background-color: black;
+}
+.causes_detail_area .area_image {
+  padding-top: 30px;
+}
+.causes_detail_area .area_image img {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .causes_detail_area .area_image img {
+    padding-bottom: 30px;
+  }
+}
+.causes_detail_area .area_image p {
+  line-height: 30px;
+  font-size: 18px;
+  color: #818181;
+  font-weight: 480;
+  padding-top: 20px;
+}
+.causes_detail_area .causes_detail_comment .detail_comment_bottom {
+  display: flex;
+  padding-top: 60px;
+  border-bottom: 2px solid rgb(242, 240, 236);
+}
+.causes_detail_area .causes_detail_comment .detail_comment_bottom img {
+  height: 100%;
+}
+.causes_detail_area .causes_detail_comment .detail_comment_bottom p {
+  line-height: 30px;
+  font-size: 18px;
+  color: #818181;
+  font-weight: 480;
+}
+.causes_detail_area .causes_detail_comment .detail_comment_bottom .bottom_title {
+  padding-left: 15px;
+}
+.causes_detail_area .causes_detail_comment .detail_comment_bottom .bottom_title .title_left {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.causes_detail_area .causes_detail_comment .detail_comment_bottom .bottom_title .title_left .left {
+  display: flex;
+}
+.causes_detail_area .causes_detail_comment .detail_comment_bottom .bottom_title .title_left .left h4 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #424242;
+  font-family: Playfair Display, serif;
+}
+.causes_detail_area .causes_detail_comment .detail_comment_bottom .bottom_title .title_left .left span {
+  color: rgb(235, 37, 37);
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 3px;
+  padding-left: 15px;
+}
+.causes_detail_area .causes_detail_comment .detail_comment_bottom .bottom_title .title_left button {
+  text-transform: uppercase;
+  font-family: Poppins, sans-serif;
+  background-color: rgb(241, 174, 68);
+  color: white;
+  border: none;
+  line-height: 29px;
+  font-size: 13px;
+  font-weight: 700;
+  height: 40px;
+  width: 100px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+@media (max-width: 768px) {
+  .causes_detail_area .causes_detail_comment h3 {
+    text-align: center;
+  }
+  .causes_detail_area .causes_detail_comment .detail_comment_bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .causes_detail_area .causes_detail_comment .detail_comment_bottom .title_left {
+    flex-direction: column;
+  }
+  .causes_detail_area .causes_detail_comment .detail_comment_bottom .title_left .left {
+    justify-content: center;
+    padding-top: 20px;
+  }
+}
+.causes_detail_area .form {
+  padding: 50px 0;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.causes_detail_area .form h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #424242;
+  font-family: Playfair Display, serif;
+}
+.causes_detail_area .form .form_top {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .causes_detail_area .form .form_top {
+    flex-direction: column;
+  }
+  .causes_detail_area .form input {
+    margin-bottom: 20px;
+  }
+}
+.causes_detail_area .form input {
+  border: none;
+  background-color: rgb(242, 240, 236);
+  padding: 20px 20px;
+  line-height: 30px;
+  font-size: 18px;
+  color: #818181;
+  font-weight: 480;
+  border-radius: 4px;
+  padding-left: 100px;
+}
+.causes_detail_area .form textarea {
+  border: none;
+  background-color: rgb(242, 240, 236);
+  padding: 20px 20px;
+  line-height: 30px;
+  font-size: 18px;
+  color: #818181;
+  font-weight: 480;
+  border-radius: 4px;
+}
+.causes_detail_area .form button {
+  text-transform: uppercase;
+  font-family: Poppins, sans-serif;
+  background-color: rgb(241, 174, 68);
+  color: white;
+  border: none;
+  line-height: 29px;
+  font-size: 13px;
+  font-weight: 700;
+  height: 50px;
+  width: 180px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+.causes_detail_area .form button:hover {
+  background-color: rgb(227, 105, 85);
+}
+.causes_detail_area .organizer {
+  background-color: rgb(242, 240, 236);
+  display: flex;
+  padding: 40px 30px;
+}
+.causes_detail_area .organizer img {
+  height: 100%;
+  padding-right: 10px;
+}
+.causes_detail_area .organizer .organizer_title span {
+  font-size: 13px;
+  color: #818181;
+  font-weight: 600;
+}
+.causes_detail_area .organizer .organizer_title h4 {
+  font-size: 20px;
+  font-weight: 550;
+  color: #424242;
+  font-family: Playfair Display, serif;
+}
+.causes_detail_area .organizer .organizer_title h4 a {
+  text-decoration: none;
+  color: #e36955;
+}
+.causes_detail_area .organizer .organizer_title ul li {
+  list-style: none;
+  color: #818181;
+  font-size: 16px;
+  font-weight: 400;
+}
+.causes_detail_area .organizer .organizer_title ul li i {
+  color: rgb(241, 174, 68);
+  padding-right: 10px;
+  font-size: 15px;
+}
+.causes_detail_area .recent_donations {
+  background-color: rgb(242, 240, 236);
+  padding: 40px 30px;
+  margin-top: 10px;
+}
+.causes_detail_area .recent_donations h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #424242;
+  font-family: Playfair Display, serif;
+}
+.causes_detail_area .recent_donations .recent_donations_title {
+  display: flex;
+  border-bottom: 1px solid white;
+  padding: 20px 20px;
+}
+.causes_detail_area .recent_donations .recent_donations_title img {
+  padding-right: 10px;
+  height: 100%;
+}
+.causes_detail_area .recent_donations .recent_donations_title .recent_donations_text .span {
+  color: #50bac3;
+  font-weight: 600;
+  font-size: 22px;
+  font-family: "Playfair Display", sans-serif;
+}
+.causes_detail_area .recent_donations .recent_donations_title .recent_donations_text h4 {
+  font-size: 16px;
+  font-weight: 550;
+  color: #424242;
+  font-family: Playfair Display, serif;
+}
+.causes_detail_area .recent_donations .recent_donations_title .recent_donations_text h4 span {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e36955;
+}
+.causes_detail_area .recent_donations .recent_donations_title .recent_donations_text ul li {
+  list-style: none;
+  color: #818181;
+  font-size: 20px;
+  font-weight: 400;
+}
+.causes_detail_area .recent_donations_connect {
+  background-color: rgb(242, 240, 236);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 50px;
+  margin-top: 10px;
+}
+.causes_detail_area .recent_donations_connect h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #424242;
+  font-family: Playfair Display, serif;
+  padding-bottom: 20px;
+}
+.causes_detail_area .recent_donations_connect ul {
+  display: flex;
+  gap: 20px;
+}
+.causes_detail_area .recent_donations_connect ul li {
+  list-style: none;
+}
+.causes_detail_area .recent_donations_connect ul li a {
+  text-decoration: none;
+}
+.causes_detail_area .recent_donations_connect ul li a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 20px 20px;
+  width: 50px;
+  height: 50px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+.causes_detail_area .recent_donations_connect ul li a .icon1 {
+  background-color: rgb(80, 186, 195);
+}
+.causes_detail_area .recent_donations_connect ul li a .icon2 {
+  background-color: rgb(227, 105, 85);
+}
+.causes_detail_area .recent_donations_connect ul li a .icon3 {
+  background-color: rgb(241, 174, 68);
+}
+.causes_detail_area .recent_donations_connect ul li a .icon4 {
+  background-color: rgb(134, 59, 174);
+}/*# sourceMappingURL=causesdetail.css.map */

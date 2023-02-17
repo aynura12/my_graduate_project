@@ -96,14 +96,14 @@ const Volunteer = () => {
                 tincidunt vix at
               </p>
               <p>
-                <i class="fa-solid fa-check"></i> Eos ei nisl graecis vix
+                <i className="fa-solid fa-check"></i> Eos ei nisl graecis vix
                 aperiri consequat
               </p>
               <p>
-                <i class="fa-solid fa-check"></i> Alienum phaedrum torquatos
+                <i className="fa-solid fa-check"></i> Alienum phaedrum torquatos
               </p>
               <p>
-                <i class="fa-solid fa-check"></i> Dius lorem tincidunt vixat
+                <i className="fa-solid fa-check"></i> Dius lorem tincidunt vixat
               </p>
               <div className="become_contact">
                 <div>

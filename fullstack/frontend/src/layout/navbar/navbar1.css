@@ -1,0 +1,220 @@
+.navbar_top {
+  width: 100%;
+  background-color: rgb(242, 240, 236);
+  padding: 20px 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-left-list {
+  justify-content: flex-start;
+}
+
+.navbar-right-list {
+  justify-content: flex-end;
+}
+.navbar-right-list .link {
+  margin-left: 15px;
+}
+
+.lists {
+  display: flex;
+  align-items: center;
+}
+.lists .list {
+  list-style: none;
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+}
+.lists .list .link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: rgb(129, 129, 129);
+}
+.lists .list .link .navbar_top_left {
+  color: rgb(236, 152, 67);
+}
+.lists .list .link .telephone {
+  background-color: rgb(236, 152, 67);
+  border-radius: 2px;
+  padding: 3px 3px;
+  color: black;
+  font-size: 8px;
+}
+.lists .list .link:hover {
+  color: rgb(236, 152, 67);
+}
+
+.navbar_bottom {
+  width: 100%;
+  padding: 30px 0;
+}
+.navbar_bottom .bottom_lists {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+.navbar_bottom .bottom_lists .bottom_list {
+  position: relative;
+  list-style: none;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+.navbar_bottom .bottom_lists .bottom_list .bottom_link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: rgb(129, 129, 129);
+}
+.navbar_bottom .bottom_left_logo {
+  display: flex;
+  justify-content: space-around;
+}
+.navbar_bottom .bottom_left_logo button {
+  margin-top: 7px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  background-color: rgb(227, 105, 85);
+  color: white;
+  width: 150px;
+  height: 40px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+.navbar_bottom .bottom_left_logo button:hover {
+  background-color: #f1ae44;
+}
+.navbar_bottom .home_drop {
+  visibility: hidden;
+  position: absolute;
+}
+.navbar_bottom .home:hover .home_drop {
+  visibility: visible;
+}
+.navbar_bottom .causes_drop {
+  visibility: hidden;
+  position: absolute;
+}
+.navbar_bottom .causes:hover .causes_drop {
+  visibility: visible;
+}
+.navbar_bottom .events_drop {
+  visibility: hidden;
+  position: absolute;
+}
+.navbar_bottom .events:hover .events_drop {
+  visibility: visible;
+}
+.navbar_bottom .news_drop {
+  visibility: hidden;
+  position: absolute;
+}
+.navbar_bottom .news:hover .news_drop {
+  visibility: visible;
+}
+.navbar_bottom .pages_drop {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.navbar_bottom .pages:hover .pages_drop {
+  visibility: visible;
+  opacity: 1;
+}
+.navbar_bottom .dropdown_lists {
+  padding: 10px 10px;
+  width: 200px;
+  background-color: white;
+  z-index: 99;
+}
+
+.hamburger_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background-color: rgb(207, 206, 206);
+}
+
+.hamburger_icon:hover {
+  transition: 0.5s;
+  background-color: orangered;
+  color: white;
+}
+
+.modal-content {
+  background-color: black;
+}
+.modal-content .btn-close {
+  background-color: aliceblue;
+}
+.modal-content .modal_list {
+  list-style: none;
+}
+.modal-content .modal_link {
+  text-decoration: none;
+  color: rgb(223, 223, 223);
+}
+.modal-content .modal_link:hover {
+  color: rgb(255, 113, 61);
+}
+.modal-content .modal_button {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  background-color: rgb(227, 105, 85);
+  color: white;
+  width: 150px;
+  height: 40px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
+}
+.modal-content .modal_button:hover {
+  background-color: #f1ae44;
+}
+.modal-content .modal_contact_list {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.modal-content .list1 {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  padding: 10px 10px;
+  background-color: rgb(80, 186, 195);
+}
+.modal-content .list2 {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  padding: 10px 10px;
+  background-color: rgb(227, 105, 85);
+}
+.modal-content .list3 {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  padding: 10px 10px;
+  background-color: rgb(241, 174, 68);
+}
+.modal-content .list4 {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  padding: 10px 10px;
+  background-color: rgb(135, 60, 174);
+}/*# sourceMappingURL=navbar1.css.map */

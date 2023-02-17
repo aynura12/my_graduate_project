@@ -5,8 +5,9 @@ import "../pageStyle/causesdetail.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../schema/formSchema";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { format } from "date-fns";
 const CausesDetail = () => {
   const [state, setState] = useState({
     fullName: "",
@@ -16,9 +17,9 @@ const CausesDetail = () => {
   const handleChange = async (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
-  const addData = async (id) => {
+  const addData = async () => {
     if (!state.fullName || !state.email || !state.comment) return;
-    await axios.post("", state);
+    await axios.post("http://localhost:8080/causeComment", state);
     setState({
       fullName: "",
       email: "",
@@ -36,10 +37,26 @@ const CausesDetail = () => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
+
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    const res = await axios.get("http://localhost:8080/causeComment");
+    setData(res.data);
+  };
+  useEffect(() => {
+    getData();
+    getRecent();
+  }, []);
+
+  const [recent, setRecent] = useState([]);
+  const getRecent = async () => {
+    const res = await axios.get("http://localhost:8080/causeRecent");
+    setRecent(res.recent);
+  };
   return (
     <>
       <Helmet>
-        <title>Couses Detail</title>
+        <title>Causes Detail</title>
       </Helmet>
       <section className="causes_detail">
         <div className="container">
@@ -61,7 +78,7 @@ const CausesDetail = () => {
             <div className="col-lg-8 col-md-12">
               <div className="causes_detail_card">
                 <img
-                  src="https://layerdrops.com/oxpitan/images/img12.jpg"
+                  src="https://oxpitan-gatsby.vercel.app/static/img1-53058564398eaad130cb0a80e4960c88.jpg"
                   alt="img"
                 />
                 <div className="card_bottom">
@@ -69,11 +86,11 @@ const CausesDetail = () => {
                     <h2>Save Poor Childrens</h2>
                     <ul>
                       <li>
-                        <i class="fa-solid fa-bullseye"></i>
+                        <i className="fa-solid fa-bullseye"></i>
                         Goal: <span>$30,000</span>
                       </li>
-                      <li class="causes_list">
-                        <i class="fa-solid fa-chart-line"></i>Raised:
+                      <li className="causes_list">
+                        <i className="fa-solid fa-chart-line"></i>Raised:
                         <span>25,270</span>
                       </li>
                     </ul>
@@ -90,18 +107,6 @@ const CausesDetail = () => {
                   Lorem Ipsum, you need to be sure there isn't anything
                   embarrassing hidden in the middle of text.{" "}
                 </p>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like.
-                </p>
               </div>
               <div className="area_image row">
                 {" "}
@@ -117,61 +122,30 @@ const CausesDetail = () => {
                     alt="img"
                   />
                 </div>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book
-                </p>
               </div>
               <div className="causes_detail_comment ">
                 <h2>Comments</h2>
-                <div className="detail_comment_bottom">
-                  <img
-                    src="http://layerdrops.com/oxpitan/images/comment-avatar.jpg"
-                    alt="img"
-                  />
-                  <div className="bottom_title">
-                    <div className="title_left">
-                      <div className="left">
-                        <h4>David Marks </h4>
-                        <span>4 hours ago</span>
+                {data?.map((datas) => {
+                  return (
+                    <div className="detail_comment_bottom">
+                      <img src={datas.image} alt="img" />
+                      <div className="bottom_title">
+                        <div className="title_left">
+                          <div className="left">
+                            <h4>{datas.fullName}</h4>
+                            {/* <span >{format(datas.createdAt, 'dd/mm/yyyy')}</span> */}
+                            <span>{datas.createdAt}</span>
+                          </div>
+                          <Link to="/">
+                            <button>reply</button>
+                          </Link>
+                        </div>
+                        <p>{datas.comment}</p>
                       </div>
-                      <Link to="/">
-                        <button>reply</button>
-                      </Link>
                     </div>
-                    <p>
-                      Sending love. My nephews Nick and Anthony Salaber are your
-                      teammates, so I know the caliber person you are. Our whole
-                      family is sending our best to you and your family.
-                    </p>
-                  </div>
-                </div>
-                <div className="detail_comment_bottom">
-                  <img
-                    src="http://layerdrops.com/oxpitan/images/comment-avatar2.jpg"
-                    alt="img"
-                  />
-                  <div className="bottom_title">
-                    <div className="title_left">
-                      <div className="left">
-                        <h4>Christine Eve</h4>
-                        <span>3 hours ago</span>
-                      </div>
-                      <Link to="/">
-                        <button>reply</button>
-                      </Link>
-                    </div>
-                    <p>
-                      You're a champ. Your in my thoughts and prayers every day.
-                      You're the best teammate a bloke could ask for and we're
-                      going to return the favour my being there for you every
-                      step along this journey. Stay strong
-                    </p>
-                  </div>
-                </div>
+                  );
+                })}
+
                 <form className="form">
                   <h3>Leave a Comment</h3>
                   <div className="form_top">
@@ -239,10 +213,10 @@ const CausesDetail = () => {
                   </h4>
                   <ul>
                     <li>
-                      <i class="fa fa-tag"></i> Education
+                      <i className="fa fa-tag"></i> Education
                     </li>
                     <li>
-                      <i class="fa fa-map-marker"></i>Wrightwood, Canada
+                      <i className="fa fa-map-marker"></i>Wrightwood, Canada
                     </li>
                   </ul>
                 </div>
@@ -250,86 +224,58 @@ const CausesDetail = () => {
 
               <div className="recent_donations">
                 <h2>Recent Donations</h2>
-                <div className="recent_donations_title">
-                  <img
-                    src="https://layerdrops.com/oxpitan/images/author-avatar2.jpg"
-                    alt="img"
-                  />
-                  <div className="recent_donations_text">
-                    <span className="span">$20</span>
-                    <h4>
-                      David Marks <span>3 HOURS AGO</span>
-                    </h4>
-                    <ul>
-                      <li>God bless you dear</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="recent_donations_title">
-                  <img
-                    src="https://layerdrops.com/oxpitan/images/author-avatar3.jpg"
-                    alt="img"
-                  />
-                  <div className="recent_donations_text">
-                    <span className="span">$35</span>
-                    <h4>
-                    Jean Jerome <span>10 HOURS AGO </span>
-                    </h4>
-                    <ul>
-                      <li>My prayers are with you</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="recent_donations_title">
-                  <img
-                    src="https://layerdrops.com/oxpitan/images/author-avatar4.jpg"
-                    alt="img"
-                  />
-                  <div className="recent_donations_text">
-                    <span className="span">$160</span>
-                    <h4>
-                    Kistin Eve<span> 1 DAY AGO</span>
-                    </h4>
-                    <ul>
-                      <li>Wishing you blessings</li>
-                    </ul>
-                  </div>
-                </div>
+                {recent?.map((recents) => {
+                  return (
+                    <div className="recent_donations_title">
+                      <img src={recents.image} alt="img" />
+                      <div className="recent_donations_text">
+                        <span className="span">${recents.payment}</span>
+                        <h4>
+                          {recents.fullName}
+                          <span>{recents.createdAt}</span>
+                        </h4>
+                        <ul>
+                          <li>{recents.text}</li>
+                        </ul>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
 
               <div className="recent_donations_connect">
                 <h2>Share Cause</h2>
-                  <ul>
-                    <li>
-                      <a href="/">
-                        <div>
-                          <i className="icon1 fa-brands fa-twitter"></i>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <div>
-                          <i className="icon2 fa-brands fa-facebook-f"></i>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <div>
-                          <i className="icon3 fa-brands fa-pinterest"></i>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <div>
-                          <i className="icon4 fa-brands fa-instagram"></i>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <ul>
+                  <li>
+                    <a href="/">
+                      <div>
+                        <i className="icon1 fa-brands fa-twitter"></i>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <div>
+                        <i className="icon2 fa-brands fa-facebook-f"></i>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <div>
+                        <i className="icon3 fa-brands fa-pinterest"></i>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <div>
+                        <i className="icon4 fa-brands fa-instagram"></i>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

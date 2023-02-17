@@ -218,7 +218,7 @@ const Navbar1 = () => {
                     <div className="modal-header">
                       <button
                         type="button"
-                        class="btn-close"
+                        className="btn-close"
                         data-bs-dismiss="modal"
                         aria-label="Close"
                       ></button>
@@ -254,9 +254,7 @@ const Navbar1 = () => {
                                 </Link>
                               </li>
                               <li className="modal_list">
-                                <Link to="causesdetail" className="modal_link">
-                                  Causes Detail
-                                </Link>
+                               <Link to="causes/:id" className="modal_link">Causes Detail</Link>
                               </li>
                               <li className="modal_list">
                                 <Link to="donatenow" className="modal_link">

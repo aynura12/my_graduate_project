@@ -1,12 +1,12 @@
 const mongoose=require("mongoose")
 
 const { Schema } = mongoose
-const commentSchema= new Schema({
-    id:{
-        type: String    ,
+const causeCommentSchema= new Schema({
+    image: {
+        type: String,
         require: true
     },
-    name: {
+    fullName: {
         type: String,
         require: true
     },
@@ -14,7 +14,12 @@ const commentSchema= new Schema({
         type: String,
         require: true
     },
+    email: {
+        type: String,
+        require: true
+    },
+   
 },
 { timestamps: true },)
 
-module.exports =  mongoose.model("comment", commentSchema)
+module.exports =  mongoose.model("causeComment", causeCommentSchema)

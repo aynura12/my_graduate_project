@@ -32,10 +32,8 @@
                 path:"causes",
                 element:<Causes/>
             },
-            {
-                path:"causesdetail",
-                element:<CausesDetail/>
-            },
+           {path:"causes/:id",
+        element:<CausesDetail/>},
             {
                 path:"donatenow",
                 element:<DonateNow/>

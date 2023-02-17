@@ -46,3 +46,10 @@ app.use("/team",teamRoute)
 
 const volunteerRoute=require("./routes/volunteerRoute")
 app.use("/volunteer",volunteerRoute)
+
+const causeCommentRoute=require("./routes/causeCommentRoute")
+app.use("/causeComment",causeCommentRoute)
+
+
+const causeRecentRoute=require("./routes/causeRecentRoute")
+app.use("/causeRecent",causeRecentRoute)

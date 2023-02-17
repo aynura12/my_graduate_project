@@ -9,7 +9,7 @@ const Donation = () => {
         <div className="row">
           <div className="col-lg-8">
             <img src={donationLogo} alt="" />
-            <h2 class="donation_title">
+            <h2 className="donation_title">
               Fundraising for the people and causes you care about
             </h2>
             <Link to="donatenow" className="donation_link">

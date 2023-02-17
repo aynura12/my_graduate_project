@@ -5,7 +5,7 @@ const HelpUs = () => {
   return (
     <div className="help_us">
       <div className="container">
-        <div class="help_us_title">
+        <div className="help_us_title">
           <h2>We Believe that We can Save More Lifes with you</h2>
         </div>
         <div className="row">
@@ -14,8 +14,8 @@ const HelpUs = () => {
               <div className="help_card_icon1">
                 <i class="fa-solid fa-dove"></i>
               </div>
-              <h4 class="help_title">Hope</h4>
-              <p class="help_text">
+              <h4 className="help_title">Hope</h4>
+              <p className="help_text">
                 Lorem ipsum is simply free text available in the market
                 wesbites.
               </p>

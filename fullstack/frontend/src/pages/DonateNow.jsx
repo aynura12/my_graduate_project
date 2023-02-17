@@ -62,10 +62,10 @@ const DonateNow = () => {
                   </h4>
                   <ul>
                     <li>
-                      <i class="fa fa-tag"></i> Education
+                      <i className="fa fa-tag"></i> Education
                     </li>
                     <li>
-                      <i class="fa fa-map-marker"></i>Wrightwood, Canada
+                      <i className="fa fa-map-marker"></i>Wrightwood, Canada
                     </li>
                   </ul>
                 </div>

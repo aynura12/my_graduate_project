@@ -1,0 +1,58 @@
+.gallery {
+  padding: 40px 0;
+  background-color: rgb(242, 240, 236);
+}
+.gallery .galerry_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.gallery .galerry_title h2 {
+  color: rgb(66, 66, 66);
+  font-family: Playfair Display, serif;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 800;
+  padding-bottom: 40px;
+}
+.gallery .galerry_title button {
+  background-color: rgb(227, 105, 85);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  width: 150px;
+  height: 50px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+.gallery_area {
+  padding: 50px 0;
+}
+.gallery_area .gallery_photo {
+  position: relative;
+  margin-bottom: 20px;
+}
+.gallery_area .gallery_photo img {
+  width: 100%;
+  height: 100%;
+}
+.gallery_area .gallery_photo img:hover .gallery_color {
+  display: none;
+}
+.gallery_area .gallery_photo .gallery_color {
+  position: absolute;
+  display: block;
+  background-color: rgb(134, 59, 174);
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  bottom: 0px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+}/*# sourceMappingURL=gallery.css.map */

@@ -1,0 +1,141 @@
+.events_detail {
+  padding: 40px 0;
+  background-color: rgb(242, 240, 236);
+}
+.events_detail .events_detail_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.events_detail .events_detail_title h2 {
+  color: rgb(66, 66, 66);
+  font-family: Playfair Display, serif;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 800;
+  padding-bottom: 40px;
+}
+.events_detail .events_detail_title button {
+  background-color: rgb(227, 105, 85);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  width: 150px;
+  height: 50px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+.events_detail_image {
+  padding: 50px 0;
+  position: relative;
+}
+.events_detail_image img {
+  height: 100%;
+  width: 100%;
+}
+.events_detail_image .date_of_card {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 30px;
+  width: 50px;
+  height: 50px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  background-color: rgb(235, 46, 77);
+}
+.events_detail_image .date_of_card .day_date {
+  font-size: 40px;
+  line-height: 35px;
+  font-family: "Playfair Display", sans-serif;
+  color: white;
+}
+.events_detail_image .date_of_card .month_date {
+  font-size: 12px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .events_detail_area .detail_left {
+    padding: 30px 0;
+  }
+}
+.events_detail_area .detail_left h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #424242;
+  font-family: Playfair Display, serif;
+}
+.events_detail_area .detail_left p {
+  line-height: 30px;
+  font-size: 18px;
+  color: #818181;
+  font-weight: 480;
+}
+.events_detail_area .detail_left button {
+  text-transform: uppercase;
+  font-family: Poppins, sans-serif;
+  background-color: rgb(241, 174, 68);
+  color: white;
+  border: none;
+  line-height: 29px;
+  font-size: 13px;
+  font-weight: 700;
+  height: 50px;
+  width: 180px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+.events_detail_area .detail_right {
+  margin-bottom: 20px;
+  padding: 70px 10px;
+  border-radius: 5px;
+  background-color: rgb(242, 240, 236);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.events_detail_area .detail_right h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #424242;
+  font-family: Playfair Display, serif;
+  text-align: center;
+}
+.events_detail_area .detail_right .detail_list li {
+  list-style: none;
+  color: rgb(201, 34, 34);
+}
+.events_detail_area .detail_right .detail_list li span {
+  color: black;
+}
+.events_detail_area .detail_right .detail_list li .span1 {
+  padding-right: 20px;
+}
+.events_detail_area .detail_right .detail_list li .span2 {
+  padding-right: 85px;
+}
+.events_detail_area .detail_right .detail_list li .span3 {
+  padding-right: 55px;
+}
+.events_detail_area .detail_right .detail_list li .span4 {
+  padding-right: 75px;
+}
+.events_detail_area .detail_right .detail_list li .span5 {
+  padding-right: 65px;
+}
+.events_detail_area .detail_right .detail_list li .span6 {
+  padding-right: 62px;
+}/*# sourceMappingURL=eventsDetail.css.map */

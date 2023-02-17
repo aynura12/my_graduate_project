@@ -23,22 +23,22 @@ const Cause = () => {
         <div className="row">
           {data?.map((datas) => {
             return (
-              <div className="cards col-lg-4 col-md-12">
+              <div className="cards col-lg-4 col-md-12" key={datas._id}>
                 <img src={datas.image} alt="" />
                 <div className="cause_card">
                   <h3>
-                    <Link to="causesdetail" className="cause_title_link">
+                    <Link to={`${datas._id}`} className="cause_title_link">
                       {datas.title}
                     </Link>
                   </h3>
                   <p>{datas.text}</p>
                   <ul>
                     <li className="causes_list">
-                      <i class="fa-solid fa-bullseye"></i>Goal:
+                      <i className="fa-solid fa-bullseye"></i>Goal:
                       <span>${datas.goal},000</span>
                     </li>
                     <li className="causes_list">
-                      <i class="fa-solid fa-chart-line"></i>Raised:
+                      <i className="fa-solid fa-chart-line"></i>Raised:
                       <span>{datas.raised}0</span>
                     </li>
                   </ul>

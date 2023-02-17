@@ -37,7 +37,7 @@ const Header1 = () => {
               alt=""
             />
           </div>
-          <h4 class="header_left_title">Hunger is stalking the globe</h4>
+          <h4 className="header_left_title">Hunger is stalking the globe</h4>
         </div>
         <div className="header_bottom_right">
           <div className="container">
@@ -46,17 +46,17 @@ const Header1 = () => {
                 <div className="header_bottom_video">
                   <Link to="https://youtu.be/-TYNA4Ztpy4" className="header_video_link">
                     <button className="header_video_button">
-                      <i class="fa fa-play"></i>
+                      <i className="fa fa-play"></i>
                     </button>
                   </Link>
                 </div>
               </div>
               <div className="col-lg-8">
                 <div className="header_right_title">
-                  <h4 class="right_title">
+                  <h4 className="right_title">
                     We are here to support you every step of the way.
                   </h4>
-                  <p class="right_text">
+                  <p className="right_text">
                     Watch us how we take care of everyone
                   </p>
                 </div>
