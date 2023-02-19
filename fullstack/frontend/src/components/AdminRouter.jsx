@@ -5,7 +5,7 @@ import Navbar2 from "../layout/navbar/Navbar2";
 const AdminRouter = () => {
   return (
     <>
-      {" "}
+     
       <Navbar2/>
       <Outlet />
       <Footer />

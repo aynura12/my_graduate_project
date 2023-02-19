@@ -1,9 +1,9 @@
 @import "../../../vendors/mixins";
 
-.teamAdd {
+.adminHome {
   padding: 60px 0;
   @include backcolor;
-  .teamAdd_title {
+  .adminHome_title {
     @include causestitle;
     padding-bottom: 0;
     h2 {
