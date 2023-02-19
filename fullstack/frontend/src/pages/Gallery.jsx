@@ -3,17 +3,11 @@ import { Helmet } from "react-helmet-async";
 import "../pageStyle/gallery.scss";
 import { Link } from "react-router-dom";
 import 'animate.css';
-import { useState,useEffect } from "react";
+import { useState,useEffect ,useContext} from "react";
+import {mainContext} from "../Context/ContextProvider"
 import axios  from "axios"
 const Gallery = () => {
-  const [data, setData] = useState([]);
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/gallery");
-    setData(res.data);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+ const{data,setData}=useContext(mainContext)
   return (
     <>
       <Helmet>
