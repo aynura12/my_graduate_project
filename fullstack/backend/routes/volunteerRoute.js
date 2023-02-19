@@ -6,5 +6,7 @@ router.get("/", volunteerController.volunteer_getAll);
 router.get("/:id", volunteerController.volunteer_getAll_byId);
 router.post("/", volunteerController.volunteer_post);
 router.delete("/:id", volunteerController.volunteer_delete)
+router.put("/:id", volunteerController.volunteer_update)
+
 
 module.exports=router

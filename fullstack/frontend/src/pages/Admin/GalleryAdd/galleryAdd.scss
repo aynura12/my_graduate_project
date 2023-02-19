@@ -1,6 +1,6 @@
 @import "../../../vendors/mixins";
 
-.galleryAdd{
+.galleryAdd {
   padding: 60px 0;
   @include backcolor;
   .galleryAdd_title {
@@ -11,6 +11,37 @@
     }
     button {
       @include buttonpreparty;
+    }
+  }
+}
+.gallery_table {
+  padding: 50px 0;
+  .table {
+    border-radius: 5px;
+    border: 2px solid green;
+    width: 40px;
+    
+  
+  }
+}
+.gallery_add {
+  padding: 50px 0;
+  form {
+    @include display;
+    gap:20px;
+    input {
+      border: none;
+      border-radius: 5px;
+      background-color: aliceblue;
+      padding: 10px 70px;
+    }
+    .buttons {
+      padding-top: 30px;
+      display: flex;
+      gap: 20px;
+    }
+    h2{
+        @include h3;
     }
   }
 }

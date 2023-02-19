@@ -6,5 +6,7 @@ router.get("/", causeRecentController.causeRecent_getAll);
 router.get("/:id", causeRecentController.causeRecent_getAll_byId);
 router.post("/", causeRecentController.causeRecent_post);
 router.delete("/:id", causeRecentController.causeRecent_delete)
+router.put("/:id", causeRecentController.causeRecent_update)
+
 
 module.exports=router

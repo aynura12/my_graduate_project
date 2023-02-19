@@ -3,13 +3,12 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { formSchema } from "../../../schema/formSchema";
+import { adminSchema } from "../../../schema/Admin/adminSchema";
 import { useState, useEffect, useContext } from "react";
-// import { mainContext } from "../../../Context/ContextProvider";
 import axios from "axios";
 import "../GalleryAdd/galleryAdd.scss";
 const GalleryAdd = () => {
-  const [users, setUsers] = useState([]);
+  const [datas, setDatas] = useState([]);
   const [state, setState] = useState({
     image: "",
   });
@@ -17,7 +16,7 @@ const GalleryAdd = () => {
 
   const getData = async () => {
     const res = await axios.get("http://localhost:8080/gallery");
-    setUsers(res.data);
+    setDatas(res.data);
   };
 
   useEffect(() => {
@@ -44,7 +43,7 @@ const GalleryAdd = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(formSchema),
+    resolver: yupResolver(adminSchema),
   });
 
   const deleteData = async (id) => {
@@ -57,7 +56,7 @@ const GalleryAdd = () => {
     setId(data._id);
   };
   const updateData = async (id) => {
-    await axios.put(`http://localhost:8080/gallery${id}`, state);
+    await axios.put(`http://localhost:8080/gallery/${id}`, state);
     getData();
     setState({
       image: "",
@@ -83,53 +82,63 @@ const GalleryAdd = () => {
         </div>
       </section>
 
-      <section>
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Delete data</th>
-              <th scope="col">Update Data</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => {
-              return (
-                <tr>
-                  <th scope="row">1</th>
-                  <td>
-                    <img src={user.image} style={{ height: 100 }} alt="alt" />
-                  </td>
-                  <td>
-                    <button
-                      type="button"
-                      className="btn btn-danger"
-                      onClick={() => deleteData(user._id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      type="button"
-                      className="btn btn-success"
-                      onClick={() => handleEditClick(user)}
-                    >
-                      Success
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <section className="gallery_table">
+        <div className="container">
+          <div className="row">
+            {" "}
+            <div className="col-lg-12 col-md-12">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Delete data</th>
+                    <th scope="col">Update Data</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {datas.map((data) => {
+                    return (
+                      <tr>
+                        <td>
+                          <img
+                            src={data.image}
+                            style={{ height: 100 }}
+                            alt="alt"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            className="btn btn-danger"
+                            onClick={() => deleteData(data._id)}
+                          >
+                            Delete
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            className="btn btn-success"
+                            onClick={() => handleEditClick(data)}
+                          >
+                            Update
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </section>
-      <section>
+      <section className="gallery_add">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 col-md-12">
               <form onSubmit={handleSubmit(onSubmit)}>
+                <h2>Add data</h2>
                 <input
                   type="text"
                   {...register("image")}
@@ -143,8 +152,23 @@ const GalleryAdd = () => {
                 ) : (
                   <></>
                 )}
-                <button onClick={() => addData()}>Add</button>
-                <button onClick={() => updateData(id)}>update</button>
+                <div className="buttons">
+                  {" "}
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onClick={() => addData()}
+                  >
+                    Add
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    onClick={() => updateData(id)}
+                  >
+                    Edit
+                  </button>
+                </div>
               </form>
             </div>
           </div>

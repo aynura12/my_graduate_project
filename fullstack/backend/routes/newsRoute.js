@@ -6,5 +6,7 @@ router.get("/", newsController.news_getAll);
 router.get("/:id", newsController.news_getAll_byId);
 router.post("/", newsController.news_post);
 router.delete("/:id", newsController.news_delete)
+router.put("/:id", newsController.news_update)
+
 
 module.exports=router

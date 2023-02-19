@@ -6,5 +6,7 @@ router.get("/", donateController.donate_getAll);
 router.get("/:id", donateController.donate_getAll_byId);
 router.post("/", donateController.donate_post);
 router.delete("/:id", donateController.donate_delete)
+router.put("/:id", donateController.donate_update)
+
 
 module.exports=router

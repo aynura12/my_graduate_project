@@ -20,6 +20,8 @@ export const formSchema = yup
     cvc: yup.number("Pls enter number").required("This field must not be left blank"),
     cardNumber: yup.number("Pls enter number").required("This field must not be left blank"),
     billingAddress:yup.string("Pls enter string text").required("This field must not be left blank"),
+    text:yup.string("Pls enter string text").required("This field must not be left blank"),
+
 
 
 
