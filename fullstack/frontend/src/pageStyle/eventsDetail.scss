@@ -7,6 +7,7 @@
     @include causestitle;
     h2 {
       @include pagetitle;
+      
     }
     button {
       @include buttonpreparty;
@@ -18,7 +19,7 @@
   position: relative;
   img {
     // height: 100%;
-    // width: 100%;
+    width: 100%;
   }
   .date_of_card {
     position: absolute;

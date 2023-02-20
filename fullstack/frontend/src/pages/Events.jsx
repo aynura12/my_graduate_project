@@ -14,7 +14,20 @@ const Events = () => {
   useEffect(() => {
     getData();
   }, []);
-
+  const [sorted,setSorted]=useState({sorted:"day",reversed:false})
+  const sorteddata=()=>{
+   setSorted({sorted:"day",reversed:!sorted.reversed})
+   const datacopy=[...data]
+   datacopy.sort((a,b)=>{
+     if(sorted.reversed){
+      return b.day-a.day
+     }else{
+       return a.day-b.day
+     }
+   })
+   setData(datacopy)}
+ 
+ 
   return (
     <>
       <Helmet>
@@ -36,10 +49,11 @@ const Events = () => {
       </section>
       <section className="events_area">
         <div className="container">
+        <button onClick={sorteddata}>Sorted</button>
           <div className="row">
             {data.map((datas) => {
               return (
-                <div className="col-lg-4 col-md-12">
+                <div className="col-lg-4 col-md-6" key={datas._id}>
                   <div className="events_card">
                     <img src={datas.image} alt="img" />
                     <span

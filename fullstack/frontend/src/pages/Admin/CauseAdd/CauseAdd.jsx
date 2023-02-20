@@ -5,7 +5,7 @@ import "../CauseAdd/causeAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 const CauseAdd = () => {
   const [datas, setDatas] = useState([]);

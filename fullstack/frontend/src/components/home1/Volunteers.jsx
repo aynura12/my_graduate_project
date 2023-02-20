@@ -26,7 +26,7 @@ const Volunteers = () => {
           <div className="row g-3">
             {data?.map((datas) => {
               return (
-                <div className="col-lg-3 col-md-6">
+                <div className="col-lg-3 col-md-6" key={datas._id}>
                   <div className="volunteers_card">
                     <div className="card_image">
                       <img src={datas.image} alt="card" />

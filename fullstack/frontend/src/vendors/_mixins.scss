@@ -10,6 +10,7 @@
 @mixin pagetitle {
   color: $color;
   font-family: $title_font;
+  text-align: center;
   font-size: 60px;
   line-height: 60px;
   font-weight: 800;

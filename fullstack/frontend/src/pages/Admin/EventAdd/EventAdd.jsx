@@ -5,7 +5,7 @@ import "../EventAdd/eventAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 const EventAdd = () => {
   const [datas, setDatas] = useState([]);
@@ -181,7 +181,7 @@ const EventAdd = () => {
                 <tbody>
                   {datas.map((data) => {
                     return (
-                      <tr>
+                      <tr key={data._id}>
                         <td>
                           <img
                             src={data.image}

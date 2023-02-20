@@ -7,6 +7,7 @@
     @include causestitle;
     h2 {
       @include pagetitle;
+      text-align: center;
     }
     button {
       @include buttonpreparty;

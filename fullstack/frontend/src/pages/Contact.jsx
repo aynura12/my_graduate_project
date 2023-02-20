@@ -8,7 +8,9 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../pageStyle/contact.scss";
+import Loading from "../components/Loading";
 const Contact = () => {
+  const [loading, setLoading] = useState(true);
   const [state, setState] = useState({
     fullName: "",
     email: "",
@@ -43,6 +45,7 @@ const Contact = () => {
   });
   return (
     <>
+  
       <Helmet>
         <title>Contact</title>
       </Helmet>
@@ -173,21 +176,24 @@ const Contact = () => {
       <section className="contact_bottom">
         <div className="container">
           <div className="row">
-            <div className="contact_about list col-lg-4 col-md-12">
-              <h2>About</h2>
+            <div className="col-lg-4 col-md-12">
+              <div className="contact_about"> <h2>About</h2>
               <p>
                 Lorem ipsum is simply free text dolor sit amet, duise
-                consectetur ullam blandit
-              </p>
+                consectetur 
+              </p></div>
+             
             </div>
-            <div className="contact_address list col-lg-4 col-md-12 ">
-              <h2>Address</h2>
-              <p>660 broklyn street , 88 new york, United states of america</p>
+            <div className="col-lg-4 col-md-12 ">
+              <div className="contact_address"> <h2>Address</h2>
+              <p>660 broklyn street , 88 new york, United states of america</p></div>
+             
             </div>
-            <div className="contact_number list col-lg-4 col-md-12">
-              <h2>Contact</h2>
-              <p>needhelp@oxpitan.com </p>
-              <p>666 888 000</p>
+            <div className="col-lg-4 col-md-12">
+              <div className="contact_number">  <h2>Contact</h2>
+              <a href="http://layerdrops.com/oxpitan/team.html" style={{textDecoration:"none"}}> <p>needhelp@oxpitan.com </p></a>
+              <p>666 888 000</p></div>
+            
             </div>
           </div>
         </div>

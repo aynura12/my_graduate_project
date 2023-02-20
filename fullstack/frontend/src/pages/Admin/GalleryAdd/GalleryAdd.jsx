@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "../GalleryAdd/galleryAdd.scss";
 const GalleryAdd = () => {
@@ -98,7 +98,7 @@ const GalleryAdd = () => {
                 <tbody>
                   {datas.map((data) => {
                     return (
-                      <tr>
+                      <tr key={data._id}>
                         <td>
                           <img
                             src={data.image}

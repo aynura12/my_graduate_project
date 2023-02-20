@@ -211,6 +211,13 @@
     background-color: rgb(242, 240, 236);
     padding: 40px 30px;
     margin-top: 10px;
+    input {
+      border: 1px solid rgb(139, 139, 139);
+      background-color: white;
+      padding: 10px 20px;
+      @include text;
+      border-radius: 4px;
+    }
     h2 {
       @include h3;
     }

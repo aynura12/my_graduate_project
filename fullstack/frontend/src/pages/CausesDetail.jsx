@@ -5,26 +5,27 @@ import "../pageStyle/causesdetail.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Comment  from "../components/Comment";
+import Comment from "../components/Comment";
 import { format } from "date-fns";
 const CausesDetail = () => {
- 
-  useEffect(() => {
-    getRecent();
-    getCause()
-  }, []);
-
   const [recent, setRecent] = useState([]);
+  const [cause, setCause] = useState([]);
+  const [search, setSearch] = useState("");
+
   const getRecent = async () => {
     const res = await axios.get("http://localhost:8080/causeRecent");
     setRecent(res.data);
   };
-  const {id}=useParams()
-  const [cause, setCause] = useState([]);
+  const { id } = useParams();
   const getCause = async () => {
-    const res = await axios.get(`http://localhost:8080/cause/`+id);
+    const res = await axios.get(`http://localhost:8080/cause/` + id);
     setCause(res.data);
   };
+  useEffect(() => {
+    getRecent();
+    getCause();
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -49,10 +50,7 @@ const CausesDetail = () => {
           <div className="row">
             <div className="col-lg-8 col-md-12">
               <div className="causes_detail_card">
-                <img
-                  src={cause.image}
-                  alt="img"
-                />
+                <img src={cause.image} alt="img" />
                 <div className="card_bottom">
                   <div>
                     <h2>{cause.title}</h2>
@@ -95,11 +93,10 @@ const CausesDetail = () => {
                   />
                 </div>
               </div>
-           <Comment/>
+              <Comment />
             </div>
             <div className="col-lg-4 col-md-12">
               <div className="organizer">
-                
                 <img
                   src="https://layerdrops.com/oxpitan/images/author-avatar.jpg"
                   alt="img"
@@ -122,23 +119,34 @@ const CausesDetail = () => {
 
               <div className="recent_donations">
                 <h2>Recent Donations</h2>
-                {recent?.map((recents) => {
-                  return (
-                    <div className="recent_donations_title">
-                      <img src={recents.image} alt="img" />
-                      <div className="recent_donations_text">
-                        <span className="span">${recents.payment}</span>
-                        <h4>
-                          {recents.fullName}
-                          <span>{recents.createdAt}</span>
-                        </h4>
-                        <ul>
-                          <li>{recents.text}</li>
-                        </ul>
+                <input
+                  type="text"
+                  placeholder="Search name"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                {recent
+                  ?.filter((r) => {
+                    return search.toLowerCase() === ""
+                      ? r
+                      : r.fullName.toLowerCase().includes(search);
+                  })
+                  .map((recents) => {
+                    return (
+                      <div className="recent_donations_title" key={recents._id}>
+                        <img src={recents.image} alt="img" />
+                        <div className="recent_donations_text">
+                          <span className="span">${recents.payment}</span>
+                          <h4>
+                            {recents.fullName}
+                            <span>{recents.createdAt}</span>
+                          </h4>
+                          <ul>
+                            <li>{recents.text}</li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                  )
-                })}
+                    );
+                  })}
               </div>
 
               <div className="recent_donations_connect">

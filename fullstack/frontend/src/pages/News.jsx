@@ -36,27 +36,30 @@ const News = () => {
         <div className="container">
           <div className="row">
             {data?.map((datas) => {
-              return (  <div className="col-lg-6 col-md-12">
-              <div className="news_card">
-                <span className="news_of_card ">
-                  <span className="news_date card1" style={{backgroundColor:datas.color}}>{datas.date}</span>
-                </span>
-                <img
-                  src={datas.image}
-                  alt="img"
-                />
-                <div className="news_text">
-                  <Link to={`${datas._id}`} className="news_link">
-                    <h3 className="news_title1">{datas.title}</h3>
-                  </Link>
-                  <p>{datas.text}</p>
-                  <Link to="/newsdetail">
-                    <button>Read More</button>
-                  </Link>
+              return (
+                <div className="col-lg-6 col-md-12" key={datas._id}>
+                  <div className="news_card">
+                    <span className="news_of_card ">
+                      <span
+                        className="news_date card1"
+                        style={{ backgroundColor: datas.color }}
+                      >
+                        {datas.date}
+                      </span>
+                    </span>
+                    <img src={datas.image} alt="img" />
+                    <div className="news_text">
+                      <Link to={`${datas._id}`} className="news_link">
+                        <h3 className="news_title1">{datas.title}</h3>
+                      </Link>
+                      <p>{datas.text}</p>
+                      <Link to={`${datas._id}`}>
+                        <button>Read More</button>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>)
-            
+              );
             })}
           </div>
         </div>

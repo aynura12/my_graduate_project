@@ -15,6 +15,10 @@
 }
 .events_area {
   padding: 50px 0;
+  button {
+    @include sendButton;
+    margin-bottom: 20px;
+  }
   .events_card {
     position: relative;
     margin-bottom: 20px;
@@ -36,21 +40,21 @@
         color: white;
       }
     }
-   
+
     .events_text {
       @include display;
       background-color: rgb(242, 240, 236);
       padding: 40px 20px;
 
-      .events_title1{
+      .events_title1 {
         @include h3;
       }
       ul {
         display: flex;
-        .events_list1{
-            @include events_list;
-          }
-          
+        .events_list1 {
+          @include events_list;
+          margin-right: 5px;
+        }
       }
     }
   }

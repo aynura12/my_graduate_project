@@ -16,29 +16,32 @@
 
 .gallery_area {
   padding: 50px 0;
- 
+
   .gallery_photo {
     position: relative;
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+
     img {
       width: 100%;
       height: 100%;
+      border-radius: 5px;
     }
     img:hover {
       .gallery_color {
-        display:none;
+        display: none;
       }
     }
     .gallery_color {
       position: absolute;
-      display:block;
-      background-color: rgb(134,59,174);
+      display: block;
+      background-color: rgb(134, 59, 174);
       width: 100%;
       height: 100%;
       opacity: 0.8;
       bottom: 0px;
-    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
-
+      border-radius: 5px;
+      clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
     }
   }
 }

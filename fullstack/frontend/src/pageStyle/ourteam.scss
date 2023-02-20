@@ -2,6 +2,7 @@
 
 .ourteam {
   padding: 40px 0;
+ 
   @include backcolor;
   .ourteam_title {
     @include causestitle;
@@ -15,7 +16,15 @@
 }
 .our_team {
   padding: 50px 0;
-
+  input{
+  text-align: center;
+  border: none;
+  background-color: rgb(242, 240, 236);
+  padding: 10px 40px;
+  border-radius: 4px;
+ margin-bottom: 20px;
+}
+  }
   .volunteer_row {
    padding-bottom: 20px;
   }
@@ -78,4 +87,4 @@
   .title1 {
     background-color: rgb(80, 186, 195);
   }
-}
+

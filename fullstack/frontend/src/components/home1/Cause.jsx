@@ -13,17 +13,32 @@ const Cause = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const [sorted, setSorted] = useState({ sorted: "goal", reversed: false });
+  const sorteddata = () => {
+    setSorted({ sorted: "goal", reversed: !sorted.reversed });
+    const datacopy = [...data];
+    datacopy.sort((a, b) => {
+      if (sorted.reversed) {
+        return b.goal - a.goal;
+      } else {
+        return a.goal - b.goal;
+      }
+    });
+    setData(datacopy);
+  };
   return (
     <div className="cause">
       <div className="container">
         <div className="cause_title">
-          <img src={donationLogo} alt="logo" />
+          <img src={donationLogo} alt="logo"/>
           <h2>Latest Causes</h2>
         </div>
+        <button onClick={sorteddata}>Sorted</button>
         <div className="row">
           {data?.map((datas) => {
             return (
-              <div className="cards col-lg-4 col-md-12" key={datas._id}>
+              <div className="cards col-lg-4 col-md-6" key={datas._id}>
                 <img src={datas.image} alt="" />
                 <div className="cause_card">
                   <h3>
@@ -49,59 +64,6 @@ const Cause = () => {
               </div>
             );
           })}
-
-          {/* <div className="cards col-lg-4 col-md-12">
-            <img
-              src="https://oxpitan-gatsby.vercel.app/static/img2-0e2d4e23ddf6de2cfc3ff871784bf4b7.jpg"
-              alt=""
-            />
-            <div className="cause_card">
-              <h3>
-                <Link to="causesdetail" className="cause_title_link">
-                  They want to study
-                </Link>
-              </h3>
-              <p>Aliq is notm hendr erit a augue insu image pellen tes.</p>
-              <ul>
-                <li className="causes_list">
-                  <i class="fa-solid fa-bullseye"></i>Goal:<span>$30,000</span>
-                </li>
-                <li className="causes_list">
-                  <i class="fa-solid fa-chart-line"></i>Raised:
-                  <span>25,270</span>
-                </li>
-              </ul>
-              <Link to="donatenow" className="cause_link">
-                <button>Donate Now</button>
-              </Link>
-            </div>
-          </div>
-          <div className="cards col-lg-4 col-md-12">
-            <img
-              src="https://oxpitan-gatsby.vercel.app/static/img3-ffc5abe9fce5f841e0b668145a11f6bc.jpg"
-              alt=""
-            />
-            <div className="cause_card">
-              <h3>
-                <Link to="causesdetail" className="cause_title_link">
-                  Healthy Food for All
-                </Link>
-              </h3>
-              <p>Aliq is notm hendr erit a augue insu image pellen tes.</p>
-              <ul>
-                <li className="causes_list">
-                  <i class="fa-solid fa-bullseye"></i>Goal:<span>$30,000</span>
-                </li>
-                <li className="causes_list">
-                  <i class="fa-solid fa-chart-line"></i>Raised:
-                  <span>25,270</span>
-                </li>
-              </ul>
-              <Link to="donatenow" className="cause_link">
-                <button>Donate Now</button>
-              </Link>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
