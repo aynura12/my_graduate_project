@@ -1,6 +1,6 @@
-@import "../vendors//mixins";
+@import "../vendors/mixins.scss";
 
-.about {
+.about{
   padding: 40px 0;
   @include backcolor;
   .about_title {
@@ -56,6 +56,7 @@
     padding-bottom: 30px;
   }
 
+
   h5 {
     @include h3;
     cursor: pointer;
@@ -64,15 +65,19 @@
     border-radius: 5px;
     text-align: center;
   }
-//   h5:hover{
-//       p{
-//         display:none;
-//       }
-//     }
+
   p {
     @include text;
     text-align: center;
-   display: block;
+
+  }
   }
 }
+.block{
+    min-height: 60px;
+    overflow: hidden;
+}
+.none   {
+    height: 0;
+    overflow: hidden;
 }

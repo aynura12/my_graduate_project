@@ -65,3 +65,7 @@ app.use("/become",becomeRoute)
 
 const donateRoute=require("./routes/donateRoute")
 app.use("/donate",donateRoute)
+
+
+const aboutListRoute=require("./routes/aboutListRoute")
+app.use("/aboutList",aboutListRoute)

@@ -13,7 +13,7 @@ const Navbar1 = () => {
               <div className="bottom_left_logo d-block d-md-flex">
                 <img src={logo} alt="img" />
                 <Link
-                  className="link d-lg-block d-md-none d-sm-none d-xs-none  ms-md-4"
+                  className="link d-lg-block  d-none  ms-md-4"
                   to="/donatenow"
                 >
                   <button>DONATE NOW</button>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import HelpUs from "../components/home1/HelpUs";
@@ -6,6 +6,11 @@ import Volunteers from "../components/home1/Volunteers";
 import donationLogo from "../media/smalllogo.png";
 import "../style/about.scss";
 const About = () => {
+  const [text1,setText1]=useState(false)
+  const [text2,setText2]=useState(false)
+  const [text3,setText3]=useState(false)
+  
+
   return (
     <>
       <Helmet>
@@ -72,33 +77,22 @@ const About = () => {
               <img src={donationLogo} alt="ilogo" />
               <h3>Have any Question?</h3>
               <h6>FREQUENTLY ASKED QUESTIONS</h6>
-              <img className="about_image"
+              <img
+                className="about_image"
                 src="https://oxpitan-gatsby.vercel.app/static/faq-img-685ecd7d1075dceeaa8d482dcb00c566.jpg"
                 alt="img"
               />
             </div>
             <div className="col-lg-6 col-md-12">
-              <h5>Make a difference in the life of a child</h5>
-              <p>
-                Suspendisse finibus urna mauris, vitae consequat quam blandit
-                vel. Vestibulum leo ligula, molestie ullamcorper vulputate vitae
-                sodales commodo nisl. Nulla facilisi. Pellentesque est metus.
-                There are many variations of eration in some form.
-              </p>
-              <h5>Let’s do the right thing now</h5>
-              <p>
-                Suspendisse finibus urna mauris, vitae consequat quam blandit
-                vel. Vestibulum leo ligula, molestie ullamcorper vulputate vitae
-                sodales commodo nisl. Nulla facilisi. Pellentesque est metus.
-                There are many variations of eration in some form.
-              </p>
-              <h5>Join your hand with us for a better life</h5>
-              <p>
-                Suspendisse finibus urna mauris, vitae consequat quam blandit
-                vel. Vestibulum leo ligula, molestie ullamcorper vulputate vitae
-                sodales commodo nisl. Nulla facilisi. Pellentesque est metus.
-                There are many variations of eration in some form.
-              </p>
+              <div>
+                <h5 onClick={()=>{setText1(!text1)}}>Make a  difference in the life of a child</h5>
+                <p  className={`text ${text1? "block":"none" }`}  >
+                  Suspendisse finibus urna mauris, vitae consequat quam blandit
+                  vel. Vestibulum leo ligula, molestie ullamcorper vulputate
+                  vitae sodales commodo nisl. Nulla facilisi. Pellentesque est
+                  metus. There are many variations of eration in some form.
+                </p>
+              </div>
             </div>
           </div>
         </div>
