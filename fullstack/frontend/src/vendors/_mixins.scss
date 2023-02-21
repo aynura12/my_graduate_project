@@ -19,7 +19,7 @@
 @mixin backcolor {
   background-color: $background_color;
 }
-@mixin buttonpreparty {
+@mixin buttonpreparty{
   background-color: $buttonback_color;
   color: $button_color;
   text-transform: uppercase;

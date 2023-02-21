@@ -9,12 +9,13 @@ import HelpUs from '../components/home1/HelpUs'
 import ReadMore from '../components/home1/ReadMore'
 import Recent from '../components/home1/Recent'
 import Volunteers from '../components/home1/Volunteers'
-import Header1 from '../layout/header/Header1'
-const Home1 = () => {
+import Counter from '../layout/footer/Counter'
+import Header from '../layout/header/Header'
+const Home = () => {
   return (
     <div>
     <Helmet><title>Home</title></Helmet>
-    <Header1/>
+    <Header/>
     <ReadMore/>
     <HelpUs/>
     <Donation/>
@@ -24,8 +25,9 @@ const Home1 = () => {
     <DoHelp/>
     <Volunteers/>
     <Recent/>
+    <Counter/>
     </div>
   )
 }
 
-export default Home1
+export default Home

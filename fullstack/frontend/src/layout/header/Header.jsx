@@ -5,14 +5,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "../header/header1.scss";
+import "../header/header.scss";
 import { Link } from "react-router-dom";
 import donationLogo from "../../media/smalllogo.png";
-const Header1 = () => {
+const Header = () => {
 
   const [isPlaying,setIsPlaying]=useState(false)
   const videoRef=useRef(null)
-
   const togglePlay=()=>{
     if(isPlaying){
       videoRef.current.pause(
@@ -77,18 +76,12 @@ const Header1 = () => {
             <div className="row">
               <div className="col-lg-4">
                 <div className="header_bottom_video">
-                  <video style={{objectFit:"cover"}} ref={videoRef} width="100%"    preload="auto">
-                    <source src="https://youtu.be/-TYNA4Ztpy4" type="video/mp4"/>
-                  </video>
-                  <button className="header_video_button" onClick={togglePlay}> <i className="fa fa-play"></i></button>
-                  {/* <Link
+                  <Link
                     to="https://youtu.be/-TYNA4Ztpy4"
-                    className="header_video_link"
+                    className="header_video_link" title="Play Video"
                   >
-                    <button >
-                     
-                    </button>
-                  </Link> */}
+                   <button className="header_video_button" onClick={togglePlay}> <i className="fa fa-play"></i></button>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-8">
@@ -109,4 +102,4 @@ const Header1 = () => {
   );
 };
 
-export default Header1;
+export default Header;

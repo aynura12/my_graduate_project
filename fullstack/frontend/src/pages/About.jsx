@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import HelpUs from "../components/home1/HelpUs";
 import Volunteers from "../components/home1/Volunteers";
 import donationLogo from "../media/smalllogo.png";
-import "../style/about.scss";
+import axios from "axios";
+import "../style/about.scss"
 const About = () => {
-  const [text1,setText1]=useState(false)
-  const [text2,setText2]=useState(false)
-  const [text3,setText3]=useState(false)
-  
+  const [text,setText]=useState(false)
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    const res = await axios.get("http://localhost:8080/aboutList");
+    setData(res.data);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
@@ -84,15 +90,15 @@ const About = () => {
               />
             </div>
             <div className="col-lg-6 col-md-12">
-              <div>
-                <h5 onClick={()=>{setText1(!text1)}}>Make a  difference in the life of a child</h5>
-                <p  className={`text ${text1? "block":"none" }`}  >
-                  Suspendisse finibus urna mauris, vitae consequat quam blandit
-                  vel. Vestibulum leo ligula, molestie ullamcorper vulputate
-                  vitae sodales commodo nisl. Nulla facilisi. Pellentesque est
-                  metus. There are many variations of eration in some form.
-                </p>
-              </div>
+              {data?.map((datas)=>{
+                return( <div key={datas._id}>
+                  <h5 onClick={()=>{setText(!text)}}>{datas.title}</h5>
+                  <p  className={`text ${text? "block":"none" }`}  >
+                   {datas.text}
+                  </p>
+                </div>)
+              })}
+             
             </div>
           </div>
         </div>

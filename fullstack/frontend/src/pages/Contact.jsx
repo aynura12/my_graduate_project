@@ -8,9 +8,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../style/contact.scss";
-
 const Contact = () => {
-  const [loading, setLoading] = useState(true);
   const [state, setState] = useState({
     fullName: "",
     email: "",
@@ -201,9 +199,9 @@ const Contact = () => {
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d96753.25799868624!2d-74.077644!3d40.728157!3m2!1i1024!2i768!4f13.1!4m3!3e6!4m0!4m0!5e0!3m2!1sen!2sus!4v1676124329284!5m2!1sen!2sus"
         style={{ width: "100%", height: "100vh" }}
-        allowfullscreen=""
+        allowFullScreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
+        referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
     </>
   );

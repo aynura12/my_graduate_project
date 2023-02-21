@@ -1,14 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../layout/footer/Footer";
-import Navbar2 from "../layout/navbar/Navbar2";
+import AdminNavbar from "../layout/navbar/AdminNavbar"
+
 const AdminRouter = () => {
   return (
     <>
      
-      <Navbar2/>
+    <AdminNavbar/>
       <Outlet />
       <Footer />
+   
     </>
   );
 };

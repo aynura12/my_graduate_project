@@ -23,14 +23,14 @@ const Navbar1 = () => {
             <div className="col-lg-7 col-7 d-flex justify-content-end align-items-center">
               <ul className="bottom_lists d-none d-lg-flex justify-content-end">
                 <li className="home bottom_list">
-                  <Link to="home1" className="bottom_link">
+                  <Link to="/" className="bottom_link">
                     Home
                   </Link>
                 </li>
                 <li className="causes bottom_list">
-                  <a href="/" className="bottom_link">
+                  <Link to="causes" className="bottom_link">
                     Causes
-                  </a>
+                  </Link>
                   <ul className="causes_drop dropdown_lists">
                     <li className="bottom_list">
                       <Link to="causes" className="bottom_link">
@@ -84,9 +84,9 @@ const Navbar1 = () => {
                   </ul> */}
                 </li>
                 <li className="pages bottom_list">
-                  <a href="/" className="bottom_link">
+                  <Link to="about" className="bottom_link">
                     Pages
-                  </a>
+                  </Link>
                   <ul className="pages_drop dropdown_lists">
                     <li className="bottom_list">
                       <Link to="about" className="bottom_link">
