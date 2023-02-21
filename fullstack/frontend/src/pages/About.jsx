@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import HelpUs from "../components/home1/HelpUs";
 import Volunteers from "../components/home1/Volunteers";
 import donationLogo from "../media/smalllogo.png";
-import "../pageStyle/about.scss";
+import "../style/about.scss";
 const About = () => {
   return (
     <>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import "../pageStyle/ourteam.scss";
+import "../style/ourteam.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const OurTeam = () => {

@@ -20,14 +20,14 @@ const Recent = () => {
                 alt="help-img"
               />
               <h2>A place where start new life with peace</h2>
-              <span>MIKE HARDSON</span>
-              <span>3 COMMENTS</span>
+              {/* <span>MIKE HARDSON</span>
+              <span>3 COMMENTS</span> */}
               <p>
                 Aliq is notm hendr erit a augue insu image pellen tes que id
                 erat quis sollicitud. Lorem ipsum dolor sit amet, consectetur
                 adipiscing ullam blandit hendrerit faucibus suspendisse.
               </p>
-              <Link to="newsdetail">
+              <Link to="/news">
                 <button>READ MORE</button>
               </Link>
             </div>
@@ -79,14 +79,14 @@ const Recent = () => {
         <div className="row">
           <div className="end_left col-lg-6 col-md-12">
             <h2>Sponsor an entire trending project</h2>{" "}
-            <Link to="donatenow">
-              <button>BECOME AN SPONSOR</button>
+            <Link to="/donatenow">
+              <button>BECOME A SPONSOR</button>
             </Link>
           </div>
           <div className="end_right col-lg-6 col-md-12">
             <h2>Take a look a the popular causes</h2>
-            <Link to="donatenow">
-              <button>BECOME AN SPONSOR</button>
+            <Link to="/causes">
+              <button>view all causes</button>
             </Link>
           </div>
         </div>

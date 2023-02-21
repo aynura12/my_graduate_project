@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import "../pageStyle/volunteer.scss";
+import "../style/volunteer.scss";
 import { Link } from "react-router-dom";
 import donationLogo from "../media/smalllogo.png";
 import { useForm } from "react-hook-form";

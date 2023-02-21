@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const Volunteers = () => {
+  const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const getData = async () => {
     const res = await axios.get("http://localhost:8080/volunteer");
@@ -24,7 +25,16 @@ const Volunteers = () => {
           </div>
 
           <div className="row g-3">
-            {data?.map((datas) => {
+          <input
+            type="text"
+            placeholder="Search Name"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+            {data?.filter((d) => {
+                return search.toLowerCase() === ""
+                  ? d
+                  : d.name.toLowerCase().includes(search);
+              }).map((datas) => {
               return (
                 <div className="col-lg-3 col-md-6" key={datas._id}>
                   <div className="volunteers_card">

@@ -13,7 +13,7 @@ import Header1 from '../layout/header/Header1'
 const Home1 = () => {
   return (
     <div>
-      <Helmet><title>First Home</title></Helmet>
+    <Helmet><title>Home</title></Helmet>
     <Header1/>
     <ReadMore/>
     <HelpUs/>

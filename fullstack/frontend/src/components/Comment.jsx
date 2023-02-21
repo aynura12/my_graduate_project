@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../schema/formSchema";
 import { useState, useEffect } from "react";
-import "../pageStyle/causesdetail.scss";
+import "../style/causesdetail.scss";
 import axios from "axios";
 const Comment = () => {
   const [state, setState] = useState({

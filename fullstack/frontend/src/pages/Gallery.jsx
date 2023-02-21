@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import "../pageStyle/gallery.scss";
+import "../style/gallery.scss";
 import { Link } from "react-router-dom";
 import "animate.css";
 import { useContext } from "react";

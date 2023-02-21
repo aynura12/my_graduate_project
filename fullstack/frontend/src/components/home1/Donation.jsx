@@ -12,7 +12,7 @@ const Donation = () => {
             <h2 className="donation_title">
               Fundraising for the people and causes you care about
             </h2>
-            <Link to="donatenow" className="donation_link">
+            <Link to="/donatenow" className="donation_link">
               <button>Start Donation</button>
             </Link>
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import "../pageStyle/events.scss";
+import "../style/events.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 

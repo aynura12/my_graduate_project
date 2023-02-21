@@ -1,6 +1,5 @@
 import MainRouter from "../components/MainRouter";
 import Home1 from "../pages/Home1";
-import Home2 from "../pages/Home2";
 import Causes from "../pages/Causes";
 import CausesDetail from "../pages/CausesDetail";
 import DonateNow from "../pages/DonateNow";
@@ -35,10 +34,6 @@ const ROUTES = [
       {
         path: "home1",
         element: <Home1 />,
-      },
-      {
-        path: "home2",
-        element: <Home2 />,
       },
       {
         path: "causes",

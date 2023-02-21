@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import "../pageStyle/newsDetail.scss";
+import "../style/newsDetail.scss";
 import Comment from "../components/Comment";
 import { useState, useEffect } from "react";
 import axios from "axios";

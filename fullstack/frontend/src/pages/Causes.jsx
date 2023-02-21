@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import "../pageStyle/causes.scss";
+import "../style/causes.scss";
 import Cause from "../components/home1/Cause";
 const Causes = () => {
   return (
