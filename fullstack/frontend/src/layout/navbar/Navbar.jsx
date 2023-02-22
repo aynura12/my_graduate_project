@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../navbar/navbar.scss";
 import logo from "../../media/logo.png";
 import Modal from "./Modal";
 const Navbar1 = () => {
+  const [isNavbarSmall, setIsNavbarSmall] = useState(true);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      setIsNavbarSmall(false);
+    } else {
+      setIsNavbarSmall(true);
+    }
+  };
   return (
-    <div>
-      <div className="navbar_bottom">
+    <nav>
+      <div className={`navbar_bottom ${isNavbarSmall?"navbar-large":"navbar-small"}`}>
         <div className="container">
           <div className="row">
             <div className="col-lg-5 col-5 ">
@@ -126,7 +138,7 @@ const Navbar1 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -2,7 +2,6 @@
   width: 100%;
   background-color: rgb(242, 240, 236);
   padding: 20px 0;
- 
 }
 
 ul {
@@ -43,8 +42,7 @@ ul {
         border-radius: 2px;
         padding: 3px 3px;
         color: black;
-          font-size: 8px;
-       
+        font-size: 8px;
       }
     }
     .link:hover {
@@ -52,7 +50,6 @@ ul {
     }
   }
 }
-
 
 //Main navbar
 .navbar_bottom {
@@ -62,8 +59,7 @@ ul {
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   // position: fixed;
-  // top: 0;
- 
+
   .bottom_lists {
     display: flex;
     align-items: center;
@@ -75,7 +71,7 @@ ul {
       list-style: none;
       font-size: 16px;
       font-family: "Poppins", sans-serif;
-    
+
       .bottom_link {
         display: flex;
         align-items: center;
@@ -83,15 +79,39 @@ ul {
         text-decoration: none;
         color: rgb(129, 129, 129);
         font-weight: 600;
+        overflow: hidden;
+        &::after {
+          content: " ";
+          width: 0px;
+          height: 1px;
+          background-color: black;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: all 0s;
+        }
+        &:hover::after {
+          width: 100%;
+          transition: all 0.3s;
+        }
+
+        &::before {
+          content: " ";
+          width: 0px;
+          height: 1px;
+          background-color: black;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          transition: all 0.3s;
+          transition-delay: 0;
+        }
+        &:hover::before {
+          width: 100%;
+          transition-delay: 0.2s;
+        }
       }
     }
-    // .bottom_list:hover{
-    //   ::before{
-    //     content: "ss";
-    //     border-bottom: 1px solid black;
-    //   }
- 
-    // }
   }
 
   .bottom_left_logo {
@@ -119,11 +139,9 @@ ul {
     position: absolute;
   }
   .home:hover {
-   
     .home_drop {
       visibility: visible;
     }
-    
   }
   .causes_drop {
     visibility: hidden;
@@ -169,7 +187,20 @@ ul {
     width: 200px;
     background-color: white;
     z-index: 99;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    // animation: slideInUp;
+    // animation-duration: 2s;
+    li {
+      padding-top: 20px;
+    }
   }
+}
+.navbar-large {
+  position: sticky;
+}
+.navbar-small {
+  top: 0;
+  position: fixed;
 }
 
 //Hamburger Menu

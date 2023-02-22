@@ -27,17 +27,48 @@
   .dohelp_form {
     background-color: rgb(134, 59, 174);
     @include display;
+    padding: 70px 30px;
     h2 {
       font-size: 50px;
       font-weight: 700;
       font-family: "Playfair Display", serif;
       color: #fff;
     }
-    p{
+    p {
       font-size: 14px;
       text-transform: uppercase;
       font-weight: 600;
       color: #fff;
+    }
+    input {
+      background-color: white;
+      border: none;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      width: 80%;
+      height: 60px;
+      &::placeholder {
+        color: #818181;
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+    textarea {
+      background-color: white;
+      border: none;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      padding-top: 20px;
+      width: 80%;
+      height: 100px;
+      &::placeholder {
+        color: #818181;
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+    button{
+      @include sendButton;
     }
   }
 }

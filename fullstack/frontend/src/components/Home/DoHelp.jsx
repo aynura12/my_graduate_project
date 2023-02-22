@@ -25,7 +25,7 @@ const DoHelp = () => {
       !state.comment
     )
       return;
-    await axios.post("http://localhost:8080/donate", state);
+    await axios.post("http://localhost:8080/homedonate", state);
     setState({
       value: "",
       fullName: "",
@@ -64,7 +64,7 @@ const DoHelp = () => {
           </p>
         </div>
         <div className="col-lg-6 col-md-12">
-          <form className="dohelp_form">
+          <form className="dohelp_form" onSubmit={()=>addData()}>
             <div className="dohelp_form_title">
               <img
                 src="http://layerdrops.com/oxpitan/images/section-icon.png"
@@ -73,16 +73,59 @@ const DoHelp = () => {
               <h2>Make a Donation</h2>
               <p>DONATE US NOW</p>
             </div>
+
             <input
               type="text"
-              {...register("firstName")}
+              {...register("value")}
               onChange={handleChange}
-              value={state.firstName}
-              name="firstName"
-              placeholder="First Name..."
+              value={state.value}
+              name="value"
+              placeholder="Insert Custom Value..."
             />
-            {errors.firstName ? (
-              <span style={{ color: "red" }}>{errors.firstName.message}</span>
+            {errors.value? (
+              <span style={{ color: "red" }}>{errors.value.message}</span>
+            ) : (
+              <></>
+            )}
+
+            <input
+              type="text"
+              {...register("fullName")}
+              onChange={handleChange}
+              value={state.fullName}
+              name="fullName"
+              placeholder="Full Name..."
+            />
+            {errors.fullName ? (
+              <span style={{ color: "red" }}>{errors.fullName.message}</span>
+            ) : (
+              <></>
+            )}
+
+           
+            <input
+              type="text"
+              {...register("email")}
+              onChange={handleChange}
+              value={state.email}
+              name="email"
+              placeholder="Email Address..."
+            />
+            {errors.email ? (
+              <span style={{ color: "red" }}>{errors.email.message}</span>
+            ) : (
+              <></>
+            )}
+            <input
+              type="text"
+              {...register("location")}
+              onChange={handleChange}
+              value={state.location}
+              name="location"
+              placeholder="Location..."
+            />
+            {errors.location? (
+              <span style={{ color: "red" }}>{errors.location.message}</span>
             ) : (
               <></>
             )}
@@ -99,9 +142,8 @@ const DoHelp = () => {
             ) : (
               <></>
             )}
-            <div></div>
-
-            <button>Continue Now</button>
+        
+            <button  onChange={handleSubmit(onSubmit)}>Continue Now</button>
           </form>
         </div>
       </div>

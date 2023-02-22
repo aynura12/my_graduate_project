@@ -76,3 +76,7 @@ app.use("/counter",counterRoute)
 
 const charityRoute=require("./routes/charityRoute")
 app.use("/charity",charityRoute)
+
+
+const homeDonateRoute=require("./routes/homeDonateRoute")
+app.use("/homedonate",homeDonateRoute)
