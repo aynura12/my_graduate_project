@@ -26,35 +26,7 @@
     p {
       @include text;
     }
-    ul {
-      display: flex;
-      gap: 20px;
-      .link {
-        text-decoration: none;
-        color: white;
-      }
-      .list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        width: 50px;
-        height: 50px;
-        clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
-      }
-      .list1 {
-        background-color: rgb(80, 186, 195);
-      }
-      .list2 {
-        background-color: rgb(18, 15, 223);
-      }
-      .list3 {
-        background-color: rgb(227, 105, 85);
-      }
-      .list4 {
-        background-color: rgb(134, 59, 174);
-      }
-    }
+ 
   }
   .form {
     padding: 30px 0;

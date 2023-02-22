@@ -6,6 +6,7 @@ import Comment from "../components/Comment";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
 
 const NewsDetail = () => {
   const {id}=useParams()
@@ -78,38 +79,7 @@ const NewsDetail = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="tags_right">
-                  <ul>
-                    <li>
-                      <a href="/">
-                        <div>
-                          <i className="icon1 fa-brands fa-twitter"></i>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <div>
-                          <i className="icon2 fa-brands fa-facebook-f"></i>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <div>
-                          <i className="icon3 fa-brands fa-pinterest"></i>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <div>
-                          <i className="icon4 fa-brands fa-instagram"></i>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+              <ConnectIcon/>
               </div>
               <div className="detail_comment_top">
                 <img

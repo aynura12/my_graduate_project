@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Comment from "../components/Comment";
 import { format } from "date-fns";
+import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
 const CausesDetail = () => {
   const [recent, setRecent] = useState([]);
   const [cause, setCause] = useState([]);
@@ -151,36 +152,7 @@ const CausesDetail = () => {
 
               <div className="recent_donations_connect">
                 <h2>Share Cause</h2>
-                <ul>
-                  <li>
-                    <a href="/">
-                      <div>
-                        <i className="icon1 fa-brands fa-twitter"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <div>
-                        <i className="icon2 fa-brands fa-facebook-f"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <div>
-                        <i className="icon3 fa-brands fa-pinterest"></i>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <div>
-                        <i className="icon4 fa-brands fa-instagram"></i>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
+             <ConnectIcon/>
               </div>
             </div>
           </div>

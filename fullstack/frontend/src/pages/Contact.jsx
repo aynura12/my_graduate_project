@@ -8,6 +8,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../style/contact.scss";
+import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
 const Contact = () => {
   const [state, setState] = useState({
     fullName: "",
@@ -74,36 +75,7 @@ const Contact = () => {
                 amet, consectetur adipiscing ullam blandit hendrerit faucibus
                 suspendisse.
               </p>
-              <ul>
-                <li className="list1 list">
-                  <a href="/" className="link">
-                    <div>
-                      <i className="fa-brands fa-twitter"></i>
-                    </div>
-                  </a>
-                </li>
-                <li className="list2 list">
-                  <a href="/" className="link">
-                    <div>
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </div>
-                  </a>
-                </li>
-                <li className="list3 list">
-                  <a href="/" className="link">
-                    <div>
-                      <i className="fa-brands fa-pinterest"></i>
-                    </div>
-                  </a>
-                </li>
-                <li className="list4 list">
-                  <a href="/" className="link">
-                    <div>
-                      <i className="fa-brands fa-instagram"></i>
-                    </div>
-                  </a>
-                </li>
-              </ul>
+           <ConnectIcon/>
             </div>
             <div className="col-lg-6 col-md-12">
               <form onSubmit={handleSubmit(onSubmit)} className="form">

@@ -9,7 +9,6 @@ import HelpUs from '../components/home1/HelpUs'
 import ReadMore from '../components/home1/ReadMore'
 import Recent from '../components/home1/Recent'
 import Volunteers from '../components/home1/Volunteers'
-import Counter from '../layout/footer/Counter'
 import Header from '../layout/header/Header'
 const Home = () => {
   return (
@@ -25,7 +24,7 @@ const Home = () => {
     <DoHelp/>
     <Volunteers/>
     <Recent/>
-    <Counter/>
+ 
     </div>
   )
 }

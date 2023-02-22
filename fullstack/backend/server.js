@@ -69,3 +69,7 @@ app.use("/donate",donateRoute)
 
 const aboutListRoute=require("./routes/aboutListRoute")
 app.use("/aboutList",aboutListRoute)
+
+
+const counterRoute=require("./routes/counterRoute")
+app.use("/counter",counterRoute)
