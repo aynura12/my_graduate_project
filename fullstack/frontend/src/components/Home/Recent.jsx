@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../home1/recent.scss";
+import "../Home/recent.scss";
 import donationLogo from "../../media/smalllogo.png";
 
 const Recent = () => {

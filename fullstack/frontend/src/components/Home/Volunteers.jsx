@@ -1,5 +1,5 @@
 import React from "react";
-import "../home1/volunteers.scss";
+import "../Home/volunteers.scss";
 import donationLogo from "../../media/smalllogo.png";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";

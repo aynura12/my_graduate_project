@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../home1/cause.scss";
+import "../Home/cause.scss";
 import donationLogo from "../../media/smalllogo.png";
 import { useState, useEffect } from "react";
 import axios from "axios";

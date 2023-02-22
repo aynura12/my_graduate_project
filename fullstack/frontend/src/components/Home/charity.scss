@@ -1,8 +1,12 @@
 .charity {
+  .charity_left_area{
+    padding: 90px 70px;
+  }
   .charity_left {
     display: flex;
-    border-bottom: 1px solid rgb(242, 240, 236);
-    padding-top: 100px;
+    border-bottom: 2px solid rgb(242, 240, 236);
+    padding: 30px 50px;
+  
     .charity_left_icon {
       padding-right: 20px;
       i {
@@ -26,8 +30,8 @@
     }
   }
   .charity_right {
-    background-color: rgb(227, 105, 85);
-    padding: 70px 100px;
+    height: 500px;
+    padding: 70px 70px ;
     h3 {
       font-family: Playfair Display, serif;
       max-width: 600px;
@@ -40,6 +44,11 @@
       color: #424242;
       font-weight: 600;
       text-transform: uppercase;
+    }
+    i{
+      color: white;
+      font-size: 60px;
+      
     }
   }
 }

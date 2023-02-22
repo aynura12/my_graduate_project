@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../style/causes.scss";
-import Cause from "../components/home1/Cause";
+import Cause from "../components/Home/Cause";
 const Causes = () => {
   return (
     <>

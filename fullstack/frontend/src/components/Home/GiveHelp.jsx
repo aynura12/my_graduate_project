@@ -1,5 +1,5 @@
 import React from "react";
-import "../home1/givehelp.scss";
+import "../Home/givehelp.scss";
 import donationLogo from "../../media/smalllogo.png";
 const GiveHelp = () => {
   return (

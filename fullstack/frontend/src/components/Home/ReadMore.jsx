@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../home1/readmore.scss";
+import "../Home/readmore.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const ReadMore = () => {

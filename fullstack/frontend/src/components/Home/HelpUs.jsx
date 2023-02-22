@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../home1/helpus.scss";
+import "../Home/helpus.scss";
 const HelpUs = () => {
   return (
     <div className="help_us">

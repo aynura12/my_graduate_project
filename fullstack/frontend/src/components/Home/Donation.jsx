@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../home1/donation.scss";
+import "../Home/donation.scss";
 import donationLogo from "../../media/smalllogo.png";
 const Donation = () => {
   return (

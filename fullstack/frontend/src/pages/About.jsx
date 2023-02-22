@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import HelpUs from "../components/home1/HelpUs";
-import Volunteers from "../components/home1/Volunteers";
+import HelpUs from "../components/Home/HelpUs";
+import Volunteers from "../components/Home/Volunteers";
 import donationLogo from "../media/smalllogo.png";
 import axios from "axios";
 import "../style/about.scss"
