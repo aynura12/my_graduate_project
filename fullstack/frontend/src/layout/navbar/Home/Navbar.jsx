@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../navbar/navbar.scss";
-import logo from "../../media/logo.png";
-import Modal from "./Modal";
+import "../Home/navbar.scss"
+import HomeHamburgerMenu from "./HomeHamburgerMenu";
 const Navbar1 = () => {
   const [isNavbarSmall, setIsNavbarSmall] = useState(true);
   useEffect(() => {
@@ -23,7 +22,7 @@ const Navbar1 = () => {
           <div className="row">
             <div className="col-lg-5 col-5 ">
               <div className="bottom_left_logo d-block d-md-flex">
-                <img src={logo} alt="img" />
+                <img  src="http://layerdrops.com/oxpitan/images/logo.png" alt="img" />
                 <Link
                   className="link d-lg-block  d-none  ms-md-4"
                   to="/donatenow"
@@ -133,7 +132,7 @@ const Navbar1 = () => {
                   </Link>
                 </li>
               </ul>
-              <Modal />
+           <HomeHamburgerMenu/>
             </div>
           </div>
         </div>

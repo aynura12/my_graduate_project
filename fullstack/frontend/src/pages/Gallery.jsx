@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "animate.css";
 import { useContext } from "react";
 import { mainContext } from "../Context/ContextProvider";
+import ReplyModal from "../components/ReplyModal/ReplyModal";
 // import axios  from "axios"
 const Gallery = () => {
   const { data } = useContext(mainContext);
@@ -44,6 +45,7 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+      <ReplyModal/>
     </>
   );
 };

@@ -1,0 +1,49 @@
+.admin_navbar {
+  width: 100%;
+  padding: 30px 0;
+  background-color:  hsl(0, 0%, 100%);
+  .admin_lists {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    li {
+      position: relative;
+      list-style: none;
+      font-size: 16px;
+      font-family: "Poppins", sans-serif;
+      #admin_link {
+        text-decoration: none;
+        text-decoration: none;
+        color: rgb(129, 129, 129);
+        font-weight: 550;
+
+      }
+      #admin_link:hover{
+        color: rgb(236, 152, 67);
+        font-size: 17px;
+      }
+    }
+  }
+}
+.admin-large {
+    position: sticky;
+  }
+  .admin-small {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    top: 0;
+    position: fixed;
+    z-index: 11;
+  }
+
+  .hamburger_admin_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background-color: rgb(207, 206, 206);
+  }
+  .hamburger_admin_icon:hover {
+    transition: 0.5s;
+    background-color: orangered;
+    color: white;
+  }
