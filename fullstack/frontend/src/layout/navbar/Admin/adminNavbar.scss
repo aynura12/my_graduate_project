@@ -1,7 +1,7 @@
 .admin_navbar {
   width: 100%;
   padding: 30px 0;
-  background-color:  hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
   .admin_lists {
     display: flex;
     align-items: center;
@@ -16,9 +16,8 @@
         text-decoration: none;
         color: rgb(129, 129, 129);
         font-weight: 550;
-
       }
-      #admin_link:hover{
+      #admin_link:hover {
         color: rgb(236, 152, 67);
         font-size: 17px;
       }
@@ -26,24 +25,88 @@
   }
 }
 .admin-large {
-    position: sticky;
-  }
-  .admin-small {
+  position: sticky;
+}
+.admin-small {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    top: 0;
-    position: fixed;
-    z-index: 11;
-  }
+  top: 0;
+  position: fixed;
+  z-index: 11;
+}
 
-  .hamburger_admin_icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hamburger_admin_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background-color: rgb(207, 206, 206);
+}
+.hamburger_admin_icon:hover {
+  transition: 0.5s;
+  background-color: orangered;
+  color: white;
+}
+
+.sidebar_menu {
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow-y: scroll;
+  z-index: 11;
+  .close-icon {
+    color: #535353;
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #535353;
     border-radius: 3px;
-    background-color: rgb(207, 206, 206);
   }
-  .hamburger_admin_icon:hover {
-    transition: 0.5s;
-    background-color: orangered;
+  &::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.171);
+  }
+  li {
+    list-style: none;
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  .show-list {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      &:hover {
+        color: #ff7607;
+        transition: 0.5s;
+      }
+    }
+  }
+  button {
+    text-transform: uppercase;
+    font-family: Poppins, sans-serif;
+    background-color: rgb(227, 105, 85);
     color: white;
+    border: none;
+    font-size: 11px;
+    font-weight: 700;
+    height: 40px;
+    width: 120px;
+    padding: 10px 10px;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
   }
+}
+
+.menu-hide {
+  width: 0;
+  transition: all 0.5s;
+}
+.menu-show {
+  width: 300px;
+  transition: all 0.5s;
+}
