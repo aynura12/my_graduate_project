@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import "../style/gallery.scss";
 import { Link } from "react-router-dom";
@@ -9,6 +9,7 @@ import ReplyModal from "../components/ReplyModal/ReplyModal";
 // import axios  from "axios"
 const Gallery = () => {
   const { data } = useContext(mainContext);
+  const [color,setColor]=useState(false)
   return (
     <>
       <Helmet>
