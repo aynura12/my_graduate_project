@@ -23,7 +23,7 @@ const AdminHamburgerMenu = () => {
             setMenu(false);
           }}
         >
-          <i class="close-icon fa-solid fa-xmark"></i>
+          <i className="close-icon fa-solid fa-xmark"></i>
         </div>
         <ul className="px-3">
           <Link to="/admin" id="admin_link">

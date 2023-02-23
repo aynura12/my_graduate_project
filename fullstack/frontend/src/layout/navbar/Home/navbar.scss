@@ -287,13 +287,13 @@ ul {
 //   }
 // }
 .sidebar_menu {
-  height: 100vh;
+  height: auto;
   background-color: black;
   position: absolute;
   top: 0;
   right: 0;
   overflow-y: scroll;
-  z-index: 11;
+  z-index: 100;
   .close-icon{
     color:#535353 ;
   }

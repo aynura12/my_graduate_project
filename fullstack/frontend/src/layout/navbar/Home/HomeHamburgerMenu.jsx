@@ -24,7 +24,7 @@ const HomeHamburgerMenu = () => {
             setMenu(false);
           }}
         >
-          <i class="close-icon fa-solid fa-xmark"></i>
+          <i className="close-icon fa-solid fa-xmark"></i>
         </div>
         <ul className="px-3">
           <li className="py-3" >
@@ -35,7 +35,7 @@ const HomeHamburgerMenu = () => {
               {" "}
               <Link to="causes">Causes</Link>
               <i
-                class="text-light fa-solid fa-plus"
+                className="text-light fa-solid fa-plus"
                 onClick={() => {
                   setCause(!cause);
                 }}
