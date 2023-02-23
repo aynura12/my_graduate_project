@@ -76,6 +76,8 @@ const Recent = () => {
       </section>
 
       <section className="home_end">
+        <div className="container-fluid">
+
         <div className="row">
           <div className="end_left col-lg-6 col-md-12">
             <h2>Sponsor an entire trending project</h2>{" "}
@@ -90,6 +92,8 @@ const Recent = () => {
             </Link>
           </div>
         </div>
+        </div>
+
       </section>
     </>
   );

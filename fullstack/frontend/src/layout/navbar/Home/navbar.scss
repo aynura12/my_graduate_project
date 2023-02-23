@@ -1,3 +1,5 @@
+@import "../../../vendors/mixins";
+
 .navbar_top {
   width: 100%;
   background-color: rgb(242, 240, 236);
@@ -188,8 +190,7 @@ ul {
     background-color: white;
     z-index: 99;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    // animation: slideInUp;
-    // animation-duration: 2s;
+
     li {
       padding-top: 20px;
     }
@@ -210,6 +211,7 @@ ul {
   justify-content: center;
   border-radius: 3px;
   background-color: rgb(207, 206, 206);
+  cursor: pointer;
 }
 .hamburger_icon:hover {
   transition: 0.5s;
@@ -217,70 +219,151 @@ ul {
   color: white;
 }
 
-.modal-content {
+// .modal-content {
+//   background-color: black;
+//   .btn-close {
+//     background-color: aliceblue;
+//   }
+//   .modal_list {
+//     list-style: none;
+//   }
+//   .modal_link {
+//     text-decoration: none;
+//     color: rgb(223, 223, 223);
+//   }
+//   .modal_link:hover {
+//     color: rgb(255, 113, 61);
+//   }
+//   .modal_button {
+//     border: none;
+//     font-family: "Poppins", sans-serif;
+//     font-size: 12px;
+//     background-color: rgb(227, 105, 85);
+//     color: white;
+//     width: 150px;
+//     height: 40px;
+//     clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
+//   }
+//   .modal_button:hover {
+//     background-color: #f1ae44;
+//   }
+
+//   .modal_contact_list {
+//     display: flex;
+//     gap: 20px;
+//     padding-bottom: 20px;
+//     padding-top: 20px;
+//   }
+//   .list1 {
+//     text-decoration: none;
+//     color: white;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 15px;
+//     padding: 10px 10px;
+//     background-color: rgb(80, 186, 195);
+//   }
+//   .list2 {
+//     text-decoration: none;
+//     color: white;
+//     font-size: 15px;
+//     padding: 10px 10px;
+//     background-color: rgb(227, 105, 85);
+//   }
+//   .list3 {
+//     text-decoration: none;
+//     color: white;
+//     font-size: 15px;
+//     padding: 10px 10px;
+//     background-color: rgb(241, 174, 68);
+//   }
+//   .list4 {
+//     text-decoration: none;
+//     color: white;
+//     font-size: 15px;
+//     padding: 10px 10px;
+//     background-color: rgb(135, 60, 174);
+//   }
+// }
+.sidebar_menu {
+  height: 100vh;
   background-color: black;
-  .btn-close {
-    background-color: aliceblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow-y: scroll;
+  z-index: 11;
+  .close-icon{
+    color:#535353 ;
   }
-  .modal_list {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #535353;
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.171);
+  }
+  li {
     list-style: none;
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
-  .modal_link {
-    text-decoration: none;
-    color: rgb(223, 223, 223);
-  }
-  .modal_link:hover {
-    color: rgb(255, 113, 61);
-  }
-  .modal_button {
-    border: none;
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    background-color: rgb(227, 105, 85);
-    color: white;
-    width: 150px;
-    height: 40px;
-    clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
-  }
-  .modal_button:hover {
-    background-color: #f1ae44;
+  .show-list{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    a{
+      color: rgba(255, 255, 255, 0.7);
+      &:hover{
+        color: #ff7607;
+        transition: .5s;
+      }
+      }
+    }
+    button{
+      text-transform: uppercase;
+      font-family: Poppins, sans-serif;
+      background-color:rgb(227,105,85);
+      color: white;
+      border: none;
+      font-size: 11px;
+      font-weight: 700;
+      height: 40px;
+      width: 120px;
+      padding: 10px 10px;
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    }
   }
 
-  .modal_contact_list {
-    display: flex;
-    gap: 20px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-  }
-  .list1 {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    padding: 10px 10px;
-    background-color: rgb(80, 186, 195);
-  }
-  .list2 {
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-    padding: 10px 10px;
-    background-color: rgb(227, 105, 85);
-  }
-  .list3 {
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-    padding: 10px 10px;
-    background-color: rgb(241, 174, 68);
-  }
-  .list4 {
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-    padding: 10px 10px;
-    background-color: rgb(135, 60, 174);
-  }
+.menu-hide {
+  width: 0;
+  transition: all 0.5s;
+}
+.menu-show {
+  width: 300px;
+  transition: all 0.5s;
+}
+
+.cause-hide {
+  height: 0;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.cause-show {
+  height: auto;
+}
+
+.page-hide {
+  height: 0;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.page-show {
+  height: auto;
 }

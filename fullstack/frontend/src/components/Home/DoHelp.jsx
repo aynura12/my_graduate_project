@@ -47,7 +47,7 @@ const DoHelp = () => {
   });
   return (
     <div className="dohelp">
-      <div className="row">
+      <div className="container-fluid"><div className="row">
         <div className="col-lg-6 col-md-12">
           <img
             src="https://oxpitan-gatsby.vercel.app/static/helping-img-549e82105b5ffb59be5191a04a18fb83.jpg"
@@ -146,7 +146,8 @@ const DoHelp = () => {
             <button  onChange={handleSubmit(onSubmit)}>Continue Now</button>
           </form>
         </div>
-      </div>
+      </div></div>
+      
     </div>
   );
 };
