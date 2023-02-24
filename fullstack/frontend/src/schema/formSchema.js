@@ -24,7 +24,7 @@ export const formSchema = yup
     value:yup.string("Pls enter string text").required("This field must not be left blank"),
     location:yup.string("Pls enter string text").required("This field must not be left blank"),
 
-
+    
 
 
 

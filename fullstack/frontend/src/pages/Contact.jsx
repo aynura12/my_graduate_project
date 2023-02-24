@@ -87,7 +87,7 @@ const Contact = () => {
                     value={state.fullName}
                     name="fullName"
                     placeholder="Full Name..."
-                  />
+                  /> <br />
                   {errors.fullName ? (
                     <span style={{ color: "red" }}>
                       {errors.fullName.message}
@@ -117,7 +117,7 @@ const Contact = () => {
                   value={state.number}
                   name="number"
                   placeholder="Phone number..."
-                />
+                /> 
                 {errors.number ? (
                   <span style={{ color: "red" }}>{errors.number.message}</span>
                 ) : (
@@ -161,7 +161,7 @@ const Contact = () => {
             </div>
             <div className="col-lg-4 col-md-12">
               <div className="contact_number">  <h2>Contact</h2>
-              <a href="http://layerdrops.com/oxpitan/team.html" style={{textDecoration:"none"}}> <p>needhelp@oxpitan.com </p></a>
+              <a href="https://preview.themeforest.net/item/oxpitan-gatsby-react-nonprofit-charity-template/full_screen_preview/30017712" style={{textDecoration:"none"}}> <p>needhelp@oxpitan.com </p></a>
               <p>666 888 000</p></div>
             
             </div>

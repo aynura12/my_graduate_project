@@ -7,7 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 const Donate = () => {
   const [state, setState] = useState({
-    money: "",
+    money: 0,
     firstName: "",
     lastName: "",
     email: "",
@@ -43,7 +43,7 @@ const Donate = () => {
       return;
     await axios.post("http://localhost:8080/donate", state);
     setState({
-      money: "",
+      money: 0,
       firstName: "",
       lastName: "",
       email: "",
@@ -70,7 +70,7 @@ const Donate = () => {
     resolver: yupResolver(formSchema),
   });
   return (
-    <form className="donate" >
+    <form className="donate"  >
       <div className="your_donation">
         <h2>Enter Your Donation</h2>
 
@@ -276,7 +276,7 @@ const Donate = () => {
           </select> */}
         </div>
       </div>
-      <button onChange={handleSubmit(onSubmit)}>Donate now</button>
+      <button onChange={ handleSubmit(onSubmit)}>Donate now</button>
     </form>
   );
 };
