@@ -2,7 +2,8 @@
 .connect_icon {
     ul {
       display: flex;
-      gap: 20px;
+      gap: 15px;
+      // flex-wrap: wrap;
       li {
         list-style: none;
         a {

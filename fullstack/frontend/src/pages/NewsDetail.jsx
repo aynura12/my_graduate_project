@@ -9,17 +9,16 @@ import { useParams } from "react-router-dom";
 import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
 
 const NewsDetail = () => {
-  const {id}=useParams()
+  const { id } = useParams();
   const [news, setNews] = useState([]);
   const getNews = async () => {
-    const res = await axios.get(`http://localhost:8080/news/`+id);
+    const res = await axios.get(`http://localhost:8080/news/` + id);
     setNews(res.data);
   };
   useEffect(() => {
-   
-    getNews()
+    getNews();
   }, []);
- 
+
   return (
     <>
       <Helmet>
@@ -43,43 +42,43 @@ const NewsDetail = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 col-md-12">
-              <div className="detail_card_image" >
-                <span style={{backgroundColor:news.color}}>26 FEB,2019</span>
-                <img
-                  src={news.image}
-                  alt="img"
-                />
+              <div className="detail_card_image">
+                <span style={{ backgroundColor: news.color }}>26 FEB,2019</span>
+                <img src={news.image} alt="img" />
               </div>
               <div className="detail_card_title">
                 <h2>{news.title}</h2>
-                
-                <p>
-                 {news.detailText}
-                </p>
-               
+
+                <p>{news.detailText}</p>
               </div>
-              <div className="detail_tags">
-                <div className="tags_left">
+              <div className="row detail_tags ">
+                <div className="col-12 col-md-1">
                   <span>Tags</span>
-                  <ul>
-                    <li>
-                      <Link to="/" className="left_link">
-                        Charity
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/" className="left_link">
-                        POOR
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/" className="left_link">
-                        Love
-                      </Link>
-                    </li>
-                  </ul>
                 </div>
-              <ConnectIcon/>
+                <div className="col-12 col-md-6 ">
+                  <div className="tags_left">
+                    <ul>
+                      <li>
+                        <Link to="/" className="left_link">
+                          Charity
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/" className="left_link">
+                          POOR
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/" className="left_link">
+                          Love
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="row col-12 col-md-5">
+                  <ConnectIcon />
+                </div>
               </div>
               <div className="detail_comment_top">
                 <img
@@ -98,14 +97,10 @@ const NewsDetail = () => {
               <Comment />
             </div>
             <div className="news_right col-lg-4 col-md-12" key={news._id}>
-             
               <div className="recent_posts">
                 <h3> Recent Posts</h3>
                 <div className="post">
-                  <img
-                    src={news.detailImage}
-                    alt="img"
-                  />
+                  <img src={news.detailImage} alt="img" />
                   <div>
                     {" "}
                     <h4>{news.detailTitle}</h4>

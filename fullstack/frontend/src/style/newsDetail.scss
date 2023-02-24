@@ -38,32 +38,35 @@
     }
   }
   .detail_tags {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid rgb(242, 240, 236);
+    // display: flex;
+    // justify-content: space-between;
+    // border-bottom: 2px solid rgb(242, 240, 236);
     padding: 30px 0;
-    @media (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
-      .tags_right {
-        padding-top: 20px;
-        display: flex;
-        align-items: center;
-        margin-left: 60px;
-      }
+    // @media (max-width: 768px) {
+    //   display: flex;
+    //   flex-direction: column;
+    //   .tags_right {
+    //     padding-top: 20px;
+    //     display: flex;
+    //     align-items: center;
+    //     margin-left: 60px;
+    //   }
+    // }
+    
+    span {
+      @include h3;
     }
     .tags_left {
-      display: flex;
-      align-items: center;
-      span {
-        @include h3;
-      }
+      max-width: 100%;
+    
       ul {
         display: flex;
+        flex-wrap: wrap;
+        // justify-content: space-between;
         li {
           list-style: none;
-          margin-right: 5px;
-          margin-left: 10px;
+          margin-bottom: 20px;
+
           .left_link {
             text-decoration: none;
             @include sendButton;

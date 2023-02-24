@@ -106,18 +106,21 @@ const Volunteer = () => {
                 <i className="fa-solid fa-check"></i> Dius lorem tincidunt vixat
               </p>
               <div className="become_contact">
-                <div>
+                <div className="row text-center text-md-start">
+                <div className="col-12 col-md-6 ">
                   <h4>Call us</h4>
                   <span>
                     <a href="/">666 888 0000</a>
                   </span>
                 </div>
-                <div>
+                <div className="col-12 col-md-6 ">
                   <h4>Send email</h4>
                   <span>
                     <a href="/">needhelp@oxpitan.com</a>
                   </span>
                 </div>
+                </div>
+               
               </div>
             </div>
             <div className="col-lg-6 col-md-12">

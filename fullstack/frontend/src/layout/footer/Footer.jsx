@@ -6,20 +6,28 @@ const Footer = () => {
   return (
     <section id="footer">
       <div className="container">
-        <div className="footer_title">
-          <img
-            src="http://layerdrops.com/oxpitan/images/section-icon.png"
-            alt="img"
-          />
-          <h2>Newsletter</h2>
-          <p>STAY UPDATED</p>
-          <div id="footer_form">
-            <input type="email" placeholder="Email address" />{" "}
-            <button>Subcribe</button>
+        <div className="row">
+          <div className="footer_title">
+            <img
+              src="http://layerdrops.com/oxpitan/images/section-icon.png"
+              alt="img"
+            />
+            <h2>Newsletter</h2>
+            <p>STAY UPDATED</p>
+          </div>
+        </div>
+        <div id="footer_form">
+          <div className="row">
+            <div className="col-12 col-md-8 text-center py-2">
+              <input type="email" placeholder="Email address" />
+            </div>
+            <div className="col-12 col-md-4 text-center py-2">
+              <button>Subcribe</button>
+            </div>
           </div>
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-6 col-md-4 col-lg-2 py-2" >
             <h3>About</h3>
             <ul>
               <li>
@@ -49,7 +57,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col">
+          <div className="col-6 col-md-4 col-lg-2 py-2">
             <h3>Explore</h3>
             <ul>
               <li>
@@ -79,7 +87,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col">
+          <div className="col-6 col-md-4 col-lg-2 py-2">
             <h3>Links</h3>
             <ul className="footer_list">
               <li>
@@ -104,7 +112,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col">
+          <div className="col-6 col-md-4 col-lg-2 py-2">
             <h3>Blog</h3>
             <ul>
               <li>
@@ -129,7 +137,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col">
+          <div className="col-6 col-md-4 col-lg-2 py-2">
             <h3>Contact</h3>
             <ul>
               <li>
