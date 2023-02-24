@@ -98,3 +98,41 @@
     background-color: rgb(80, 186, 195);
   }
 
+#join{
+  padding: 70px 0;
+  background-color: #f1ae44;
+
+ .join_title{
+  @include display;
+  text-align: center;
+ }
+  h3{
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 70px;
+    margin-bottom: 18px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+  }
+  p{
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 52px;
+    letter-spacing: 0.1px;
+  }
+  button{
+    text-transform: uppercase;
+    background-color: #424242;
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 30px 0 35px;
+    line-height: 49px;
+   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+
+    
+  }
+}

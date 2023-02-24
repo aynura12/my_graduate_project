@@ -35,13 +35,12 @@ const OurTeam = () => {
       </div>
       <section className="our_team">
         <div className="container">
-        
           <div className=" row">
-          <input
-            type="text"
-            placeholder="Search Name"
-            onChange={(e) => setSearch(e.target.value)}
-          />
+            <input
+              type="text"
+              placeholder="Search Name"
+              onChange={(e) => setSearch(e.target.value)}
+            />
             {data
               ?.filter((d) => {
                 return search.toLowerCase() === ""
@@ -98,6 +97,20 @@ const OurTeam = () => {
                   </div>
                 );
               })}
+          </div>
+        </div>
+      </section>
+      <section id="join">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <div className="join_title"><h3>Become an Volunteer</h3>
+              <p>JOIN YOUR HAND WITH US FOR A BETTER LIFE AND FUTURE</p>
+              <Link to="/volunteer">
+                <button> Join Us Now</button>{" "}
+              </Link></div>
+              
+            </div>
           </div>
         </div>
       </section>

@@ -4,31 +4,33 @@ import { Link } from "react-router-dom";
 import HelpUs from "../components/Home/HelpUs";
 import Volunteers from "../components/Home/Volunteers";
 import donationLogo from "../media/smalllogo.png";
-import axios from "axios";
-import "../style/about.scss"
+import "../style/_about.scss"
 const About = () => {
-  const [text,setText]=useState(false)
-  const [data, setData] = useState([]);
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/aboutList");
-    setData(res.data);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+  const [text1, setText1] = useState(false);
+  const [text2, setText2] = useState(false);  
+  const [text3, setText3] = useState(false);
+
+  // const [data, setData] = useState([]);
+  // const getData = async () => {
+  //   const res = await axios.get("http://localhost:8080/aboutList");
+  //   setData(res.data);
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <>
       <Helmet>
         <title>About</title>
       </Helmet>
-      <section className="about">
+      <section className="abouts">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="about_title">
                 <h2>About</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>
@@ -90,15 +92,61 @@ const About = () => {
               />
             </div>
             <div className="col-lg-6 col-md-12">
-              {data?.map((datas)=>{
-                return( <div key={datas._id}>
-                  <h5 onClick={()=>{setText(!text)}}>{datas.title}</h5>
-                  <p  className={`text ${text? "block":"none" }`}  >
-                   {datas.text}
-                  </p>
-                </div>)
-              })}
-             
+              <div>
+                <div className="d-flex justify-content-between px-4  py-4" style={{backgroundColor:"white"}}>
+                  <h5>Make a difference in the life of a child</h5>
+                  <i
+                    class="py-1 fa-solid fa-plus"
+                    onClick={() => {
+                      setText1(!text1);
+                    }}
+                  ></i>
+                </div>
+
+                <p className={`px-4 text1 ${text1 ? "block" : "none"}`}>
+                  Suspendisse finibus urna mauris, vitae consequat quam blandit
+                  vel. Vestibulum leo ligula, molestie ullamcorper vulputate
+                  vitae sodales commodo nisl. Nulla facilisi. Pellentesque est
+                  metus. There are many variations of eration in some form.s
+                </p>
+              </div>
+              <div>
+                <div className="d-flex justify-content-between px-4  py-4" style={{backgroundColor:"white"}}>
+                  <h5>Let’s do the right thing now</h5>
+                  <i
+                    class="py-1 fa-solid fa-plus"
+                    onClick={() => {
+                      setText2(!text2);
+                    }}
+                  ></i>
+                </div>
+
+                <p className={`px-4 text2 ${text2 ? "block" : "none"}`}>
+                  Suspendisse finibus urna mauris, vitae consequat quam blandit
+                  vel. Vestibulum leo ligula, molestie ullamcorper vulputate
+                  vitae sodales commodo nisl. Nulla facilisi. Pellentesque est
+                  metus. There are many variations of eration in some form.s
+                </p>
+              </div>
+              <div>
+                <div className="d-flex justify-content-between px-4  py-4" style={{backgroundColor:"white"}}>
+                  {" "}
+                  <h5>Join your hand with us for a better life</h5>
+                  <i
+                    class="py-1 fa-solid fa-plus"
+                    onClick={() => {
+                      setText3(!text3);
+                    }}
+                  ></i>
+                </div>
+
+                <p className={`px-4 text3 ${text3 ? "block" : "none"}`}>
+                  Suspendisse finibus urna mauris, vitae consequat quam blandit
+                  vel. Vestibulum leo ligula, molestie ullamcorper vulputate
+                  vitae sodales commodo nisl. Nulla facilisi. Pellentesque est
+                  metus. There are many variations of eration in some form.s
+                </p>
+              </div>
             </div>
           </div>
         </div>
