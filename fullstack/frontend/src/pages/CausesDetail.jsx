@@ -9,6 +9,13 @@ import Comment from "../components/Comment";
 import { format } from "date-fns";
 import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
 const CausesDetail = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   const [recent, setRecent] = useState([]);
   const [cause, setCause] = useState([]);
   const [search, setSearch] = useState("");
@@ -152,7 +159,7 @@ const CausesDetail = () => {
 
               <div className="recent_donations_connect">
                 <h2>Share Cause</h2>
-             <ConnectIcon/>
+                <ConnectIcon />
               </div>
             </div>
           </div>

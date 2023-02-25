@@ -5,6 +5,13 @@ import "../style/news.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 const News = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   const [data, setData] = useState([]);
   const getData = async () => {
     const res = await axios.get("http://localhost:8080/news");

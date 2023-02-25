@@ -49,7 +49,7 @@ const Charity = () => {
   });
   return (
     <div className="charity">
-      <div>
+      <div className="container">
         <div className="row g-0">
           <div className="charity_left_area col-lg-6 col-md-12">
             {data.map((datas) => {

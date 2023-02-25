@@ -4,10 +4,17 @@ import { Link } from "react-router-dom";
 import HelpUs from "../components/Home/HelpUs";
 import Volunteers from "../components/Home/Volunteers";
 import donationLogo from "../media/smalllogo.png";
-import "../style/_about.scss"
+import "../style/_about.scss";
 const About = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   const [text1, setText1] = useState(false);
-  const [text2, setText2] = useState(false);  
+  const [text2, setText2] = useState(false);
   const [text3, setText3] = useState(false);
 
   // const [data, setData] = useState([]);
@@ -93,7 +100,10 @@ const About = () => {
             </div>
             <div className="col-lg-6 col-md-12">
               <div>
-                <div className="d-flex justify-content-between px-4  py-4" style={{backgroundColor:"white"}}>
+                <div
+                  className="d-flex justify-content-between px-4  py-4"
+                  style={{ backgroundColor: "white" }}
+                >
                   <h5>Make a difference in the life of a child</h5>
                   <i
                     class="py-1 fa-solid fa-plus"
@@ -111,7 +121,10 @@ const About = () => {
                 </p>
               </div>
               <div>
-                <div className="d-flex justify-content-between px-4  py-4" style={{backgroundColor:"white"}}>
+                <div
+                  className="d-flex justify-content-between px-4  py-4"
+                  style={{ backgroundColor: "white" }}
+                >
                   <h5>Let’s do the right thing now</h5>
                   <i
                     class="py-1 fa-solid fa-plus"
@@ -129,7 +142,10 @@ const About = () => {
                 </p>
               </div>
               <div>
-                <div className="d-flex justify-content-between px-4  py-4" style={{backgroundColor:"white"}}>
+                <div
+                  className="d-flex justify-content-between px-4  py-4"
+                  style={{ backgroundColor: "white" }}
+                >
                   {" "}
                   <h5>Join your hand with us for a better life</h5>
                   <i

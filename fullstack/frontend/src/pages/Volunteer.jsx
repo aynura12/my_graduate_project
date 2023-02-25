@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import "../style/volunteer.scss";
 import { Link } from "react-router-dom";
@@ -9,6 +9,13 @@ import { formSchema } from "../schema/formSchema";
 import { useState } from "react";
 import axios from "axios";
 const Volunteer = () => {
+  useEffect(() => {
+    window.scrollTo({
+           top: 0,
+           left: 0,
+           behavior: "smooth"
+         });
+ },[])
   const [volunteer, setVolunteer] = useState({
     fullName: "",
     email: "",

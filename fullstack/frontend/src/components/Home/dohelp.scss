@@ -1,10 +1,10 @@
 @import "../../vendors/mixins";
 
 .dohelp {
-  padding: 60px 0;
-
+  padding-top: 60px;
   img {
     margin-bottom: 20px;
+  
   }
   h2 {
     color: #424242;
@@ -28,6 +28,8 @@
     background-color: rgb(134, 59, 174);
     @include display;
     padding: 70px 30px;
+    position: relative;
+   bottom: 30%;
     h2 {
       font-size: 50px;
       font-weight: 700;
@@ -70,5 +72,11 @@
     button{
       @include sendButton;
     }
+  }
+}
+@media (max-width:1200px){
+  .dohelp_form{
+    // position:sticky;
+    bottom: 0;
   }
 }

@@ -1,6 +1,7 @@
 .givehelp {
   background-color: rgb(242, 240, 236);
   padding: 60px 0;
+
   h2 {
     color: #424242;
     font-family: Playfair Display, serif;
@@ -17,19 +18,19 @@
   }
   .givehelp_icons {
     display: flex;
-    gap: 10px;
+    // gap: 10px;
     .icon1 {
-      padding: 20px 40px 0 40px;
+      // padding: 20px 40px 0 40px;
       background-color: rgb(80, 186, 195);
       clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     }
     .icon2 {
-      padding: 20px 45px 0 45px;
+      // padding: 20px 45px 0 45px;
       background-color: rgb(227, 105, 85);
       clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     }
     .icon3 {
-      padding: 20px 35px 0 35px;
+      // padding: 20px 35px 0 35px;
       background-color: rgb(241, 174, 68);
       clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     }
@@ -42,7 +43,6 @@
     }
   }
   .givehelp_text {
-    padding-top: 70px;
     padding-right: 20px;
     p {
       font-family: Poppins, sans-serif;

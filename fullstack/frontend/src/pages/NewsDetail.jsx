@@ -9,6 +9,13 @@ import { useParams } from "react-router-dom";
 import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
 
 const NewsDetail = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   const { id } = useParams();
   const [news, setNews] = useState([]);
   const getNews = async () => {
@@ -48,7 +55,6 @@ const NewsDetail = () => {
               </div>
               <div className="detail_card_title">
                 <h2>{news.title}</h2>
-
                 <p>{news.detailText}</p>
               </div>
               <div className="row detail_tags ">

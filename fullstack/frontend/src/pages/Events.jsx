@@ -6,6 +6,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Events = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   const [data, setData] = useState([]);
   const getData = async () => {
     const res = await axios.get("http://localhost:8080/event");
@@ -14,20 +21,20 @@ const Events = () => {
   useEffect(() => {
     getData();
   }, []);
-  const [sorted,setSorted]=useState({sorted:"day",reversed:false})
-  const sorteddata=()=>{
-   setSorted({sorted:"day",reversed:!sorted.reversed})
-   const datacopy=[...data]
-   datacopy.sort((a,b)=>{
-     if(sorted.reversed){
-      return b.day-a.day
-     }else{
-       return a.day-b.day
-     }
-   })
-   setData(datacopy)}
- 
- 
+  const [sorted, setSorted] = useState({ sorted: "day", reversed: false });
+  const sorteddata = () => {
+    setSorted({ sorted: "day", reversed: !sorted.reversed });
+    const datacopy = [...data];
+    datacopy.sort((a, b) => {
+      if (sorted.reversed) {
+        return b.day - a.day;
+      } else {
+        return a.day - b.day;
+      }
+    });
+    setData(datacopy);
+  };
+
   return (
     <>
       <Helmet>
@@ -49,7 +56,7 @@ const Events = () => {
       </section>
       <section className="events_area">
         <div className="container">
-        <button onClick={sorteddata}>Sorted</button>
+          <button onClick={sorteddata}>Sorted</button>
           <div className="row">
             {data.map((datas) => {
               return (

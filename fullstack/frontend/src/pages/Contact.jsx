@@ -4,12 +4,19 @@ import donationLogo from "../media/smalllogo.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../schema/formSchema";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../style/contact.scss";
 import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   const [state, setState] = useState({
     fullName: "",
     email: "",
@@ -44,7 +51,6 @@ const Contact = () => {
   });
   return (
     <>
-  
       <Helmet>
         <title>Contact</title>
       </Helmet>
@@ -75,7 +81,7 @@ const Contact = () => {
                 amet, consectetur adipiscing ullam blandit hendrerit faucibus
                 suspendisse.
               </p>
-           <ConnectIcon/>
+              <ConnectIcon />
             </div>
             <div className="col-lg-6 col-md-12">
               <form onSubmit={handleSubmit(onSubmit)} className="form">
@@ -87,7 +93,8 @@ const Contact = () => {
                     value={state.fullName}
                     name="fullName"
                     placeholder="Full Name..."
-                  /> <br />
+                  />{" "}
+                  <br />
                   {errors.fullName ? (
                     <span style={{ color: "red" }}>
                       {errors.fullName.message}
@@ -117,7 +124,7 @@ const Contact = () => {
                   value={state.number}
                   name="number"
                   placeholder="Phone number..."
-                /> 
+                />
                 {errors.number ? (
                   <span style={{ color: "red" }}>{errors.number.message}</span>
                 ) : (
@@ -147,23 +154,37 @@ const Contact = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-4 col-md-12">
-              <div className="contact_about"> <h2>About</h2>
-              <p>
-                Lorem ipsum is simply free text dolor sit amet, duise
-                consectetur 
-              </p></div>
-             
+              <div className="contact_about">
+                {" "}
+                <h2>About</h2>
+                <p>
+                  Lorem ipsum is simply free text dolor sit amet, duise
+                  consectetur
+                </p>
+              </div>
             </div>
             <div className="col-lg-4 col-md-12 ">
-              <div className="contact_address"> <h2>Address</h2>
-              <p>660 broklyn street , 88 new york, United states of america</p></div>
-             
+              <div className="contact_address">
+                {" "}
+                <h2>Address</h2>
+                <p>
+                  660 broklyn street , 88 new york, United states of america
+                </p>
+              </div>
             </div>
             <div className="col-lg-4 col-md-12">
-              <div className="contact_number">  <h2>Contact</h2>
-              <a href="https://preview.themeforest.net/item/oxpitan-gatsby-react-nonprofit-charity-template/full_screen_preview/30017712" style={{textDecoration:"none"}}> <p>needhelp@oxpitan.com </p></a>
-              <p>666 888 000</p></div>
-            
+              <div className="contact_number">
+                {" "}
+                <h2>Contact</h2>
+                <a
+                  href="https://preview.themeforest.net/item/oxpitan-gatsby-react-nonprofit-charity-template/full_screen_preview/30017712"
+                  style={{ textDecoration: "none" }}
+                >
+                  {" "}
+                  <p>needhelp@oxpitan.com </p>
+                </a>
+                <p>666 888 000</p>
+              </div>
             </div>
           </div>
         </div>

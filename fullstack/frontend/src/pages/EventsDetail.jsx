@@ -6,15 +6,21 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const EventsDetail = () => {
-  const {id}=useParams()
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+  const { id } = useParams();
   const [event, setEvent] = useState([]);
   const getEvent = async () => {
-    const res = await axios.get(`http://localhost:8080/event/`+id);
+    const res = await axios.get(`http://localhost:8080/event/` + id);
     setEvent(res.data);
   };
   useEffect(() => {
-   
-    getEvent()
+    getEvent();
   }, []);
   return (
     <>
@@ -40,11 +46,11 @@ const EventsDetail = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 col-md-12">
-              <img
-                src={event.image}
-                alt="img"
-              />
-              <span className="date_of_card card2" style={{backgroundColor:event.color}}>
+              <img src={event.image} alt="img" />
+              <span
+                className="date_of_card card2"
+                style={{ backgroundColor: event.color }}
+              >
                 <span className="day_date">{event.day}</span>
                 <span className="month_date">{event.month}</span>
               </span>
@@ -58,13 +64,9 @@ const EventsDetail = () => {
             <div className="col-lg-7 col-md-12">
               <div className="detail_left">
                 <h3>{event.title}</h3>
-                <p>
-                  {event.text}
-                </p>
+                <p>{event.text}</p>
                 <h3>Event Requirements</h3>
-                <p>
-                 {event.requirements}
-                </p>
+                <p>{event.requirements}</p>
                 <Link to="/volunteer">
                   <button>Register Now</button>
                 </Link>
@@ -78,19 +80,24 @@ const EventsDetail = () => {
                     <span className="span1">Starting Time:</span> {event.watch}
                   </li>
                   <li>
-                    <span className="span2">Date:</span>{event.date}
+                    <span className="span2">Date:</span>
+                    {event.date}
                   </li>
                   <li>
-                    <span className="span3">Category:</span>{event.category}
+                    <span className="span3">Category:</span>
+                    {event.category}
                   </li>
                   <li>
-                    <span className="span4">Phone:</span>{event.phone}
+                    <span className="span4">Phone:</span>
+                    {event.phone}
                   </li>
                   <li>
-                    <span className="span5">Website:</span>{event.website}
+                    <span className="span5">Website:</span>
+                    {event.website}
                   </li>
                   <li>
-                    <span className="span6">Location:</span>{event.location}
+                    <span className="span6">Location:</span>
+                    {event.location}
                   </li>
                 </ul>
               </div>

@@ -5,6 +5,13 @@ import "../style/ourteam.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const OurTeam = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const getData = async () => {
@@ -104,12 +111,13 @@ const OurTeam = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="join_title"><h3>Become an Volunteer</h3>
-              <p>JOIN YOUR HAND WITH US FOR A BETTER LIFE AND FUTURE</p>
-              <Link to="/volunteer">
-                <button> Join Us Now</button>{" "}
-              </Link></div>
-              
+              <div className="join_title">
+                <h3>Become an Volunteer</h3>
+                <p>JOIN YOUR HAND WITH US FOR A BETTER LIFE AND FUTURE</p>
+                <Link to="/volunteer">
+                  <button> Join Us Now</button>{" "}
+                </Link>
+              </div>
             </div>
           </div>
         </div>

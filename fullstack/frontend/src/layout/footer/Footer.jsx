@@ -31,7 +31,7 @@ const Footer = () => {
             <h3>About</h3>
             <ul>
               <li>
-                <Link id="footer_link" to="/cause">
+                <Link id="footer_link" to="/causes">
                   Causes
                 </Link>
               </li>
@@ -51,7 +51,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link id="footer_link" to="">
+                <Link id="footer_link" to="/events">
                   Events
                 </Link>
               </li>
@@ -66,7 +66,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link id="footer_link" to="/about">
+                <Link id="footer_link" to="/contact">
                   Contact
                 </Link>
               </li>
@@ -76,12 +76,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link id="footer_link" to="/">
+                <Link id="footer_link" to="/contact">
                   Social Connect
                 </Link>
               </li>
               <li>
-                <Link id="footer_link" to="">
+                <Link id="footer_link" to="/news">
                   Help Topics
                 </Link>
               </li>
@@ -91,7 +91,7 @@ const Footer = () => {
             <h3>Links</h3>
             <ul className="footer_list">
               <li>
-                <Link id="footer_link" to="/cause">
+                <Link id="footer_link" to="/causes">
                   Podcasts
                 </Link>
               </li>
