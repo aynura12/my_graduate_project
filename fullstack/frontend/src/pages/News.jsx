@@ -31,7 +31,7 @@ const News = () => {
             <div className="col-lg-12">
               <div className="news_title">
                 <h2>News</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>

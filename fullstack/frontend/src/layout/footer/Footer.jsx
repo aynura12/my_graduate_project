@@ -46,7 +46,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link id="footer_link" to="/">
+                <Link id="footer_link" to="https://goo.gl/maps/gYtMFmgdPgj7kLWR6">
                   Site Map
                 </Link>
               </li>
@@ -153,12 +153,12 @@ const Footer = () => {
                   Needhelp@Oxpitan.Com
                 </Link>
               </li>
-              <li style={{ paddingBottom: "30px" }}>
+              <li>
                 <Link id="footer_link" to="/">
                   666 888 0000
                 </Link>
               </li>
-              <li>
+              <li style={{ paddingTop: "30px" }}>
                 <ConnectIcon />
               </li>
             </ul>
@@ -169,8 +169,8 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 col-md-12">
-              <p>
-                © Copyright 2019 by <a href="/">Layerdrops.com</a>
+              <p >
+                © Copyright 2019 by <a href="http://layerdrops.com/oxpitan/team.html">Layerdrops.com</a>
               </p>
             </div>
           </div>

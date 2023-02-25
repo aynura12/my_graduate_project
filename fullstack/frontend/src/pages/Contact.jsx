@@ -60,7 +60,7 @@ const Contact = () => {
             <div className="col-lg-12">
               <div className="contact_title">
                 <h2>Contact</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>

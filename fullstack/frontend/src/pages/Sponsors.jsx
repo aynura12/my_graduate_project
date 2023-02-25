@@ -22,7 +22,7 @@ const Sponsors = () => {
             <div className="col-lg-12">
               <div className="sponsors_title">
                 <h2>Sponsors</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>

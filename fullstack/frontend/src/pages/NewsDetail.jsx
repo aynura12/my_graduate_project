@@ -2,12 +2,11 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../style/newsDetail.scss";
-import Comment from "../components/Comment";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
-
+import Comment from "../components/Comment/Comment";
 const NewsDetail = () => {
   useEffect(() => {
     window.scrollTo({
@@ -37,7 +36,7 @@ const NewsDetail = () => {
             <div className="col-lg-12">
               <div className="news_detail_title">
                 <h2>News Detail</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>
@@ -100,7 +99,7 @@ const NewsDetail = () => {
                   </p>
                 </div>
               </div>
-              <Comment />
+           <Comment/>
             </div>
             <div className="news_right col-lg-4 col-md-12" key={news._id}>
               <div className="recent_posts">

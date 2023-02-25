@@ -39,28 +39,28 @@ const NavbarTop = () => {
                   </Link>
                 </li>
                 <li className="list">
-                  <a href="/" className="link">
+                  <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D" className="link">
                     <div>
                       <i className="fa-brands fa-twitter"></i>
                     </div>
                   </a>
                 </li>
                 <li className="list">
-                  <a href="/" className="link">
+                  <a href="https://www.facebook.com/" className="link">
                     <div>
                       <i className="fa-brands fa-facebook-f"></i>
                     </div>
                   </a>
                 </li>
                 <li className="list">
-                  <a href="/" className="link">
+                  <a href="https://www.pinterest.com/login/" className="link">
                     <div>
                       <i className="fa-brands fa-pinterest"></i>
                     </div>
                   </a>
                 </li>
                 <li className="list">
-                  <a href="/" className="link">
+                  <a href="https://www.instagram.com/" className="link">
                     <div>
                       <i className="fa-brands fa-instagram"></i>
                     </div>

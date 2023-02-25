@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { formSchema } from "../schema/formSchema";
+import { formSchema } from "../../schema/formSchema";
 import { useState, useEffect } from "react";
-import "../style/causesdetail.scss";
+import "../Comment/comment.scss";
 import axios from "axios";
+import ReplyModal from "../ReplyModal/ReplyModal";
 const Comment = () => {
   const [state, setState] = useState({
-    imege: "",
+    image: "",
     fullName: "",
     email: "",
     comment: "",
@@ -61,9 +62,7 @@ const Comment = () => {
                   {/* <span >{format(datas.createdAt, 'dd/mm/yyyy')}</span> */}
                   <span>{datas.createdAt}</span>
                 </div>
-                <Link to="/">
-                  <button>reply</button>
-                </Link>
+                  <button  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Reply</button>
               </div>
               <p>{datas.comment}</p>
             </div>
@@ -129,7 +128,9 @@ const Comment = () => {
         )}
         <button onClick={() => addData()}>submit now</button>
       </form>
+      <ReplyModal/>
     </div>
+
   );
 };
 

@@ -25,7 +25,6 @@
       margin-top: 8px;
       padding-bottom: 20px;
     }
-    
   }
   #footer_form {
     display: flex;
@@ -70,50 +69,54 @@
     color: #bfbfbf;
     font-size: 16px;
     line-height: 38px;
+    position: relative;
     font-weight: 400;
-    // &::after {
-    //   content: " ";
-    //   width: 0px;
-    //   height: 1px;
-    //   background-color: white;
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 0;
-    //   transition: all 0s;
-    // }
-    // &:hover::after {
-    //   width: 100%;
-    //   transition: all 0.3s;
+    // &:hover {
+    //   #footer_link {
+    //
+    //   }
     // }
 
-    // &::before {
-    //   content: " ";
-    //   width: 0px;
-    //   height: 1px;
-    //   background-color: white;
-    //   position: absolute;
-    //   bottom: 0;
-    //   right: 0;
-    //  transition: all 0.3s;
-    //   transition-delay: 0;
-    // }
-    // &:hover::before {
-    //   width: 100%;
-    //   transition-delay: 0.2s;     
-    //   }
     #footer_link {
       text-decoration: none;
       color: #bfbfbf;
       font-size: 16px;
       line-height: 38px;
       font-weight: 500;
+      overflow: hidden;
+      &:hover {
+        color: #f1ae44;
+      }
+      &::after {
+        content: " ";
+        width: 0px;
+        height: 1px;
+        background-color: #f1ae44;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 0s;
+      }
+      &:hover::after {
+        width: 100%;
+        transition: all 0.3s;
+      }
 
-     
-    }
-  }
-  li:hover {
-    #footer_link {
-      color: #f1ae44;
+      &::before {
+        content: " ";
+        width: 0px;
+        height: 1px;
+        background-color: #f1ae44;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: all 0.3s;
+        transition-delay: 0;
+      }
+      &:hover::before {
+        width: 100%;
+        transition-delay: 0.2s;
+      }
     }
   }
 }
@@ -132,11 +135,9 @@
       color: #bfbfbf;
     }
   }
-  p:hover{
-    a{
-        color: #f1ae44;
+  p:hover {
+    a {
+      color: #f1ae44;
     }
-  
-
   }
 }

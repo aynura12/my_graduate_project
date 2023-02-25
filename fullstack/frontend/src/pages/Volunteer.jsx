@@ -72,7 +72,7 @@ const Volunteer = () => {
             <div className="col-lg-12">
               <div className="volunteer_title">
                 <h2>Become A Volunteer</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>

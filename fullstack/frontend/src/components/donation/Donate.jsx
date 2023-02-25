@@ -25,22 +25,14 @@ const Donate = () => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
   const addData = async () => {
-    if (
-      !state.money ||
-      !state.firstName ||
-      !state.lastName ||
-      !state.email ||
-      !state.number ||
-      !state.address ||
-      !state.country ||
+    if ( !state.money ||  !state.firstName || !state.lastName ||  !state.email ||  !state.number || !state.address ||  !state.country ||
       !state.comment ||
       !state.cardNumber ||
       !state.mm ||
       !state.cvc ||
       !state.billingAddress ||
       !state.city
-    )
-      return;
+    ) return;
     await axios.post("http://localhost:8080/donate", state);
     setState({
       money: 0,
@@ -58,6 +50,8 @@ const Donate = () => {
       city: "",
     });
   };
+
+  console.log(state);
   const onSubmit = (data) => {
     console.log(data);
     addData();
@@ -70,7 +64,7 @@ const Donate = () => {
     resolver: yupResolver(formSchema),
   });
   return (
-    <form className="donate"  >
+    <form className="donate" onSubmit={()=>handleSubmit(onSubmit)}>
       <div className="your_donation">
         <h2>Enter Your Donation</h2>
 
@@ -79,10 +73,13 @@ const Donate = () => {
           {...register("money")}
           onChange={handleChange}
           value={state.money}
-          name="money" placeholder="Donation..."
+          name="money"
+          placeholder="Donation..."
         />
         {errors.money ? (
-          <span style={{ color: "red",fontSize:15 }}>{errors.money.message}</span>
+          <span style={{ color: "red", fontSize: 15 }}>
+            {errors.money.message}
+          </span>
         ) : (
           <></>
         )}
@@ -93,8 +90,8 @@ const Donate = () => {
           <input
             type="text"
             {...register("firstName")}
-            onChange={handleChange}
             value={state.firstName}
+            onChange={handleChange}
             name="firstName"
             placeholder="First Name..."
           />
@@ -106,8 +103,8 @@ const Donate = () => {
           <input
             type="text"
             {...register("lastName")}
-            onChange={handleChange}
             value={state.lastName}
+            onChange={handleChange}
             name="lastName"
             placeholder="Last Name..."
           />
@@ -121,8 +118,8 @@ const Donate = () => {
           <input
             type="email"
             {...register("email")}
-            onChange={handleChange}
             value={state.email}
+            onChange={handleChange}
             name="email"
             placeholder="Email Address..."
           />
@@ -134,8 +131,8 @@ const Donate = () => {
           <input
             type="number"
             {...register("number")}
-            onChange={handleChange}
             value={state.number}
+            onChange={handleChange}
             name="number"
             placeholder="Phone Number..."
           />
@@ -149,8 +146,8 @@ const Donate = () => {
           <input
             type="text"
             {...register("address")}
-            onChange={handleChange}
             value={state.address}
+            onChange={handleChange}
             placeholder="Address..."
           />
           {errors.number ? (
@@ -162,21 +159,29 @@ const Donate = () => {
             aria-label="Default select example"
             {...register("country")}
             onChange={handleChange}
-            value={state.country}
-            name="country"
           >
             <option selected>Country...</option>
-            <option value="1">USA</option>
-            <option value="2">UK</option>
-            <option value="3">PAKISTAN</option>
-            <option value="3">BANGLADESH</option>
-            <option value="3">INDIA</option>
+            <option value={state.country} name="country">
+              USA
+            </option>
+            <option value={state.country} name="country">
+              UK
+            </option>
+            <option value={state.country} name="country">
+              PAKISTAN
+            </option>
+            <option value={state.country} name="country">
+              BANGLADESH
+            </option>
+            <option value={state.country} name="country">
+              INDIA
+            </option>
           </select> */}
         </div>
         <textarea
+          value={state.comment}
           {...register("comment")}
           onChange={handleChange}
-          value={state.comment}
           name="comment"
           placeholder="Leave a Comment...   "
         ></textarea>
@@ -192,8 +197,8 @@ const Donate = () => {
           <input
             type="number"
             {...register("cardNumber")}
-            onChange={handleChange}
             value={state.cardNumber}
+            onChange={handleChange}
             name="cardNumber"
             placeholder="Card Number..."
           />
@@ -276,7 +281,7 @@ const Donate = () => {
           </select> */}
         </div>
       </div>
-      <button onChange={ handleSubmit(onSubmit)}>Donate now</button>
+      <button onClick={()=>addData()}>Donate now</button>
     </form>
   );
 };

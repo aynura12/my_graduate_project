@@ -32,7 +32,7 @@ const Gallery = () => {
             <div className="col-lg-12">
               <div className="galerry_title">
                 <h2>Gallery</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>

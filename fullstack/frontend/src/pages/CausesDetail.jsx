@@ -5,7 +5,7 @@ import "../style/causesdetail.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Comment from "../components/Comment";
+import Comment from "../components/Comment/Comment";
 import { format } from "date-fns";
 import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
 const CausesDetail = () => {
@@ -45,7 +45,7 @@ const CausesDetail = () => {
             <div className="col-lg-12">
               <div className="causes_detail_title">
                 <h2>Causes Detail</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>
@@ -101,7 +101,7 @@ const CausesDetail = () => {
                   />
                 </div>
               </div>
-              <Comment />
+              <Comment/>
             </div>
             <div className="col-lg-4 col-md-12">
               <div className="organizer">

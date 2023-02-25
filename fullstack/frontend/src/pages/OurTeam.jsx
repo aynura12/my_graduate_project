@@ -32,7 +32,7 @@ const OurTeam = () => {
             <div className="col-lg-12">
               <div className="ourteam_title">
                 <h2> Our Team</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Our Team</button>
                 </Link>
               </div>

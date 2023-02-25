@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import Cause from "../components/Home/Cause";
 import Charity from "../components/Home/Charity";
@@ -12,13 +12,7 @@ import Volunteers from "../components/Home/Volunteers";
 
 import Header from "../layout/header/Header";
 const Home = () => {
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  }, []);
+ 
   return (
     <div>
       <Helmet>

@@ -46,7 +46,7 @@ const Events = () => {
             <div className="col-lg-12">
               <div className="events_title">
                 <h2>Events</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>

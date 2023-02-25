@@ -151,9 +151,9 @@
 .slide-box {
   width: 30px;
   height: 30px;
-  border: 1px solid #000;
   border: none;
   background-color: rgb(161, 160, 160);
+  opacity: 0.5;
   cursor: pointer;
   clip-path: polygon(0 0, 100% 0, 72% 100%, 0% 100%);
   &:hover {

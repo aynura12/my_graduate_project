@@ -22,7 +22,7 @@ const Causes = () => {
             <div className="col-lg-12">
               <div className="causesto_title">
                 <h2>Causes</h2>
-                <Link to="/home1">
+                <Link to="/">
                   <button>Back Home</button>
                 </Link>
               </div>
