@@ -50,15 +50,15 @@ const Charity = () => {
   return (
     <div className="charity">
       <div className="container">
-        <div className="row g-0">
+        <div className="row g-0 align-items-center justify-content-center">
           <div className="charity_left_area col-lg-6 col-md-12">
             {data.map((datas) => {
               return (
-                <div className="charity_left" key={datas._id}>
+                <div className="charity_left align-items-center" key={datas._id}>
                   <div className="charity_left_icon">
                     <i class="fa-solid fa-hands-holding-circle"></i>
                   </div>
-                  <div>
+                  <div className="ps-3">
                     <h3>
                       <span className="counter" data-count={datas.count}></span>
                     </h3>
@@ -68,8 +68,8 @@ const Charity = () => {
               );
             })}
           </div>
-          <div className=" col-lg-6 col-md-12">
-            <Swiper
+          <div className="col-lg-6 col-md-12">
+            <Swiper className="text_slide py-2"
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={50}
               slidesPerView={1}

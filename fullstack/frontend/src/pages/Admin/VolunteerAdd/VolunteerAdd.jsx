@@ -81,7 +81,7 @@ const VolunteerAdd = () => {
     <>
       {" "}
       <Helmet>
-        <title>VolunteerAdd</title>
+        <title>Volunteer</title>
       </Helmet>
       <section className="volunteerAdd">
         <div className="container">

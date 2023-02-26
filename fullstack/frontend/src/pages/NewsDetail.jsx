@@ -56,11 +56,11 @@ const NewsDetail = () => {
                 <h2>{news.title}</h2>
                 <p>{news.detailText}</p>
               </div>
-              <div className="row detail_tags ">
-                <div className="col-12 col-md-1">
+              <div className="d-flex align-items-baseline flex-wrap detail_tags ">
+                <div className="col-12 col-md-1 pe-md-0 py-2">
                   <span>Tags</span>
                 </div>
-                <div className="col-12 col-md-6 ">
+                <div className="col-12 col-md-6   px-md-2 ">
                   <div className="tags_left">
                     <ul>
                       <li>
@@ -81,7 +81,7 @@ const NewsDetail = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="row col-12 col-md-5">
+                <div className="col-12 col-md-5">
                   <ConnectIcon />
                 </div>
               </div>
@@ -99,7 +99,7 @@ const NewsDetail = () => {
                   </p>
                 </div>
               </div>
-           <Comment/>
+              <Comment />
             </div>
             <div className="news_right col-lg-4 col-md-12" key={news._id}>
               <div className="recent_posts">

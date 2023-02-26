@@ -58,7 +58,7 @@ ul {
   width: 100%;
   padding: 30px 0;
   z-index: 999;
-  background-color: white;
+  background-color:white;
   
   .bottom_lists {
     display: flex;
@@ -201,6 +201,7 @@ transition: 600ms;
   top: 0;
   position: fixed;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: 100vw;
 
 }
 
@@ -219,78 +220,12 @@ transition: 600ms;
   color: white;
 }
 
-// .modal-content {
-//   background-color: black;
-//   .btn-close {
-//     background-color: aliceblue;
-//   }
-//   .modal_list {
-//     list-style: none;
-//   }
-//   .modal_link {
-//     text-decoration: none;
-//     color: rgb(223, 223, 223);
-//   }
-//   .modal_link:hover {
-//     color: rgb(255, 113, 61);
-//   }
-//   .modal_button {
-//     border: none;
-//     font-family: "Poppins", sans-serif;
-//     font-size: 12px;
-//     background-color: rgb(227, 105, 85);
-//     color: white;
-//     width: 150px;
-//     height: 40px;
-//     clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
-//   }
-//   .modal_button:hover {
-//     background-color: #f1ae44;
-//   }
 
-//   .modal_contact_list {
-//     display: flex;
-//     gap: 20px;
-//     padding-bottom: 20px;
-//     padding-top: 20px;
-//   }
-//   .list1 {
-//     text-decoration: none;
-//     color: white;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     font-size: 15px;
-//     padding: 10px 10px;
-//     background-color: rgb(80, 186, 195);
-//   }
-//   .list2 {
-//     text-decoration: none;
-//     color: white;
-//     font-size: 15px;
-//     padding: 10px 10px;
-//     background-color: rgb(227, 105, 85);
-//   }
-//   .list3 {
-//     text-decoration: none;
-//     color: white;
-//     font-size: 15px;
-//     padding: 10px 10px;
-//     background-color: rgb(241, 174, 68);
-//   }
-//   .list4 {
-//     text-decoration: none;
-//     color: white;
-//     font-size: 15px;
-//     padding: 10px 10px;
-//     background-color: rgb(135, 60, 174);
-//   }
-// }
 .sidebar_menu {
-  height: auto;
+  height: 150vh !important;
   background-color: black;
   position: absolute;
-  top: 0;
+  top: -80px !important;
   right: 0;
   overflow-y: scroll;
   z-index: 100;
@@ -306,6 +241,12 @@ transition: 600ms;
   }
   &::-webkit-scrollbar-track {
     background-color: rgba(255, 255, 255, 0.171);
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
   }
   li {
     list-style: none;

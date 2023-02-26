@@ -92,14 +92,14 @@ const CauseAdd = () => {
     <>
       {" "}
       <Helmet>
-        <title>CauseAdd</title>
+        <title>Cause</title>
       </Helmet>
       <section className="causeAdd">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="causeAdd_title">
-                <h2>CauseAdd</h2>
+                <h2>Cause</h2>
                 <Link to="/admin">
                   <button>Back Home</button>
                 </Link>

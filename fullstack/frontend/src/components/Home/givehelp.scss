@@ -18,19 +18,19 @@
   }
   .givehelp_icons {
     display: flex;
-    // gap: 10px;
+    gap: 10px;
     .icon1 {
-      // padding: 20px 40px 0 40px;
+      padding: 20px 40px 0 40px;
       background-color: rgb(80, 186, 195);
       clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     }
     .icon2 {
-      // padding: 20px 45px 0 45px;
+      padding: 20px 45px 0 45px;
       background-color: rgb(227, 105, 85);
       clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     }
     .icon3 {
-      // padding: 20px 35px 0 35px;
+      padding: 20px 35px 0 35px;
       background-color: rgb(241, 174, 68);
       clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     }
@@ -54,4 +54,30 @@
       padding-bottom: 20px;
     }
   }
+}
+
+
+@media (max-width:576px){
+  .givehelp{
+    i{
+      font-size:20px ;
+    }
+    .givehelp_icons {
+      justify-content: space-between;
+      gap: 5px;
+      .icon1 {
+        padding: 10px 20px 0 20px;
+      }
+      .icon2{
+        padding: 10px 25px 0 25px;
+      }
+      .icon3{
+        padding: 10px 15px 0 15px;
+      }
+      h2{
+        font-size: 15px;
+      }
+    }
+  }
+ 
 }

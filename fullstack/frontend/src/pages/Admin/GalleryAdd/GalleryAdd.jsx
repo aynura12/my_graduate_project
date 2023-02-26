@@ -72,7 +72,7 @@ const GalleryAdd = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="galleryAdd_title">
-                <h2>GalleryAdd</h2>
+                <h2>Gallery</h2>
                 <Link to="/admin">
                   <button>Back Home</button>
                 </Link>

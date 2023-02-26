@@ -8,11 +8,12 @@
   }
   .your_donation {
     position: relative;
-   
+
     input {
+      width: 100%;
       border: none;
       background-color: #f1ae44;
-     padding: 30px 0;
+      padding: 30px 10px;
       color: #fff;
       font-size: 50px;
       font-family: "Playfair Display", sans-serif;
@@ -24,11 +25,11 @@
   .personal_info {
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
     padding-bottom: 30px;
-    .personal_input{
-        display: flex;
-        justify-content: space-between;
+    .personal_input {
+      display: flex;
+      justify-content: space-between;
     }
 
     input {
@@ -38,7 +39,6 @@
       color: #818181;
       padding: 19px 70px;
       font-size: 16px;
-     
     }
     select {
       border-radius: 5px;
@@ -47,7 +47,6 @@
       color: #818181;
       padding: 19px 100px;
       font-size: 16px;
-     
     }
     textarea {
       border-radius: 5px;
@@ -57,26 +56,25 @@
       padding: 19px 20px;
       font-weight: 500;
       font-size: 16px;
-      
     }
-    @media (max-width:768px){
-        .personal_input{
-            display: flex;
-            flex-direction: column;
-            input{
-              margin-bottom: 20px;
-            }
-        } 
+    @media (max-width: 768px) {
+      .personal_input {
+        display: flex;
+        flex-direction: column;
+        input {
+          margin-bottom: 20px;
+        }
+      }
     }
   }
 
   .payment_info {
     display: flex;
     flex-direction: column;
-    gap:20px;
-    .payment_input{
-        display: flex;
-        justify-content: space-between;
+    gap: 20px;
+    .payment_input {
+      display: flex;
+      justify-content: space-between;
     }
 
     input {
@@ -86,7 +84,6 @@
       color: #818181;
       padding: 19px 70px;
       font-size: 16px;
-     
     }
     select {
       border-radius: 5px;
@@ -95,21 +92,20 @@
       color: #818181;
       padding: 19px 100px;
       font-size: 16px;
-     
     }
-  
-    @media (max-width:768px){
-        .payment_input{
-            display: flex;
-            flex-direction: column;
-            input{
-              margin-bottom: 20px;
-            }
-        } 
+
+    @media (max-width: 768px) {
+      .payment_input {
+        display: flex;
+        flex-direction: column;
+        input {
+          margin-bottom: 20px;
+        }
+      }
     }
   }
-   
-  button{
+
+  button {
     margin-top: 20px;
     @include sendButton;
   }

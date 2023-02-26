@@ -17,7 +17,6 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AdminRouter from "../components/AdminRouter";
 import CauseAdd from "../pages/Admin/CauseAdd/CauseAdd";
-import CommentAdd from "../pages/Admin/CommentAdd/CommentAdd";
 import EventAdd from "../pages/Admin/EventAdd/EventAdd";
 import GalleryAdd from "../pages/Admin/GalleryAdd/GalleryAdd";
 import NewsAdd from "../pages/Admin/NewsAdd/NewsAdd";
@@ -26,6 +25,8 @@ import RecentAdd from "../pages/Admin/RecentAdd/RecentAdd";
 import TeamAdd from "../pages/Admin/TeamAdd/TeamAdd";
 import VolunteerAdd from "../pages/Admin/VolunteerAdd/VolunteerAdd";
 import AdminHome from "../pages/Admin/AdminHome/AdminHome";
+import AdminLogin from "../pages/Admin/AdminLogin/AdminLogin";
+import AdminReg from "../pages/Admin/AdminReg/AdminReg";
 const ROUTES = [
   {
     path: "/",
@@ -100,7 +101,6 @@ const ROUTES = [
     children: [
       { path: "", element: <AdminHome/> },
       { path: "causeAdd", element: <CauseAdd /> },
-      { path: "commentAdd", element: <CommentAdd/> },
       { path: "eventAdd", element: <EventAdd/> },
       { path: "galleryAdd", element: <GalleryAdd/> },
       { path: "newsAdd", element: <NewsAdd/> },
@@ -108,6 +108,8 @@ const ROUTES = [
       { path: "recentAdd", element: <RecentAdd/> },
       { path: "teamAdd", element: <TeamAdd/> },
       { path: "volunteerAdd", element: <VolunteerAdd/> },
+      { path: "login", element: <AdminLogin/>},
+      { path: "register", element: <AdminReg/> },
     ],
   },
 ];

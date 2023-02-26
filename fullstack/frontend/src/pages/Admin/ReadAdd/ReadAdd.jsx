@@ -72,7 +72,7 @@ const ReadAdd = () => {
     <>
       {" "}
       <Helmet>
-        <title>ReadAdd</title>
+        <title>Read</title>
       </Helmet>
       <section className="readAdd">
         <div className="container">

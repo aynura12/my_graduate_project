@@ -3,15 +3,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const aboutListSchema = new Schema(
   {
-    title: {
+    country: {
       type: String,
       require: true,
     },
-    text: {
-      type: String,
-      require: true,
-    },
-   
   },
   { timestamps: true }
 );

@@ -81,7 +81,7 @@ const RecentAdd = () => {
     <>
       {" "}
       <Helmet>
-        <title>RecentAdd</title>
+        <title>Recent</title>
       </Helmet>
       <section className="recentAdd">
         <div className="container">

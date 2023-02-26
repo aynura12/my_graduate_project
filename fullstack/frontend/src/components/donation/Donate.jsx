@@ -3,9 +3,26 @@ import "../donation/donate.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../../schema/formSchema";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 const Donate = () => {
+  
+  //   // Function will execute on click of button
+  //   const onButtonClick = () => {
+  //     // using Java Script method to get PDF file
+  //     fetch('Graduation Project (1).pdf').then(response => {
+  //         response.blob().then(blob => {
+  //             // Creating new object of PDF file
+  //             const fileURL = window.URL.createObjectURL(blob);
+  //             // Setting various property values
+  //             let alink = document.createElement('a');
+  //             alink.href = fileURL;
+  //             alink.download = 'Graduation Project (1).pdf';
+  //             alink.click();
+  //         })
+  //     })
+  // }
+  const [datas, setDatas] = useState([]);
   const [state, setState] = useState({
     money: 0,
     firstName: "",
@@ -25,14 +42,22 @@ const Donate = () => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
   const addData = async () => {
-    if ( !state.money ||  !state.firstName || !state.lastName ||  !state.email ||  !state.number || !state.address ||  !state.country ||
+    if (
+      !state.money ||
+      !state.firstName ||
+      !state.lastName ||
+      !state.email ||
+      !state.number ||
+      !state.address ||
+      !state.country ||
       !state.comment ||
       !state.cardNumber ||
       !state.mm ||
       !state.cvc ||
       !state.billingAddress ||
       !state.city
-    ) return;
+    )
+      return;
     await axios.post("http://localhost:8080/donate", state);
     setState({
       money: 0,
@@ -63,11 +88,19 @@ const Donate = () => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
+
+  const getData = async () => {
+    const res = await axios.get("http://localhost:8080/aboutList");
+    setDatas(res.data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   return (
-    <form className="donate" onSubmit={()=>handleSubmit(onSubmit)}>
+    <form className="donate" onSubmit={() => handleSubmit(onSubmit)}>
       <div className="your_donation">
         <h2>Enter Your Donation</h2>
-
         <input
           type="number"
           {...register("money")}
@@ -155,28 +188,16 @@ const Donate = () => {
           ) : (
             <></>
           )}
-          {/* <select
-            aria-label="Default select example"
-            {...register("country")}
-            onChange={handleChange}
-          >
+          <select onChange={handleChange}>
             <option selected>Country...</option>
-            <option value={state.country} name="country">
-              USA
-            </option>
-            <option value={state.country} name="country">
-              UK
-            </option>
-            <option value={state.country} name="country">
-              PAKISTAN
-            </option>
-            <option value={state.country} name="country">
-              BANGLADESH
-            </option>
-            <option value={state.country} name="country">
-              INDIA
-            </option>
-          </select> */}
+            {datas?.map((data) => {
+              return (
+                <option value={data._id} name="country">
+                  {data.country}
+                </option>
+              );
+            })}
+          </select>
         </div>
         <textarea
           value={state.comment}
@@ -265,23 +286,26 @@ const Donate = () => {
           ) : (
             <></>
           )}
-          {/* <select
-           aria-label="Default select example"
-           {...register("country")}
-           onChange={handleChange}
-           value={state.country}
-           name="country"
-          >
+          <select onChange={handleChange}>
             <option selected>Country...</option>
-            <option value="1">USA</option>
-            <option value="2">UK</option>
-            <option value="3">PAKISTAN</option>
-            <option value="3">BANGLADESH</option>
-            <option value="3">INDIA</option>
-          </select> */}
+            {datas?.map((data) => {
+              return (
+                <option value={data._id} name="country">
+                  {data.country}
+                </option>
+              );
+            })}
+          </select>
         </div>
       </div>
-      <button onClick={()=>addData()}>Donate now</button>
+      <button onClick={() => addData()}>Donate now</button>
+      {/* <center>
+                <h1>Welcome to Geeks for Geeks</h1>
+                <h3>Click on below button to download PDF file</h3>
+                <button onClick={onButtonClick}>
+                    Download PDF
+                </button>
+            </center> */}
     </form>
   );
 };

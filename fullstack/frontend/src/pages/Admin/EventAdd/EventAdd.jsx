@@ -143,7 +143,7 @@ const EventAdd = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="eventAdd_title">
-                <h2>EventAdd</h2>
+                <h2>Event</h2>
                 <Link to="/admin">
                   <button>Back Home</button>
                 </Link>

@@ -3,11 +3,21 @@
 .header_bottom_area {
   display: flex;
   border-bottom: 1px solid rgb(242, 240, 236);
+  
 
   .header_bottom_left {
     background-color: rgb(66, 66, 66);
-    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
-    padding: 50px 98px;
+    clip-path: polygon(0 0, 89% 0, 75% 100%, 0% 100%);
+    padding: 80px 40px;
+    width: 40%;
+    height: 300px;
+    @media (max-width: 992px) {
+      width: 100%;
+      height: 200px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      padding: 50px;
+
+    }
 
     .header_left_title {
       color: #fff;
@@ -15,20 +25,31 @@
       line-height: 36px;
       font-weight: 800;
       padding-right: 50px;
-
       font-family: Playfair Display, serif;
       max-width: 300px;
+      
+      @media (max-width: 992px) {
+        max-width: 100%;
+  
+      }
     }
   }
 
   .header_bottom_right {
     padding: 50px 0;
+    width: 60%;
+    @media (max-width: 992px) {
+      width: 100%;
+    }
     .header_bottom_video {
       background: url("https://oxpitan-gatsby.vercel.app/static/entry-video-img-e6bec51e90933f24e0bc39bddfccd029.jpg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      padding: 70px 150px;
+      // padding: 70px 150px;
+      width: 100%;
+      height: 200px;
+      position: relative;
       .header_video_link {
         text-decoration: none;
         display: flex;
@@ -36,6 +57,10 @@
         justify-content: center;
       }
       .header_video_button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
         background-color: rgb(241, 174, 68);
         border: none;
         padding: 10px 20px;
@@ -49,7 +74,7 @@
       }
     }
     .header_right_title {
-      padding-left: 50px;
+     // padding-left: 50px;
       .right_title {
         color: #424242;
         max-width: 400px;
@@ -67,11 +92,9 @@
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-direction: column;
-    .header_right_title {
-      padding-left: 50px;
-    }
+    
   }
 }
 
@@ -162,12 +185,11 @@
 }
 
 @media (max-width: 992px) {
-  .slide_text{
-  width: 40%;
-
+  .slide_text {
+    width: 40%;
   }
   .slide_text h2 {
-    font-size:30px;
+    font-size: 30px;
     font-weight: 500;
   }
 

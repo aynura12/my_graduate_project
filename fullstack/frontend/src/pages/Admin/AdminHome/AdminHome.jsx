@@ -12,7 +12,7 @@ const AdminHome = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="adminHome_title">
-                <h2>AdminHome</h2>
+                <h2>Home</h2>
               </div>
             </div>
           </div>

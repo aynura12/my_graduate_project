@@ -54,7 +54,9 @@ const Comment = () => {
       {data?.map((datas) => {
         return (
           <div className="detail_comment_bottom">
-            <img src={datas.image} alt="img" />
+            <div className="w-100">
+              <img src={datas.image} alt="img" />
+            </div>
             <div className="bottom_title">
               <div className="title_left">
                 <div className="left">

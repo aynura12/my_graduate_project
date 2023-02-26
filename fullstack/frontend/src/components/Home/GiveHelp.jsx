@@ -1,13 +1,12 @@
 import React from "react";
 import "../Home/givehelp.scss";
-import donationLogo from "../../media/smalllogo.png";
 const GiveHelp = () => {
   return (
     <div className="givehelp">
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-12">
-            <img src={donationLogo} alt="" />
+            <img src="http://layerdrops.com/oxpitan/images/section-icon.png"alt="img" />
             <h2>Give a helping hand for homeless childrens</h2>
             <div className="givehelp_icons">
               <i className="icon1 fa-solid fa-burger"><h2>Food</h2></i>

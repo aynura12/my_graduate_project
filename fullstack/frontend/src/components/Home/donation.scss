@@ -1,7 +1,7 @@
 .donation {
   background: url("../../media/section_back.png");
   width: 100% !important;
- padding: 70px 0;
+  padding: 70px 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,15 +10,15 @@
   h2 {
     font-family: Playfair Display, serif;
     color: #fff;
-    font-size: 70px;
-    line-height: 84px;
+    font-size: 60px;
+    line-height: 74px;
     font-weight: 800;
-  padding-bottom: 20px;
+    max-width: 600px;
+    padding-bottom: 20px;
   }
   .donation_link {
     text-decoration: none;
     button {
-     
       font-family: "Poppins", sans-serif;
       text-transform: uppercase;
       background: #f1ae44;
@@ -30,11 +30,17 @@
       clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
       font-weight: 600;
       padding: 0 30px 0 35px;
-    
-    
     }
     button:hover {
       background-color: rgb(227, 105, 85);
+    }
+  }
+}
+@media (max-width: 576px) {
+  .donation {
+    h2 {
+      font-size: 30px;
+      line-height: 30px;
     }
   }
 }

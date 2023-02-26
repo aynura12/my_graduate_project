@@ -111,7 +111,7 @@ const NewsAdd = () => {
     <>
       {" "}
       <Helmet>
-        <title> NewsAdd </title>
+        <title> News</title>
       </Helmet>
       <section className="newsAdd">
         <div className="container">

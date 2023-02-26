@@ -36,47 +36,47 @@ const Navbar2 = () => {
             >
               <li>
                 <Link to="/admin" id="admin_link">
-                  HomeAdmin
+                  Home
                 </Link>
               </li>
               <li>
                 <Link to="causeAdd" id="admin_link">
-                  CauseAdd
+                  Cause
                 </Link>
               </li>
               <li>
                 <Link to="eventAdd" id="admin_link">
-                  EventAdd
+                  Event
                 </Link>
               </li>
               <li>
                 <Link to="galleryAdd" id="admin_link">
-                  GalleryAdd
+                  Gallery
                 </Link>
               </li>
               <li>
                 <Link to="newsAdd" id="admin_link">
-                  NewsAdd
+                  News
                 </Link>
               </li>
               <li>
                 <Link to="readAdd" id="admin_link">
-                  ReadAdd
+                  Read
                 </Link>
               </li>
               <li>
                 <Link to="recentAdd" id="admin_link">
-                  RecentAdd
+                  Recent
                 </Link>
               </li>
               <li>
                 <Link to="teamAdd" id="admin_link">
-                  TeamAdd
+                  Team
                 </Link>
               </li>
               <li>
                 <Link to="volunteerAdd" id="admin_link">
-                  VolunteerAdd
+                  Volunteer
                 </Link>
               </li>
             </ul>

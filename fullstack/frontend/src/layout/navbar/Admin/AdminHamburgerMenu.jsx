@@ -27,52 +27,52 @@ const AdminHamburgerMenu = () => {
         </div>
         <ul className="px-3">
           <Link to="/admin" id="admin_link">
-            HomeAdmin
+            Home
           </Link>
           <li className="py-3">
             <div className="d-flex justify-content-between ">
               {" "}
               <Link to="causeAdd" id="admin_link">
-                CauseAdd
+                Cause
               </Link>
             </div>
           </li>
           <li className="py-3">
             <Link to="eventAdd" id="admin_link">
-              EventAdd
+              Event
             </Link>
           </li>
           <li className="py-3">
             <Link to="galleryAdd" id="admin_link">
-              GalleryAdd
+              Gallery
             </Link>
           </li>
           <li className="py-3">
             <div className="d-flex justify-content-between">
               {" "}
               <Link to="newsAdd" id="admin_link">
-                NewsAdd
+                News
               </Link>
             </div>
           </li>
           <li className="py-3">
             <Link to="readAdd" id="admin_link">
-              ReadAdd
+              Read
             </Link>
           </li>
           <li className="py-3">
             <Link to="recentAdd" id="admin_link">
-              RecentAdd
+              Recent
             </Link>
           </li>
           <li className="py-3">
             <Link to="teamAdd" id="admin_link">
-              TeamAdd
+              Team
             </Link>
           </li>
           <li className="py-3">
             <Link to="volunteerAdd" id="admin_link">
-              VolunteerAdd
+              Volunteer
             </Link>
           </li>
 
