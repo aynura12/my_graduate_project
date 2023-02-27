@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../../schema/formSchema";
@@ -22,7 +21,7 @@ const Comment = () => {
     await axios.post("http://localhost:8080/causeComment", state);
     getData();
     setState({
-      image: "",
+      // image: "",
       fullName: "",
       email: "",
       comment: "",
@@ -50,13 +49,14 @@ const Comment = () => {
   }, []);
   return (
     <div className="causes_detail_comment ">
-      <h2>Comments</h2>
+ 
+      <h2 style={{fontFamily:" Playfair Display, serif",marginTop:"40px"}} >Comments</h2>
       {data?.map((datas) => {
         return (
           <div className="detail_comment_bottom">
-            <div className="w-100">
+            {/* <div className="w-100">
               <img src={datas.image} alt="img" />
-            </div>
+            </div> */}
             <div className="bottom_title">
               <div className="title_left">
                 <div className="left">
@@ -73,8 +73,7 @@ const Comment = () => {
       })}
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <h3>Leave a Comment</h3>
-        
-          <input
+          {/* <input
             type="text"
             {...register("image")}
             onChange={handleChange}
@@ -86,7 +85,7 @@ const Comment = () => {
             <span style={{ color: "red" }}>{errors.image.message}</span>
           ) : (
             <></>
-          )}
+          )} */}
           <input
             type="text"
             {...register("fullName")}

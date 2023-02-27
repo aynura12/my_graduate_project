@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Home/charity.scss";
 import axios from "axios";
-import $ from "jquery";
+// import $ from "jquery";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -25,28 +25,43 @@ const Charity = () => {
     const res = await axios.get("http://localhost:8080/charity");
     setStates(res.data);
   };
-
-  $(document).ready(function () {
-    $(".counter").each(function () {
-      var $this = $(this),
-        countTo = $this.attr("data-count");
-      $({ countNum: $this.text() }).animate(
-        {
-          countNum: countTo,
-        },
-        {
-          duration: 1000,
-          easing: "linear",
-          step: function () {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function () {
-            $this.text(this.countNum);
-          },
-        }
-      );
-    });
-  });
+  // var a = 0;
+  // $(window).scroll(function () {
+  //     var oTop = $("#counter-box").offset().top - window.innerHeight;
+  //     if (a == 0 && $(window).scrollTop() > oTop) {
+  //         $(".counter").each(function () {
+  //             var $this = $(this),
+  //                 countTo = $this.attr("data-number");
+  //             $({
+  //                 countNum: $this.text()
+  //             }).animate(
+  //                 {
+                 
+  //                     countNum: countTo
+  //                 },
+  
+  //                 {
+  //                     duration: 2000,
+  //                     easing: "swing",
+  //                     step: function () {
+  //                         // $this.text(Math.ceil(this.countNum));  
+  //                         $this.text(
+  //                             Math.ceil(this.countNum).toLocaleString("en")
+  //                         );
+  //                     },
+  //                     complete: function () {
+  //                         $this.text(
+  //                             Math.ceil(this.countNum).toLocaleString("en")
+  //                         );
+  //                         // alert('finished');
+  //                     }
+  //                 }
+  //             );
+  //         });
+  //         a = 1;
+  //     }
+  // });
+  
   return (
     <div className="charity">
       <div className="container">
@@ -56,11 +71,11 @@ const Charity = () => {
               return (
                 <div className="charity_left align-items-center" key={datas._id}>
                   <div className="charity_left_icon">
-                    <i class="fa-solid fa-hands-holding-circle"></i>
+                    <i className ="fa-solid fa-hands-holding-circle"></i>
                   </div>
-                  <div className="ps-3">
+                  <div className="ps-3" id="counter-box">
                     <h3>
-                      <span className="counter" data-count={datas.count}></span>
+                      <span className="counter" data-number={datas.count}></span>
                     </h3>
                     <p>{datas.title}</p>
                   </div>
@@ -81,7 +96,7 @@ const Charity = () => {
                   className="charity_right"
                   style={{ backgroundColor: state.color }}
                 >
-                  <i class="fa-solid fa-quote-left"></i>
+                  <i className="fa-solid fa-quote-left"></i>
                   <h3>{state.title}</h3>
                   <p className="charity_right_text">{state.text}</p>
                 </SwiperSlide>)

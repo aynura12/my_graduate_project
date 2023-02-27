@@ -13,10 +13,10 @@ const GalleryAdd = () => {
     image: "",
   });
   const [id, setId] = useState();
-
   const getData = async () => {
     const res = await axios.get("http://localhost:8080/gallery");
     setDatas(res.data);
+   
   };
 
   useEffect(() => {

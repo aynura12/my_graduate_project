@@ -21,8 +21,8 @@ const Header = () => {
           className="carousel slide"
           data-bs-ride="carousel"
         >
-          <div class="carousel-inner">
-            <div class="carousel-item slider_area active">
+          <div className="carousel-inner">
+            <div className="carousel-item slider_area active">
               <div className="slide_image">
                 <img
                   src="http://layerdrops.com/oxpitan/images/slider1.jpg"
@@ -39,7 +39,7 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-            <div class="carousel-item slider_area">
+            <div className="carousel-item slider_area">
               <div className="slide_image">
                 <img
                   src="http://layerdrops.com/oxpitan/images/slider2.jpg"
@@ -56,7 +56,7 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-            <div class="carousel-item slider_area">
+            <div className="carousel-item slider_area">
               <div className="slide_image">
                 <img
                   src="http://layerdrops.com/oxpitan/images/slider3.jpg"

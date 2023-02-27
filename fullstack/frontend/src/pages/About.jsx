@@ -106,7 +106,7 @@ const About = () => {
                 >
                   <h5>Make a difference in the life of a child</h5>
                   <i
-                    class="py-1 fa-solid fa-plus"
+                    className="py-1 fa-solid fa-plus"
                     onClick={() => {
                       setText1(!text1);
                     }}
@@ -127,7 +127,7 @@ const About = () => {
                 >
                   <h5>Let’s do the right thing now</h5>
                   <i
-                    class="py-1 fa-solid fa-plus"
+                    className="py-1 fa-solid fa-plus"
                     onClick={() => {
                       setText2(!text2);
                     }}
@@ -149,7 +149,7 @@ const About = () => {
                   {" "}
                   <h5>Join your hand with us for a better life</h5>
                   <i
-                    class="py-1 fa-solid fa-plus"
+                    className="py-1 fa-solid fa-plus"
                     onClick={() => {
                       setText3(!text3);
                     }}

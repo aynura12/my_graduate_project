@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import "../style/gallery.scss";
 import { Link } from "react-router-dom";
@@ -52,25 +52,31 @@ const Gallery = () => {
                     <div className="gallery_color"></div>
                     <button
                       type="button"
-                      class="modal_button"
+                      className="modal_button"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal"
                       data-bs-whatever="@getbootstrap"
                     >
-                      <i class="fa-solid fa-plus"></i>
+                      <i className="fa-solid fa-plus"></i>
                     </button>
                   </div>
 
                   <div
-                    class="modal fade"
+                    className="modal fade"
                     id="exampleModal"
-                    tabindex="-1"
+                    // tabindex="-1"
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                   >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-body">
+                    <div className="modal-dialog">
+                      <div className="modal-content">
+                      <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                        <div className="modal-body">
                           <Swiper
                             modules={[Navigation, Pagination, Scrollbar, A11y]}
                             spaceBetween={50}
@@ -85,12 +91,7 @@ const Gallery = () => {
                             <SwiperSlide className="modal_slide6"></SwiperSlide>
                           </Swiper>
                         </div>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
+                       
                       </div>
                     </div>
                   </div>

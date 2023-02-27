@@ -5,12 +5,10 @@
       display: flex;
       padding-top: 60px;
       border-bottom: 2px solid rgb(242, 240, 236);
-      img {
-        // object-fit: cover;
-        // min-width: 100%;
-        height: 100px;
-        max-width: 100%;
-      }
+      // img {
+      //   height: 100px;
+      //   max-width: 100%;
+      // }
       p {
         @include text;
       }

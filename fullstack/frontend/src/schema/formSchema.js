@@ -1,33 +1,99 @@
-import * as yup from 'yup';
+import * as yup from "yup";
 export const formSchema = yup
   .object()
   .shape({
-    fullName: yup.string("Pls enter string text").required("This field must not be left blank"),
-    firstName: yup.string("Pls enter string text").required("This field must not be left blank"),
-    lastName: yup.string("Pls enter string text").required("This field must not be left blank"),
-    email: yup.string("Pls enter email firmatted text").required("This field must not be left blank"),
-    number: yup.number("Pls enter number").required("This field must not be left blank"),
-    message: yup.string("Pls enter string text").required("This field must not be left blank"),
-    address:yup.string("Pls enter string text").required("This field must not be left blank"),
-    image:yup.string("Pls enter string text").required("This field must not be left blank"),
-    date: yup.number("Pls enter number").required("This field must not be left blank"),
-    occupation:yup.string("Pls enter string text").required("This field must not be left blank"),
-    comment:yup.string("Pls enter string text").required("This field must not be left blank"),
-    money: yup.number("Pls enter number").required("This field must not be left blank"),
-    country:yup.string("Pls enter string text").required("This field must not be left blank"),
-    city:yup.string("Pls enter string text").required("This field must not be left blank"),
-    mm:yup.string("Pls enter string text").required("This field must not be left blank"),
-    cvc: yup.number("Pls enter number").required("This field must not be left blank"),
-    cardNumber: yup.number("Pls enter number").required("This field must not be left blank"),
-    billingAddress:yup.string("Pls enter string text").required("This field must not be left blank"),
-    text:yup.string("Pls enter string text").required("This field must not be left blank"),
-    value:yup.string("Pls enter string text").required("This field must not be left blank"),
-    location:yup.string("Pls enter string text").required("This field must not be left blank"),
+    fullName: yup
+      .string("Pls enter string text")
+      .min(3, "fullName is Too Short!")
+      .max(50, "fullName is Too Long!")
+      .required("This field is required"),
+    firstName: yup
+      .string("Pls enter string text")
+      .min(3, "firstname is Too Short!")
+      .max(30, "username is Too Long!")
+      .required("This field is required"),
+    lastName: yup
+      .string("Pls enter string text")
+      .min(3, "lastname is Too Short!")
+      .max(30, "lastname is Too Long!")
+      .required("This field is required"),
+    email: yup
+      .string("Pls enter email firmatted text")
+      .positive(
+        "The number must be greater than 0!",
+      )
+      .required("This field is required"),
+    number: yup
+      .number("Pls enter number")
+      .positive(
+        "The number must be greater than 0!",
+      )
+      .min(10, "Phone number must be 10 characters!")
+      .required("This field is required"),
+    message: yup
+      .string("Pls enter string text")
+      .required("This field is required"),
+    address: yup
+      .string("Pls enter string text")
+      .min(12, "address is Too Short!")
+      .max(50, "address is Too Long!")
+      .positive(
+        "The number must be greater than 0!",
+      )
+      .required("This field is required"),
+    image: yup
+      .string("Pls enter string text")
+      .required("This field is required"),
+    date: yup
+      .number("Pls enter number")
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
+    occupation: yup
+      .string("Pls enter string text")
+      .required("This field is required"),
+    comment: yup
+      .string("Pls enter string text")
+      .required("This field is required"),
+    money: yup
+      .number("Pls enter number")
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
+    country: yup
+      .string("Pls enter string text")
+      .required("This field is required"),
+    city: yup
+      .string("Pls enter string text")
+      .required("This field is required"),
+    mm: yup
+      .string("Pls enter string text")
 
-    
-
-
-
-
-})
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
+    cvc: yup
+      .number("Pls enter number")
+       .min(3, "address is Too Short!")
+      .max(3, "address is Too Long!")
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
+    cardNumber: yup
+      .number("Pls enter number")
+      .positive("The number must be greater than 0!")
+      .min(16, "card number is Too Short!")
+      .max(16, "card number is Too Long!")
+      .required("This field is required"),
+    billingAddress: yup
+      .string("Pls enter string text")
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
+    text: yup
+      .string("Pls enter string text")
+      .required("This field is required"),
+    value: yup
+      .string("Pls enter string text")
+      .required("This field is required"),
+    location: yup
+      .string("Pls enter string text")
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
+  })
   .required();

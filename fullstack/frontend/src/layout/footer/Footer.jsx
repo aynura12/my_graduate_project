@@ -1,8 +1,37 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { formSchema } from "../../schema/formSchema";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import ConnectIcon from "../../components/ConnectIcon/ConnectIcon";
 import "../footer/footer.scss";
 const Footer = () => {
+  const [state, setState] = useState({
+    email: "",
+  });
+  const handleChange = async (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+  const addData = async () => {
+    if (!state.email) return;
+    await axios.post("http://localhost:8080/subcribe", state);
+    setState({
+      email: "",
+    });
+  };
+  const onSubmit = (data) => {
+    console.log(data);
+    addData();
+  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(formSchema),
+  });
   return (
     <section id="footer">
       <div className="container">
@@ -16,16 +45,28 @@ const Footer = () => {
             <p>STAY UPDATED</p>
           </div>
         </div>
-        <div id="footer_form">
+        <form id="footer_form" onSubmit={handleSubmit(onSubmit)}>
           <div className="row">
             <div className="col-12 col-md-8 text-center py-2">
-              <input type="email" placeholder="Email address" />
+            <input
+            type="email"
+            {...register("email")}
+            onChange={handleChange}
+            value={state.email}
+            name="email"
+            placeholder="E-mail..."
+          />
+          {errors.email ? (
+            <span style={{ color: "red" }}>{errors.email.message}</span>
+          ) : (
+            <></>
+          )}
             </div>
             <div className="col-12 col-md-4 text-center py-2">
-              <button>Subcribe</button>
+              <button onClick={() => addData()}>Subcribe</button>
             </div>
           </div>
-        </div>
+        </form>
         <div className="row">
           <div className="col-6 col-md-4 col-lg-2 py-2" >
             <h3>About</h3>

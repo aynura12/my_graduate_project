@@ -17,7 +17,7 @@ const ReadMore = () => {
       <div className="container">
         <div className="row g-2">
           {data?.map((datas)=>{
-            return(  <div className="col-lg-4 col-md-4 col-sm-12  ">
+            return(  <div className="col-lg-4 col-md-4 col-sm-12  " key={datas._id}>
             <div className="read_card1">
               <img
                 src={datas.image}

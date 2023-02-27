@@ -54,11 +54,11 @@ const HelpUs = () => {
           <div className="col-lg-3 col-md-6">
             <div className="help_card">
               <div className="help_card_icon3">
-                <i class="fa-solid fa-globe"></i>
+                <i className="fa-solid fa-globe"></i>
               </div>
 
-              <h4 class="help_title">Peace</h4>
-              <p class="help_text">
+              <h4 className="help_title">Peace</h4>
+              <p className="help_text">
                 Lorem ipsum is simply free text available in the market
                 wesbites.
               </p>
@@ -67,10 +67,10 @@ const HelpUs = () => {
           <div className="col-lg-3 col-md-6">
             <div className="help_card">
               <div className="help_card_icon4">
-                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <i className="fa-solid fa-hand-holding-dollar"></i>
               </div>
-              <h4 class="help_title">Donation</h4>
-              <p class="help_text">
+              <h4 className="help_title">Donation</h4>
+              <p className="help_text">
                 Lorem ipsum is simply free text available in the market
                 wesbites.
               </p>

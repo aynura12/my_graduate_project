@@ -80,3 +80,6 @@ app.use("/charity",charityRoute)
 
 const homeDonateRoute=require("./routes/homeDonateRoute")
 app.use("/homedonate",homeDonateRoute)
+
+const subcribeRoute=require("./routes/subcribeRoute")
+app.use("/subcribe",subcribeRoute)
