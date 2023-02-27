@@ -27,6 +27,8 @@ import VolunteerAdd from "../pages/Admin/VolunteerAdd/VolunteerAdd";
 import AdminHome from "../pages/Admin/AdminHome/AdminHome";
 import AdminLogin from "../pages/Admin/AdminLogin/AdminLogin";
 import AdminReg from "../pages/Admin/AdminReg/AdminReg";
+import NotFound from "../pages/NotFound";
+import NotFoundRoute from "../components/NotFoundRoute";
 const ROUTES = [
   {
     path: "/",
@@ -93,6 +95,7 @@ const ROUTES = [
         path: "register",
         element: <Register />,
       },
+     
     ],
   },
   {
@@ -112,6 +115,16 @@ const ROUTES = [
       { path: "register", element: <AdminReg/> },
     ],
   },
+  {
+    path:"*",
+    element:<NotFoundRoute/>,
+    children:[
+      {
+        path: "*",
+        element: <NotFound/>,
+      },
+    ]
+  }
 ];
 
 export default ROUTES;

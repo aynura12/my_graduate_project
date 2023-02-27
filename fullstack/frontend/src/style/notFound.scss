@@ -1,0 +1,36 @@
+@import "../vendors//mixins";
+
+#notfound {
+  background-color: rgb(148, 193, 199);
+ height: 100vh;
+  padding: 60px 0;
+  .notfound_area {
+    @include display;
+    img {
+      width: 100%;
+    }
+    h2 {
+      animation: pulse;
+      animation-duration: 2s;
+      padding-top: 30px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 800;
+      color: aliceblue;
+      font-family: Playfair Display, serif;
+    }
+    button {
+        animation: pulse;
+        animation-duration: 2s;
+      margin-top: 20px;
+      border-radius: 15px;
+      font-family: Playfair Display, serif;
+      text-align: center;
+      border: none;
+      padding: 10px;
+      font-weight: 500;
+
+      color: rgb(2, 154, 224);
+    }
+  }
+}
