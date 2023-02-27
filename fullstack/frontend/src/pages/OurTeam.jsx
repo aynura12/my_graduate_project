@@ -5,16 +5,11 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../style/ourteam.scss";
 import { useState, useEffect } from "react";
-import axios from "axios";
 const OurTeam = () => {
-  const { teams } = useContext(mainContext);
+  const { teams ,ToTop} = useContext(mainContext);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    ToTop()
   }, []);
   return (
     <>

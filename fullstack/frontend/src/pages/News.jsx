@@ -5,15 +5,12 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../style/news.scss";
 import { useEffect } from "react";
+import { mainContext } from "../Context/ContextProvider";
+import { useContext } from "react";
 const News = () => {
-  const { news } = useContext(mainContext);
-
+  const { news ,ToTop} = useContext(mainContext);
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    ToTop()
   }, []);
   return (
     <>

@@ -9,10 +9,14 @@ import HelpUs from "../components/Home/HelpUs";
 import ReadMore from "../components/Home/ReadMore";
 import Recent from "../components/Home/Recent";
 import Volunteers from "../components/Home/Volunteers";
-
 import Header from "../layout/header/Header";
+import { mainContext } from "../Context/ContextProvider";
+import { useContext,useEffect } from "react";
 const Home = () => {
- 
+  const { ToTop } = useContext(mainContext);
+  useEffect(() => {
+    ToTop()
+  }, []);
   return (
     <div>
       <Helmet>

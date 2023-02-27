@@ -157,7 +157,7 @@ const Footer = () => {
             <h3>Blog</h3>
             <ul>
               <li>
-                <Link id="footer_link" to="/cause">
+                <Link id="footer_link" to="/causes">
                   Care For All People
                 </Link>
               </li>

@@ -9,13 +9,13 @@ import { useState} from "react";
 import axios from "axios";
 import { mainContext } from "../../../Context/ContextProvider";
 const CauseAdd = () => {
-  const { causes,getCause } = useContext(mainContext);
+  const { causes,getCause} = useContext(mainContext);
   const [id, setId] = useState();
   const [state, setState] = useState({
     image: "",
     title: "",
     text: "",
-    goal: "",
+    goal: "", 
     raised: "",
   });
 

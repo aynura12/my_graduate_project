@@ -9,13 +9,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../style/contact.scss";
 import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
+import { mainContext } from "../Context/ContextProvider";
+import { useContext } from "react";
 const Contact = () => {
+  const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    ToTop()
   }, []);
   const [state, setState] = useState({
     fullName: "",

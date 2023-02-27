@@ -5,13 +5,12 @@ import "../style/eventsDetail.scss";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { mainContext } from "../Context/ContextProvider";
+import { useContext } from "react";
 const EventsDetail = () => {
+  const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    ToTop()
   }, []);
   const { id } = useParams();
   const [event, setEvent] = useState([]);

@@ -91,7 +91,21 @@ const ContextProvider = ({ children }) => {
   useEffect(() => {
     getTeams();
   }, [teams]);
+
+
+const  ToTop=()=>{
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+ 
+}
+
+
+
   const values = {
+    ToTop,
     causes,
     setCause,
     lefts,

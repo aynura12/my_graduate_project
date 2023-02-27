@@ -8,13 +8,12 @@ import { useParams } from "react-router-dom";
 import Comment from "../components/Comment/Comment";
 import { format } from "date-fns";
 import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
+import { mainContext } from "../Context/ContextProvider";
+import { useContext } from "react";
 const CausesDetail = () => {
+  const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    ToTop()
   }, []);
   const [recent, setRecent] = useState([]);
   const [cause, setCause] = useState([]);

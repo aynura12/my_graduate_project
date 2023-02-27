@@ -5,13 +5,12 @@ import HelpUs from "../components/Home/HelpUs";
 import Volunteers from "../components/Home/Volunteers";
 import donationLogo from "../media/smalllogo.png";
 import "../style/_about.scss";
+import { mainContext } from "../Context/ContextProvider";
+import { useContext } from "react";
 const About = () => {
+  const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    ToTop()
   }, []);
   const [text1, setText1] = useState(false);
   const [text2, setText2] = useState(false);

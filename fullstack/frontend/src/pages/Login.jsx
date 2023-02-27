@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { mainContext } from "../Context/ContextProvider";
+import { useContext} from "react";
 const Login = () => {
+  const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    ToTop()
   }, []);
   return (
     <div>

@@ -7,13 +7,12 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import ConnectIcon from "../components/ConnectIcon/ConnectIcon";
 import Comment from "../components/Comment/Comment";
+import { mainContext } from "../Context/ContextProvider";
+import { useContext } from "react";
 const NewsDetail = () => {
+  const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    ToTop()
   }, []);
   const { id } = useParams();
   const [news, setNews] = useState([]);
