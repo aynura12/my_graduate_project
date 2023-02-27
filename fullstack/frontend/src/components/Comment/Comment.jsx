@@ -7,7 +7,10 @@ import { useState, useEffect } from "react";
 import "../Comment/comment.scss";
 import axios from "axios";
 import ReplyModal from "../ReplyModal/ReplyModal";
+import { mainContext } from "../../Context/ContextProvider";
+import { useContext } from "react";
 const Comment = () => {
+  const { comments,getComment } = useContext(mainContext);
   const [state, setState] = useState({
     image: "",
     fullName: "",
@@ -20,7 +23,7 @@ const Comment = () => {
   const addData = async () => {
     if (!state.fullName || !state.email || !state.comment) return;
     await axios.post("http://localhost:8080/causeComment", state);
-    getData();
+  getComment()
     setState({
       // image: "",
       fullName: "",
@@ -40,29 +43,21 @@ const Comment = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const [data, setData] = useState([]);
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/causeComment");
-    setData(res.data);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
   return (
     <div className="causes_detail_comment ">
       <h2 style={{ fontFamily: " Playfair Display, serif", marginTop: "40px" }}>
         Comments
       </h2>
-      {data?.map((datas) => {
+      {comments?.map((comment) => {
         return (
-          <div className="detail_comment_bottom" key={datas._id}>
+          <div className="detail_comment_bottom" key={comment._id}>
             {/* <div className="w-100">
               <img src={datas.image} alt="img" />
             </div> */}
             <div className="bottom_title">
               <div className="title_left">
                 <div className="left">
-                  <h4>{datas.fullName}</h4>
+                  <h4>{comment.fullName}</h4>
                   {/* <span >{format(datas.updateAt, 'yyyy-mm-dd')}</span>
                   <span>{datas.createdAt}</span> */}
                 </div>
@@ -74,7 +69,7 @@ const Comment = () => {
                   Reply
                 </button>
               </div>
-              <p>{datas.comment}</p>
+              <p>{comment.comment}</p>
             </div>
           </div>
         );

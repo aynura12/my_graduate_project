@@ -13,7 +13,7 @@ const ContextProvider = ({ children }) => {
   const [events, setEvents] = useState([]);
   const [news, setNews] = useState([]);
   const [teams, setTeams] = useState([]);
-  
+  const [comments, setComments] = useState([]);
 
   const getGallery= async () => {
     const res = await axios.get("http://localhost:8080/gallery");
@@ -56,6 +56,10 @@ const ContextProvider = ({ children }) => {
     setTeams(res.data);
   };
  
+  const getComment = async () => {
+    const res = await axios.get("http://localhost:8080/causeComment");
+    setComments(res.data);
+  };
   useEffect(() => {
    getVolunteers()
   }, []);
@@ -92,7 +96,9 @@ const ContextProvider = ({ children }) => {
     getTeams();
   }, [teams]);
 
-
+  useEffect(() => {
+   getComment()
+  }, [comments]);
 const  ToTop=()=>{
   window.scrollTo({
     top: 0,
@@ -131,6 +137,9 @@ const  ToTop=()=>{
     getGallery,
     getNews,
     getTeams,
+    comments,
+    setComments,
+    getComment,
   };
 
   return <mainContext.Provider value={values}>{children}</mainContext.Provider>;

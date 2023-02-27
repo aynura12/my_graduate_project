@@ -4,9 +4,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../../schema/formSchema";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { mainContext } from "../../Context/ContextProvider";
+import { useContext } from "react";
 const ReplyModal = () => {
+  const { getComment} = useContext(mainContext);
   const [state, setState] = useState({
-    image: "",
     fullName: "",
     email: "",
     comment: "",
@@ -17,9 +19,8 @@ const ReplyModal = () => {
   const addData = async () => {
     if (!state.fullName || !state.email || !state.comment) return;
     await axios.post("http://localhost:8080/causeComment", state);
-    // getData();
+    getComment()
     setState({
-      image: "",
       fullName: "",
       email: "",
       comment: "",
@@ -63,40 +64,44 @@ const ReplyModal = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div class="mb-3">
                   <label for="recipient-name" class="col-form-label">
-                    You Image:
+                    Full Name:
                   </label>
-                  <input
-                    type="text"
-                    {...register("image")}
-                    onChange={handleChange}
-                    value={state.image}
-                    name="image"
-                    class="form-control"
-                    id="recipient-name"
-                  />
-                  {errors.image ? (
-                    <span style={{ color: "red" }}>{errors.image.message}</span>
+                  <div>
+                    <input
+                      type="text"
+                      {...register("fullName")}
+                      onChange={handleChange}
+                      value={state.fullName}
+                      name="fullName"
+                      className="form-control"
+                      id="recipient-name"
+                    />
+                  </div>
+
+                  {errors.fullName ? (
+                    <p style={{ color: "red" }}>{errors.fullName.message}</p>
                   ) : (
                     <></>
                   )}
                 </div>
                 <div class="mb-3">
                   <label for="recipient-name" class="col-form-label">
-                    Full Name:
+                    Email Address:
                   </label>
-                  <input
-                    type="text"
-                    {...register("fullName")}
-                    onChange={handleChange}
-                    value={state.fullName}
-                    name="fullName"
-                    class="form-control"
-                    id="recipient-name"
-                  />
-                  {errors.fullName ? (
-                    <span style={{ color: "red" }}>
-                      {errors.fullName.message}
-                    </span>
+                  <div>
+                    <input
+                      type="email"
+                      {...register("email")}
+                      onChange={handleChange}
+                      value={state.email}
+                      name="email"
+                      className="form-control"
+                      id="recipient-name"
+                    />
+                  </div>
+
+                  {errors.email ? (
+                    <p style={{ color: "red" }}>{errors.email.message}</p>
                   ) : (
                     <></>
                   )}
@@ -105,35 +110,26 @@ const ReplyModal = () => {
                   <label for="message-text" class="col-form-label">
                     Comment:
                   </label>
-                  <textarea
-                    type="text"
-                    {...register("comment")}
-                    onChange={handleChange}
-                    value={state.comment}
-                    name="comment"
-                    class="form-control"
-                    id="message-text"
-                  >
-                    {errors.comment ? (
-                      <span style={{ color: "red" }}>
-                        {errors.comment.message}
-                      </span>
-                    ) : (
-                      <></>
-                    )}
-                  </textarea>
+                  <div>
+                    <textarea
+                      type="text"
+                      {...register("comment")}
+                      onChange={handleChange}
+                      value={state.comment}
+                      name="comment"
+                      className="form-control"
+                      id="message-text"
+                    ></textarea>
+                  </div>
+
+                  {errors.comment ? (
+                    <p style={{ color: "red" }}>{errors.comment.message}</p>
+                  ) : (
+                    <></>
+                  )}
                 </div>
-                <button onClick={() => addData()}>Send message</button>
+                <button onClick={() => addData()} class="btn btn-warning">Send message</button>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
             </div>
           </div>
         </div>
