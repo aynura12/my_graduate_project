@@ -29,6 +29,8 @@ import AdminLogin from "../pages/Admin/AdminLogin/AdminLogin";
 import AdminReg from "../pages/Admin/AdminReg/AdminReg";
 import NotFound from "../pages/NotFound";
 import NotFoundRoute from "../components/NotFoundRoute";
+import AdminPassword from "../pages/Admin/AdminPassword/AdminPassword";
+import Password from "../pages/Password";
 const ROUTES = [
   {
     path: "/",
@@ -95,6 +97,10 @@ const ROUTES = [
         path: "register",
         element: <Register />,
       },
+      {
+        path: "password",
+        element: <Password/>,
+      },
      
     ],
   },
@@ -113,6 +119,8 @@ const ROUTES = [
       { path: "volunteerAdd", element: <VolunteerAdd/> },
       { path: "login", element: <AdminLogin/>},
       { path: "register", element: <AdminReg/> },
+      { path: "password", element: <AdminPassword/> },
+
     ],
   },
   {

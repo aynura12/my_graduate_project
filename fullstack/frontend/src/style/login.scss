@@ -1,10 +1,26 @@
-.admin-login__wrapper {
+@import "../vendors//mixins";
+
+.login{
+  padding: 40px 0;
+  @include backcolor;
+  .login_title {
+    @include causestitle;
+    h2 {
+      @include pagetitle;
+    }
+    button {
+      @include buttonpreparty;
+    }
+  }
+}
+
+.login__wrapper {
     height: 95vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(242,240,236);
+    background-color: white;
 }
 
 .login-inp{

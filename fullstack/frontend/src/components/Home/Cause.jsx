@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../Home/cause.scss";
 import donationLogo from "../../media/smalllogo.png";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState} from "react";
 import { mainContext } from "../../Context/ContextProvider";
 const Cause = () => {
   const {causes,setCause}=useContext(mainContext)
