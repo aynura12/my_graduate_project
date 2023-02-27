@@ -1,14 +1,16 @@
 import React from "react";
+import { useContext } from "react";
+import { mainContext } from "../../../Context/ContextProvider";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../NewsAdd/newsAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState, useEffect} from "react";
+import { useState } from "react";
 import axios from "axios";
 const NewsAdd = () => {
-  const [datas, setDatas] = useState([]);
+  const { news, getNews } = useContext(mainContext);
   const [state, setState] = useState({
     image: "",
     date: "",
@@ -21,16 +23,6 @@ const NewsAdd = () => {
     category: "",
   });
   const [id, setId] = useState();
-
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/news");
-    setDatas(res.data);
-  };
-
-  useEffect(() => {
-    addData();
-    getData();
-  }, []);
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
@@ -48,7 +40,7 @@ const NewsAdd = () => {
     )
       return;
     await axios.post("http://localhost:8080/news", state);
-    getData();
+    getNews();
     setState({
       image: "",
       date: "",
@@ -75,7 +67,7 @@ const NewsAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/news/${id}`);
-    getData();
+    getNews();
   };
 
   const handleEditClick = (data) => {
@@ -94,7 +86,7 @@ const NewsAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/news/${id}`, state);
-    getData();
+    getNews();
     setState({
       image: "",
       date: "",
@@ -149,30 +141,30 @@ const NewsAdd = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {datas.map((data) => {
+                  {news.map((n) => {
                     return (
-                      <tr key={data._id}>
+                      <tr key={n._id}>
                         <td>
                           <img
-                            src={data.image}
+                            src={n.image}
                             style={{ height: 100 }}
                             alt="alt"
                           />
                         </td>
-                        <td>{data.date}</td>
-                        <td>{data.title}</td>
-                        <td>{data.text}</td>
-                        <td>{data.color}</td>
-                        <td>{data.detailText}</td>
-                        <td>{data.detailImage}</td>
-                        <td>{data.detailTitle}</td>
-                        <td>{data.category}</td>
+                        <td>{n.date}</td>
+                        <td>{n.title}</td>
+                        <td>{n.text}</td>
+                        <td>{n.color}</td>
+                        <td>{n.detailText}</td>
+                        <td>{n.detailImage}</td>
+                        <td>{n.detailTitle}</td>
+                        <td>{n.category}</td>
 
                         <td>
                           <button
                             type="button"
                             className="btn btn-danger"
-                            onClick={() => deleteData(data._id)}
+                            onClick={() => deleteData(n._id)}
                           >
                             Delete
                           </button>
@@ -181,7 +173,7 @@ const NewsAdd = () => {
                           <button
                             type="button"
                             className="btn btn-success"
-                            onClick={() => handleEditClick(data)}
+                            onClick={() => handleEditClick(n)}
                           >
                             Update
                           </button>

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../../schema/formSchema";
 import { useState, useEffect } from "react";
+// import { format } from 'date-fns'
 import "../Comment/comment.scss";
 import axios from "axios";
 import ReplyModal from "../ReplyModal/ReplyModal";
@@ -53,7 +54,7 @@ const Comment = () => {
       <h2 style={{fontFamily:" Playfair Display, serif",marginTop:"40px"}} >Comments</h2>
       {data?.map((datas) => {
         return (
-          <div className="detail_comment_bottom">
+          <div className="detail_comment_bottom" key={datas._id}>
             {/* <div className="w-100">
               <img src={datas.image} alt="img" />
             </div> */}
@@ -61,8 +62,8 @@ const Comment = () => {
               <div className="title_left">
                 <div className="left">
                   <h4>{datas.fullName}</h4>
-                  {/* <span >{format(datas.createdAt, 'dd/mm/yyyy')}</span> */}
-                  <span>{datas.createdAt}</span>
+                  {/* <span >{format(datas.updateAt, 'yyyy-mm-dd')}</span>
+                  <span>{datas.createdAt}</span> */}
                 </div>
                   <button  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Reply</button>
               </div>

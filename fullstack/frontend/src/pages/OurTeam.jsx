@@ -1,25 +1,20 @@
 import React from "react";
+import { useContext } from "react";
+import { mainContext } from "../Context/ContextProvider";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../style/ourteam.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const OurTeam = () => {
+  const { teams } = useContext(mainContext);
+  const [search, setSearch] = useState("");
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
-  }, []);
-  const [search, setSearch] = useState("");
-  const [data, setData] = useState([]);
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/team");
-    setData(res.data);
-  };
-  useEffect(() => {
-    getData();
   }, []);
   return (
     <>
@@ -48,18 +43,18 @@ const OurTeam = () => {
               placeholder="Search Name"
               onChange={(e) => setSearch(e.target.value)}
             />
-            {data
+            {teams
               ?.filter((d) => {
                 return search.toLowerCase() === ""
                   ? d
                   : d.name.toLowerCase().includes(search);
               })
-              .map((datas) => {
+              .map((team) => {
                 return (
-                  <div className="col-lg-3 col-md-6" key={datas._id}>
+                  <div className="col-lg-3 col-md-6" key={team._id}>
                     <div className="volunteers_card volunteer_row">
                       <div className="card_image">
-                        <img src={datas.image} alt="card" />
+                        <img src={team.image} alt="card" />
                         <div className="volunteers_icons">
                           <ul>
                             <li className="list">
@@ -95,10 +90,10 @@ const OurTeam = () => {
                       </div>
                       <div
                         className="volunteers_title"
-                        style={{ backgroundColor: datas.color }}
+                        style={{ backgroundColor: team.color }}
                       >
-                        <h2>{datas.name}</h2>
-                        <p>{datas.title}</p>
+                        <h2>{team.name}</h2>
+                        <p>{team.title}</p>
                       </div>
                     </div>
                   </div>

@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../CauseAdd/causeAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import axios from "axios";
+import { mainContext } from "../../../Context/ContextProvider";
 const CauseAdd = () => {
-  const [datas, setDatas] = useState([]);
+  const { causes,getCause } = useContext(mainContext);
+  const [id, setId] = useState();
   const [state, setState] = useState({
     image: "",
     title: "",
@@ -16,17 +18,7 @@ const CauseAdd = () => {
     goal: "",
     raised: "",
   });
-  const [id, setId] = useState();
 
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/cause");
-    setDatas(res.data);
-  };
-
-  useEffect(() => {
-    addData();
-    getData();
-  }, []);
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
@@ -40,7 +32,7 @@ const CauseAdd = () => {
     )
       return;
     await axios.post("http://localhost:8080/cause", state);
-    getData();
+    getCause();
     setState({
       image: "",
       title: "",
@@ -63,7 +55,7 @@ const CauseAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/cause/${id}`);
-    getData();
+    getCause()
   };
 
   const handleEditClick = (data) => {
@@ -78,7 +70,7 @@ const CauseAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/cause/${id}`, state);
-    getData();
+   getCause()
     setState({
       image: "",
       title: "",
@@ -126,27 +118,27 @@ const CauseAdd = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {datas.map((data) => {
+                  {causes.map((cause) => {
                     return (
-                      <tr key={data._id}>
+                      <tr key={cause._id}>
                         <td>
                           <img
-                            src={data.image}
+                            src={cause.image}
                             style={{ height: 100 }}
                             alt="alt"
                           />
                         </td>
 
-                        <td>{data.title}</td>
-                        <td>{data.text}</td>
-                        <td>{data.goal}</td>
-                        <td>{data.raised}</td>
+                        <td>{cause.title}</td>
+                        <td>{cause.text}</td>
+                        <td>{cause.goal}</td>
+                        <td>{cause.raised}</td>
 
                         <td>
                           <button
                             type="button"
                             className="btn btn-danger"
-                            onClick={() => deleteData(data._id)}
+                            onClick={() => deleteData(cause._id)}
                           >
                             Delete
                           </button>
@@ -155,7 +147,7 @@ const CauseAdd = () => {
                           <button
                             type="button"
                             className="btn btn-success"
-                            onClick={() => handleEditClick(data)}
+                            onClick={() => handleEditClick(cause)}
                           >
                             Update
                           </button>

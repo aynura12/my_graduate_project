@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../style/events.scss";
 import { useState, useEffect } from "react";
-import axios from "axios";
-
+import { mainContext } from "../Context/ContextProvider";
 const Events = () => {
+  const { events, setEvents } = useContext(mainContext);
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -13,18 +13,10 @@ const Events = () => {
       behavior: "smooth",
     });
   }, []);
-  const [data, setData] = useState([]);
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/event");
-    setData(res.data);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
   const [sorted, setSorted] = useState({ sorted: "day", reversed: false });
   const sorteddata = () => {
     setSorted({ sorted: "day", reversed: !sorted.reversed });
-    const datacopy = [...data];
+    const datacopy = [...events];
     datacopy.sort((a, b) => {
       if (sorted.reversed) {
         return b.day - a.day;
@@ -32,7 +24,7 @@ const Events = () => {
         return a.day - b.day;
       }
     });
-    setData(datacopy);
+    setEvents(datacopy);
   };
 
   return (
@@ -58,44 +50,44 @@ const Events = () => {
         <div className="container">
           <button onClick={sorteddata}>Sorted</button>
           <div className="row">
-            {data.map((datas) => {
+            {events.map((event) => {
               return (
-                <div className="col-lg-4 col-md-6" key={datas._id}>
+                <div className="col-lg-4 col-md-6" key={event._id}>
                   <div className="events_card">
-                    <img src={datas.image} alt="img" />
+                    <img src={event.image} alt="img" />
                     <span
-                      style={{ backgroundColor: datas.color }}
+                      style={{ backgroundColor: event.color }}
                       className="date_of_card "
                     >
-                      <span className="day_date">{datas.day}</span>
-                      <span className="month_date">{datas.month}</span>
+                      <span className="day_date">{event.day}</span>
+                      <span className="month_date">{event.month}</span>
                     </span>
                     <div className="events_text">
                       <Link
                         style={{ textDecoration: "none" }}
-                        to={`${datas._id}`}
+                        to={`${event._id}`}
                       >
                         {" "}
                         <h3
                           className="events_title1"
-                          style={{ color: datas.color }}
+                          style={{ color: event.color }}
                         >
-                          {datas.title}
+                          {event.title}
                         </h3>
                       </Link>
 
                       <ul>
                         <li
                           className="events_list1"
-                          style={{ color: datas.color }}
+                          style={{ color: event.color }}
                         >
-                          {datas.watch}
+                          {event.watch}
                         </li>
                         <li
                           className="events_list1"
-                          style={{ color: datas.color }}
+                          style={{ color: event.color }}
                         >
-                          {datas.name}
+                          {event.name}
                         </li>
                       </ul>
                     </div>

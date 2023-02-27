@@ -33,9 +33,21 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
+    input{
+      width: 100%;
+    }
+    textarea{
+      width: 100%;
+    }
     .form_top {
       display: flex;
+      gap: 2px;
       justify-content: space-between;
+      max-width: 100%;
+      flex-wrap: wrap;
+      @media screen and (max-width:992px) {
+        gap: 10px;
+      }
     }
     
     input {

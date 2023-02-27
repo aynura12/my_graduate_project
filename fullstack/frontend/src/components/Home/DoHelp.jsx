@@ -7,7 +7,6 @@ import { formSchema } from "../../schema/formSchema";
 import axios from "axios";
 const DoHelp = () => {
   const [state, setState] = useState({
-    value: "",
     fullName: "",
     email: "",
     location: "",
@@ -18,7 +17,6 @@ const DoHelp = () => {
   };
   const addData = async () => {
     if (
-      !state.value ||
       !state.fullName ||
       !state.email ||
       !state.location ||
@@ -27,7 +25,6 @@ const DoHelp = () => {
       return;
     await axios.post("http://localhost:8080/homedonate", state);
     setState({
-      value: "",
       fullName: "",
       email: "",
       location: "",
@@ -73,21 +70,6 @@ const DoHelp = () => {
               <h2>Make a Donation</h2>
               <p>DONATE US NOW</p>
             </div>
-
-            <input
-              type="text"
-              {...register("value")}
-              onChange={handleChange}
-              value={state.value}
-              name="value"
-              placeholder="Insert Custom Value..."
-            />
-            {errors.value? (
-              <span style={{ color: "red" }}>{errors.value.message}</span>
-            ) : (
-              <></>
-            )}
-
             <input
               type="text"
               {...register("fullName")}

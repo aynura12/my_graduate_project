@@ -1,14 +1,15 @@
-import React from "react";
+import React , { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../EventAdd/eventAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import axios from "axios";
+import { mainContext } from "../../../Context/ContextProvider";
 const EventAdd = () => {
-  const [datas, setDatas] = useState([]);
+  const { events,getEvents } = useContext(mainContext);
   const [state, setState] = useState({
     image: "",
     day: "",
@@ -26,16 +27,7 @@ const EventAdd = () => {
     location: "",
   });
   const [id, setId] = useState();
-
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/event");
-    setDatas(res.data);
-  };
-
-  useEffect(() => {
-    addData();
-    getData();
-  }, []);
+ 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
@@ -58,7 +50,7 @@ const EventAdd = () => {
     )
       return;
     await axios.post("http://localhost:8080/event", state);
-    getData();
+   getEvents()
     setState({
       image: "",
       day: "",
@@ -90,7 +82,7 @@ const EventAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/event/${id}`);
-    getData();
+    getEvents()
   };
 
   const handleEditClick = (data) => {
@@ -114,7 +106,7 @@ const EventAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/event/${id}`, state);
-    getData();
+  getEvents()
     setState({
       image: "",
       day: "",
@@ -179,35 +171,35 @@ const EventAdd = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {datas.map((data) => {
+                  {events.map((event) => {
                     return (
-                      <tr key={data._id}>
+                      <tr key={event._id}>
                         <td>
                           <img
-                            src={data.image}
+                            src={event.image}
                             style={{ height: 100 }}
                             alt="alt"
                           />
                         </td>
-                        <td>{data.day}</td>
-                        <td>{data.month}</td>
-                        <td>{data.title}</td>
-                        <td>{data.watch}</td>
-                        <td>{data.name}</td>
-                        <td>{data.color}</td>
-                        <td>{data.requirements}</td>
-                        <td>{data.text}</td>
-                        <td>{data.date}</td>
-                        <td>{data.category}</td>
-                        <td>{data.phone}</td>
-                        <td>{data.website}</td>
-                        <td>{data.location}</td>
+                        <td>{event.day}</td>
+                        <td>{event.month}</td>
+                        <td>{event.title}</td>
+                        <td>{event.watch}</td>
+                        <td>{event.name}</td>
+                        <td>{event.color}</td>
+                        <td>{event.requirements}</td>
+                        <td>{event.text}</td>
+                        <td>{event.date}</td>
+                        <td>{event.category}</td>
+                        <td>{event.phone}</td>
+                        <td>{event.website}</td>
+                        <td>{event.location}</td>
 
                         <td>
                           <button
                             type="button"
                             className="btn btn-danger"
-                            onClick={() => deleteData(data._id)}
+                            onClick={() => deleteData(event._id)}
                           >
                             Delete
                           </button>
@@ -216,7 +208,7 @@ const EventAdd = () => {
                           <button
                             type="button"
                             className="btn btn-success"
-                            onClick={() => handleEditClick(data)}
+                            onClick={() => handleEditClick(event)}
                           >
                             Update
                           </button>

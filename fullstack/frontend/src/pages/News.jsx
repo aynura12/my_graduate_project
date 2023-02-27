@@ -1,24 +1,19 @@
 import React from "react";
+import { useContext } from "react";
+import { mainContext } from "../Context/ContextProvider";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../style/news.scss";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 const News = () => {
+  const { news } = useContext(mainContext);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
-  }, []);
-  const [data, setData] = useState([]);
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/news");
-    setData(res.data);
-  };
-  useEffect(() => {
-    getData();
   }, []);
   return (
     <>
@@ -42,25 +37,25 @@ const News = () => {
       <section className="news_area">
         <div className="container">
           <div className="row">
-            {data?.map((datas) => {
+            {news?.map((n) => {
               return (
-                <div className="col-lg-6 col-md-12" key={datas._id}>
+                <div className="col-lg-6 col-md-12" key={n._id}>
                   <div className="news_card">
                     <span className="news_of_card ">
                       <span
                         className="news_date card1"
-                        style={{ backgroundColor: datas.color }}
+                        style={{ backgroundColor: n.color }}
                       >
-                        {datas.date}
+                        {n.date}
                       </span>
                     </span>
-                    <img src={datas.image} alt="img" />
+                    <img src={n.image} alt="img" />
                     <div className="news_text">
-                      <Link to={`${datas._id}`} className="news_link">
-                        <h3 className="news_title1">{datas.title}</h3>
+                      <Link to={`${n._id}`} className="news_link">
+                        <h3 className="news_title1">{n.title}</h3>
                       </Link>
-                      <p>{datas.text}</p>
-                      <Link to={`${datas._id}`}>
+                      <p>{n.text}</p>
+                      <Link to={`${n._id}`}>
                         <button>Read More</button>
                       </Link>
                     </div>

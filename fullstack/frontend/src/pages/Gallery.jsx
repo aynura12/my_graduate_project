@@ -13,6 +13,7 @@ import "swiper/css/scrollbar";
 import "swiper/css";
 import { useEffect } from "react";
 const Gallery = () => {
+  const { gallerys } = useContext(mainContext);
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -20,7 +21,7 @@ const Gallery = () => {
       behavior: "smooth",
     });
   }, []);
-  const { data } = useContext(mainContext);
+ 
   return (
     <>
       <Helmet>
@@ -44,11 +45,11 @@ const Gallery = () => {
         <div className="container">
           {" "}
           <div className="row">
-            {data?.map((datas) => {
+            {gallerys?.map((gallery) => {
               return (
-                <div className="col-lg-4 col-md-6" key={datas._id}>
+                <div className="col-lg-4 col-md-6" key={gallery._id}>
                   <div className="gallery_photo">
-                    <img src={datas.image} alt="img" />
+                    <img src={gallery.image} alt="img" />
                     <div className="gallery_color"></div>
                     <button
                       type="button"

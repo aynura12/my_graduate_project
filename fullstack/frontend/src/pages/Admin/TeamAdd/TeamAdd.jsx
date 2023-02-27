@@ -1,38 +1,30 @@
 import React from "react";
+import { useContext } from "react";
+import { mainContext } from "../../../Context/ContextProvider";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../TeamAdd/teamAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 const TeamAdd = () => {
-  const [datas, setDatas] = useState([]);
+  const { teams, getTeams} = useContext(mainContext);
+  const [id, setId] = useState();
   const [state, setState] = useState({
     image: "",
     name: "",
     title: "",
     color: "",
   });
-  const [id, setId] = useState();
-
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/team");
-    setDatas(res.data);
-  };
-
-  useEffect(() => {
-    addData();
-    getData();
-  }, []);
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
   const addData = async () => {
     if (!state.image || !state.name || !state.title || !state.color) return;
     await axios.post("http://localhost:8080/team", state);
-    getData();
+    getTeams()
     setState({
       image: "",
       name: "",
@@ -54,7 +46,7 @@ const TeamAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/team/${id}`);
-    getData();
+    getTeams()
   };
 
   const handleEditClick = (data) => {
@@ -68,7 +60,7 @@ const TeamAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/team/${id}`, state);
-    getData();
+  getTeams()
     setState({
       image: "",
       name: "",
@@ -114,25 +106,25 @@ const TeamAdd = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {datas.map((data) => {
+                  {teams.map((team) => {
                     return (
-                      <tr key={data._id}>
+                      <tr key={team._id}>
                         <td>
                           <img
-                            src={data.image}
+                            src={team.image}
                             style={{ height: 100 }}
                             alt="alt"
                           />
                         </td>
-                        <td>{data.name}</td>
-                        <td>{data.title}</td>
-                        <td>{data.color}</td>
+                        <td>{team.name}</td>
+                        <td>{team.title}</td>
+                        <td>{team.color}</td>
 
                         <td>
                           <button
                             type="button"
                             className="btn btn-danger"
-                            onClick={() => deleteData(data._id)}
+                            onClick={() => deleteData(team._id)}
                           >
                             Delete
                           </button>
@@ -141,7 +133,7 @@ const TeamAdd = () => {
                           <button
                             type="button"
                             className="btn btn-success"
-                            onClick={() => handleEditClick(data)}
+                            onClick={() => handleEditClick(team)}
                           >
                             Update
                           </button>

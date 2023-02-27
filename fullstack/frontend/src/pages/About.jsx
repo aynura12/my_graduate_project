@@ -16,16 +16,6 @@ const About = () => {
   const [text1, setText1] = useState(false);
   const [text2, setText2] = useState(false);
   const [text3, setText3] = useState(false);
-
-  // const [data, setData] = useState([]);
-  // const getData = async () => {
-  //   const res = await axios.get("http://localhost:8080/aboutList");
-  //   setData(res.data);
-  // };
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
   return (
     <>
       <Helmet>

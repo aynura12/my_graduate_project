@@ -1,35 +1,28 @@
 import React from "react";
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import axios from "axios";
 import "../GalleryAdd/galleryAdd.scss";
+import { mainContext } from "../../../Context/ContextProvider";
 const GalleryAdd = () => {
-  const [datas, setDatas] = useState([]);
+  const { gallerys,getGallery } = useContext(mainContext);
+
+  const [id, setId] = useState();
   const [state, setState] = useState({
     image: "",
   });
-  const [id, setId] = useState();
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/gallery");
-    setDatas(res.data);
-   
-  };
-
-  useEffect(() => {
-    addData();
-    getData();
-  }, []);
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
   const addData = async () => {
     if (!state.image) return;
     await axios.post("http://localhost:8080/gallery", state);
-    getData();
+   getGallery()
     setState({
       image: "",
     });
@@ -48,7 +41,7 @@ const GalleryAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/gallery/${id}`);
-    getData();
+    getGallery()
   };
 
   const handleEditClick = (data) => {
@@ -57,7 +50,7 @@ const GalleryAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/gallery/${id}`, state);
-    getData();
+   getGallery()
     setState({
       image: "",
     });
@@ -96,12 +89,12 @@ const GalleryAdd = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {datas.map((data) => {
+                  {gallerys.map((gallery) => {
                     return (
-                      <tr key={data._id}>
+                      <tr key={gallery._id}>
                         <td>
                           <img
-                            src={data.image}
+                            src={gallery.image}
                             style={{ height: 100 }}
                             alt="alt"
                           />
@@ -110,7 +103,7 @@ const GalleryAdd = () => {
                           <button
                             type="button"
                             className="btn btn-danger"
-                            onClick={() => deleteData(data._id)}
+                            onClick={() => deleteData(gallery._id)}
                           >
                             Delete
                           </button>
@@ -119,7 +112,7 @@ const GalleryAdd = () => {
                           <button
                             type="button"
                             className="btn btn-success"
-                            onClick={() => handleEditClick(data)}
+                            onClick={() => handleEditClick(gallery)}
                           >
                             Update
                           </button>
