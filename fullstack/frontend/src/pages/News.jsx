@@ -5,8 +5,6 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../style/news.scss";
 import { useEffect } from "react";
-import { mainContext } from "../Context/ContextProvider";
-import { useContext } from "react";
 const News = () => {
   const { news ,ToTop} = useContext(mainContext);
   useEffect(() => {
