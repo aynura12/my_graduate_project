@@ -6,7 +6,6 @@ import { formSchema } from "../../schema/formSchema";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const Donate = () => {
-  
   //   // Function will execute on click of button
   //   const onButtonClick = () => {
   //     // using Java Script method to get PDF file
@@ -22,7 +21,7 @@ const Donate = () => {
   //         })
   //     })
   // }
-  const [datas, setDatas] = useState([]);
+  // const [datas, setDatas] = useState([]);
   const [state, setState] = useState({
     money: 0,
     firstName: "",
@@ -30,7 +29,7 @@ const Donate = () => {
     email: "",
     number: 0,
     address: "",
-    country: "",
+    // country: "",
     comment: "",
     cardNumber: 0,
     mm: "",
@@ -49,7 +48,7 @@ const Donate = () => {
       !state.email ||
       !state.number ||
       !state.address ||
-      !state.country ||
+      // !state.country ||
       !state.comment ||
       !state.cardNumber ||
       !state.mm ||
@@ -66,7 +65,7 @@ const Donate = () => {
       email: "",
       number: 0,
       address: "",
-      country: "",
+      // country: "",
       comment: "",
       cardNumber: 0,
       mm: "",
@@ -76,7 +75,6 @@ const Donate = () => {
     });
   };
 
-  console.log(state);
   const onSubmit = (data) => {
     console.log(data);
     addData();
@@ -89,204 +87,258 @@ const Donate = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/aboutList");
-    setDatas(res.data);
-  };
+  // const getData = async () => {
+  //   const res = await axios.get("http://localhost:8080/aboutList");
+  //   setDatas(res.data);
+  // };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
   return (
-    <form className="donate" onSubmit={() => handleSubmit(onSubmit)}>
+    <form className="donate" onSubmit={handleSubmit(onSubmit)}>
       <div className="your_donation">
         <h2>Enter Your Donation</h2>
-        <input
-          type="number"
-          {...register("money")}
-          onChange={handleChange}
-          value={state.money}
-          name="money"
-          placeholder="Donation..."
-        />
-        {errors.money ? (
-          <span style={{ color: "red", fontSize: 15 }}>
-            {errors.money.message}
-          </span>
-        ) : (
-          <></>
-        )}
+        <div>
+          <div>
+            <input
+              type="number"
+              {...register("money")}
+              onChange={handleChange}
+              value={state.money}
+              name="money"
+              placeholder="Donation..."
+            />
+          </div>
+          {errors.money ? (
+            <p style={{ color: "red", fontSize: 15 }}>
+              {errors.money?.message}
+            </p>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
       <div className="personal_info">
         <h2>Personal Info</h2>
         <div className="personal_input">
-          <input
-            type="text"
-            {...register("firstName")}
-            value={state.firstName}
-            onChange={handleChange}
-            name="firstName"
-            placeholder="First Name..."
-          />
-          {errors.firstName ? (
-            <span style={{ color: "red" }}>{errors.firstName.message}</span>
-          ) : (
-            <></>
-          )}
-          <input
-            type="text"
-            {...register("lastName")}
-            value={state.lastName}
-            onChange={handleChange}
-            name="lastName"
-            placeholder="Last Name..."
-          />
-          {errors.lastName ? (
-            <span style={{ color: "red" }}>{errors.lastName.message}</span>
-          ) : (
-            <></>
-          )}
+          <div>
+            <div>
+              <input
+                type="text"
+                {...register("firstName")}
+                value={state.firstName}
+                onChange={handleChange}
+                name="firstName"
+                placeholder="First Name..."
+              />
+            </div>
+            <div>
+              {errors.firstName ? (
+                <div>
+                  <p style={{ color: "red" }}>{errors.firstName.message}</p>
+                </div>
+              ) : (
+                <></>
+              )}
+            </div>
+          </div>
+          <div>
+            <div>
+              <input
+                type="text"
+                {...register("lastName")}
+                value={state.lastName}
+                onChange={handleChange}
+                name="lastName"
+                placeholder="Last Name..."
+              />
+            </div>
+            {errors.lastName ? (
+              <p style={{ color: "red" }}>{errors.lastName.message}</p>
+            ) : (
+              <></>
+            )}
+          </div>
         </div>
         <div className="personal_input">
-          <input
-            type="email"
-            {...register("email")}
-            value={state.email}
-            onChange={handleChange}
-            name="email"
-            placeholder="Email Address..."
-          />
-          {errors.email ? (
-            <span style={{ color: "red" }}>{errors.email.message}</span>
-          ) : (
-            <></>
-          )}
-          <input
-            type="number"
-            {...register("number")}
-            value={state.number}
-            onChange={handleChange}
-            name="number"
-            placeholder="Phone Number..."
-          />
-          {errors.number ? (
-            <span style={{ color: "red" }}>{errors.number.message}</span>
-          ) : (
-            <></>
-          )}
+          <div>
+            <div>
+              <input
+                type="email"
+                {...register("email")}
+                value={state.email}
+                onChange={handleChange}
+                name="email"
+                placeholder="Email Address..."
+              />
+            </div>
+            {errors.email ? (
+              <p style={{ color: "red" }}>{errors.email.message}</p>
+            ) : (
+              <></>
+            )}
+          </div>
+          <div>
+            <div>
+              <input
+                type="number"
+                {...register("number")}
+                value={state.number}
+                onChange={handleChange}
+                name="number"
+                placeholder="Phone Number..."
+              />
+            </div>
+            {errors.number ? (
+              <p style={{ color: "red" }}>{errors.number.message}</p>
+            ) : (
+              <></>
+            )}
+          </div>
         </div>
         <div className="personal_input">
-          <input
-            type="text"
-            {...register("address")}
-            value={state.address}
-            onChange={handleChange}
-            placeholder="Address..."
-          />
-          {errors.number ? (
-            <span style={{ color: "red" }}>{errors.number.message}</span>
-          ) : (
-            <></>
-          )}
-          <select onChange={handleChange}>
-            <option selected>Country...</option>
+          <div>
+            <div>
+              <input
+                type="text"
+                {...register("address")}
+                value={state.address}
+                onChange={handleChange}
+                placeholder="Address..."
+              />
+            </div>
+            {errors.number ? (
+              <p style={{ color: "red" }}>{errors.number.message}</p>
+            ) : (
+              <></>
+            )}
+          </div>
+
+          {/* <select onChange={handleChange}>
+            <option  selected>Country...</option>
             {datas?.map((data) => {
               return (
-                <option value={data._id} name="country">
+               
+                
+                <option key={data._id} value={data._id} name="country">
                   {data.country}
                 </option>
               );
             })}
-          </select>
+          </select> */}
         </div>
-        <textarea
-          value={state.comment}
-          {...register("comment")}
-          onChange={handleChange}
-          name="comment"
-          placeholder="Leave a Comment...   "
-        ></textarea>
-        {errors.comment ? (
-          <span style={{ color: "red" }}>{errors.comment.message}</span>
-        ) : (
-          <></>
-        )}
+        <div>
+          <div>
+            <textarea
+              value={state.comment}
+              {...register("comment")}
+              onChange={handleChange}
+              name="comment"
+              placeholder="Leave a Comment...   "
+            ></textarea>
+          </div>
+          {errors.comment ? (
+            <p style={{ color: "red" }}>{errors.comment.message}</p>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
       <div className="payment_info">
         <h2>Payment Info</h2>
         <div className="payment_input">
-          <input
-            type="number"
-            {...register("cardNumber")}
-            value={state.cardNumber}
-            onChange={handleChange}
-            name="cardNumber"
-            placeholder="Card Number..."
-          />
-          {errors.cardNumber ? (
-            <span style={{ color: "red" }}>{errors.cardNumber.message}</span>
-          ) : (
-            <></>
-          )}
-          <input
-            type="text"
-            {...register("mm")}
-            onChange={handleChange}
-            value={state.mm}
-            name="mm"
-            placeholder="MM/YY..."
-          />
-          {errors.mm ? (
-            <span style={{ color: "red" }}>{errors.mm.message}</span>
-          ) : (
-            <></>
-          )}
+          <div>
+            <div>
+              <input
+                type="number"
+                {...register("cardNumber")}
+                value={state.cardNumber}
+                onChange={handleChange}
+                name="cardNumber"
+                placeholder="Card Number..."
+              />
+            </div>
+            {errors.cardNumber ? (
+              <p style={{ color: "red" }}>{errors.cardNumber.message}</p>
+            ) : (
+              <></>
+            )}
+          </div>
+          <div>
+            <div>
+              <input
+                type="text"
+                {...register("mm")}
+                onChange={handleChange}
+                value={state.mm}
+                name="mm"
+                placeholder="MM/YY..."
+              />
+            </div>
+            {errors.mm ? (
+              <p style={{ color: "red" }}>{errors.mm.message}</p>
+            ) : (
+              <></>
+            )}
+          </div>
         </div>
         <div className="payment_input">
-          <input
-            type="number"
-            {...register("cvc")}
-            onChange={handleChange}
-            value={state.cvc}
-            name="cvc"
-            placeholder="Card Code(CVC)..."
-          />
-          {errors.cvc ? (
-            <span style={{ color: "red" }}>{errors.cvc.message}</span>
-          ) : (
-            <></>
-          )}
-          <input
-            type="text"
-            {...register("billingAddress")}
-            onChange={handleChange}
-            value={state.billingAddress}
-            name="billingAddress"
-            placeholder="Billing Address..."
-          />{" "}
-          {errors.billingAddress ? (
-            <span style={{ color: "red" }}>
-              {errors.billingAddress.message}
-            </span>
-          ) : (
-            <></>
-          )}
+          <div>
+            <div>
+              <input
+                type="number"
+                {...register("cvc")}
+                onChange={handleChange}
+                value={state.cvc}
+                name="cvc"
+                placeholder="Card Code(CVC)..."
+              />
+            </div>
+            {errors.cvc ? (
+              <p style={{ color: "red" }}>{errors.cvc.message}</p>
+            ) : (
+              <></>
+            )}
+          </div>
+          <div>
+            <div>
+              <input
+                type="text"
+                {...register("billingAddress")}
+                onChange={handleChange}
+                value={state.billingAddress}
+                name="billingAddress"
+                placeholder="Billing Address..."
+              />
+            </div>
+            {errors.billingAddress ? (
+              <p style={{ color: "red" }}>{errors.billingAddress.message}</p>
+            ) : (
+              <></>
+            )}
+          </div>
         </div>
         <div className="payment_input">
-          <input
-            type="text"
-            {...register("city")}
-            onChange={handleChange}
-            value={state.city}
-            name="city"
-            placeholder="City..."
-          />
-          {errors.city ? (
-            <span style={{ color: "red" }}>{errors.city.message}</span>
-          ) : (
-            <></>
-          )}
-          <select onChange={handleChange}>
+          <div>
+            <div>
+              <input
+                type="text"
+                {...register("city")}
+                onChange={handleChange}
+                value={state.city}
+                name="city"
+                placeholder="City..."
+              />
+            </div>
+            {errors.city ? (
+              <p style={{ color: "red" }}>{errors.city.message}</p>
+            ) : (
+              <></>
+            )}
+          </div>
+
+          {/* <select onChange={handleChange}>
             <option selected>Country...</option>
             {datas?.map((data) => {
               return (
@@ -295,7 +347,7 @@ const Donate = () => {
                 </option>
               );
             })}
-          </select>
+          </select> */}
         </div>
       </div>
       <button onClick={() => addData()}>Donate now</button>

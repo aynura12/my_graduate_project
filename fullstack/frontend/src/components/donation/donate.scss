@@ -8,17 +8,19 @@
   }
   .your_donation {
     position: relative;
-
     input {
-      width: 100%;
+     width: 100%;
       border: none;
       background-color: #f1ae44;
-      padding: 30px 10px;
+      padding: 20px 40px;
       color: #fff;
-      font-size: 50px;
       font-family: "Playfair Display", sans-serif;
-      font-weight: 800;
       margin-bottom: 30px;
+      &::placeholder {
+        color: white;
+        font-weight: 500;
+        font-size: 20px;
+      }
     }
   }
 
@@ -38,7 +40,13 @@
       background-color: #f2f0ec;
       color: #818181;
       padding: 19px 70px;
+      width: 100%;
       font-size: 16px;
+      &::placeholder {
+        color: #818181;
+        font-weight: 400;
+        font-size: 16px;
+      }
     }
     select {
       border-radius: 5px;
@@ -56,8 +64,16 @@
       padding: 19px 20px;
       font-weight: 500;
       font-size: 16px;
+      width: 100%;
+
+      &::placeholder {
+        color: #818181;
+        font-weight: 400;
+        font-size: 16px;
+      }
+      
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       .personal_input {
         display: flex;
         flex-direction: column;
@@ -84,6 +100,8 @@
       color: #818181;
       padding: 19px 70px;
       font-size: 16px;
+      width: 100%;
+
     }
     select {
       border-radius: 5px;
@@ -94,7 +112,7 @@
       font-size: 16px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       .payment_input {
         display: flex;
         flex-direction: column;
@@ -102,8 +120,10 @@
           margin-bottom: 20px;
         }
       }
+  
     }
   }
+
 
   button {
     margin-top: 20px;

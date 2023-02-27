@@ -4,18 +4,18 @@ export const formSchema = yup
   .shape({
     fullName: yup
       .string("Pls enter string text")
-      .min(3, "fullName is Too Short!")
-      .max(50, "fullName is Too Long!")
+      .min(3, "FullName is Too Short!")
+      .max(50, "FullName is Too Long!")
       .required("This field is required"),
     firstName: yup
       .string("Pls enter string text")
-      .min(3, "firstname is Too Short!")
-      .max(30, "firstname is Too Long!")
+      .min(3, "FirstName is Too Short!")
+      .max(30, "FirstName is Too Long!")
       .required("This field is required"),
     lastName: yup
       .string("Pls enter string text")
-      .min(3, "lastname is Too Short!")
-      .max(30, "lastname is Too Long!")
+      .min(3, "Lastname is Too Short!")
+      .max(30, "Lastname is Too Long!")
       .required("This field is required"),
     email: yup
       .string("Pls enter email firmatted text")
@@ -59,15 +59,14 @@ export const formSchema = yup
     mm: yup.string("Pls enter string text").required("This field is required"),
     cvc: yup
       .number("Pls enter number")
-      .min(3, "cvc is Too Short!")
-      .max(3, "cvc is Too Long!")
+      .min(3, "CVC is Too Short!")
       .positive("The number must be greater than 0!")
       .required("This field is required"),
     cardNumber: yup
       .number("Pls enter number")
       .positive("The number must be greater than 0!")
-      .min(16, "card number is Too Short!")
-      .max(16, "card number is Too Long!")
+      .min(16, "Card number is Too Short!")
+    
       .required("This field is required"),
     billingAddress: yup
       .string("Pls enter string text")

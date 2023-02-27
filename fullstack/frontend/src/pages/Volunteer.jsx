@@ -13,7 +13,7 @@ import { useContext } from "react";
 const Volunteer = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   const [volunteer, setVolunteer] = useState({
     fullName: "",
@@ -113,123 +113,140 @@ const Volunteer = () => {
               </p>
               <div className="become_contact">
                 <div className="row text-center text-md-start">
-                <div className="col-12 col-md-6 ">
-                  <h4>Call us</h4>
-                  <span>
-                    <a href="/">666 888 0000</a>
-                  </span>
+                  <div className="col-12 col-md-6 ">
+                    <h4>Call us</h4>
+                    <span>
+                      <a href="/">666 888 0000</a>
+                    </span>
+                  </div>
+                  <div className="col-12 col-md-6 ">
+                    <h4>Send email</h4>
+                    <span>
+                      <a href="/">needhelp@oxpitan.com</a>
+                    </span>
+                  </div>
                 </div>
-                <div className="col-12 col-md-6 ">
-                  <h4>Send email</h4>
-                  <span>
-                    <a href="/">needhelp@oxpitan.com</a>
-                  </span>
-                </div>
-                </div>
-               
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
               {" "}
               <form className="form" onSubmit={handleSubmit(onSubmit)}>
-                <input
-                  type="text"
-                  {...register("fullName")}
-                  onChange={volunteerChange}
-                  value={volunteer.fullName}
-                  name="fullName"
-                  placeholder="Full Name..."
-                />
+                <div>
+                  <input
+                    type="text"
+                    {...register("fullName")}
+                    onChange={volunteerChange}
+                    value={volunteer.fullName}
+                    name="fullName"
+                    placeholder="Full Name..."
+                  />
+                </div>
+
                 {errors.fullName ? (
-                  <span style={{ color: "red" }}>
-                    {errors.fullName.message}
-                  </span>
+                  <p style={{ color: "red" }}>{errors.fullName.message}</p>
                 ) : (
                   <></>
                 )}
-                <input
-                  type="email"
-                  {...register("email")}
-                  onChange={volunteerChange}
-                  value={volunteer.email}
-                  name="email"
-                  placeholder="E-mail..."
-                />
+                <div>
+                  {" "}
+                  <input
+                    type="email"
+                    {...register("email")}
+                    onChange={volunteerChange}
+                    value={volunteer.email}
+                    name="email"
+                    placeholder="E-mail..."
+                  />
+                </div>
+
                 {errors.email ? (
-                  <span style={{ color: "red" }}>{errors.email.message}</span>
+                  <p style={{ color: "red" }}>{errors.email.message}</p>
                 ) : (
                   <></>
                 )}
+                <div>
+                  <input
+                    type="number"
+                    {...register("number")}
+                    onChange={volunteerChange}
+                    value={volunteer.number}
+                    name="number"
+                    placeholder="Phone number..."
+                  />
+                </div>
 
-                <input
-                  type="number"
-                  {...register("number")}
-                  onChange={volunteerChange}
-                  value={volunteer.number}
-                  name="number"
-                  placeholder="Phone number..."
-                />
                 {errors.number ? (
-                  <span style={{ color: "red" }}>{errors.number.message}</span>
+                  <p style={{ color: "red" }}>{errors.number.message}</p>
                 ) : (
                   <></>
                 )}
-                <input
-                  type="text"
-                  {...register("address")}
-                  onChange={volunteerChange}
-                  value={volunteer.address}
-                  name="address"
-                  placeholder="Adress..."
-                />
-                {errors.address ? (
-                  <span style={{ color: "red" }}>{errors.address.message}</span>
-                ) : (
-                  <></>
-                )}
-                <input
-                  type="number"
-                  {...register("date")}
-                  onChange={volunteerChange}
-                  value={volunteer.date}
-                  name="date"
-                  placeholder="Date of Brith..."
-                />
-                {errors.date ? (
-                  <span style={{ color: "red" }}>{errors.date.message}</span>
-                ) : (
-                  <></>
-                )}
+                <div>
+                  {" "}
+                  <input
+                    type="text"
+                    {...register("address")}
+                    onChange={volunteerChange}
+                    value={volunteer.address}
+                    name="address"
+                    placeholder="Adress..."
+                  />
+                </div>
 
-                <input
-                  type="text"
-                  {...register("occupation")}
-                  onChange={volunteerChange}
-                  value={volunteer.occupation}
-                  name="occupation"
-                  placeholder="Occupation..."
-                />
+                {errors.address ? (
+                  <p style={{ color: "red" }}>{errors.address.message}</p>
+                ) : (
+                  <></>
+                )}
+                <div>
+                  {" "}
+                  <input
+                    type="number"
+                    {...register("date")}
+                    onChange={volunteerChange}
+                    value={volunteer.date}
+                    name="date"
+                    placeholder="Date of Brith..."
+                  />
+                </div>
+
+                {errors.date ? (
+                  <p style={{ color: "red" }}>{errors.date.message}</p>
+                ) : (
+                  <></>
+                )}
+                <div>
+                  <input
+                    type="text"
+                    {...register("occupation")}
+                    onChange={volunteerChange}
+                    value={volunteer.occupation}
+                    name="occupation"
+                    placeholder="Occupation..."
+                  />
+                </div>
                 {errors.occupation ? (
-                  <span style={{ color: "red" }}>
-                    {errors.occupation.message}
-                  </span>
+                  <p style={{ color: "red" }}>{errors.occupation.message}</p>
                 ) : (
                   <></>
                 )}
-                <textarea
-                  type="text"
-                  {...register("message")}
-                  onChange={volunteerChange}
-                  value={volunteer.message}
-                  name="message"
-                  placeholder="Write a message..."
-                />
+                <div>
+                  {" "}
+                  <textarea
+                    type="text"
+                    {...register("message")}
+                    onChange={volunteerChange}
+                    value={volunteer.message}
+                    name="message"
+                    placeholder="Write a message..."
+                  />
+                </div>
+
                 {errors.message ? (
-                  <span style={{ color: "red" }}>{errors.message.message}</span>
+                  <p style={{ color: "red" }}>{errors.message.message}</p>
                 ) : (
                   <></>
                 )}
-                <button onClick={()=>volunteerData()}>SEND MESSAGE</button>
+                <button onClick={() => volunteerData()}>SEND MESSAGE</button>
               </form>
             </div>
           </div>

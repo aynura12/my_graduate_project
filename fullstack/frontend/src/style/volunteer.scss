@@ -62,9 +62,11 @@
     flex-direction: column;
 
     input {
+      width: 100%;
       @include input;
     }
     textarea {
+      width: 100%;
       @include input;
     }
     button {

@@ -50,8 +50,9 @@ const Comment = () => {
   }, []);
   return (
     <div className="causes_detail_comment ">
- 
-      <h2 style={{fontFamily:" Playfair Display, serif",marginTop:"40px"}} >Comments</h2>
+      <h2 style={{ fontFamily: " Playfair Display, serif", marginTop: "40px" }}>
+        Comments
+      </h2>
       {data?.map((datas) => {
         return (
           <div className="detail_comment_bottom" key={datas._id}>
@@ -65,7 +66,13 @@ const Comment = () => {
                   {/* <span >{format(datas.updateAt, 'yyyy-mm-dd')}</span>
                   <span>{datas.createdAt}</span> */}
                 </div>
-                  <button  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Reply</button>
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  data-bs-whatever="@getbootstrap"
+                >
+                  Reply
+                </button>
               </div>
               <p>{datas.comment}</p>
             </div>
@@ -74,7 +81,7 @@ const Comment = () => {
       })}
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <h3>Leave a Comment</h3>
-          {/* <input
+        {/* <input
             type="text"
             {...register("image")}
             onChange={handleChange}
@@ -87,6 +94,7 @@ const Comment = () => {
           ) : (
             <></>
           )} */}
+        <div>
           <input
             type="text"
             {...register("fullName")}
@@ -95,11 +103,15 @@ const Comment = () => {
             name="fullName"
             placeholder="Full Name..."
           />
-          {errors.fullName ? (
-            <span style={{ color: "red" }}>{errors.fullName.message}</span>
-          ) : (
-            <></>
-          )}
+        </div>
+
+        {errors.fullName ? (
+          <p style={{ color: "red" }}>{errors.fullName.message}</p>
+        ) : (
+          <></>
+        )}
+        <div>
+          {" "}
           <input
             type="email"
             {...register("email")}
@@ -108,31 +120,33 @@ const Comment = () => {
             name="email"
             placeholder="E-mail..."
           />
-          {errors.email ? (
-            <span style={{ color: "red" }}>{errors.email.message}</span>
-          ) : (
-            <></>
-          )}
-      
+        </div>
 
-        <textarea
-          type="text"
-          {...register("comment")}
-          onChange={handleChange}
-          value={state.comment}
-          name="comment"
-          placeholder="Leavee a Comment..."
-        />
+        {errors.email ? (
+          <p style={{ color: "red" }}>{errors.email.message}</p>
+        ) : (
+          <></>
+        )}
+        <div>
+          <textarea
+            type="text"
+            {...register("comment")}
+            onChange={handleChange}
+            value={state.comment}
+            name="comment"
+            placeholder="Leavee a Comment..."
+          />
+        </div>
+
         {errors.comment ? (
-          <span style={{ color: "red" }}>{errors.comment.message}</span>
+          <p style={{ color: "red" }}>{errors.comment.message}</p>
         ) : (
           <></>
         )}
         <button onClick={() => addData()}>submit now</button>
       </form>
-      <ReplyModal/>
+      <ReplyModal />
     </div>
-
   );
 };
 
