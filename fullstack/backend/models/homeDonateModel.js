@@ -2,10 +2,6 @@ const mongoose=require("mongoose")
 
 const { Schema } = mongoose
 const homeDonateSchema= new Schema({
-    value:{
-        type: String    ,
-        require: true
-    },
     fullName: {
         type: String,
         require: true

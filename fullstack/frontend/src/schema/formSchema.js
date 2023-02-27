@@ -10,7 +10,7 @@ export const formSchema = yup
     firstName: yup
       .string("Pls enter string text")
       .min(3, "firstname is Too Short!")
-      .max(30, "username is Too Long!")
+      .max(30, "firstname is Too Long!")
       .required("This field is required"),
     lastName: yup
       .string("Pls enter string text")
@@ -19,15 +19,10 @@ export const formSchema = yup
       .required("This field is required"),
     email: yup
       .string("Pls enter email firmatted text")
-      .positive(
-        "The number must be greater than 0!",
-      )
       .required("This field is required"),
     number: yup
       .number("Pls enter number")
-      .positive(
-        "The number must be greater than 0!",
-      )
+      .positive("The number must be greater than 0!")
       .min(10, "Phone number must be 10 characters!")
       .required("This field is required"),
     message: yup
@@ -35,11 +30,7 @@ export const formSchema = yup
       .required("This field is required"),
     address: yup
       .string("Pls enter string text")
-      .min(12, "address is Too Short!")
       .max(50, "address is Too Long!")
-      .positive(
-        "The number must be greater than 0!",
-      )
       .required("This field is required"),
     image: yup
       .string("Pls enter string text")
@@ -47,6 +38,7 @@ export const formSchema = yup
     date: yup
       .number("Pls enter number")
       .positive("The number must be greater than 0!")
+      .min(8, "Phone number must be 8 characters!")
       .required("This field is required"),
     occupation: yup
       .string("Pls enter string text")
@@ -64,15 +56,11 @@ export const formSchema = yup
     city: yup
       .string("Pls enter string text")
       .required("This field is required"),
-    mm: yup
-      .string("Pls enter string text")
-
-      .positive("The number must be greater than 0!")
-      .required("This field is required"),
+    mm: yup.string("Pls enter string text").required("This field is required"),
     cvc: yup
       .number("Pls enter number")
-       .min(3, "address is Too Short!")
-      .max(3, "address is Too Long!")
+      .min(3, "cvc is Too Short!")
+      .max(3, "cvc is Too Long!")
       .positive("The number must be greater than 0!")
       .required("This field is required"),
     cardNumber: yup
@@ -83,17 +71,12 @@ export const formSchema = yup
       .required("This field is required"),
     billingAddress: yup
       .string("Pls enter string text")
-      .positive("The number must be greater than 0!")
       .required("This field is required"),
     text: yup
       .string("Pls enter string text")
       .required("This field is required"),
-    value: yup
-      .string("Pls enter string text")
-      .required("This field is required"),
     location: yup
       .string("Pls enter string text")
-      .positive("The number must be greater than 0!")
       .required("This field is required"),
   })
   .required();

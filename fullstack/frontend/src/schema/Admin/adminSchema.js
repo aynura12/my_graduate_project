@@ -2,38 +2,23 @@ import * as yup from "yup";
 export const adminSchema = yup
   .object()
   .shape({
-    // fullName: yup.string("Pls enter string text").required("This field must not be left blank"),
-    // firstName: yup.string("Pls enter string text").required("This field must not be left blank"),
-    // lastName: yup.string("Pls enter string text").required("This field must not be left blank"),
-    // email: yup.string("Pls enter email firmatted text").required("This field must not be left blank"),
-    // number: yup.number("Pls enter number").required("This field must not be left blank"),
-    // message: yup.string("Pls enter string text").required("This field must not be left blank"),
-    // address:yup.string("Pls enter string text").required("This field must not be left blank"),
-    // image:yup.string("Pls enter string text").required("This field must not be left blank"),
-    // date: yup.number("Pls enter number").required("This field must not be left blank"),
-    // occupation:yup.string("Pls enter string text").required("This field must not be left blank"),
-    // comment:yup.string("Pls enter string text").required("This field must not be left blank"),
-    // money: yup.number("Pls enter number").required("This field must not be left blank"),
-    // country:yup.string("Pls enter string text").required("This field must not be left blank"),
-    // city:yup.string("Pls enter string text").required("This field must not be left blank"),
-    // mm:yup.string("Pls enter string text").required("This field must not be left blank"),
-    // cvc: yup.number("Pls enter number").required("This field must not be left blank"),
-    // cardNumber: yup.number("Pls enter number").required("This field must not be left blank"),
-    // billingAddress:yup.string("Pls enter string text").required("This field must not be left blank"),
-    // text:yup.string("Pls enter string text").required("This field must not be left blank"),
-
     fullName: yup
       .string("Pls enter string text")
-      .required("This field must not be left blank"),
+      .min(3, "fullName is Too Short!")
+      .max(50, "fullName is Too Long!")
+      .required("This field is required"),
     name: yup
       .string("Pls enter string text")
-      .required("This field must not be left blank"),
+      .min(3, "name is Too Short!")
+      .max(30, "name is Too Long!")
+      .required("This field is required"),
     image: yup
       .string("Pls enter string text")
       .required("This field must not be left blank"),
     date: yup
-      .string("Pls enter string text")
-      .required("This field must not be left blank"),
+      .number("Pls enter number")
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
     title: yup
       .string("Pls enter string text")
       .required("This field must not be left blank"),
@@ -57,16 +42,22 @@ export const adminSchema = yup
       .required("This field must not be left blank"),
     goal: yup
       .number("Pls enter number")
-      .required("This field must not be left blank"),
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
     raised: yup
       .number("Pls enter number")
-      .required("This field must not be left blank"),
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
     payment: yup
       .number("Pls enter number")
-      .required("This field must not be left blank"),
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
     day: yup
       .number("Pls enter number")
-      .required("This field must not be left blank"),
+      .min(1, "Day is Too Short!")
+      .max(2, "Day is Too Long!")
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
     location: yup
       .string("Pls enter string text")
       .required("This field must not be left blank"),
