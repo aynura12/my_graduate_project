@@ -12,7 +12,6 @@ import { useContext } from "react";
 const Comment = () => {
   const { comments,getComment } = useContext(mainContext);
   const [state, setState] = useState({
-    image: "",
     fullName: "",
     email: "",
     comment: "",
@@ -25,7 +24,6 @@ const Comment = () => {
     await axios.post("http://localhost:8080/causeComment", state);
   getComment()
     setState({
-      // image: "",
       fullName: "",
       email: "",
       comment: "",
@@ -51,9 +49,6 @@ const Comment = () => {
       {comments?.map((comment) => {
         return (
           <div className="detail_comment_bottom" key={comment._id}>
-            {/* <div className="w-100">
-              <img src={datas.image} alt="img" />
-            </div> */}
             <div className="bottom_title">
               <div className="title_left">
                 <div className="left">
@@ -76,19 +71,6 @@ const Comment = () => {
       })}
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <h3>Leave a Comment</h3>
-        {/* <input
-            type="text"
-            {...register("image")}
-            onChange={handleChange}
-            value={state.image}
-            name="image"
-            placeholder="Your image..."
-          />
-          {errors.image ? (
-            <span style={{ color: "red" }}>{errors.image.message}</span>
-          ) : (
-            <></>
-          )} */}
         <div>
           <input
             type="text"

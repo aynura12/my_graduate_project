@@ -5,7 +5,7 @@ import "../AdminReg/adminReg.scss";
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+    
   // const handleSubmit = (event) => {
   //     event.preventDefault();
   //     axios.post('http://127.0.0.1:3070/login/', { email, password })
@@ -31,7 +31,9 @@ const AdminLogin = () => {
       return;
     }
     axios
-      .post("http://127.0.0.1:3070/login/", { email, password })
+
+      .post("http://127.0.0.1:8080/user/login", { email, password })
+
       .then((response) => {
         console.log("success", response);
         document.cookie = `token=${response.data.token}; expires=${new Date(
@@ -51,7 +53,13 @@ const AdminLogin = () => {
   return (
     <div className="admin-login__wrapper">
       <div style={{ width: "20%", textAlign: "center" }}>
-        <div> <img src="http://layerdrops.com/oxpitan/images/section-icon.png" alt="" /></div>
+        <div>
+          {" "}
+          <img
+            src="http://layerdrops.com/oxpitan/images/section-icon.png"
+            alt=""
+          />
+        </div>
         <h3 style={{ color: "#e36955", marginBottom: "30px" }}>ADMIN LOGIN</h3>
         <form
           onSubmit={handleSubmit}
@@ -85,7 +93,7 @@ const AdminLogin = () => {
             <Link className="login-links" to="/admin/password">
               Forgot password?
             </Link>
-           
+
             <Link className="login-links" to="/admin/register">
               Register
             </Link>

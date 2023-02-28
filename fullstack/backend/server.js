@@ -25,8 +25,11 @@ app.listen(PORT,()=>{
 })
 
 
+
 const commentRoute=require("./routes/commentRoute")
 app.use("/comment",commentRoute)
+
+
 
 const galleryRoute=require("./routes/galleryRoute")
 app.use("/gallery",galleryRoute)
@@ -83,3 +86,6 @@ app.use("/homedonate",homeDonateRoute)
 
 const subcribeRoute=require("./routes/subcribeRoute")
 app.use("/subcribe",subcribeRoute)
+
+const UserRoute=require("./routes/UserRoute")
+app.use("/user",UserRoute)

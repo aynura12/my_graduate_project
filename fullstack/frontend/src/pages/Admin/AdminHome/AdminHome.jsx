@@ -1,7 +1,15 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import "../AdminHome/adminHome.scss"
+
+  
+
+
+
 const AdminHome = () => {
+
+
+
   return (
     <>
       <Helmet>
@@ -14,7 +22,7 @@ const AdminHome = () => {
               <div className="adminHome_title">
                 <h2>Home</h2>
               </div>
-            </div>
+            </div>+
           </div>
         </div>
       </section>

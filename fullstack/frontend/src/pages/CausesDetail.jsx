@@ -100,6 +100,7 @@ const CausesDetail = () => {
                   />
                 </div>
               </div>
+              
               <Comment/>
             </div>
             <div className="col-lg-4 col-md-12">

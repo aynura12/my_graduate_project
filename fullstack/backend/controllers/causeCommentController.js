@@ -30,7 +30,7 @@ exports.causeComment_post=async(req,res)=>{
     await CauseComment.create(causesComment)
     res.status(200).json({
         message:"succes"
-        
+    
     })
 
    }catch(error){
