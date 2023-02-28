@@ -69,6 +69,9 @@ const CauseAdd = () => {
     setId(data._id);
   };
   const updateData = async (id) => {
+
+    
+
     await axios.put(`http://localhost:8080/cause/${id}`, state);
    getCause()
     setState({
