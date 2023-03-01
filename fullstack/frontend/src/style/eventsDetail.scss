@@ -7,7 +7,6 @@
     @include causestitle;
     h2 {
       @include pagetitle;
-      
     }
     button {
       @include buttonpreparty;
@@ -24,11 +23,11 @@
   .date_of_card {
     position: absolute;
     top: 50px;
-   @include display;
+    @include display;
     padding: 30px 30px;
     width: 100px;
     height: 50px;
-  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
     .day_date {
       font-size: 40px;
@@ -45,13 +44,12 @@
   }
 }
 .events_detail_area {
-    @media (max-width:992px){
-        .detail_left{
-            padding: 30px 0;
-        }
+  @media (max-width: 992px) {
+    .detail_left {
+      padding: 30px 0;
     }
+  }
   .detail_left {
-   
     h3 {
       @include h3;
     }
@@ -79,25 +77,24 @@
         span {
           color: black;
         }
-        .span1{
-            padding-right: 20px;
+        .span1 {
+          padding-right: 20px;
         }
-        .span2{
-            padding-right: 85px;
+        .span2 {
+          padding-right: 85px;
         }
-        .span3{
-            padding-right: 55px;
+        .span3 {
+          padding-right: 55px;
         }
-        .span4{
-            padding-right: 75px;
+        .span4 {
+          padding-right: 75px;
         }
-        .span5{
-            padding-right: 65px;
+        .span5 {
+          padding-right: 65px;
         }
-        .span6{
-            padding-right: 62px;
+        .span6 {
+          padding-right: 62px;
         }
-      
       }
     }
   }

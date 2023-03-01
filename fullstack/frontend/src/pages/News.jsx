@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import "../style/news.scss";
 import { useEffect } from "react";
 const News = () => {
-  const { news ,ToTop} = useContext(mainContext);
+  const { news, ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   return (
     <>

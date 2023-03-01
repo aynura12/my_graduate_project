@@ -101,43 +101,41 @@ const ROUTES = [
       },
       {
         path: "password",
-        element: <Password/>,
+        element: <Password />,
       },
-     
     ],
   },
   {
     path: "/admin",
     element: <AdminRouter />,
     children: [
-      { path: "", element: <AdminHome/> },
+      { path: "", element: <AdminHome /> },
       { path: "causeAdd", element: <CauseAdd /> },
-      { path: "eventAdd", element: <EventAdd/> },
-      { path: "galleryAdd", element: <GalleryAdd/> },
-      { path: "newsAdd", element: <NewsAdd/> },
-      { path: "readAdd", element: <ReadAdd/>},
-      { path: "recentAdd", element: <RecentAdd/> },
-      { path: "teamAdd", element: <TeamAdd/> },
-      { path: "counterAdd", element: <CounterAdd/> },
-      { path: "charityAdd", element: <CharityAdd/> },
+      { path: "eventAdd", element: <EventAdd /> },
+      { path: "galleryAdd", element: <GalleryAdd /> },
+      { path: "newsAdd", element: <NewsAdd /> },
+      { path: "readAdd", element: <ReadAdd /> },
+      { path: "recentAdd", element: <RecentAdd /> },
+      { path: "teamAdd", element: <TeamAdd /> },
+      { path: "counterAdd", element: <CounterAdd /> },
+      { path: "charityAdd", element: <CharityAdd /> },
 
-      { path: "volunteerAdd", element: <VolunteerAdd/> },
-      { path: "admin-login", element: <AdminLogin/>},
-      { path: "admin-register", element: <AdminReg/> },
-      { path: "password", element: <AdminPassword/> },
-
+      { path: "volunteerAdd", element: <VolunteerAdd /> },
+      { path: "admin-login", element: <AdminLogin /> },
+      { path: "admin-register", element: <AdminReg /> },
+      { path: "password", element: <AdminPassword /> },
     ],
   },
   {
-    path:"*",
-    element:<NotFoundRoute/>,
-    children:[
+    path: "*",
+    element: <NotFoundRoute />,
+    children: [
       {
         path: "*",
-        element: <NotFound/>,
+        element: <NotFound />,
       },
-    ]
-  }
+    ],
+  },
 ];
 
 export default ROUTES;

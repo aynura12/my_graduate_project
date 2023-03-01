@@ -101,8 +101,7 @@ const VolunteerAdd = () => {
         <div className="container">
           <div className="row">
             <div>
-
-              <table >
+              <table>
                 <thead>
                   <tr>
                     <th scope="col">Image</th>
@@ -207,7 +206,7 @@ const VolunteerAdd = () => {
                   onChange={handleChange}
                   value={state.color}
                   name="color"
-                  placeholder="Add color..."
+                  style={{ backgroundColor: "rgb(238, 79, 16)" }}
                 />
                 {errors.color ? (
                   <span style={{ color: "red" }}>{errors.color.message}</span>

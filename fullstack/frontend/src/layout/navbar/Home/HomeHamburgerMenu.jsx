@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Home/navbar.scss";
-import Connection from "../../../components/ConnectIcon/ConnectIcon"
+import Connection from "../../../components/ConnectIcon/ConnectIcon";
 const HomeHamburgerMenu = () => {
   const [menu, setMenu] = useState(false);
   const [cause, setCause] = useState(false);
@@ -27,7 +27,7 @@ const HomeHamburgerMenu = () => {
           <i className="close-icon fa-solid fa-xmark"></i>
         </div>
         <ul className="px-3">
-          <li className="py-3" >
+          <li className="py-3">
             <Link to="/">Home</Link>
           </li>
           <li className="py-3">
@@ -42,7 +42,11 @@ const HomeHamburgerMenu = () => {
               ></i>
             </div>
 
-            <ul className={`cause_menu overflow-hidden ${cause ? "cause-show" : "cause-hide"}`}>
+            <ul
+              className={`cause_menu overflow-hidden ${
+                cause ? "cause-show" : "cause-hide"
+              }`}
+            >
               <li className="px-4 show-list">
                 <Link to="causes">Causes</Link>
               </li>
@@ -82,7 +86,7 @@ const HomeHamburgerMenu = () => {
               </li>
               <li className="px-4 show-list">
                 <Link to="ourteam">Our Team</Link>
-              </li >
+              </li>
               <li className="px-4 show-list">
                 <Link to="sponsors">Sponsors</Link>
               </li>
@@ -91,8 +95,14 @@ const HomeHamburgerMenu = () => {
           <li className="py-3">
             <Link to="contact">Contact</Link>
           </li>
-          <li className="py-3"><Connection/> </li>
-          <li className="py-3 text-center"><Link to="/donatenow"><button>Donate Now</button></Link></li>
+          <li className="py-3">
+            <Connection />{" "}
+          </li>
+          <li className="py-3 text-center">
+            <Link to="/donatenow">
+              <button>Donate Now</button>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

@@ -1,12 +1,14 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose");
 
-const { Schema } = mongoose
-const gallerySchema= new Schema({
+const { Schema } = mongoose;
+const gallerySchema = new Schema(
+  {
     image: {
-        type: String,
-        require: true
-    }
-},
-{ timestamps: true },)
+      type: String,
+      require: true,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports =  mongoose.model("gallery", gallerySchema)
+module.exports = mongoose.model("gallery", gallerySchema);

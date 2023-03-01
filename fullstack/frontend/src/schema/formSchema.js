@@ -66,7 +66,7 @@ export const formSchema = yup
       .number("Pls enter number")
       .positive("The number must be greater than 0!")
       .min(16, "Card number is Too Short!")
-    
+
       .required("This field is required"),
     billingAddress: yup
       .string("Pls enter string text")

@@ -13,9 +13,9 @@ import "swiper/css/scrollbar";
 import "swiper/css";
 import { useEffect } from "react";
 const Gallery = () => {
-  const { gallerys ,ToTop} = useContext(mainContext);
+  const { gallerys, ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   return (
     <>
@@ -66,7 +66,7 @@ const Gallery = () => {
                   >
                     <div className="modal-dialog">
                       <div className="modal-content">
-                      <button
+                        <button
                           type="button"
                           className="btn-close"
                           data-bs-dismiss="modal"
@@ -87,7 +87,6 @@ const Gallery = () => {
                             <SwiperSlide className="modal_slide6"></SwiperSlide>
                           </Swiper>
                         </div>
-                       
                       </div>
                     </div>
                   </div>

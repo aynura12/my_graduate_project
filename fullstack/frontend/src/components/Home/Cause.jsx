@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../Home/cause.scss";
 import donationLogo from "../../media/smalllogo.png";
-import { useState} from "react";
+import { useState } from "react";
 import { mainContext } from "../../Context/ContextProvider";
 const Cause = () => {
-  const {causes,setCause}=useContext(mainContext)
+  const { causes, setCause } = useContext(mainContext);
   const [sorted, setSorted] = useState({ sorted: "goal", reversed: false });
   const sorteddata = () => {
     setSorted({ sorted: "goal", reversed: !sorted.reversed });

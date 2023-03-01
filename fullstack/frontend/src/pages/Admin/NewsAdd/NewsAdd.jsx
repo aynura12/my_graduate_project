@@ -153,9 +153,13 @@ const NewsAdd = () => {
                         </td>
                         <td data-label="Date">{n.date}</td>
                         <td data-label="Title">{n.title}</td>
-                        <td data-label="Text"><p className="large">{n.text}</p></td>
+                        <td data-label="Text">
+                          <p className="large">{n.text}</p>
+                        </td>
                         <td data-label="Color">{n.color}</td>
-                        <td data-label="TextDetail"><p className="large">{n.detailText}</p></td>
+                        <td data-label="TextDetail">
+                          <p className="large">{n.detailText}</p>
+                        </td>
                         <td data-label="ImageDetail">{n.detailImage}</td>
                         <td data-label="Titledetail">{n.detailTitle}</td>
                         <td data-label="Category">{n.category}</td>
@@ -255,7 +259,7 @@ const NewsAdd = () => {
                   onChange={handleChange}
                   value={state.color}
                   name="color"
-                  placeholder="Add color..."
+                  style={{ backgroundColor: "rgb(238, 79, 16)" }}
                 />
                 {errors.color ? (
                   <span style={{ color: "red" }}>{errors.color.message}</span>
@@ -354,4 +358,3 @@ const NewsAdd = () => {
 };
 
 export default NewsAdd;
-

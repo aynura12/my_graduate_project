@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import "../AdminHome/adminHome.scss"
+import "../AdminHome/adminHome.scss";
 const AdminHome = () => {
   return (
     <>
@@ -19,8 +19,12 @@ const AdminHome = () => {
         </div>
       </section>
       <section id="admin_home_area">
-        <img src="http://layerdrops.com/oxpitan/images/section-icon.png" alt="img" />
-        <h2>Welcome</h2></section>
+        <img
+          src="http://layerdrops.com/oxpitan/images/section-icon.png"
+          alt="img"
+        />
+        <h2>Welcome</h2>
+      </section>
     </>
   );
 };

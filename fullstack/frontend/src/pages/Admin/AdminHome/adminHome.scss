@@ -14,10 +14,10 @@
     }
   }
 }
-#admin_home_area{
+#admin_home_area {
   padding-top: 50px;
   @include display;
   h2 {
     @include pagetitle;
-  };
+  }
 }

@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 import "../GalleryAdd/galleryAdd.scss";
 import { mainContext } from "../../../Context/ContextProvider";
 const GalleryAdd = () => {
-  const { gallerys,getGallery } = useContext(mainContext);
+  const { gallerys, getGallery } = useContext(mainContext);
 
   const [id, setId] = useState();
   const [state, setState] = useState({
@@ -22,7 +22,7 @@ const GalleryAdd = () => {
   const addData = async () => {
     if (!state.image) return;
     await axios.post("http://localhost:8080/gallery", state);
-   getGallery()
+    getGallery();
     setState({
       image: "",
     });
@@ -41,7 +41,7 @@ const GalleryAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/gallery/${id}`);
-    getGallery()
+    getGallery();
   };
 
   const handleEditClick = (data) => {
@@ -50,7 +50,7 @@ const GalleryAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/gallery/${id}`, state);
-   getGallery()
+    getGallery();
     setState({
       image: "",
     });
@@ -79,7 +79,7 @@ const GalleryAdd = () => {
         <div className="container">
           <div className="row">
             {" "}
-            <div >
+            <div>
               <table>
                 <thead>
                   <tr>

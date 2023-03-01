@@ -3,7 +3,6 @@
 .header_bottom_area {
   display: flex;
   border-bottom: 1px solid rgb(242, 240, 236);
-  
 
   .header_bottom_left {
     background-color: rgb(66, 66, 66);
@@ -16,7 +15,6 @@
       height: 200px;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
       padding: 50px;
-
     }
 
     .header_left_title {
@@ -27,10 +25,9 @@
       padding-right: 50px;
       font-family: Playfair Display, serif;
       max-width: 300px;
-      
+
       @media (max-width: 992px) {
         max-width: 100%;
-  
       }
     }
   }
@@ -60,7 +57,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         background-color: rgb(241, 174, 68);
         border: none;
         padding: 10px 20px;
@@ -74,7 +71,7 @@
       }
     }
     .header_right_title {
-     // padding-left: 50px;
+      // padding-left: 50px;
       .right_title {
         color: #424242;
         max-width: 400px;
@@ -94,7 +91,6 @@
   }
   @media (max-width: 992px) {
     flex-direction: column;
-    
   }
 }
 

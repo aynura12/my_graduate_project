@@ -44,7 +44,6 @@
       }
     }
   }
- 
 }
 .read_link {
   text-decoration: none;
@@ -55,13 +54,13 @@
   button {
     text-transform: uppercase;
     font-family: Poppins, sans-serif;
-    background-color:rgb(227,105,85);
+    background-color: rgb(227, 105, 85);
     color: white;
     border: none;
     line-height: 29px;
     font-size: 13px;
     font-weight: 700;
-   padding: 7px 15px;
+    padding: 7px 15px;
     clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
   }
   button:hover {

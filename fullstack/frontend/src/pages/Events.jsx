@@ -6,9 +6,9 @@ import { useState, useEffect } from "react";
 import { mainContext } from "../Context/ContextProvider";
 import { useContext } from "react";
 const Events = () => {
-  const { events, setEvents,ToTop } = useContext(mainContext);
+  const { events, setEvents, ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   const [sorted, setSorted] = useState({ sorted: "day", reversed: false });
   const sorteddata = () => {

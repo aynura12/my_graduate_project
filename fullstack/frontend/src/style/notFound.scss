@@ -2,7 +2,7 @@
 
 #notfound {
   background-color: rgb(148, 193, 199);
- height: 100vh;
+  height: 100vh;
   padding: 60px 0;
   .notfound_area {
     @include display;
@@ -20,8 +20,8 @@
       font-family: Playfair Display, serif;
     }
     button {
-        animation: pulse;
-        animation-duration: 2s;
+      animation: pulse;
+      animation-duration: 2s;
       margin-top: 20px;
       border-radius: 15px;
       font-family: Playfair Display, serif;

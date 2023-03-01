@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../../schema/formSchema";
 import { useState, useEffect } from "react";
-import moment from 'moment'
+import moment from "moment";
 
 // import { format } from 'date-fns'
 import "../Comment/comment.scss";
@@ -12,7 +12,7 @@ import ReplyModal from "../ReplyModal/ReplyModal";
 import { mainContext } from "../../Context/ContextProvider";
 import { useContext } from "react";
 const Comment = () => {
-  const { comments,getComment } = useContext(mainContext);
+  const { comments, getComment } = useContext(mainContext);
   const [state, setState] = useState({
     fullName: "",
     email: "",
@@ -24,7 +24,7 @@ const Comment = () => {
   const addData = async () => {
     if (!state.fullName || !state.email || !state.comment) return;
     await axios.post("http://localhost:8080/causeComment", state);
-  getComment()
+    getComment();
     setState({
       fullName: "",
       email: "",
@@ -53,9 +53,11 @@ const Comment = () => {
           <div className="detail_comment_bottom" key={comment._id}>
             <div className="bottom_title">
               <div className="title_left">
-                <div className="left">  
+                <div className="left">
                   <h4>{comment.fullName}</h4>
-                  <span>{moment(comment.createdAt).startOf('hour').fromNow()}</span>
+                  <span>
+                    {moment(comment.createdAt).startOf("hour").fromNow()}
+                  </span>
                 </div>
                 <button
                   data-bs-toggle="modal"

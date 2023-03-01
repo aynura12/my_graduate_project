@@ -11,11 +11,11 @@ import Recent from "../components/Home/Recent";
 import Volunteers from "../components/Home/Volunteers";
 import Header from "../layout/header/Header";
 import { mainContext } from "../Context/ContextProvider";
-import { useContext,useEffect } from "react";
+import { useContext, useEffect } from "react";
 const Home = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   return (
     <div>

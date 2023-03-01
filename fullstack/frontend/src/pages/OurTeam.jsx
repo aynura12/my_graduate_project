@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import "../style/ourteam.scss";
 import { useState, useEffect } from "react";
 const OurTeam = () => {
-  const { teams ,ToTop} = useContext(mainContext);
+  const { teams, ToTop } = useContext(mainContext);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   return (
     <>

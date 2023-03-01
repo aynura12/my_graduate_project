@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 // import Footer from "../layout/footer/Footer";
 import AdminNavbar from "../layout/navbar/Admin/AdminNavbar";
-import AdminNavbarTop from "../layout/navbar/Admin/AdminNavbarTop"
+import AdminNavbarTop from "../layout/navbar/Admin/AdminNavbarTop";
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
 import axios from "axios";
 const getAuthToken = () => {
@@ -45,7 +45,7 @@ const AdminRouter = () => {
   }, []);
   return (
     <>
-     <AdminNavbarTop/>
+      <AdminNavbarTop />
       {isLogin && <AdminNavbar />}
       <Outlet />
       <ScrollToTop />

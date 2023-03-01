@@ -12,7 +12,7 @@ import { useContext } from "react";
 const NewsDetail = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   const { id } = useParams();
   const [news, setNews] = useState([]);

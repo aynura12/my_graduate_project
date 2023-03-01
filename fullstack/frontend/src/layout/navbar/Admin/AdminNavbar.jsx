@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import "../Admin/adminNavbar.scss"
+import "../Admin/adminNavbar.scss";
 import AdminHamburgerMenu from "./AdminHamburgerMenu";
 const Navbar2 = () => {
   const [isNavbarSmall, setIsNavbarSmall] = useState(true);
@@ -82,12 +82,12 @@ const Navbar2 = () => {
               </li>
               <li>
                 <Link to="counterAdd" id="admin_link">
-              Counter
+                  Counter
                 </Link>
               </li>
               <li>
                 <Link to="charityAdd" id="admin_link">
-              Charity
+                  Charity
                 </Link>
               </li>
             </ul>

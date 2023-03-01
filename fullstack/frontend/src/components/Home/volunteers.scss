@@ -1,12 +1,12 @@
 .volunteers {
   padding: 50px 0;
-  input{
+  input {
     text-align: center;
     border: none;
     background-color: rgb(242, 240, 236);
     padding: 10px 40px;
     border-radius: 4px;
-   margin-bottom: 20px;
+    margin-bottom: 20px;
   }
   .volunteers_text {
     display: flex;
@@ -22,7 +22,6 @@
       line-height: 60px;
       font-weight: 700;
       max-width: 600px;
-      
     }
     p {
       font-family: Poppins, sans-serif;
@@ -35,13 +34,11 @@
     }
   }
   .volunteers_card {
-    
-    .card_image{
+    .card_image {
       position: relative;
       overflow: hidden;
-      &:hover{
-        .volunteers_icons{
-
+      &:hover {
+        .volunteers_icons {
           transform: translateY(0px);
         }
       }
@@ -52,8 +49,12 @@
     .volunteers_icons {
       position: absolute;
       display: block;
-      background: rgb(11,3,6);
-      background: linear-gradient(0deg, rgba(11,3,6,1) 16%, rgba(252,176,69,0) 100%);
+      background: rgb(11, 3, 6);
+      background: linear-gradient(
+        0deg,
+        rgba(11, 3, 6, 1) 16%,
+        rgba(252, 176, 69, 0) 100%
+      );
       width: 100%;
       bottom: 0;
       padding: 30px 0;
@@ -73,8 +74,8 @@
         color: white;
         display: block;
       }
-      a:hover{
-        color:rgb(241, 174, 68) ;
+      a:hover {
+        color: rgb(241, 174, 68);
       }
     }
 

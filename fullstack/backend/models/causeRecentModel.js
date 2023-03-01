@@ -1,26 +1,26 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose");
 
-const { Schema } = mongoose
-const causeRecentSchema= new Schema({
+const { Schema } = mongoose;
+const causeRecentSchema = new Schema(
+  {
     image: {
-        type: String,
-        require: true
+      type: String,
+      require: true,
     },
     payment: {
-        type: Number,
-        require: true
+      type: Number,
+      require: true,
     },
     fullName: {
-        type: String,
-        require: true
+      type: String,
+      require: true,
     },
     text: {
-        type: String,
-        require: true
+      type: String,
+      require: true,
     },
-  
-   
-},
-{ timestamps: true },)
+  },
+  { timestamps: true }
+);
 
-module.exports =  mongoose.model("causeRecent", causeRecentSchema)
+module.exports = mongoose.model("causeRecent", causeRecentSchema);

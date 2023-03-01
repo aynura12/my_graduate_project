@@ -10,7 +10,7 @@ import { adminSchema } from "../../../schema/Admin/adminSchema";
 import { useState } from "react";
 import axios from "axios";
 const TeamAdd = () => {
-  const { teams, getTeams} = useContext(mainContext);
+  const { teams, getTeams } = useContext(mainContext);
   const [id, setId] = useState();
   const [state, setState] = useState({
     image: "",
@@ -24,7 +24,7 @@ const TeamAdd = () => {
   const addData = async () => {
     if (!state.image || !state.name || !state.title || !state.color) return;
     await axios.post("http://localhost:8080/team", state);
-    getTeams()
+    getTeams();
     setState({
       image: "",
       name: "",
@@ -46,7 +46,7 @@ const TeamAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/team/${id}`);
-    getTeams()
+    getTeams();
   };
 
   const handleEditClick = (data) => {
@@ -60,7 +60,7 @@ const TeamAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/team/${id}`, state);
-  getTeams()
+    getTeams();
     setState({
       image: "",
       name: "",
@@ -81,7 +81,7 @@ const TeamAdd = () => {
             <div className="col-lg-12">
               <div className="teamAdd_title">
                 <h2>TeamAdd</h2>
-                <Link to="/home1">
+                <Link to="/admin">
                   <button>Back Home</button>
                 </Link>
               </div>
@@ -92,7 +92,7 @@ const TeamAdd = () => {
       <section className="gallery_table">
         <div className="container">
           <div className="row">
-            <div >
+            <div>
               {" "}
               <table>
                 <thead>
@@ -200,7 +200,7 @@ const TeamAdd = () => {
                   onChange={handleChange}
                   value={state.color}
                   name="color"
-                  placeholder="Add color..."
+                  style={{ backgroundColor: "rgb(238, 79, 16)" }}
                 />
                 {errors.color ? (
                   <span style={{ color: "red" }}>{errors.color.message}</span>

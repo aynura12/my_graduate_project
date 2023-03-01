@@ -24,9 +24,13 @@ const register = async (req, res) => {
       email,
       password: hashedPassword,
     });
-    const token = jwt.sign({ email: admin.email, id: admin._id }, "admin-mysecret", {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign(
+      { email: admin.email, id: admin._id },
+      "admin-mysecret",
+      {
+        expiresIn: "1h",
+      }
+    );
 
     res.status(201).json({ result: admin, token });
   } catch (error) {
@@ -96,9 +100,13 @@ const forgotPassword = async (req, res) => {
     if (!existingAdmin) {
       return res.status(404).json({ message: "Admin does not exist" });
     }
-    const token = jwt.sign({ email: admin.email, id: admin._id }, "admin-mysecret", {
-      expiresIn: "2h",
-    });
+    const token = jwt.sign(
+      { email: admin.email, id: admin._id },
+      "admin-mysecret",
+      {
+        expiresIn: "2h",
+      }
+    );
 
     // const reset_url_text = "http://localhost:8080/admin/reset_password?token=" + token
     // send email this text reset_url_text

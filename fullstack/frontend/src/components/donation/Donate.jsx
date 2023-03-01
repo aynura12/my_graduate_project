@@ -6,8 +6,7 @@ import { formSchema } from "../../schema/formSchema";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const Donate = () => {
-
-  const [datas, setDatas] = useState([]);
+  // const [datas, setDatas] = useState([]);
   const [state, setState] = useState({
     money: 0,
     firstName: "",
@@ -15,7 +14,7 @@ const Donate = () => {
     email: "",
     number: 0,
     address: "",
-    country: "",
+    // country: "",
     comment: "",
     cardNumber: 0,
     mm: "",
@@ -34,7 +33,7 @@ const Donate = () => {
       !state.email ||
       !state.number ||
       !state.address ||
-      !state.country ||
+      // !state.country ||
       !state.comment ||
       !state.cardNumber ||
       !state.mm ||
@@ -51,7 +50,7 @@ const Donate = () => {
       email: "",
       number: 0,
       address: "",
-      country: "",
+      // country: "",
       comment: "",
       cardNumber: 0,
       mm: "",
@@ -73,14 +72,14 @@ const Donate = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/aboutList");
-    setDatas(res.data);
-  };
+  // const getData = async () => {
+  //   const res = await axios.get("http://localhost:8080/aboutList");
+  //   setDatas(res.data);
+  // };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
   return (
     <form className="donate" onSubmit={handleSubmit(onSubmit)}>
       <div className="your_donation">
@@ -200,19 +199,17 @@ const Donate = () => {
               <></>
             )}
           </div>
-
+          {/* 
           <select onChange={handleChange}>
-            <option  selected>Country...</option>
+            <option selected>Country...</option>
             {datas?.map((data) => {
               return (
-               
-                
                 <option key={data._id} value={data._id} name="country">
                   {data.country}
                 </option>
               );
             })}
-          </select> 
+          </select> */}
         </div>
         <div>
           <div>
@@ -324,7 +321,7 @@ const Donate = () => {
             )}
           </div>
 
-         <select onChange={handleChange}>
+          {/* <select onChange={handleChange}>
             <option selected>Country...</option>
             {datas?.map((data) => {
               return (
@@ -333,11 +330,10 @@ const Donate = () => {
                 </option>
               );
             })}
-          </select> 
+          </select> */}
         </div>
       </div>
       <button onClick={() => addData()}>Donate now</button>
-      
     </form>
   );
 };

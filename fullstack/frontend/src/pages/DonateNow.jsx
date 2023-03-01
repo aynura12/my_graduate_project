@@ -8,7 +8,7 @@ import { useContext } from "react";
 const DonateNow = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   return (
     <>

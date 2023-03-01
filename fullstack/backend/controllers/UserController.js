@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
   try {
-    console.log("StartAPP")
+    console.log("StartAPP");
 
     const { username, email, password, confirmPassword } = req.body;
     const existingUser = await User.findOne({ email });
@@ -32,7 +32,7 @@ const register = async (req, res) => {
 
     res.status(201).json({ result: user, token });
   } catch (error) {
-    console.log("Something went wrong error")
+    console.log("Something went wrong error");
     res.status(500).json({ message: "Something went wrong" });
   }
 };

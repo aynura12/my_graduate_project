@@ -18,9 +18,9 @@ const AdminLogin = () => {
 
       .then((response) => {
         console.log("success", response);
-        document.cookie = `admin-token=${response.data.token}; expires=${new Date(
-          Date.now() + 36000000
-        ).toUTCString()}; path=/`;
+        document.cookie = `admin-token=${
+          response.data.token
+        }; expires=${new Date(Date.now() + 36000000).toUTCString()}; path=/`;
         window.location.href = "/admin";
         setEmail("");
         setPassword("");

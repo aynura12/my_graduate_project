@@ -11,7 +11,7 @@ const Footer = () => {
   const [state, setState] = useState({
     email: "",
   });
-  
+
   const handleChange = async (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
@@ -49,19 +49,19 @@ const Footer = () => {
         <form id="footer_form" onSubmit={handleSubmit(onSubmit)}>
           <div className="row">
             <div className="col-12 col-md-8 text-center py-2">
-            <input
-            type="email"
-            {...register("email")}
-            onChange={handleChange}
-            value={state.email}
-            name="email"
-            placeholder="E-mail..."
-          />
-          {errors.email ? (
-            <span style={{ color: "red" }}>{errors.email.message}</span>
-          ) : (
-            <></>
-          )}
+              <input
+                type="email"
+                {...register("email")}
+                onChange={handleChange}
+                value={state.email}
+                name="email"
+                placeholder="E-mail..."
+              />
+              {errors.email ? (
+                <span style={{ color: "red" }}>{errors.email.message}</span>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="col-12 col-md-4 text-center py-2">
               <button onClick={() => addData()}>Subcribe</button>
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
         </form>
         <div className="row">
-          <div className="col-6 col-md-4 col-lg-2 py-2" >
+          <div className="col-6 col-md-4 col-lg-2 py-2">
             <h3>About</h3>
             <ul>
               <li>
@@ -88,7 +88,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link id="footer_link" to="https://goo.gl/maps/gYtMFmgdPgj7kLWR6">
+                <Link
+                  id="footer_link"
+                  to="https://goo.gl/maps/gYtMFmgdPgj7kLWR6"
+                >
                   Site Map
                 </Link>
               </li>
@@ -211,8 +214,11 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 col-md-12">
-              <p >
-                © Copyright 2019 by <a href="http://layerdrops.com/oxpitan/team.html">Layerdrops.com</a>
+              <p>
+                © Copyright 2019 by{" "}
+                <a href="http://layerdrops.com/oxpitan/team.html">
+                  Layerdrops.com
+                </a>
               </p>
             </div>
           </div>

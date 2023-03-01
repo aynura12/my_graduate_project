@@ -1,12 +1,12 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const NotFoundRoute = () => {
   return (
     <>
-    <Outlet/>
+      <Outlet />
     </>
-  )
-}
+  );
+};
 
-export default NotFoundRoute
+export default NotFoundRoute;

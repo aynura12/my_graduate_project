@@ -7,7 +7,7 @@ import axios from "axios";
 import { mainContext } from "../../Context/ContextProvider";
 import { useContext } from "react";
 const ReplyModal = () => {
-  const { getComment} = useContext(mainContext);
+  const { getComment } = useContext(mainContext);
   const [state, setState] = useState({
     fullName: "",
     email: "",
@@ -19,7 +19,7 @@ const ReplyModal = () => {
   const addData = async () => {
     if (!state.fullName || !state.email || !state.comment) return;
     await axios.post("http://localhost:8080/causeComment", state);
-    getComment()
+    getComment();
     setState({
       fullName: "",
       email: "",
@@ -128,7 +128,9 @@ const ReplyModal = () => {
                     <></>
                   )}
                 </div>
-                <button onClick={() => addData()} class="btn btn-warning">Send message</button>
+                <button onClick={() => addData()} class="btn btn-warning">
+                  Send message
+                </button>
               </form>
             </div>
           </div>

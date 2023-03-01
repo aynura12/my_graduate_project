@@ -7,7 +7,7 @@ const AdminReg = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -25,9 +25,9 @@ const AdminReg = () => {
       })
       .then((response) => {
         console.log("success", response);
-        document.cookie = `admin-token=${response.data.token}; expires=${new Date(
-          Date.now() + 36000000
-        ).toUTCString()}; path=/`;
+        document.cookie = `admin-token=${
+          response.data.token
+        }; expires=${new Date(Date.now() + 36000000).toUTCString()}; path=/`;
         window.location.href = "/admin";
 
         setAdminname("");

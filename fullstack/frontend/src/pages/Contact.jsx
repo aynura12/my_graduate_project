@@ -4,7 +4,7 @@ import donationLogo from "../media/smalllogo.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../schema/formSchema";
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../style/contact.scss";
@@ -14,7 +14,7 @@ import { useContext } from "react";
 const Contact = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   const [state, setState] = useState({
     fullName: "",

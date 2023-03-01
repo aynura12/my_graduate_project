@@ -20,17 +20,17 @@ const becomeSchema = new Schema(
       require: true,
     },
     date: {
-        type: Number,
-        require: true,
-      },
-      occupation: {
-        type: String,
-        require: true,
-      },
-      message: {
-        type: String,
-        require: true,
-      },
+      type: Number,
+      require: true,
+    },
+    occupation: {
+      type: String,
+      require: true,
+    },
+    message: {
+      type: String,
+      require: true,
+    },
   },
   { timestamps: true }
 );

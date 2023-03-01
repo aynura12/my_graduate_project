@@ -10,7 +10,7 @@ import { useContext } from "react";
 const About = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   const [text1, setText1] = useState(false);
   const [text2, setText2] = useState(false);

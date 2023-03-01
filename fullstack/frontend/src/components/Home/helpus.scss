@@ -3,19 +3,17 @@
   position: relative;
   .help-image {
     position: absolute;
-    animation:pulse; 
+    animation: pulse;
     animation-duration: 2s;
-    animation-iteration-count: infinite; 
+    animation-iteration-count: infinite;
   }
   @keyframes image {
-   
     25% {
       width: 40px;
     }
     50% {
       width: 100px;
     }
-    
   }
   @media (max-width: 992px) {
     .help-image {

@@ -5,12 +5,12 @@ import "../ReadAdd/readAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 import { mainContext } from "../../../Context/ContextProvider";
 
 const ReadAdd = () => {
-  const {reads,getReads}=useContext(mainContext)
+  const { reads, getReads } = useContext(mainContext);
   const [id, setId] = useState();
   const [state, setState] = useState({
     image: "",
@@ -23,7 +23,7 @@ const ReadAdd = () => {
   const addData = async () => {
     if (!state.image || !state.title || !state.color) return;
     await axios.post("http://localhost:8080/read", state);
-    getReads()
+    getReads();
     setState({
       image: "",
       title: "",
@@ -44,7 +44,7 @@ const ReadAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/read/${id}`);
- getReads()
+    getReads();
   };
 
   const handleEditClick = (data) => {
@@ -53,7 +53,7 @@ const ReadAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/read/${id}`, state);
-   getReads()
+    getReads();
     setState({
       image: "",
       title: "",
@@ -175,7 +175,7 @@ const ReadAdd = () => {
                   onChange={handleChange}
                   value={state.color}
                   name="color"
-                  placeholder="Add Color..."
+                  style={{ backgroundColor: "rgb(238, 79, 16)" }}
                 />
                 {errors.color ? (
                   <span style={{ color: "red" }}>{errors.color.message}</span>

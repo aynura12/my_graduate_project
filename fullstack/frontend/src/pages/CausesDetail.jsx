@@ -13,7 +13,7 @@ import { useContext } from "react";
 const CausesDetail = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   const [recent, setRecent] = useState([]);
   const [cause, setCause] = useState([]);
@@ -100,8 +100,8 @@ const CausesDetail = () => {
                   />
                 </div>
               </div>
-              
-              <Comment/>
+
+              <Comment />
             </div>
             <div className="col-lg-4 col-md-12">
               <div className="organizer">

@@ -1,43 +1,42 @@
 .admin-login__wrapper {
-    height: 95vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(242,240,236);
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(242, 240, 236);
 }
 
-.login-inp{
-    background-color: rgb(241,174,68);
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    &::placeholder{
-        color: white;
-    }
-}
-
-.login-button{
-    border-radius: 5px;
-    padding: 10px;
-    background: #0D52FF;
+.login-inp {
+  background-color: rgb(241, 174, 68);
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  &::placeholder {
     color: white;
-    border: none;
+  }
 }
 
-.login-button:hover{
-    background: #1644bb;
-    transition: all 0.3s;
+.login-button {
+  border-radius: 5px;
+  padding: 10px;
+  background: #0d52ff;
+  color: white;
+  border: none;
 }
 
-.login-links{
-    color: #e36955;
-    text-decoration: none;
-    font-size: 18px;
-    
+.login-button:hover {
+  background: #1644bb;
+  transition: all 0.3s;
 }
 
-.login-links:hover{
-    color: #e73317;
+.login-links {
+  color: #e36955;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.login-links:hover {
+  color: #e73317;
 }

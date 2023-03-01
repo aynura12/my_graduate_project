@@ -7,7 +7,10 @@ const Donation = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-8">
-            <img src="http://layerdrops.com/oxpitan/images/section-icon.png" alt="" />
+            <img
+              src="http://layerdrops.com/oxpitan/images/section-icon.png"
+              alt=""
+            />
             <h2 className="donation_title">
               Fundraising for the people and causes you care about
             </h2>

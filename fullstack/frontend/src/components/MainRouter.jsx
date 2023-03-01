@@ -32,10 +32,6 @@ const tokenRequired = (setIsLogin) => {
 
       const url = window.location.href;
       const check_href = url.substring(url.lastIndexOf("/") + 1).toString();
-
-      // if (check_href !== "user-login" && check_href !== "user-register") {
-      //   // window.location.href = "/user-login";
-      // }
     });
 };
 
@@ -43,13 +39,13 @@ const MainRouter = () => {
   useEffect(() => {
     tokenRequired();
   }, []);
-  const override= {
+  const override = {
     display: "flex",
-    justifyContent:"center",
+    justifyContent: "center",
     margin: "0 auto",
-    margintOP:"10%"
+    margintOP: "10%",
   };
-  
+
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -61,8 +57,22 @@ const MainRouter = () => {
   return (
     <div>
       {loading ? (
-        <div style={{display:"flex",justifyContent:"center",alignItems:"center",paddingTop:"270px"}}> <SquareLoader     color={"orange"}    cssOverride={override} loading={loading} size={40}    /></div>
-       
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingTop: "270px",
+          }}
+        >
+          {" "}
+          <SquareLoader
+            color={"orange"}
+            cssOverride={override}
+            loading={loading}
+            size={40}
+          />
+        </div>
       ) : (
         <div>
           {" "}

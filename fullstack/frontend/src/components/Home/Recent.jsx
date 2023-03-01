@@ -40,7 +40,8 @@ const Recent = () => {
                       <img
                         src="https://oxpitan-gatsby.vercel.app/static/blog-img2-35b5a659e6b754026ea3ea16bc6bf1fb.jpg"
                         alt="img"
-                      /></div>
+                      />
+                    </div>
                     <div className="col-12 col-sm-8 ps-sm-4">
                       <p>07 MAR, 2019</p>
                       <h2>Let’s together provide them a healthy food</h2>
@@ -63,7 +64,8 @@ const Recent = () => {
                       <img
                         src="https://oxpitan-gatsby.vercel.app/static/blog-img4-bebe58b75d17818cd494eb4726ac59d3.jpg"
                         alt="img"
-                      /> </div>
+                      />{" "}
+                    </div>
                     <div className="col-12 col-sm-8 ps-sm-4">
                       <p>29 FEB, 2019</p>
                       <h2>Become a volunteer you will feel the benefits</h2>
@@ -81,7 +83,6 @@ const Recent = () => {
 
       <section className="home_end">
         <div className="container-fluid">
-
           <div className="row">
             <div className="end_left col-lg-6 col-md-12">
               <h2>Sponsor an entire trending project</h2>{" "}
@@ -97,7 +98,6 @@ const Recent = () => {
             </div>
           </div>
         </div>
-
       </section>
     </>
   );

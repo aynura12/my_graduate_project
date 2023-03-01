@@ -5,17 +5,17 @@ import "../CauseAdd/causeAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 import { mainContext } from "../../../Context/ContextProvider";
 const CauseAdd = () => {
-  const { causes,getCause} = useContext(mainContext);
+  const { causes, getCause } = useContext(mainContext);
   const [id, setId] = useState();
   const [state, setState] = useState({
     image: "",
     title: "",
     text: "",
-    goal: "", 
+    goal: "",
     raised: "",
   });
 
@@ -55,7 +55,7 @@ const CauseAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/cause/${id}`);
-    getCause()
+    getCause();
   };
 
   const handleEditClick = (data) => {
@@ -70,7 +70,7 @@ const CauseAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/cause/${id}`, state);
-   getCause()
+    getCause();
     setState({
       image: "",
       title: "",
@@ -103,8 +103,7 @@ const CauseAdd = () => {
       <section className="gallery_table">
         <div className="container">
           <div className="row">
-            <div >
-              {" "}
+            <div>
               <table>
                 <thead>
                   <tr>
@@ -264,4 +263,3 @@ const CauseAdd = () => {
 };
 
 export default CauseAdd;
-

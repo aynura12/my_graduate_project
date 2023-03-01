@@ -1,18 +1,16 @@
 .charity {
-  .text_slide{
-    .swiper-button-next,.swiper-button-prev{
+  .text_slide {
+    .swiper-button-next,
+    .swiper-button-prev {
       width: 30px;
       height: 30px;
       cursor: pointer;
       background-color: rgb(196, 101, 101);
-      color:rgb(196, 101, 101);
+      color: rgb(196, 101, 101);
       clip-path: polygon(0 0, 100% 0, 72% 100%, 0% 100%);
-     
     }
-  
   }
-   
- 
+
   .charity_left {
     display: flex;
     border-bottom: 2px solid rgb(242, 240, 236);
@@ -31,7 +29,6 @@
       margin-bottom: 13px;
       color: #424242;
       font-family: Playfair Display, serif;
-   
     }
     p {
       color: #e36955;
@@ -63,12 +60,11 @@
     }
   }
 }
-@media (max-width:490px){
-  .charity_right{
-    h3{
-      font-size:20px!important ;
+@media (max-width: 490px) {
+  .charity_right {
+    h3 {
+      font-size: 20px !important ;
       line-height: 24px !important ;
-     }
+    }
   }
- 
 }

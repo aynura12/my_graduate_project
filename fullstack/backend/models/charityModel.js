@@ -1,21 +1,22 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose");
 
-const { Schema } = mongoose
-const charitySchema= new Schema({
+const { Schema } = mongoose;
+const charitySchema = new Schema(
+  {
     title: {
-        type: String,
-        require: true
+      type: String,
+      require: true,
     },
     text: {
-        type: String,
-        require: true
+      type: String,
+      require: true,
     },
     color: {
-        type: String,
-        require: true
+      type: String,
+      require: true,
     },
-   
-},
-{ timestamps: true },)
+  },
+  { timestamps: true }
+);
 
-module.exports =  mongoose.model("charity", charitySchema)
+module.exports = mongoose.model("charity", charitySchema);

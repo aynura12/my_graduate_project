@@ -102,7 +102,7 @@ const RecentAdd = () => {
           <div className="row">
             {" "}
             <div>
-              <table >
+              <table>
                 <thead>
                   <tr>
                     <th scope="col">Image</th>

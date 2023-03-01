@@ -9,7 +9,7 @@ const Sponsors = () => {
   const { ToTop } = useContext(mainContext);
 
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   return (
     <>

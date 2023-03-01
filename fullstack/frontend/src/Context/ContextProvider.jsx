@@ -15,7 +15,7 @@ const ContextProvider = ({ children }) => {
   const [teams, setTeams] = useState([]);
   const [comments, setComments] = useState([]);
 
-  const getGallery= async () => {
+  const getGallery = async () => {
     const res = await axios.get("http://localhost:8080/gallery");
     setGallerys(res.data);
   };
@@ -35,37 +35,37 @@ const ContextProvider = ({ children }) => {
 
   const getReads = async () => {
     const res = await axios.get("http://localhost:8080/read");
-   setReads(res.data)
+    setReads(res.data);
   };
   const getVolunteers = async () => {
     const res = await axios.get("http://localhost:8080/volunteer");
-    setVolunteers(res.data)
+    setVolunteers(res.data);
   };
 
-  const getEvents= async () => {
+  const getEvents = async () => {
     const res = await axios.get("http://localhost:8080/event");
-   setEvents(res.data);
+    setEvents(res.data);
   };
 
   const getNews = async () => {
     const res = await axios.get("http://localhost:8080/news");
     setNews(res.data);
   };
-  const getTeams= async () => {
+  const getTeams = async () => {
     const res = await axios.get("http://localhost:8080/team");
     setTeams(res.data);
   };
- 
+
   const getComment = async () => {
     const res = await axios.get("http://localhost:8080/causeComment");
     setComments(res.data);
   };
   useEffect(() => {
-   getVolunteers()
+    getVolunteers();
   }, []);
 
   useEffect(() => {
-   getGallery()
+    getGallery();
   }, [gallerys]);
 
   useEffect(() => {
@@ -81,9 +81,9 @@ const ContextProvider = ({ children }) => {
   }, [rights]);
 
   useEffect(() => {
- getReads()
+    getReads();
   }, [reads]);
- 
+
   useEffect(() => {
     getEvents();
   }, [events]);
@@ -97,18 +97,15 @@ const ContextProvider = ({ children }) => {
   }, [teams]);
 
   useEffect(() => {
-   getComment()
+    getComment();
   }, [comments]);
-const  ToTop=()=>{
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
- 
-}
-
-
+  const ToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
 
   const values = {
     ToTop,

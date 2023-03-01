@@ -1,15 +1,15 @@
-import React , { useContext } from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../EventAdd/eventAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 import { mainContext } from "../../../Context/ContextProvider";
 const EventAdd = () => {
-  const { events,getEvents } = useContext(mainContext);
+  const { events, getEvents } = useContext(mainContext);
   const [state, setState] = useState({
     image: "",
     day: "",
@@ -27,7 +27,7 @@ const EventAdd = () => {
     location: "",
   });
   const [id, setId] = useState();
- 
+
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
@@ -50,7 +50,7 @@ const EventAdd = () => {
     )
       return;
     await axios.post("http://localhost:8080/event", state);
-   getEvents()
+    getEvents();
     setState({
       image: "",
       day: "",
@@ -82,7 +82,7 @@ const EventAdd = () => {
 
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/event/${id}`);
-    getEvents()
+    getEvents();
   };
 
   const handleEditClick = (data) => {
@@ -106,7 +106,7 @@ const EventAdd = () => {
   };
   const updateData = async (id) => {
     await axios.put(`http://localhost:8080/event/${id}`, state);
-  getEvents()
+    getEvents();
     setState({
       image: "",
       day: "",
@@ -187,8 +187,12 @@ const EventAdd = () => {
                         <td data-label="Watch">{event.watch}</td>
                         <td data-label="Name">{event.name}</td>
                         <td data-label="Color">{event.color}</td>
-                        <td data-label="Requirements" ><p className="large">{event.requirements}</p></td>
-                        <td data-label="Text" ><p className="large">{event.text}</p></td>
+                        <td data-label="Requirements">
+                          <p className="large">{event.requirements}</p>
+                        </td>
+                        <td data-label="Text">
+                          <p className="large">{event.text}</p>
+                        </td>
                         <td data-label="Date">{event.date}</td>
                         <td data-label="Category">{event.category}</td>
                         <td data-label="Phone">{event.phone}</td>
@@ -318,7 +322,7 @@ const EventAdd = () => {
                   onChange={handleChange}
                   value={state.color}
                   name="color"
-                  placeholder="Add color..."
+                  style={{ backgroundColor: "rgb(238, 79, 16)" }}
                 />
                 {errors.color ? (
                   <span style={{ color: "red" }}>{errors.color.message}</span>

@@ -8,7 +8,7 @@ import { useContext } from "react";
 const Causes = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   return (
     <>
@@ -29,7 +29,7 @@ const Causes = () => {
           </div>
         </div>
       </div>
-      <Cause/>
+      <Cause />
     </>
   );
 };

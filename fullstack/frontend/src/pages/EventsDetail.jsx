@@ -10,7 +10,7 @@ import { useContext } from "react";
 const EventsDetail = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
   const { id } = useParams();
   const [event, setEvent] = useState([]);

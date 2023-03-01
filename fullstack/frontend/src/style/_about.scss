@@ -1,6 +1,6 @@
 @import "../vendors/mixins";
 
-.abouts{
+.abouts {
   padding: 40px 0;
   @include backcolor;
   .about_title {
@@ -8,16 +8,13 @@
     h2 {
       @include pagetitle;
     }
-    button{
+    button {
       @include buttonpreparty;
-     }
+    }
   }
- 
- 
- 
 }
 .about_area_photo {
-  padding: 60px 0 ;
+  padding: 60px 0;
   img {
     width: 100%;
   }
@@ -62,15 +59,13 @@
   h5 {
     @include h3;
     cursor: pointer;
-   &:hover{
-    color: rgb(227,105,85);
-   }
-  
+    &:hover {
+      color: rgb(227, 105, 85);
+    }
   }
 
   p {
     @include text;
-
   }
 }
 
