@@ -81,7 +81,7 @@ const ContextProvider = ({ children }) => {
   }, [rights]);
 
   useEffect(() => {
-    getReads()
+ getReads()
   }, [reads]);
  
   useEffect(() => {
