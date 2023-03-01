@@ -174,7 +174,8 @@ const CharityAdd = () => {
                   onChange={handleChange}
                   value={state.color}
                   name="color"
-                  style={{backgroundColor:"rgb(238, 79, 16)"}}
+                 
+                  placeholder="Add Color"
                 />
                 {errors.text ? (
                   <span style={{ color: "red" }}>{errors.text.message}</span>

@@ -259,7 +259,8 @@ const NewsAdd = () => {
                   onChange={handleChange}
                   value={state.color}
                   name="color"
-                  style={{ backgroundColor: "rgb(238, 79, 16)" }}
+             
+                  placeholder="Add Color"
                 />
                 {errors.color ? (
                   <span style={{ color: "red" }}>{errors.color.message}</span>
