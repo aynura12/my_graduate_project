@@ -149,7 +149,7 @@ const GalleryAdd = () => {
                   {" "}
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     onClick={() => addData()}
                   >
                     Add

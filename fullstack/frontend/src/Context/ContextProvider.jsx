@@ -60,45 +60,57 @@ const ContextProvider = ({ children }) => {
     const res = await axios.get("http://localhost:8080/causeComment");
     setComments(res.data);
   };
-  useEffect(() => {
-    getVolunteers();
-  }, []);
+  // useEffect(() => {
+  //   getVolunteers();
+  // }, []);
 
-  useEffect(() => {
-    getGallery();
-  }, [gallerys]);
+  // useEffect(() => {
+  //   getGallery();
+  // }, [gallerys]);
 
-  useEffect(() => {
-    getCause();
-  }, [causes]);
+  // useEffect(() => {
+  //   getCause();
+  // }, [causes]);
 
-  useEffect(() => {
-    getLefts();
-  }, [lefts]);
+  // useEffect(() => {
+  //   getLefts();
+  // }, [lefts]);
 
-  useEffect(() => {
-    getRights();
-  }, [rights]);
+  // useEffect(() => {
+  //   getRights();
+  // }, [rights]);
 
-  useEffect(() => {
-    getReads();
-  }, [reads]);
+  // useEffect(() => {
+  //   getReads();
+  // }, [reads]);
 
-  useEffect(() => {
-    getEvents();
-  }, [events]);
+  // useEffect(() => {
+  //   getEvents();
+  // }, [events]);
 
-  useEffect(() => {
-    getNews();
-  }, [news]);
+  // useEffect(() => {
+  //   getNews();
+  // }, [news]);
 
-  useEffect(() => {
-    getTeams();
-  }, [teams]);
+  // useEffect(() => {
+  //   getTeams();
+  // }, [teams]);
 
-  useEffect(() => {
-    getComment();
-  }, [comments]);
+  // useEffect(() => {
+  //   getComment();
+  // }, [comments]);
+  useEffect(()=>{
+  getComment();
+  getTeams();
+  getNews();
+  getEvents();
+  getReads();
+  getRights();
+  getLefts();
+  getCause();
+  getGallery();
+  getVolunteers();
+  },[])
   const ToTop = () => {
     window.scrollTo({
       top: 0,
@@ -137,6 +149,7 @@ const ContextProvider = ({ children }) => {
     comments,
     setComments,
     getComment,
+    
   };
 
   return <mainContext.Provider value={values}>{children}</mainContext.Provider>;

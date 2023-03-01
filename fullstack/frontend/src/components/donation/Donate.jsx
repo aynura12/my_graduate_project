@@ -6,6 +6,7 @@ import { formSchema } from "../../schema/formSchema";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const Donate = () => {
+
   // const [datas, setDatas] = useState([]);
   const [state, setState] = useState({
     money: 0,
@@ -190,6 +191,7 @@ const Donate = () => {
                 {...register("address")}
                 value={state.address}
                 onChange={handleChange}
+                name="address"
                 placeholder="Address..."
               />
             </div>
@@ -199,11 +201,13 @@ const Donate = () => {
               <></>
             )}
           </div>
-          {/* 
-          <select onChange={handleChange}>
-            <option selected>Country...</option>
+
+          {/* <select onChange={handleChange}>
+            <option  selected>Country...</option>
             {datas?.map((data) => {
               return (
+               
+                
                 <option key={data._id} value={data._id} name="country">
                   {data.country}
                 </option>
@@ -334,6 +338,7 @@ const Donate = () => {
         </div>
       </div>
       <button onClick={() => addData()}>Donate now</button>
+    
     </form>
   );
 };
