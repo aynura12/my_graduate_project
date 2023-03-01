@@ -1,44 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import "../RecentAdd/recentAdd.scss";
+import "../CauseAdd/causeAdd.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "../../../schema/Admin/adminSchema";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-const RecentAdd = () => {
-  const [datas, setDatas] = useState([]);
-  const [state, setState] = useState({
-    image: "",
-    payment: "",
-    fullName: "",
-    text: "",
-  });
+import { mainContext } from "../../../Context/ContextProvider";
+const CharityAdd = () => {
+  const { rights, getRights } = useContext(mainContext);
   const [id, setId] = useState();
+  const [state, setState] = useState({
+    title: "",
+    text: "",
+    color: "",
+  });
 
-  const getData = async () => {
-    const res = await axios.get("http://localhost:8080/causeRecent");
-    setDatas(res.data);
-  };
-
-  useEffect(() => {
-    addData();
-    getData();
-  }, []);
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
   const addData = async () => {
-    if (!state.image || !state.payment || !state.fullName || !state.text)
-      return;
-    await axios.post("http://localhost:8080/causeRecent", state);
-    getData();
+    if (!state.text || !state.title || !state.color) return;
+    await axios.post("http://localhost:8080/charity", state);
+    getRights();
     setState({
-      image: "",
-      payment: "",
-      fullName: "",
+      title: "",
       text: "",
+      color: "",
     });
   };
   const onSubmit = (data) => {
@@ -54,41 +43,40 @@ const RecentAdd = () => {
   });
 
   const deleteData = async (id) => {
-    await axios.delete(`http://localhost:8080/causeRecent/${id}`);
-    getData();
+    await axios.delete(`http://localhost:8080/charity/${id}`);
+    getRights();
   };
 
   const handleEditClick = (data) => {
     setState({
-      image: data.image,
-      payment: data.payment,
-      fullName: data.fullName,
+      title: data.title,
       text: data.text,
+      color: data.color,
     });
     setId(data._id);
   };
   const updateData = async (id) => {
-    await axios.put(`http://localhost:8080/causeRecent/${id}`, state);
-    getData();
+    await axios.put(`http://localhost:8080/charity/${id}`, state);
+    getRights();
     setState({
-      image: "",
-      payment: "",
-      fullName: "",
+      title: "",
       text: "",
+      color: "",
     });
   };
+
   return (
     <>
       {" "}
       <Helmet>
-        <title>Recent</title>
+        <title>Charity</title>
       </Helmet>
-      <section className="recentAdd">
+      <section className="causeAdd">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="recentAdd_title">
-                <h2>RecentAdd</h2>
+              <div className="causeAdd_title">
+                <h2>Charity</h2>
                 <Link to="/admin">
                   <button>Back Home</button>
                 </Link>
@@ -100,47 +88,39 @@ const RecentAdd = () => {
       <section className="gallery_table">
         <div className="container">
           <div className="row">
-            {" "}
             <div>
-              <table >
+              {" "}
+              <table>
                 <thead>
                   <tr>
-                    <th scope="col">Image</th>
-                    <th scope="col">Payment</th>
-                    <th scope="col">FullName</th>
+                    <th scope="col">Title</th>
                     <th scope="col">Text</th>
+                    <th scope="col">Color</th>
                     <th scope="col">Delete data</th>
                     <th scope="col">Update Data</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {datas.map((data) => {
+                  {rights.map((right) => {
                     return (
-                      <tr key={data._id}>
-                        <td data-label="Image">
-                          <img
-                            src={data.image}
-                            style={{ height: 100 }}
-                            alt="alt"
-                          />
-                        </td>
-                        <td data-label="Payment">{data.payment}</td>
-                        <td data-label="FullName">{data.fullName}</td>
-                        <td data-label="Text">{data.text}</td>
+                      <tr key={right._id}>
+                        <td data-label="Title">{right.title}</td>
+                        <td data-label="Text">{right.text}</td>
+                        <td data-label="Text">{right.color}</td>
                         <td data-label="Delete data">
                           <button
                             type="button"
                             className="btn btn-danger"
-                            onClick={() => deleteData(data._id)}
+                            onClick={() => deleteData(right._id)}
                           >
                             Delete
                           </button>
                         </td>
-                        <td data-label="Update data">
+                        <td data-label="Update Data">
                           <button
                             type="button"
                             className="btn btn-success"
-                            onClick={() => handleEditClick(data)}
+                            onClick={() => handleEditClick(right)}
                           >
                             Update
                           </button>
@@ -151,7 +131,7 @@ const RecentAdd = () => {
                 </tbody>
               </table>
             </div>
-          </div>
+          </div>{" "}
         </div>
       </section>
       <section className="gallery_add">
@@ -162,44 +142,14 @@ const RecentAdd = () => {
                 <h2>Add data</h2>
                 <input
                   type="text"
-                  {...register("image")}
+                  {...register("title")}
                   onChange={handleChange}
-                  value={state.image}
-                  name="image"
-                  placeholder="Add Image..."
+                  value={state.title}
+                  name="title"
+                  placeholder="Add Title..."
                 />
-                {errors.image ? (
-                  <span style={{ color: "red" }}>{errors.image.message}</span>
-                ) : (
-                  <></>
-                )}
-
-                <input
-                  type="number"
-                  {...register("payment")}
-                  onChange={handleChange}
-                  value={state.payment}
-                  name="payment"
-                  placeholder="Add Payment..."
-                />
-                {errors.payment ? (
-                  <span style={{ color: "red" }}>{errors.payment.message}</span>
-                ) : (
-                  <></>
-                )}
-
-                <input
-                  type="text"
-                  {...register("fullName")}
-                  onChange={handleChange}
-                  value={state.fullName}
-                  name="fullName"
-                  placeholder="Add FullName..."
-                />
-                {errors.fullName ? (
-                  <span style={{ color: "red" }}>
-                    {errors.fullName.message}
-                  </span>
+                {errors.title ? (
+                  <span style={{ color: "red" }}>{errors.title.message}</span>
                 ) : (
                   <></>
                 )}
@@ -217,11 +167,25 @@ const RecentAdd = () => {
                 ) : (
                   <></>
                 )}
+
+                <input
+                  type="color"
+                  {...register("color")}
+                  onChange={handleChange}
+                  value={state.text}
+                  name="color"
+                  placeholder="Add color..."
+                />
+                {errors.text ? (
+                  <span style={{ color: "red" }}>{errors.text.message}</span>
+                ) : (
+                  <></>
+                )}
                 <div className="buttons">
                   {" "}
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     onClick={() => addData()}
                   >
                     Add
@@ -243,4 +207,4 @@ const RecentAdd = () => {
   );
 };
 
-export default RecentAdd;
+export default CharityAdd;

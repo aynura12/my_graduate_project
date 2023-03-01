@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../../schema/formSchema";
 import { useState, useEffect } from "react";
+import moment from 'moment'
+
 // import { format } from 'date-fns'
 import "../Comment/comment.scss";
 import axios from "axios";
@@ -51,10 +53,9 @@ const Comment = () => {
           <div className="detail_comment_bottom" key={comment._id}>
             <div className="bottom_title">
               <div className="title_left">
-                <div className="left">
+                <div className="left">  
                   <h4>{comment.fullName}</h4>
-                  {/* <span >{format(datas.updateAt, 'yyyy-mm-dd')}</span>
-                  <span>{datas.createdAt}</span> */}
+                  <span>{moment(comment.createdAt).startOf('hour').fromNow()}</span>
                 </div>
                 <button
                   data-bs-toggle="modal"

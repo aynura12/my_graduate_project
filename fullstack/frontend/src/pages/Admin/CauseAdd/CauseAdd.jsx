@@ -69,9 +69,6 @@ const CauseAdd = () => {
     setId(data._id);
   };
   const updateData = async (id) => {
-
-    
-
     await axios.put(`http://localhost:8080/cause/${id}`, state);
    getCause()
     setState({
@@ -106,9 +103,9 @@ const CauseAdd = () => {
       <section className="gallery_table">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12 col-md-12">
+            <div >
               {" "}
-              <table className="table">
+              <table>
                 <thead>
                   <tr>
                     <th scope="col">Image</th>
@@ -124,7 +121,7 @@ const CauseAdd = () => {
                   {causes.map((cause) => {
                     return (
                       <tr key={cause._id}>
-                        <td>
+                        <td data-label="Image">
                           <img
                             src={cause.image}
                             style={{ height: 100 }}
@@ -132,12 +129,12 @@ const CauseAdd = () => {
                           />
                         </td>
 
-                        <td>{cause.title}</td>
-                        <td>{cause.text}</td>
-                        <td>{cause.goal}</td>
-                        <td>{cause.raised}</td>
+                        <td data-label="Title">{cause.title}</td>
+                        <td data-label="Text">{cause.text}</td>
+                        <td data-label="Goal">{cause.goal}</td>
+                        <td data-label="Raised">{cause.raised}</td>
 
-                        <td>
+                        <td data-label="Delete data">
                           <button
                             type="button"
                             className="btn btn-danger"
@@ -146,7 +143,7 @@ const CauseAdd = () => {
                             Delete
                           </button>
                         </td>
-                        <td>
+                        <td data-label="Update Data">
                           <button
                             type="button"
                             className="btn btn-success"
@@ -267,3 +264,4 @@ const CauseAdd = () => {
 };
 
 export default CauseAdd;
+

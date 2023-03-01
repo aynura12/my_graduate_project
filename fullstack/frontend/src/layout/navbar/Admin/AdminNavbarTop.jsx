@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../Home/navbar.scss"
+import "../Home/navbar.scss";
 import axios from "axios";
 const getAuthToken = () => {
-  const name = "token=";
+  const name = "admin-token=";
   const cookieArr = document.cookie.split(";");
   for (let i = 0; i < cookieArr.length; i++) {
     let cookie = cookieArr[i].trim();
@@ -18,7 +18,7 @@ const tokenRequired = (setIsLogin) => {
   const token = getAuthToken();
 
   axios
-    .post("http://127.0.0.1:8080/user/tokenRequired/", { token })
+    .post("http://127.0.0.1:8080/admin/tokenRequired/", { token })
     .then((response) => {
       console.log(response.data);
       setIsLogin(true);
@@ -35,24 +35,21 @@ const tokenRequired = (setIsLogin) => {
     });
 };
 
-const logOut=()=>{
-  document.cookie = `token=; expires=${new Date(
+const logOut = () => {
+  document.cookie = `admin-token=; expires=${new Date(
     Date.now() - 100000000
   ).toUTCString()}; path=/`;
 
   window.location.reload();
-}
-
+};
 const NavbarTop = () => {
-  const[isLogin,setIsLogin]=useState(false)
+  const [isLogin, setIsLogin] = useState(false);
   useEffect(() => {
     tokenRequired(setIsLogin);
   }, []);
-
-
   return (
     <>
-     <div className="navbar_top">
+      <div className="navbar_top">
         <div className="container">
           <div className="row">
             <div className="col-md-5 col-sm-12 d-flex d-md-block justify-content-center">
@@ -74,25 +71,33 @@ const NavbarTop = () => {
             </div>
             <div className="col-md-7 col-sm-12 d-flex d-md-block justify-content-center">
               <ul className="lists navbar-right-list">
-               {!isLogin ? (
-               <><li className="list">
-                  <Link to="user-login" className="link">
-                    Login
-                  </Link>
-                </li>
-                <li className="list">
-                  <Link to="user-register" className="link">
-                    Register
-                  </Link>
-                </li>
-                </>
-                ):
-                <li className="list" onClick={()=>logOut()} style={{cursor:"pointer"}}>
+                {!isLogin ? (
+                  <>
+                    <li className="list">
+                      <Link to="admin-login" className="link">
+                        Login
+                      </Link>
+                    </li>
+                    <li className="list">
+                      <Link to="admin-register" className="link">
+                        Register
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <li
+                    className="list"
+                    onClick={() => logOut()}
+                    style={{ cursor: "pointer" }}
+                  >
                     Log out
-                </li>
-                }
+                  </li>
+                )}
                 <li className="list">
-                  <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D" className="link">
+                  <a
+                    href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"
+                    className="link"
+                  >
                     <div>
                       <i className="fa-brands fa-twitter"></i>
                     </div>
@@ -125,7 +130,7 @@ const NavbarTop = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default NavbarTop
+export default NavbarTop;

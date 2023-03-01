@@ -11,6 +11,7 @@ const Footer = () => {
   const [state, setState] = useState({
     email: "",
   });
+  
   const handleChange = async (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };

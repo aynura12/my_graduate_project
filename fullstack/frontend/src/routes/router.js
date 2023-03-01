@@ -24,6 +24,8 @@ import ReadAdd from "../pages/Admin/ReadAdd/ReadAdd";
 import RecentAdd from "../pages/Admin/RecentAdd/RecentAdd";
 import TeamAdd from "../pages/Admin/TeamAdd/TeamAdd";
 import VolunteerAdd from "../pages/Admin/VolunteerAdd/VolunteerAdd";
+import CounterAdd from "../pages/Admin/CounterAdd/CounterAdd";
+import CharityAdd from "../pages/Admin/CharityAdd/CharityAdd";
 import AdminHome from "../pages/Admin/AdminHome/AdminHome";
 import AdminLogin from "../pages/Admin/AdminLogin/AdminLogin";
 import AdminReg from "../pages/Admin/AdminReg/AdminReg";
@@ -90,11 +92,11 @@ const ROUTES = [
         element: <Contact />,
       },
       {
-        path: "login",
+        path: "user-login",
         element: <Login />,
       },
       {
-        path: "register",
+        path: "user-register",
         element: <Register />,
       },
       {
@@ -116,9 +118,12 @@ const ROUTES = [
       { path: "readAdd", element: <ReadAdd/>},
       { path: "recentAdd", element: <RecentAdd/> },
       { path: "teamAdd", element: <TeamAdd/> },
+      { path: "counterAdd", element: <CounterAdd/> },
+      { path: "charityAdd", element: <CharityAdd/> },
+
       { path: "volunteerAdd", element: <VolunteerAdd/> },
-      { path: "login", element: <AdminLogin/>},
-      { path: "register", element: <AdminReg/> },
+      { path: "admin-login", element: <AdminLogin/>},
+      { path: "admin-register", element: <AdminReg/> },
       { path: "password", element: <AdminPassword/> },
 
     ],

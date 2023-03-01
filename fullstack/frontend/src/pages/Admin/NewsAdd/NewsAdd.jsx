@@ -120,11 +120,11 @@ const NewsAdd = () => {
         </div>
       </section>
       <section className="gallery_table">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-12 col-md-12">
+            <div>
               {" "}
-              <table className="table">
+              <table>
                 <thead>
                   <tr>
                     <th scope="col">Image</th>
@@ -144,23 +144,23 @@ const NewsAdd = () => {
                   {news.map((n) => {
                     return (
                       <tr key={n._id}>
-                        <td>
+                        <td data-label="Image">
                           <img
                             src={n.image}
                             style={{ height: 100 }}
                             alt="alt"
                           />
                         </td>
-                        <td>{n.date}</td>
-                        <td>{n.title}</td>
-                        <td>{n.text}</td>
-                        <td>{n.color}</td>
-                        <td>{n.detailText}</td>
-                        <td>{n.detailImage}</td>
-                        <td>{n.detailTitle}</td>
-                        <td>{n.category}</td>
+                        <td data-label="Date">{n.date}</td>
+                        <td data-label="Title">{n.title}</td>
+                        <td data-label="Text"><p className="large">{n.text}</p></td>
+                        <td data-label="Color">{n.color}</td>
+                        <td data-label="TextDetail"><p className="large">{n.detailText}</p></td>
+                        <td data-label="ImageDetail">{n.detailImage}</td>
+                        <td data-label="Titledetail">{n.detailTitle}</td>
+                        <td data-label="Category">{n.category}</td>
 
-                        <td>
+                        <td data-label="Delete data">
                           <button
                             type="button"
                             className="btn btn-danger"
@@ -169,7 +169,7 @@ const NewsAdd = () => {
                             Delete
                           </button>
                         </td>
-                        <td>
+                        <td data-label="Update data">
                           <button
                             type="button"
                             className="btn btn-success"
@@ -354,3 +354,4 @@ const NewsAdd = () => {
 };
 
 export default NewsAdd;
+

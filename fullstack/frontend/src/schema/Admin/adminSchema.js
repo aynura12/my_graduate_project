@@ -76,5 +76,9 @@ export const adminSchema = yup
     requirements: yup
       .string("Pls enter string text")
       .required("This field must not be left blank"),
+    count: yup
+      .number("Pls enter number")
+      .positive("The number must be greater than 0!")
+      .required("This field is required"),
   })
   .required();

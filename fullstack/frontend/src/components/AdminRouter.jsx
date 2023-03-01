@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 // import Footer from "../layout/footer/Footer";
 import AdminNavbar from "../layout/navbar/Admin/AdminNavbar";
-import NavbarTop from "../layout/navbar/Home/NavbarTop";
+import AdminNavbarTop from "../layout/navbar/Admin/AdminNavbarTop"
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
 import axios from "axios";
 const getAuthToken = () => {
-  const name = "token=";
+  const name = "admin-token=";
   const cookieArr = document.cookie.split(";");
   for (let i = 0; i < cookieArr.length; i++) {
     let cookie = cookieArr[i].trim();
@@ -21,7 +21,7 @@ const tokenRequired = (setIsLogin) => {
   const token = getAuthToken();
 
   axios
-    .post("http://127.0.0.1:8080/user/tokenRequired/", { token })
+    .post("http://127.0.0.1:8080/admin/tokenRequired/", { token })
     .then((response) => {
       console.log(response.data);
       setIsLogin(true);
@@ -32,8 +32,8 @@ const tokenRequired = (setIsLogin) => {
       const url = window.location.href;
       const check_href = url.substring(url.lastIndexOf("/") + 1).toString();
 
-      if (check_href !== "login" && check_href !== "register") {
-        window.location.href = "/admin/login";
+      if (check_href !== "admin-login" && check_href !== "admin-register") {
+        window.location.href = "/admin/admin-login";
       }
     });
 };
@@ -45,9 +45,8 @@ const AdminRouter = () => {
   }, []);
   return (
     <>
-      <NavbarTop />
+     <AdminNavbarTop/>
       {isLogin && <AdminNavbar />}
-
       <Outlet />
       <ScrollToTop />
     </>

@@ -6,22 +6,8 @@ import { formSchema } from "../../schema/formSchema";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const Donate = () => {
-  //   // Function will execute on click of button
-  //   const onButtonClick = () => {
-  //     // using Java Script method to get PDF file
-  //     fetch('Graduation Project (1).pdf').then(response => {
-  //         response.blob().then(blob => {
-  //             // Creating new object of PDF file
-  //             const fileURL = window.URL.createObjectURL(blob);
-  //             // Setting various property values
-  //             let alink = document.createElement('a');
-  //             alink.href = fileURL;
-  //             alink.download = 'Graduation Project (1).pdf';
-  //             alink.click();
-  //         })
-  //     })
-  // }
-  // const [datas, setDatas] = useState([]);
+
+  const [datas, setDatas] = useState([]);
   const [state, setState] = useState({
     money: 0,
     firstName: "",
@@ -29,7 +15,7 @@ const Donate = () => {
     email: "",
     number: 0,
     address: "",
-    // country: "",
+    country: "",
     comment: "",
     cardNumber: 0,
     mm: "",
@@ -48,7 +34,7 @@ const Donate = () => {
       !state.email ||
       !state.number ||
       !state.address ||
-      // !state.country ||
+      !state.country ||
       !state.comment ||
       !state.cardNumber ||
       !state.mm ||
@@ -65,7 +51,7 @@ const Donate = () => {
       email: "",
       number: 0,
       address: "",
-      // country: "",
+      country: "",
       comment: "",
       cardNumber: 0,
       mm: "",
@@ -87,14 +73,14 @@ const Donate = () => {
     resolver: yupResolver(formSchema),
   });
 
-  // const getData = async () => {
-  //   const res = await axios.get("http://localhost:8080/aboutList");
-  //   setDatas(res.data);
-  // };
+  const getData = async () => {
+    const res = await axios.get("http://localhost:8080/aboutList");
+    setDatas(res.data);
+  };
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <form className="donate" onSubmit={handleSubmit(onSubmit)}>
       <div className="your_donation">
@@ -215,7 +201,7 @@ const Donate = () => {
             )}
           </div>
 
-          {/* <select onChange={handleChange}>
+          <select onChange={handleChange}>
             <option  selected>Country...</option>
             {datas?.map((data) => {
               return (
@@ -226,7 +212,7 @@ const Donate = () => {
                 </option>
               );
             })}
-          </select> */}
+          </select> 
         </div>
         <div>
           <div>
@@ -338,7 +324,7 @@ const Donate = () => {
             )}
           </div>
 
-          {/* <select onChange={handleChange}>
+         <select onChange={handleChange}>
             <option selected>Country...</option>
             {datas?.map((data) => {
               return (
@@ -347,17 +333,11 @@ const Donate = () => {
                 </option>
               );
             })}
-          </select> */}
+          </select> 
         </div>
       </div>
       <button onClick={() => addData()}>Donate now</button>
-      {/* <center>
-                <h1>Welcome to Geeks for Geeks</h1>
-                <h3>Click on below button to download PDF file</h3>
-                <button onClick={onButtonClick}>
-                    Download PDF
-                </button>
-            </center> */}
+      
     </form>
   );
 };

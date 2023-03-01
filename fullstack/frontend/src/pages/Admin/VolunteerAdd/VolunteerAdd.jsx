@@ -100,9 +100,9 @@ const VolunteerAdd = () => {
       <section className="gallery_table">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12 col-md-12">
-              {" "}
-              <table className="table">
+            <div>
+
+              <table >
                 <thead>
                   <tr>
                     <th scope="col">Image</th>
@@ -117,17 +117,17 @@ const VolunteerAdd = () => {
                   {datas.map((data) => {
                     return (
                       <tr key={data._id}>
-                        <td>
+                        <td data-label="Image">
                           <img
                             src={data.image}
                             style={{ height: 100 }}
                             alt="alt"
                           />
                         </td>
-                        <td>{data.name}</td>
-                        <td>{data.title}</td>
-                        <td>{data.color}</td>
-                        <td>
+                        <td data-label="Name">{data.name}</td>
+                        <td data-label="Title">{data.title}</td>
+                        <td data-label="Color">{data.color}</td>
+                        <td data-label="Delete data">
                           <button
                             type="button"
                             className="btn btn-danger"
@@ -136,7 +136,7 @@ const VolunteerAdd = () => {
                             Delete
                           </button>
                         </td>
-                        <td>
+                        <td data-label="Update Data">
                           <button
                             type="button"
                             className="btn btn-success"

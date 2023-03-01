@@ -1,4 +1,14 @@
 @import "../../../vendors/mixins";
+.large{
+ // width: 100% ;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  border: none;
+}
+
+
 
 .eventAdd {
   padding: 60px 0;

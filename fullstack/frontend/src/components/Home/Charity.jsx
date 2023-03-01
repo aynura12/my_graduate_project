@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
 import "../Home/charity.scss";
-import axios from "axios";
-// import $ from "jquery";
+import $ from "jquery";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -14,42 +13,42 @@ const Charity = () => {
  
   const {lefts,rights}=useContext(mainContext)
  
-  // var a = 0;
-  // $(window).scroll(function () {
-  //     var oTop = $("#counter-box").offset().top - window.innerHeight;
-  //     if (a == 0 && $(window).scrollTop() > oTop) {
-  //         $(".counter").each(function () {
-  //             var $this = $(this),
-  //                 countTo = $this.attr("data-number");
-  //             $({
-  //                 countNum: $this.text()
-  //             }).animate(
-  //                 {
+  var a = 0;
+  $(window).scroll(function () {
+      var oTop = $("#counter-box").offset().top - window.innerHeight;
+      if (a == 0 && $(window).scrollTop() > oTop) {
+          $(".counter").each(function () {
+              var $this = $(this),
+                  countTo = $this.attr("data-number");
+              $({
+                  countNum: $this.text()
+              }).animate(
+                  {
                  
-  //                     countNum: countTo
-  //                 },
+                      countNum: countTo
+                  },
   
-  //                 {
-  //                     duration: 2000,
-  //                     easing: "swing",
-  //                     step: function () {
-  //                         // $this.text(Math.ceil(this.countNum));  
-  //                         $this.text(
-  //                             Math.ceil(this.countNum).toLocaleString("en")
-  //                         );
-  //                     },
-  //                     complete: function () {
-  //                         $this.text(
-  //                             Math.ceil(this.countNum).toLocaleString("en")
-  //                         );
-  //                         // alert('finished');
-  //                     }
-  //                 }
-  //             );
-  //         });
-  //         a = 1;
-  //     }
-  // });
+                  {
+                      duration: 2000,
+                      easing: "swing",
+                      step: function () {
+                          // $this.text(Math.ceil(this.countNum));  
+                          $this.text(
+                              Math.ceil(this.countNum).toLocaleString("en")
+                          );
+                      },
+                      complete: function () {
+                          $this.text(
+                              Math.ceil(this.countNum).toLocaleString("en")
+                          );
+                          // alert('finished');
+                      }
+                  }
+              );
+          });
+          a = 1;
+      }
+  });
   
   return (
     <div className="charity">

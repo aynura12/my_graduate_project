@@ -145,11 +145,11 @@ const EventAdd = () => {
         </div>
       </section>
       <section className="gallery_table">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-12 col-md-12">
+            <div>
               {" "}
-              <table className="table">
+              <table>
                 <thead>
                   <tr>
                     <th scope="col">Image</th>
@@ -174,28 +174,28 @@ const EventAdd = () => {
                   {events.map((event) => {
                     return (
                       <tr key={event._id}>
-                        <td>
+                        <td data-label="Image">
                           <img
                             src={event.image}
                             style={{ height: 100 }}
                             alt="alt"
                           />
                         </td>
-                        <td>{event.day}</td>
-                        <td>{event.month}</td>
-                        <td>{event.title}</td>
-                        <td>{event.watch}</td>
-                        <td>{event.name}</td>
-                        <td>{event.color}</td>
-                        <td>{event.requirements}</td>
-                        <td>{event.text}</td>
-                        <td>{event.date}</td>
-                        <td>{event.category}</td>
-                        <td>{event.phone}</td>
-                        <td>{event.website}</td>
-                        <td>{event.location}</td>
+                        <td data-label="Day">{event.day}</td>
+                        <td data-label="Month">{event.month}</td>
+                        <td data-label="Title">{event.title}</td>
+                        <td data-label="Watch">{event.watch}</td>
+                        <td data-label="Name">{event.name}</td>
+                        <td data-label="Color">{event.color}</td>
+                        <td data-label="Requirements" ><p className="large">{event.requirements}</p></td>
+                        <td data-label="Text" ><p className="large">{event.text}</p></td>
+                        <td data-label="Date">{event.date}</td>
+                        <td data-label="Category">{event.category}</td>
+                        <td data-label="Phone">{event.phone}</td>
+                        <td data-label="Website">{event.website}</td>
+                        <td data-label="Location">{event.location}</td>
 
-                        <td>
+                        <td data-label="Delete data">
                           <button
                             type="button"
                             className="btn btn-danger"
@@ -204,7 +204,7 @@ const EventAdd = () => {
                             Delete
                           </button>
                         </td>
-                        <td>
+                        <td data-label="Update data">
                           <button
                             type="button"
                             className="btn btn-success"

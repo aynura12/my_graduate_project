@@ -84,8 +84,14 @@ app.use("/charity",charityRoute)
 const homeDonateRoute=require("./routes/homeDonateRoute")
 app.use("/homedonate",homeDonateRoute)
 
+
+
 const subcribeRoute=require("./routes/subcribeRoute")
 app.use("/subcribe",subcribeRoute)
+
+const AdminRoute=require("./routes/AdminRoute")
+app.use("/admin",AdminRoute)
+
 
 const UserRoute=require("./routes/UserRoute")
 app.use("/user",UserRoute)

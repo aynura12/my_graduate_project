@@ -80,6 +80,16 @@ const Navbar2 = () => {
                   Volunteer
                 </Link>
               </li>
+              <li>
+                <Link to="counterAdd" id="admin_link">
+              Counter
+                </Link>
+              </li>
+              <li>
+                <Link to="charityAdd" id="admin_link">
+              Charity
+                </Link>
+              </li>
             </ul>
             <AdminHamburgerMenu />
           </div>

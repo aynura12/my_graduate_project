@@ -1,19 +1,17 @@
-const User = require("../models/UserModel");
+const Admin = require("../models/AdminModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
   try {
-    console.log("StartAPP")
-
-    const { username, email, password, confirmPassword } = req.body;
-    const existingUser = await User.findOne({ email });
-    console.log(username);
+    const { adminname, email, password, confirmPassword } = req.body;
+    const existingAdmin = await Admin.findOne({ email });
+    console.log(adminname);
     console.log(email);
     console.log(password);
     console.log(confirmPassword);
-    if (existingUser) {
-      return res.status(400).json({ message: "User already exists" });
+    if (existingAdmin) {
+      return res.status(400).json({ message: "Admin already exists" });
     }
 
     if (password !== confirmPassword) {
@@ -21,18 +19,17 @@ const register = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 12);
-    const user = await User.create({
-      username,
+    const admin = await Admin.create({
+      adminname,
       email,
       password: hashedPassword,
     });
-    const token = jwt.sign({ email: user.email, id: user._id }, "mysecret", {
+    const token = jwt.sign({ email: admin.email, id: admin._id }, "admin-mysecret", {
       expiresIn: "1h",
     });
 
-    res.status(201).json({ result: user, token });
+    res.status(201).json({ result: admin, token });
   } catch (error) {
-    console.log("Something went wrong error")
     res.status(500).json({ message: "Something went wrong" });
   }
 };
@@ -42,29 +39,29 @@ const login = async (req, res) => {
     const { email, password } = req.body;
     console.log(email);
     console.log(password);
-    const existingUser = await User.findOne({ email });
+    const existingAdmin = await Admin.findOne({ email });
 
-    if (!existingUser) {
+    if (!existingAdmin) {
       return res.redirect("/register");
     }
 
     const isPasswordCorrect = await bcrypt.compare(
       password,
-      existingUser.password
+      existingAdmin.password
     );
 
     if (!isPasswordCorrect) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    existingUser.isLoggedIn = true;
-    await existingUser.save();
+    existingAdmin.isLoggedIn = true;
+    await existingAdmin.save();
     const token = jwt.sign(
-      { email: existingUser.email, id: existingUser._id },
-      "mysecret",
-      { expiresIn: "1h" }
+      { email: existingAdmin.email, id: existingAdmin._id },
+      "admin-mysecret",
+      { expiresIn: "2h" }
     );
-    return res.status(200).json({ result: existingUser, token });
+    return res.status(200).json({ result: existingAdmin, token });
   } catch (error) {
     return res.status(500).json({ message: "Something went wrong" });
   }
@@ -79,10 +76,10 @@ const tokenRequired = (req, res, next) => {
   }
   try {
     console.log("try");
-    const decodedData = jwt.verify(token, "mysecret");
+    const decodedData = jwt.verify(token, "admin-mysecret");
     console.log("after dekot");
-    req.user = decodedData;
-    console.log("after req user");
+    req.admin = decodedData;
+    console.log("after req admin");
 
     return res.status(200).json({ result: decodedData, token });
   } catch (error) {
@@ -94,13 +91,13 @@ const forgotPassword = async (req, res) => {
   try {
     const { email } = req.body;
 
-    const existingUser = await User.findOne({ email });
+    const existingAdmin = await Admin.findOne({ email });
 
-    if (!existingUser) {
-      return res.status(404).json({ message: "User does not exist" });
+    if (!existingAdmin) {
+      return res.status(404).json({ message: "Admin does not exist" });
     }
-    const token = jwt.sign({ email: user.email, id: user._id }, "mysecret", {
-      expiresIn: "1h",
+    const token = jwt.sign({ email: admin.email, id: admin._id }, "admin-mysecret", {
+      expiresIn: "2h",
     });
 
     // const reset_url_text = "http://localhost:8080/admin/reset_password?token=" + token
@@ -112,10 +109,10 @@ const forgotPassword = async (req, res) => {
   }
 };
 
-const getLoggedInUsers = async (req, res) => {
+const getLoggedInAdmins = async (req, res) => {
   try {
-    const loggedInUsers = await User.find({ isLoggedIn: true });
-    res.status(200).json(loggedInUsers);
+    const loggedInAdmins = await Admin.find({ isLoggedIn: true });
+    res.status(200).json(loggedInAdmins);
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
   }
@@ -125,6 +122,6 @@ module.exports = {
   register,
   login,
   forgotPassword,
-  getLoggedInUsers,
+  getLoggedInAdmins,
   tokenRequired,
 };

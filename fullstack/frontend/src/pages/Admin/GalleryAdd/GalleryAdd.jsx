@@ -79,8 +79,8 @@ const GalleryAdd = () => {
         <div className="container">
           <div className="row">
             {" "}
-            <div className="col-lg-12 col-md-12">
-              <table className="table">
+            <div >
+              <table>
                 <thead>
                   <tr>
                     <th scope="col">Image</th>
@@ -92,14 +92,14 @@ const GalleryAdd = () => {
                   {gallerys.map((gallery) => {
                     return (
                       <tr key={gallery._id}>
-                        <td>
+                        <td data-label="Image">
                           <img
                             src={gallery.image}
                             style={{ height: 100 }}
                             alt="alt"
                           />
                         </td>
-                        <td>
+                        <td data-label="Delete data">
                           <button
                             type="button"
                             className="btn btn-danger"
@@ -108,7 +108,7 @@ const GalleryAdd = () => {
                             Delete
                           </button>
                         </td>
-                        <td>
+                        <td data-label="Update Data">
                           <button
                             type="button"
                             className="btn btn-success"

@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { mainContext } from "../Context/ContextProvider";
 import { useContext } from "react";
@@ -9,10 +9,8 @@ import { Link } from "react-router-dom";
 const Register = () => {
   const { ToTop } = useContext(mainContext);
   useEffect(() => {
-    ToTop()
+    ToTop();
   }, []);
-
-
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -28,7 +26,7 @@ const Register = () => {
     }
 
     axios
-      .post("http://127.0.0.1:3070/register/", {
+      .post("http://127.0.0.1:8080/user/register", {
         username,
         email,
         password,
@@ -39,7 +37,7 @@ const Register = () => {
         document.cookie = `token=${response.data.token}; expires=${new Date(
           Date.now() + 36000000
         ).toUTCString()}; path=/`;
-        window.location.href = "/admin";
+        window.location.href = "/";
 
         setUsername("");
         setEmail("");
@@ -49,7 +47,7 @@ const Register = () => {
       .catch((error) => {
         console.log("catch", error);
       });
-    window.alert("success register");
+    // window.alert("success register");
   };
 
   return (
@@ -73,54 +71,59 @@ const Register = () => {
         </div>
       </div>
       <section>
-      <div className="login__wrapper">
-      <div style={{ width: "20%", textAlign: "center" }}>
-      <div> <img src="http://layerdrops.com/oxpitan/images/section-icon.png" alt="" /></div>
-        <h2 style={{ color: "#e36955", marginBottom: "30px" }}>Register</h2>
-        <form
-          onSubmit={handleSubmit}
-          style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-        >
-          <input
-            className="login-inp"
-            type="text"
-            placeholder="Name"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            className="login-inp"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            className="login-inp"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            className="login-inp"
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-          <button className="login-button" type="submit">
-            Sign in
-          </button>
-          <div>
-          <Link className="login-links" to="/login">
-           Login
-            </Link>
-            
+        <div className="login__wrapper">
+          <div style={{ width: "20%", textAlign: "center" }}>
+            <div>
+              {" "}
+              <img
+                src="http://layerdrops.com/oxpitan/images/section-icon.png"
+                alt=""
+              />
+            </div>
+            <h2 style={{ color: "#e36955", marginBottom: "30px" }}>Register</h2>
+            <form
+              onSubmit={handleSubmit}
+              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+            >
+              <input
+                className="login-inp"
+                type="text"
+                placeholder="Name"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input
+                className="login-inp"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                className="login-inp"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <input
+                className="login-inp"
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <button className="login-button" type="submit">
+                Sign in
+              </button>
+              <div>
+                <Link className="login-links" to="/user-login">
+                  Login
+                </Link>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-    </div>
+        </div>
       </section>
     </>
   );

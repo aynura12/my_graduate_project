@@ -1,6 +1,6 @@
 @import "../../../vendors/mixins";
 
-.causeAdd{
+.causeAdd {
   padding: 60px 0;
   @include backcolor;
   .causeAdd_title {
@@ -12,5 +12,57 @@
     button {
       @include buttonpreparty;
     }
+  }
+}
+table{
+  width: 100%;
+  tr{
+    border: 1px solid rgb(13, 90, 20);
+    //padding: 10px;
+  }
+  td ,th{
+    padding: 10px;
+    border: 1px solid grey;
+  }
+  thead{
+    background-color: rgba(43, 134, 43, 0.568);
+
+  }
+}
+@media (max-width: 992px) {
+  table {
+   
+    td {
+      display: block;
+      //text-align: left;
+      position: relative;
+      padding-left:30% ;
+      padding-bottom: 10px;
+      border: 1px solid grey;
+      padding: 10px 0 10px 32%;
+
+      &:before {
+        content: attr(data-label);
+        //float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 30%;
+        position: absolute;
+        top:0px;
+        left: 0px;
+        padding: 10px;
+        background-color: rgba(43, 134, 43, 0.568);
+        height: 100%;
+        border-right:1px solid grey;
+      }
+    }
+
+    thead {
+      display: none;
+    }
+    tr {
+      margin-bottom: 50px;
+      display: block;
+        }
   }
 }

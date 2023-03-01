@@ -5,24 +5,6 @@ import "../AdminReg/adminReg.scss";
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-    
-  // const handleSubmit = (event) => {
-  //     event.preventDefault();
-  //     axios.post('http://127.0.0.1:3070/login/', { email, password })
-  //         .then((response) => {
-
-  //             console.log("succcess", response)
-  //             document.cookie = `token=${response.data.token}; expires=${new Date(Date.now() + 36000000).toUTCString()}; path=/`;
-  //             window.location.href = '/admin';
-  //             setEmail('');
-  //             setPassword('');
-
-  //         })
-  //         .catch((error) => {
-  //             console.log("catch", error)
-  //         });
-  //     window.alert("success login")
-  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,17 +14,17 @@ const AdminLogin = () => {
     }
     axios
 
-      .post("http://127.0.0.1:8080/user/login", { email, password })
+      .post("http://127.0.0.1:8080/admin/login", { email, password })
 
       .then((response) => {
         console.log("success", response);
-        document.cookie = `token=${response.data.token}; expires=${new Date(
+        document.cookie = `admin-token=${response.data.token}; expires=${new Date(
           Date.now() + 36000000
         ).toUTCString()}; path=/`;
         window.location.href = "/admin";
         setEmail("");
         setPassword("");
-        window.alert("Success login");
+        // window.alert("Success login");
       })
       .catch((error) => {
         console.log("catch", error);
@@ -94,7 +76,7 @@ const AdminLogin = () => {
               Forgot password?
             </Link>
 
-            <Link className="login-links" to="/admin/register">
+            <Link className="login-links" to="/admin/admin-register">
               Register
             </Link>
           </div>
