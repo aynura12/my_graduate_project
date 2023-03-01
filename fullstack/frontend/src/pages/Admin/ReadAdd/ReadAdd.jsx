@@ -170,7 +170,7 @@ const ReadAdd = () => {
                 )}
 
                 <input
-                  type="color"
+                  type="text"
                   {...register("color")}
                   onChange={handleChange}
                   value={state.color}

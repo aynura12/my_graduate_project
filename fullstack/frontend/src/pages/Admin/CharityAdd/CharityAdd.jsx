@@ -169,10 +169,10 @@ const CharityAdd = () => {
                 )}
 
                 <input
-                  type="color"
+                  type="text"
                   {...register("color")}
                   onChange={handleChange}
-                  value={state.text}
+                  value={state.color}
                   name="color"
                   style={{backgroundColor:"rgb(238, 79, 16)"}}
                 />

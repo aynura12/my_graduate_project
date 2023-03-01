@@ -195,7 +195,7 @@ const TeamAdd = () => {
                   <></>
                 )}
                 <input
-                  type="color"
+                  type="string"
                   {...register("color")}
                   onChange={handleChange}
                   value={state.color}
