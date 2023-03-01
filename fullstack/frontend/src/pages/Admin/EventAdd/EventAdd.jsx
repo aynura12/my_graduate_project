@@ -336,7 +336,7 @@ const EventAdd = () => {
                   {...register("requirements")}
                   onChange={handleChange}
                   value={state.requirements}
-                  name="requirementsr"
+                  name="requirements"
                   placeholder="Add Requirements..."
                 />
                 {errors.requirements ? (
